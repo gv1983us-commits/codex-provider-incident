@@ -4,7 +4,15 @@
 
 **Target:** reliable Jarvis work through Hermes using the existing Pro Full `openai-codex` subscription connection.
 
-**Status:** GPT-5.5 responded in official Work. Hermes GPT-5.5, auxiliary routing, sustained work and exception recovery are not yet verified. The following is a proposed validation procedure, not a completed repair.
+**Status:** A new Hermes GPT-5.5 Ultra session showed initial activity, then overload. The [owner's exact receipt](https://github.com/gv1983us-commits/codex-provider-incident/issues/1#issuecomment-5618436481) confirms `openai-codex / gpt-5.5 / overloaded` at 2026-09-10T12:06:26.863Z. No reliable Hermes workaround is demonstrated. Earlier GPT-5.5 browser success and very slow Max operation are separate observations. The following is a proposed validation procedure, not a completed repair.
+
+## 0. Preserve the confirmed failure
+
+The new Copy details receipt explicitly names `openai-codex`, `gpt-5.5` and `overloaded`. It resolves the screenshot's model-attribution uncertainty. The receipt does not give an HTTP status, endpoint, request ID, call role or attempt count; obtain a focused log excerpt only if one of those fields is needed for a concrete diagnostic.
+
+`retryable: true` is an error classification, not a promise of provider recovery. Treat GPT-5.5 as another route with an observed failure until scoped recovery evidence is supplied.
+
+The screenshot also exposes a client build label, transcribed in the evidence file. It is a UI label, not a verified full installed runtime commit.
 
 ## 1. Pin the environment once
 
@@ -45,6 +53,10 @@ Ask the agent to list a harmless test directory with an available read-only tool
 Record actual timestamps, provider/model IDs from the request log, error text if any, and the installed revision. A plain text response alone is a narrower success. Stop after the normal bounded retry budget if the route fails; do not generate a retry storm.
 
 If the current installation does not support this command, report the installed revision and its supported model picker. Do not assume current upstream documentation describes a customized historical build exactly.
+
+### Record where the delay occurs
+
+For one short, comparable request, distinguish time before the first visible event, time spent producing the response, and time inside a tool. Record the selected interface setting without assuming “Ultra” and “Max” map to identical request parameters. The current slow-progress report contains no timed measurements.
 
 ## 3. Cover the routes Jarvis actually uses
 

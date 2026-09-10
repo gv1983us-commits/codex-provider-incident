@@ -2,7 +2,32 @@
 
 Source: [owner's Hermes issue](https://github.com/NousResearch/hermes-agent/issues/107307) and its [focused evidence reply](https://github.com/NousResearch/hermes-agent/issues/107307#issuecomment-5617927854). Snapshot: 10 September 2026.
 
-## Update — 10 September 2026: GPT-5.5 works on the affected Full account
+## Latest confirmed update — 10 September 2026: GPT-5.5 also returns Codex overload
+
+A new Hermes session with GPT-5.5 Ultra selected first appeared to make very slow progress, then displayed an overload banner. The owner subsequently supplied this **exact Copy details receipt**:
+
+```text
+── Hermes error details ──
+time: 2026-09-10T12:06:26.863Z
+layer: provider
+code: overloaded
+retryable: true
+provider: openai-codex
+model: gpt-5.5
+error: Our servers are currently overloaded. Please try again later.
+```
+
+[Recorded receipt and context](https://github.com/gv1983us-commits/codex-provider-incident/issues/1#issuecomment-5618436481). The timestamp converts to **15:06:26.863 Moscow (UTC+3)**.
+
+**The provider and model are now explicit: `openai-codex` / `gpt-5.5`.** The earlier screenshot only showed the selected session model; this receipt resolves that attribution gap. The session showed initial activity, so a brief start must not be treated as sustained recovery.
+
+**No reliable Hermes workaround has been demonstrated.** GPT-5.5 joins the previously affected model routes on the Full account. Earlier GPT-5.5 success in official Work and reported very slow GPT-5.5 Max operation there remain separate observations; this receipt establishes a Hermes failure, not a new browser failure.
+
+The receipt does not supply an HTTP status, endpoint, request ID, call role or retry-attempt count. `retryable: true` means the error is classified as retryable; a successful retry is not guaranteed. The cause of the slowness and the exact upstream root cause remain unknown.
+
+Historical log counts are unchanged: this is a new owner-supplied receipt outside the original eight-log audit. Earlier provisional observations below are retained as history.
+
+## Earlier update — 10 September 2026: GPT-5.5 works in official Work
 
 A new browser test narrows the original report:
 
@@ -93,6 +118,6 @@ The account owner reports that continuous execution had already been configured 
 
 The detailed success log begins on 9 September at approximately 15:56, whereas some earlier logs contain errors only. The 1,987 successes and the 151 overload failures must not be combined into an overall failure rate for 8–10 September.
 
-The original comparison used an existing Work conversation. A fresh short-prompt Work conversation on the affected account remains a useful additional control. GPT-5.5 in Hermes is still unverified.
+The original comparison used an existing Work conversation. A fresh short-prompt Work conversation on the affected account remains a useful additional control for GPT-5.6/GPT-6. The latest update above records a confirmed openai-codex / gpt-5.5 overload receipt after initial activity in a new Hermes session. Reliable recovery remains unverified.
 
 Public materials here are a curated subset of the retained audits, not the eight raw logs or the full session export. No source-file checksum has been independently added by this repository. Source line references refer to the retained files, not line numbers in this repository.

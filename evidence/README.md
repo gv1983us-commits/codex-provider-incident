@@ -6,7 +6,7 @@
 
 | File | Evidence type | How to interpret it |
 | --- | --- | --- |
-| [excerpts.json](excerpts.json) | Two exact log message fields | Timestamp, logger, original filename and line are separate metadata; these are not fabricated full log lines |
+| [excerpts.json](excerpts.json) | Two historical log message fields, a later UI transcription and a new GPT-5.5 receipt | Original source metadata is separate. The new receipt confirms provider/model; screenshot labels alone do not. |
 | [audit-summary.json](audit-summary.json) | Derived counts and chronology | Transcribed from the retained audits; the raw logs are not bundled |
 | [route-matrix.json](route-matrix.json) | Account owner's browser and Hermes observations | Unknown model IDs or timestamps remain unknown |
 
@@ -19,6 +19,12 @@ Counts apply to different scopes:
 - **11 auxiliary overload attempts:** separate from the 181 main-loop failures.
 - **1,987 successful Codex calls:** only the detailed success window, 9 September after 15:56 through 10 September 10:40:37, UTC+3.
 - The later Terra and GPT-5.5 browser observations do not change those historical counters.
+
+## New receipt after the original audit
+
+At **2026-09-10T12:06:26.863Z**, an owner-supplied Hermes error receipt explicitly names **openai-codex / gpt-5.5 / overloaded**, with `retryable: true`. [Exact receipt](https://github.com/gv1983us-commits/codex-provider-incident/issues/1#issuecomment-5618436481). It follows an initial report of very slow activity in a new GPT-5.5 Ultra session and a subsequent overload screenshot.
+
+This is a new evidence item outside the original eight-log corpus and 260-record index. Historical counters remain unchanged. The receipt has no HTTP status, endpoint, request ID, call role or retry-attempt count. The screenshot and receipt have distinct displayed times and are recorded separately.
 
 ## Provenance already public
 

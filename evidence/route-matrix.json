@@ -54,9 +54,31 @@
       "account": "Pro Full 20x",
       "client": "Hermes",
       "provider": "openai-codex",
-      "model_to_test": "gpt-5.5",
-      "outcome": "not_yet_verified",
-      "exact_test_timestamp": null
+      "outcome": "initial_activity_then_overload_confirmed_by_receipt",
+      "exact_test_timestamp": "2026-09-10T12:06:26.863Z",
+      "model": "gpt-5.5",
+      "selected_setting_as_reported": "Ultra",
+      "session": "new",
+      "error_message": "Our servers are currently overloaded. Please try again later.",
+      "code": "overloaded",
+      "layer": "provider",
+      "retryable": true,
+      "receipt_timestamp": "2026-09-10T12:06:26.863Z",
+      "receipt_timestamp_moscow": "2026-09-10T15:06:26.863+03:00",
+      "timestamp_scope": "Time field of the supplied error receipt",
+      "provider_and_model_source": "Exact owner-supplied Copy details receipt",
+      "failed_request_role": null,
+      "http_status": null,
+      "endpoint": null,
+      "request_id": null,
+      "retry_attempt_count": null,
+      "sustained_recovery_verified": false,
+      "sequence": [
+        "Owner reported apparent initial progress, very slow.",
+        "Owner then supplied an overload screenshot and retracted the optimistic interpretation.",
+        "Subsequent Copy details receipt explicitly confirms openai-codex / gpt-5.5 / overloaded."
+      ],
+      "source_url": "https://github.com/gv1983us-commits/codex-provider-incident/issues/1#issuecomment-5618436481"
     },
     {
       "id": "full-conversation",
@@ -74,6 +96,18 @@
       "model": null,
       "outcome": "works_as_reported",
       "exact_test_timestamp": null
+    },
+    {
+      "id": "full-work-55-max-slow",
+      "account": "Pro Full 20x",
+      "client": "Official ChatGPT interface; continuing Work comparison",
+      "browser": null,
+      "selected_model_as_reported": "GPT-5.5",
+      "selected_setting_as_reported": "Max",
+      "outcome": "very_slow_operation_owner_report",
+      "exact_test_timestamp": null,
+      "latency_measurements": null,
+      "new_browser_failure_established": false
     }
   ],
   "browser_error_original": "Выбранная модель сейчас недоступна из-за высокой нагрузки. Попробуйте выбрать другую модель.",
@@ -83,5 +117,10 @@
     "Exact upstream root cause",
     "Reliable Hermes recovery through GPT-5.5",
     "Fresh-conversation control for affected Full models"
-  ]
+  ],
+  "latest_update": {
+    "date": "2026-09-10",
+    "interpretation": "GPT-5.5 also has a confirmed openai-codex overload receipt after initial Hermes activity. No reliable Hermes workaround demonstrated. Historical audit counts unchanged.",
+    "source_url": "https://github.com/gv1983us-commits/codex-provider-incident/issues/1#issuecomment-5618436481"
+  }
 }
