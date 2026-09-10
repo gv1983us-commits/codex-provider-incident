@@ -4,7 +4,9 @@
 
 **Target:** reliable Jarvis work through Hermes using the existing Pro Full `openai-codex` subscription connection.
 
-**Status:** Astra's short Medium tool turn passed, but later work failed with an [exact `unknown` receipt at 14:17:45.876 UTC](ASTRA-2026-09-10.md). The owner reports approximately ten additional tool calls. The failed call's effort is not supplied. The earlier GPT-5.5 overload remains confirmed. No sustained workaround or exception-recovery repair is demonstrated. Preserve the interrupted work and correlate the supplied request ID before treating a retry as recovery.
+**Latest status:** the owner reports [Sol overload on Light at 15:21:54.745 UTC](LIGHT-OVERLOAD-2026-09-10.md), after the reported completion of conservation. Both accounts now have observed Hermes/Codex failures. Preserve the reported `QUIESCED_SAFE` checkpoint and pause automatic requests if any remain active. No dependable fallback is established; a new browser-wide failure is not shown.
+
+**Earlier status:** Astra's short Medium tool turn passed, but later work failed with an [exact `unknown` receipt at 14:17:45.876 UTC](ASTRA-2026-09-10.md). The owner reports approximately ten additional tool calls. The failed call's effort is not supplied. The earlier GPT-5.5 overload remains confirmed. No sustained workaround or exception-recovery repair is demonstrated. Preserve the interrupted work and correlate the supplied request ID before treating a retry as recovery.
 
 **Temporary continuation on another account:** the owner now reports that connecting Pro Light to Hermes resumed work in the same large Builder session. The owner has now supplied a completed conservation report and identified Sol as the working model. A later Astra banner was explicitly identified as old. [Completion and receipt comparison](CONSERVATION-2026-09-10.md). Underlying storage/process state and sustained duration have not been independently verified here. Record this as [same-session progress on Light](ACCOUNT-SWITCH-2026-09-10.md), while retaining the Full-account recovery target and earlier failures. No new export or effective request settings were captured for this switch.
 

@@ -176,6 +176,28 @@
       "conservation_completion_reported": true,
       "underlying_state_independently_verified": false,
       "completion_source": "conservation-20260910.json"
+    },
+    {
+      "id": "light-hermes-sol-overload-after-conservation",
+      "account_as_reported": "Pro Light / Pro 5x",
+      "account_attribution": "Owner statement accompanying receipt",
+      "client": "Hermes",
+      "provider": "openai-codex",
+      "model": "gpt-5.6-sol-900k",
+      "receipt_timestamp": "2026-09-10T15:21:54.745Z",
+      "layer": "provider",
+      "code": "overloaded",
+      "retryable": true,
+      "error_message": "Our servers are currently overloaded. Please try again later.",
+      "outcome": "overload_in_owner_supplied_receipt_after_reported_conservation",
+      "http_status": null,
+      "request_id": null,
+      "session_id": null,
+      "failed_call_role": null,
+      "retry_attempt_count": null,
+      "current_weekly_allowance": null,
+      "sustained_recovery_verified": false,
+      "source": "light-sol-20260910T152154745Z.json"
     }
   ],
   "browser_error_original": "Выбранная модель сейчас недоступна из-за высокой нагрузки. Попробуйте выбрать другую модель.",
@@ -188,8 +210,8 @@
   ],
   "latest_update": {
     "date": "2026-09-10",
-    "exact_recovery_time": null,
-    "source": "conservation-20260910.json",
-    "interpretation": "Owner supplies completed conservation report and identifies Sol as the working model on Light. The later Astra banner is explicitly identified as old and not counted as a new failure. Full recovery and release acceptance remain unresolved."
+    "receipt_timestamp": "2026-09-10T15:21:54.745Z",
+    "source": "light-sol-20260910T152154745Z.json",
+    "interpretation": "The owner now reports Sol overload on Light after conservation. Earlier same-session progress remains valid, but both accounts have reported Hermes failures and Light is not a sustained workaround. The old Astra redisplay remains a separate observation."
   }
 }

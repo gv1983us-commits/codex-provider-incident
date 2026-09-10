@@ -11,6 +11,7 @@
 | [audit-summary.json](audit-summary.json) | Derived counts and chronology | Transcribed from the retained audits; the raw logs are not bundled |
 | [builder-pro-light-20260910.json](builder-pro-light-20260910.json) | Owner-reported same-Builder resumption; reset history transcribed from owner screenshot | Three received, three used, Available 0; initiator and 97% → 100% change are owner observations |
 | [conservation-20260910.json](conservation-20260910.json) | Owner-supplied conservation report and explicit stale-banner correction | Sol completion is reported; identical Astra request ID at a later displayed time is not a new failure count |
+| [light-sol-20260910T152154745Z.json](light-sol-20260910T152154745Z.json) | Exact Sol `overloaded` receipt; owner attributes it to Light | Separate from the stale Astra redisplay and original audit counters |
 | [route-matrix.json](route-matrix.json) | Account owner's browser and Hermes observations | Unknown model IDs or timestamps remain unknown |
 
 The source corpus consists of eight logs spanning 8–10 September and a saved session export of 21,492,423 bytes / 4,400 messages. A retained index contains 260 evidence records: 259 from source logs plus one later user error receipt. The receipt was not added to the historical 181 Codex / 151 overload counters.

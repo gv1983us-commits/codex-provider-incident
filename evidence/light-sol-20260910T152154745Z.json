@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "evidence_id": "light-sol-overload-20260910T152154745Z",
+  "source": "Exact owner-supplied Hermes error details and accompanying statement that Pro Light is now failing",
+  "receipt": {
+    "time": "2026-09-10T15:21:54.745Z",
+    "layer": "provider",
+    "code": "overloaded",
+    "retryable": true,
+    "provider": "openai-codex",
+    "model": "gpt-5.6-sol-900k",
+    "error": "Our servers are currently overloaded. Please try again later."
+  },
+  "verbatim_receipt": "── Hermes error details ──\ntime: 2026-09-10T15:21:54.745Z\nlayer: provider\ncode: overloaded\nretryable: true\nprovider: openai-codex\nmodel: gpt-5.6-sol-900k\nerror: Our servers are currently overloaded. Please try again later.",
+  "receipt_time_gmt_plus_3": "2026-09-10T18:21:54.745+03:00",
+  "account_as_reported": "Pro Light / Pro 5x",
+  "account_attribution_scope": "Owner identifies Light; the receipt itself does not contain an account or subscription identifier.",
+  "not_supplied": {
+    "http_status": null,
+    "upstream_request_id": null,
+    "endpoint": null,
+    "session_id": null,
+    "failed_call_role": null,
+    "effective_reasoning_effort": null,
+    "retry_attempt_count": null,
+    "current_weekly_allowance": null,
+    "exact_conservation_completion_time": null
+  },
+  "interpretation": [
+    "The supplied receipt identifies Sol overloaded, distinct from the previously redisplayed Astra unknown error.",
+    "The owner attributes this failure to Light after reporting Sol completed conservation there.",
+    "Earlier successful work on Light remains a scoped success; Light is not a demonstrated reliable workaround.",
+    "The observed failure set now includes both Full and Light in Hermes. A Full-only explanation does not cover all current observations.",
+    "This receipt does not establish zero quota, a browser-wide failure, a shared root cause, or loss of retained work.",
+    "The prior conservation report and original audit counters remain unchanged; one pasted receipt does not establish the number of transport attempts."
+  ]
+}

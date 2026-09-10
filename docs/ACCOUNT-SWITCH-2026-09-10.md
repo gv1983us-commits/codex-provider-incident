@@ -2,7 +2,9 @@
 
 [Home](../README.md) · [Structured observations and reset ledger](../evidence/builder-pro-light-20260910.json) · [Recovery task](https://github.com/gv1983us-commits/codex-provider-incident/issues/1)
 
-**Latest owner report, 10 September 2026: connecting the existing Pro Light account to Hermes allowed work to resume in the same large Builder session. A new empty session was not required for this reported recovery. The affected Pro Full subscription remains unresolved.**
+**Later update:** the owner subsequently supplied a [Sol `overloaded` receipt on Light at 15:21:54.745 UTC](LIGHT-OVERLOAD-2026-09-10.md). The conservation success below remains part of the history, but Light is not a sustained workaround.
+
+**Earlier owner report, 10 September 2026: connecting the existing Pro Light account to Hermes allowed work to resume in the same large Builder session. A new empty session was not required for this reported recovery. The affected Pro Full subscription remains unresolved.**
 
 ## Observed comparison
 

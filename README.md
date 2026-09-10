@@ -9,7 +9,9 @@ We refer to the company as **the provider** throughout the investigation. Produc
 [Русская сводка](docs/README.ru.md) · [Evidence](evidence/README.md) · [Recovery procedure](docs/RECOVERY.md) · [Open tasks](https://github.com/gv1983us-commits/codex-provider-incident/issues) · [Hermes report](https://github.com/NousResearch/hermes-agent/issues/107307)
 
 > [!IMPORTANT]
-> **Latest owner report: the same large Builder session resumed in Hermes after switching to Pro Light.** The owner now reports **Sol completed conservation to `QUIESCED_SAFE`**. The later Astra banner was identified as old; no new Sol failure is counted. [Completion and banner correction](docs/CONSERVATION-2026-09-10.md). This is temporary continuation on another account. **Pro Full remains unresolved.** [Account-switch evidence and reset ledger](docs/ACCOUNT-SWITCH-2026-09-10.md).
+> **Latest: Pro Light also returns Sol overload.** The [15:21:54.745 UTC receipt](docs/LIGHT-OVERLOAD-2026-09-10.md) names `gpt-5.6-sol-900k / overloaded`; the owner identifies Light. Both accounts now have reported Hermes/Codex failures. Light allowed conservation but is not a sustained workaround.
+>
+> **Earlier: the same large Builder session resumed in Hermes after switching to Pro Light.** The owner now reports **Sol completed conservation to `QUIESCED_SAFE`**. The later Astra banner was identified as old; no new Sol failure is counted. [Completion and banner correction](docs/CONSERVATION-2026-09-10.md). This is temporary continuation on another account. **Pro Full remains unresolved.** [Account-switch evidence and reset ledger](docs/ACCOUNT-SWITCH-2026-09-10.md).
 >
 > **Earlier: Astra continuation also failed.** After the confirmed **Astra 900k / Medium five-tool success at 12:18:50 UTC**, the owner reports approximately ten further tool calls followed by a provider error. The [new exact receipt](docs/ASTRA-2026-09-10.md) records **14:17:45.876 UTC / `gpt-6-astra-900k` / `code: unknown`**, with a request ID. This is separate from the earlier GPT-5.5 `overloaded` receipt. No sustained recovery is demonstrated; the failed call's effort is not supplied.
 
@@ -24,10 +26,11 @@ We refer to the company as **the provider** throughout the investigation. Produc
 | Pro Full 20× | Official ChatGPT Work | GPT-5.5; Max in latest report | 🟡 Earlier response; latest report very slow; no new browser failure established |
 | Pro Full 20× | Hermes → Codex, new session | GPT-5.5, Ultra selected | 🔴 Initial activity, then overload; provider/model confirmed by receipt |
 | Pro Full 20× | Ordinary ChatGPT Conversation | Model not recorded | 🟢 Conversation works |
-| Pro Light | Official ChatGPT Work | Working session; exact model not recorded in this comparison | 🟢 Work works |
-| Pro Light | Hermes → Codex, same existing Builder session | Sol, owner-reported; exact request settings not supplied | 🟢 Conservation reported complete to `QUIESCED_SAFE`; Full recovery remains open |
+| Pro Light | Official ChatGPT Work, earlier comparison | Exact model not recorded | 🟢 Earlier Work comparison passed; no new browser failure established |
+| Pro Light | Hermes → Codex, same Builder session during conservation | Sol, owner-reported; exact request settings not supplied | 🟡 Conservation reported complete to `QUIESCED_SAFE`; later failure recorded below |
+| Pro Light, owner attribution | Hermes → Codex, latest receipt | `gpt-5.6-sol-900k` | 🔴 `overloaded` at 15:21:54.745 UTC |
 
-**Controls:** the same home Windows laptop, network and VPN; both Edge and Yandex tested; ChatGPT's built-in account switcher used in Yandex. The Full-account browser failure persists with Hermes shut down. The Pro Light account works in the same environment.
+**Controls:** the same home Windows laptop, network and VPN; both Edge and Yandex tested; ChatGPT's built-in account switcher used in Yandex. The Full-account browser failure persists with Hermes shut down. Pro Light worked in the earlier comparison and completed conservation, but a later Hermes receipt records Sol overload on Light as well.
 
 This narrows the failure to an **account/model/route-dependent pattern**. It does not identify an internal server pool, prove an account restriction, or establish the exact server-side cause. A short-prompt test in a fresh Work conversation on the affected account is still useful to separate conversation state from model/account routing.
 
@@ -61,7 +64,7 @@ The procedure and acceptance criteria are in [RECOVERY.md](docs/RECOVERY.md). No
 
 | Task | Current owner / invitation | Status |
 | --- | --- | --- |
-| [#1 · Validate sustained Codex work](https://github.com/gv1983us-commits/codex-provider-incident/issues/1) | Account owner | Sol conservation on Light reported complete; Full recovery open |
+| [#1 · Validate sustained Codex work](https://github.com/gv1983us-commits/codex-provider-incident/issues/1) | Account owner | Both Full and Light now have failures; reported conservation preserved |
 | [#2 · Preserve continuation after retry exhaustion](https://github.com/gv1983us-commits/codex-provider-incident/issues/2) | `huklaa` invited; formal assignment pending | Awaiting contributor confirmation |
 | [#3 · Check compression failure and recovery](https://github.com/gv1983us-commits/codex-provider-incident/issues/3) | Account owner coordinates; help wanted | Installed revision and code review needed |
 | [#4 · Compare results with Sub2API](https://github.com/gv1983us-commits/codex-provider-incident/issues/4) | Project owner and two relevant reporters invited | Awaiting replies |
@@ -72,6 +75,7 @@ The [invitation and repository handoff](https://github.com/NousResearch/hermes-a
 
 | Material | Purpose |
 | --- | --- |
+| [Latest Light overload](docs/LIGHT-OVERLOAD-2026-09-10.md) | Sol `overloaded` on Light after reported conservation; failures now span both accounts |
 | [Conservation result and stale banner](docs/CONSERVATION-2026-09-10.md) | Sol completion reported; old Astra receipt redisplayed, no new failure counted |
 | [Same-session account switch](docs/ACCOUNT-SWITCH-2026-09-10.md) | Builder resumes on Light, owner-reported; Full unresolved; scoped reset ledger |
 | [Latest Astra failure](docs/ASTRA-2026-09-10.md) | Exact `unknown` receipt with request ID; later continuation failure |

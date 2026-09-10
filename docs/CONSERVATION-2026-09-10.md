@@ -4,6 +4,8 @@
 
 **The owner supplied a Jarvis report of completed conservation and then clarified that Sol completed the current work; the Astra error banner shown below it was old.** The preceding account-switch report places this work in the same Builder session using Pro Light. The exact Sol wire model and reasoning effort have not been supplied.
 
+**Subsequent event:** a [Sol `overloaded` receipt at 15:21:54.745 UTC](LIGHT-OVERLOAD-2026-09-10.md) was then supplied, with the owner identifying Light. That is distinct from the old Astra banner discussed below and does not erase the completed conservation report.
+
 ## Completed work, as reported
 
 The relayed report places the parent in **`QUIESCED_SAFE`**, with retained storage, checkpoints and a handoff for resumption. It does not report an accepted release or promotion. This is a report of a completed preservation stage, not completion of the overall build task. The underlying storage, process state and hashes have not been independently checked by this repository.

@@ -2,7 +2,11 @@
 
 Source: [owner's Hermes issue](https://github.com/NousResearch/hermes-agent/issues/107307) and its [focused evidence reply](https://github.com/NousResearch/hermes-agent/issues/107307#issuecomment-5617927854). Snapshot: 10 September 2026.
 
-## Latest owner report — the same Builder session resumes on Pro Light
+## Latest receipt — 15:21:54.745 UTC: Light also returns Sol overload
+
+The [new exact receipt](LIGHT-OVERLOAD-2026-09-10.md) names `openai-codex / gpt-5.6-sol-900k / overloaded / retryable: true`. The owner identifies the account as Pro Light. This is distinct from the old Astra banner and follows the reported conservation success. Both Full and Light now have reported Hermes/Codex failures; a Full-only account/tier explanation does not cover all observations. The conservation report and original audit counters remain unchanged.
+
+## Earlier owner report — the same Builder session resumes on Pro Light
 
 After connecting Pro Light to Hermes, the owner reports that work resumed directly in the same large Builder session associated with the earlier approximately 21 MB export. The owner subsequently supplied a completed conservation report and clarified that Sol ran the work successfully. A later-displayed Astra error was identified as an old banner with the same request ID. [Completion report and duplicate-display scope](CONSERVATION-2026-09-10.md). This adds a same-session account-switch observation to the earlier browser comparisons. Actual new request settings and exact recovery time are not supplied. **Pro Full recovery remains unresolved.** [Comparison, provenance and scoped reset ledger](ACCOUNT-SWITCH-2026-09-10.md).
 
