@@ -9,7 +9,9 @@ We refer to the company as **the provider** throughout the investigation. Produc
 [Русская сводка](docs/README.ru.md) · [Evidence](evidence/README.md) · [Recovery procedure](docs/RECOVERY.md) · [Open tasks](https://github.com/gv1983us-commits/codex-provider-incident/issues) · [Hermes report](https://github.com/NousResearch/hermes-agent/issues/107307)
 
 > [!IMPORTANT]
-> **Latest: Pro Light also returns Sol overload.** The [15:21:54.745 UTC receipt](docs/LIGHT-OVERLOAD-2026-09-10.md) names `gpt-5.6-sol-900k / overloaded`; the owner identifies Light. Both accounts now have reported Hermes/Codex failures. Light allowed conservation but is not a sustained workaround.
+> **Latest owner follow-up:** roughly five failures with shrinking usable intervals, ending in immediate failure; Hermes/Codex is now unusable for the owner. This is an approximate narrative, not five additional audited receipts. [Fresh community comparison](docs/COMMUNITY-FOLLOWUP-2026-09-10.md) finds similar temporary recovery and renewed failures across several clients, with conflicting workaround outcomes.
+>
+> **Latest exact receipt: Pro Light also returns Sol overload.** The [15:21:54.745 UTC receipt](docs/LIGHT-OVERLOAD-2026-09-10.md) names `gpt-5.6-sol-900k / overloaded`; the owner identifies Light. Both accounts now have reported Hermes/Codex failures. Light allowed conservation but is not a sustained workaround.
 >
 > **Earlier: the same large Builder session resumed in Hermes after switching to Pro Light.** The owner now reports **Sol completed conservation to `QUIESCED_SAFE`**. The later Astra banner was identified as old; no new Sol failure is counted. [Completion and banner correction](docs/CONSERVATION-2026-09-10.md). This is temporary continuation on another account. **Pro Full remains unresolved.** [Account-switch evidence and reset ledger](docs/ACCOUNT-SWITCH-2026-09-10.md).
 >
@@ -75,6 +77,7 @@ The [invitation and repository handoff](https://github.com/NousResearch/hermes-a
 
 | Material | Purpose |
 | --- | --- |
+| [Fresh community follow-up](docs/COMMUNITY-FOLLOWUP-2026-09-10.md) | 10 Sep evening: shrinking work intervals, related user reports, temporary recovery and conflicting workarounds |
 | [Latest Light overload](docs/LIGHT-OVERLOAD-2026-09-10.md) | Sol `overloaded` on Light after reported conservation; failures now span both accounts |
 | [Conservation result and stale banner](docs/CONSERVATION-2026-09-10.md) | Sol completion reported; old Astra receipt redisplayed, no new failure counted |
 | [Same-session account switch](docs/ACCOUNT-SWITCH-2026-09-10.md) | Builder resumes on Light, owner-reported; Full unresolved; scoped reset ledger |

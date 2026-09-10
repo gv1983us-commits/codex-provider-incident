@@ -1,0 +1,265 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-09-10T16:52:06Z",
+  "scope": "Selected first-person public issue reports and comments; not provider statements or a global prevalence estimate.",
+  "owner_followup": {
+    "reported_on_date": "2026-09-10",
+    "exact_report_time": null,
+    "account_context": "Pro Light after the same Builder conservation window, as identified by the owner in preceding messages",
+    "approximate_failure_count": 5,
+    "count_is_exact": false,
+    "count_relationship": "Approximate total of the reported series; do not add five to historical audit counters or assume five new distinct receipts.",
+    "sequence": [
+      "Builder completed the longest successful pass.",
+      "Work on abandoned tasks continued in another session.",
+      "A second failure followed roughly ten minutes after the first.",
+      "The last failure occurred immediately on invocation."
+    ],
+    "current_owner_assessment": "Hermes through Codex is no longer usable for their work.",
+    "source_log_supplied": false,
+    "per_failure_model_code_and_timestamps": null,
+    "prior_exact_receipt": "light-sol-20260910T152154745Z.json",
+    "browser_failure_newly_established": false,
+    "conservation_loss_established": false
+  },
+  "sources": [
+    {
+      "repository": "Wei-Shaw/sub2api",
+      "issue_number": 6937,
+      "url": "https://github.com/Wei-Shaw/sub2api/issues/6937",
+      "created_at": "2026-09-10T06:48:28Z",
+      "updated_at": "2026-09-10T10:43:32Z",
+      "state": "open",
+      "author": "Yui100901",
+      "summary": "Reporter describes intermittent 5.6/6 reconnects ending in 503 with upstream server_is_overloaded, then morning-to-afternoon worsening; switching models did not help.",
+      "selected_comment_links": [
+        {
+          "id": 5614540482,
+          "author": "ngynlaam",
+          "url": "https://github.com/Wei-Shaw/sub2api/issues/6937#issuecomment-5614540482"
+        },
+        {
+          "id": 5614728835,
+          "author": "Yui100901",
+          "url": "https://github.com/Wei-Shaw/sub2api/issues/6937#issuecomment-5614728835"
+        }
+      ]
+    },
+    {
+      "repository": "Wei-Shaw/sub2api",
+      "issue_number": 6957,
+      "url": "https://github.com/Wei-Shaw/sub2api/issues/6957",
+      "created_at": "2026-09-10T10:10:14Z",
+      "updated_at": "2026-09-10T16:44:08Z",
+      "state": "open",
+      "author": "zhang2580384",
+      "summary": "A comment reports a fresh account working in a fresh conversation, then failing on continuation of an old conversation. Claimed marking mechanism is speculation. Another comment reports Plus working while Pro fails.",
+      "selected_comment_links": [
+        {
+          "id": 5618136607,
+          "author": "YuxuZhou-CN",
+          "url": "https://github.com/Wei-Shaw/sub2api/issues/6957#issuecomment-5618136607"
+        },
+        {
+          "id": 5622200468,
+          "author": "Mojiajun2022",
+          "url": "https://github.com/Wei-Shaw/sub2api/issues/6957#issuecomment-5622200468"
+        }
+      ]
+    },
+    {
+      "repository": "Wei-Shaw/sub2api",
+      "issue_number": 6967,
+      "url": "https://github.com/Wei-Shaw/sub2api/issues/6967",
+      "created_at": "2026-09-10T12:56:44Z",
+      "updated_at": "2026-09-10T16:41:35Z",
+      "state": "open",
+      "author": "zhang2580384",
+      "summary": "A recovery question receives mixed responses: limited use with frequent 503 versus no usable access. Latest read reply at 16:41 UTC still reports errors.",
+      "selected_comment_links": [
+        {
+          "id": 5619824833,
+          "author": "weixiaolong147",
+          "url": "https://github.com/Wei-Shaw/sub2api/issues/6967#issuecomment-5619824833"
+        },
+        {
+          "id": 5619942912,
+          "author": "Xuecheng377",
+          "url": "https://github.com/Wei-Shaw/sub2api/issues/6967#issuecomment-5619942912"
+        },
+        {
+          "id": 5620641703,
+          "author": "lowbicp-rgb",
+          "url": "https://github.com/Wei-Shaw/sub2api/issues/6967#issuecomment-5620641703"
+        },
+        {
+          "id": 5622169600,
+          "author": "NoHeart0",
+          "url": "https://github.com/Wei-Shaw/sub2api/issues/6967#issuecomment-5622169600"
+        }
+      ]
+    },
+    {
+      "repository": "Wei-Shaw/sub2api",
+      "issue_number": 6981,
+      "url": "https://github.com/Wei-Shaw/sub2api/issues/6981",
+      "created_at": "2026-09-10T16:01:09Z",
+      "updated_at": "2026-09-10T16:39:51Z",
+      "state": "open",
+      "author": "TheCoffeeCat-A",
+      "summary": "Reporter says direct Codex login works while the same account routed through Sub2API continually returns overload.",
+      "selected_comment_links": [
+        {
+          "id": 5622147211,
+          "author": "NoHeart0",
+          "url": "https://github.com/Wei-Shaw/sub2api/issues/6981#issuecomment-5622147211"
+        }
+      ]
+    },
+    {
+      "repository": "Wei-Shaw/sub2api",
+      "issue_number": 6947,
+      "url": "https://github.com/Wei-Shaw/sub2api/issues/6947",
+      "created_at": "2026-09-10T08:11:10Z",
+      "updated_at": "2026-09-10T10:06:55Z",
+      "state": "open",
+      "author": "cyn-zn",
+      "summary": "Reporter describes roughly half-hour cooldowns with usage indicators not full, explicitly leaves upstream versus local cooldown cause unknown. Comments include direct-route successes.",
+      "selected_comment_links": [
+        {
+          "id": 5615537278,
+          "author": "Y-ASLant",
+          "url": "https://github.com/Wei-Shaw/sub2api/issues/6947#issuecomment-5615537278"
+        },
+        {
+          "id": 5615977994,
+          "author": "wangbowen7778-ops",
+          "url": "https://github.com/Wei-Shaw/sub2api/issues/6947#issuecomment-5615977994"
+        },
+        {
+          "id": 5616501770,
+          "author": "lognjin",
+          "url": "https://github.com/Wei-Shaw/sub2api/issues/6947#issuecomment-5616501770"
+        }
+      ]
+    },
+    {
+      "repository": "router-for-me/CLIProxyAPI",
+      "issue_number": 5586,
+      "url": "https://github.com/router-for-me/CLIProxyAPI/issues/5586",
+      "created_at": "2026-09-07T03:25:18Z",
+      "updated_at": "2026-09-10T13:20:16Z",
+      "state": "open",
+      "author": "resisterdkdk",
+      "summary": "Multiple overload reports, including single-Pro-account and Desktop failures. Claimed single-user operation does not establish single-request concurrency.",
+      "selected_comment_links": [
+        {
+          "id": 5566146213,
+          "author": "Pengo0o",
+          "url": "https://github.com/router-for-me/CLIProxyAPI/issues/5586#issuecomment-5566146213"
+        },
+        {
+          "id": 5566376265,
+          "author": "hhhaiai",
+          "url": "https://github.com/router-for-me/CLIProxyAPI/issues/5586#issuecomment-5566376265"
+        },
+        {
+          "id": 5579894065,
+          "author": "lqy007700",
+          "url": "https://github.com/router-for-me/CLIProxyAPI/issues/5586#issuecomment-5579894065"
+        },
+        {
+          "id": 5580355364,
+          "author": "jdiaan",
+          "url": "https://github.com/router-for-me/CLIProxyAPI/issues/5586#issuecomment-5580355364"
+        },
+        {
+          "id": 5619346190,
+          "author": "CuteMing",
+          "url": "https://github.com/router-for-me/CLIProxyAPI/issues/5586#issuecomment-5619346190"
+        }
+      ]
+    },
+    {
+      "repository": "james-6-23/codex2api",
+      "issue_number": 660,
+      "url": "https://github.com/james-6-23/codex2api/issues/660",
+      "created_at": "2026-09-10T07:30:29Z",
+      "updated_at": "2026-09-10T09:46:56Z",
+      "state": "open",
+      "author": "bcxdawn222",
+      "summary": "Reporter gives a version comparison: v2.9.5 fails before output, v2.9.4 produces short successful calls. Another user reports v2.9.4 still failing. Not a Hermes fix.",
+      "selected_comment_links": [
+        {
+          "id": 5616578905,
+          "author": "mashangxiu",
+          "url": "https://github.com/james-6-23/codex2api/issues/660#issuecomment-5616578905"
+        }
+      ]
+    },
+    {
+      "repository": "openai/codex",
+      "issue_number": 44516,
+      "url": "https://github.com/openai/codex/issues/44516",
+      "created_at": "2026-09-10T12:27:04Z",
+      "updated_at": "2026-09-10T12:28:18Z",
+      "state": "open",
+      "author": "Chenbo-Shi",
+      "summary": "Pro 20x Windows Desktop user reports all-model failures on minimal fresh-session prompts and supplies server_overloaded rollout classification.",
+      "selected_comment_links": []
+    },
+    {
+      "repository": "openai/codex",
+      "issue_number": 44382,
+      "url": "https://github.com/openai/codex/issues/44382",
+      "created_at": "2026-09-10T02:28:21Z",
+      "updated_at": "2026-09-10T12:48:44Z",
+      "state": "open",
+      "author": "lyhe28",
+      "summary": "Selected comments report approximately 90 minutes of temporary recovery followed by all-model capacity failure, and a separate direct minimal-prompt failure after removing a local router.",
+      "selected_comment_links": [
+        {
+          "id": 5614599021,
+          "author": "FawziLinggo",
+          "url": "https://github.com/openai/codex/issues/44382#issuecomment-5614599021"
+        },
+        {
+          "id": 5618874563,
+          "author": "1ef7yy",
+          "url": "https://github.com/openai/codex/issues/44382#issuecomment-5618874563"
+        }
+      ]
+    }
+  ],
+  "individually_verified_comment_dates": [
+    {
+      "name": "same-session-comment",
+      "id": 5622200468,
+      "url": "https://github.com/Wei-Shaw/sub2api/issues/6957#issuecomment-5622200468",
+      "created_at": "2026-09-10T16:44:08Z",
+      "updated_at": "2026-09-10T16:44:08Z"
+    },
+    {
+      "name": "temporary-recovery-comment",
+      "id": 5618874563,
+      "url": "https://github.com/openai/codex/issues/44382#issuecomment-5618874563",
+      "created_at": "2026-09-10T12:44:22Z",
+      "updated_at": "2026-09-10T12:48:44Z"
+    },
+    {
+      "name": "recovery-thread-latest",
+      "id": 5622169600,
+      "url": "https://github.com/Wei-Shaw/sub2api/issues/6967#issuecomment-5622169600",
+      "created_at": "2026-09-10T16:41:35Z",
+      "updated_at": "2026-09-10T16:41:35Z"
+    }
+  ],
+  "research_limits": [
+    "Related symptoms do not establish a shared root cause.",
+    "External screenshots were not independently interpreted.",
+    "No new provider inference tests were performed.",
+    "An additional search batch was stopped after GitHub secondary rate limiting.",
+    "Raw doctor diagnostics in issue 44382 are not used for these conclusions; selected comments were fully read."
+  ],
+  "hermes_response_status": "No new substantive reply from another participant was found in the existing issue; the earlier offer by huklaa remains the only other-participant response read."
+}

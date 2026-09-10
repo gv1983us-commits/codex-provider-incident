@@ -4,6 +4,10 @@
 
 **Latest observation: after the reported completion of conservation using Sol on Light, the owner supplied an `overloaded` receipt for `gpt-5.6-sol-900k` at 15:21:54.745 UTC and explicitly identified the affected account as Pro Light.** The observed Hermes failure set now includes both Pro Full and Pro Light. No sustained workaround has been demonstrated.
 
+## Subsequent owner narrative
+
+The owner subsequently reports approximately five failures with shrinking usable intervals: the Builder pass was longest, later work in another session failed, a second failure followed roughly ten minutes after the first, and the last failed immediately on invocation. Hermes/Codex is currently unusable for the owner. This is an approximate total, not five additional audited receipts; per-event timestamps, codes and models were not supplied. No loss of conservation is established. [Community comparison and evidence limits](COMMUNITY-FOLLOWUP-2026-09-10.md).
+
 ## Exact supplied receipt
 
 ```text
