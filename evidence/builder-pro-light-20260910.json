@@ -12,8 +12,10 @@
     "same_existing_session": true,
     "existing_export_named_by_owner": "session-20260909.json, approximately 21 MB",
     "clarification_verbatim_ru": "причем все заработало прямо в сессии строителе, которая большая вон лог от нее 21 мб",
-    "work_in_progress": "Jarvis is preserving the work and shutting down the external server, as reported by the owner; completion is not yet confirmed",
-    "remaining_runtime_estimate": "A couple of hours, owner estimate; not a measured quota-to-runtime conversion"
+    "remaining_runtime_estimate": "A couple of hours, owner estimate; not a measured quota-to-runtime conversion",
+    "initial_work_status": "Jarvis is preserving the work and shutting down the external server, as reported by the owner; completion is not yet confirmed",
+    "latest_work_status": "Conservation reported complete by Jarvis; owner confirms Sol ran the work and the Astra banner was old.",
+    "model_as_reported": "Sol"
   },
   "not_supplied": {
     "exact_recovery_time": null,
@@ -22,7 +24,6 @@
     "reasoning_effort": null,
     "request_payload": null,
     "new_tool_pairings": null,
-    "completed_conservation_receipt": null,
     "current_pro_light_quota": null
   },
   "interpretation": [
@@ -128,5 +129,6 @@
         "correction": "The earlier chat contains that recollection; the visible history shows 23 August, 4 September and 5 September as the three used dates. Do not add 30 August as a fourth event."
       }
     ]
-  }
+  },
+  "completion_report_source": "conservation-20260910.json"
 }

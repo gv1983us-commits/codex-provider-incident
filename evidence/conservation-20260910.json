@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "reported_on": "2026-09-10",
+  "source": "Owner-supplied Jarvis conservation report, pasted Hermes error details and subsequent explicit owner correction; no new raw runtime trace audited",
+  "account_context": "Pro Light connected to Hermes in the same existing Builder session, per preceding owner reports",
+  "model_as_reported_for_completed_work": "Sol",
+  "effective_wire_model": null,
+  "effective_reasoning_effort": null,
+  "conservation": {
+    "completion_reported": true,
+    "independently_verified_by_this_repository": false,
+    "parent_state_as_reported": "QUIESCED_SAFE",
+    "release_accepted": false,
+    "promotion_performed": false,
+    "reported_artifacts": "Retained storage, payload/status checkpoints and a resumption handoff",
+    "source_scope": "The owner relayed the agent report; underlying disks, processes, hashes and cloud resource state have not been independently read here."
+  },
+  "later_displayed_receipt": {
+    "time": "2026-09-10T15:11:27.300Z",
+    "layer": "provider",
+    "code": "unknown",
+    "retryable": true,
+    "provider": "openai-codex",
+    "model": "gpt-6-astra-900k",
+    "error": "An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID 2a438cad-4c97-43d4-abc8-77ce4e4ac03d in your message."
+  },
+  "comparison_with_earlier_receipt": {
+    "earlier_time": "2026-09-10T14:17:45.876Z",
+    "later_time": "2026-09-10T15:11:27.300Z",
+    "difference_seconds": 3221.424,
+    "request_id": "2a438cad-4c97-43d4-abc8-77ce4e4ac03d",
+    "same_non_time_receipt_fields": true,
+    "scope": "Difference between displayed receipt times, not task duration or provider downtime"
+  },
+  "owner_correction_verbatim_ru": "о, эито старая плашка прилетела, у нас сол отработал ща",
+  "interpretation": [
+    "The owner identifies the Astra banner as old and states that Sol completed the current work.",
+    "Do not count the later display as a new Sol failure, new Light-account failure, or independently established upstream request.",
+    "The original Astra failure remains in the record; its later reappearance does not erase the completed conservation report.",
+    "The UI/error-event lifecycle and why the displayed time changed have not been traced.",
+    "Same-session useful work on Light reached a reported safe checkpoint. This does not establish recovery of the affected Full subscription or release acceptance."
+  ]
+}

@@ -164,15 +164,18 @@
       "provider_as_reported": "openai-codex",
       "model": null,
       "reasoning_effort": null,
-      "outcome": "same_existing_builder_session_resumed_after_account_switch_owner_report",
+      "outcome": "same_builder_conservation_reported_complete_on_pro_light",
       "same_session_as_reported": true,
       "new_empty_session_used": false,
       "exact_test_timestamp": null,
       "report_date": "2026-09-10",
-      "conservation_completion_confirmed": false,
       "sustained_duration_measured": false,
       "full_account_recovery_established": false,
-      "source": "builder-pro-light-20260910.json"
+      "source": "builder-pro-light-20260910.json",
+      "model_as_reported": "Sol",
+      "conservation_completion_reported": true,
+      "underlying_state_independently_verified": false,
+      "completion_source": "conservation-20260910.json"
     }
   ],
   "browser_error_original": "Выбранная модель сейчас недоступна из-за высокой нагрузки. Попробуйте выбрать другую модель.",
@@ -186,7 +189,7 @@
   "latest_update": {
     "date": "2026-09-10",
     "exact_recovery_time": null,
-    "source": "builder-pro-light-20260910.json",
-    "interpretation": "Owner reports the same large Builder session resuming after Pro Light is connected to Hermes. Temporary continuation on another account; Full remains unresolved. Exact effective model/settings and completion are not supplied."
+    "source": "conservation-20260910.json",
+    "interpretation": "Owner supplies completed conservation report and identifies Sol as the working model on Light. The later Astra banner is explicitly identified as old and not counted as a new failure. Full recovery and release acceptance remain unresolved."
   }
 }

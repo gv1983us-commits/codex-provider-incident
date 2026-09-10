@@ -4,7 +4,7 @@ Source: [owner's Hermes issue](https://github.com/NousResearch/hermes-agent/issu
 
 ## Latest owner report — the same Builder session resumes on Pro Light
 
-After connecting Pro Light to Hermes, the owner reports that work resumed directly in the same large Builder session associated with the earlier approximately 21 MB export. The owner reports work preservation and server shutdown in progress; completion is not yet confirmed. This adds a same-session account-switch observation to the earlier browser comparisons. Actual new request settings and exact recovery time are not supplied. **Pro Full recovery remains unresolved.** [Comparison, provenance and scoped reset ledger](ACCOUNT-SWITCH-2026-09-10.md).
+After connecting Pro Light to Hermes, the owner reports that work resumed directly in the same large Builder session associated with the earlier approximately 21 MB export. The owner subsequently supplied a completed conservation report and clarified that Sol ran the work successfully. A later-displayed Astra error was identified as an old banner with the same request ID. [Completion report and duplicate-display scope](CONSERVATION-2026-09-10.md). This adds a same-session account-switch observation to the earlier browser comparisons. Actual new request settings and exact recovery time are not supplied. **Pro Full recovery remains unresolved.** [Comparison, provenance and scoped reset ledger](ACCOUNT-SWITCH-2026-09-10.md).
 
 ## Earlier receipt — 14:17:45.876 UTC: Astra continuation fails with `unknown`
 
