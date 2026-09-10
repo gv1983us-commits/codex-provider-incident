@@ -156,6 +156,23 @@
       "further_tool_calls_as_reported": "Approximately ten; not an audited count",
       "sustained_recovery_verified": false,
       "source": "astra-20260910T141745876Z.json"
+    },
+    {
+      "id": "light-hermes-same-builder-resumed",
+      "account": "Pro Light / Pro 5x",
+      "client": "Hermes",
+      "provider_as_reported": "openai-codex",
+      "model": null,
+      "reasoning_effort": null,
+      "outcome": "same_existing_builder_session_resumed_after_account_switch_owner_report",
+      "same_session_as_reported": true,
+      "new_empty_session_used": false,
+      "exact_test_timestamp": null,
+      "report_date": "2026-09-10",
+      "conservation_completion_confirmed": false,
+      "sustained_duration_measured": false,
+      "full_account_recovery_established": false,
+      "source": "builder-pro-light-20260910.json"
     }
   ],
   "browser_error_original": "Выбранная модель сейчас недоступна из-за высокой нагрузки. Попробуйте выбрать другую модель.",
@@ -168,8 +185,8 @@
   ],
   "latest_update": {
     "date": "2026-09-10",
-    "receipt_timestamp": "2026-09-10T14:17:45.876Z",
-    "source": "astra-20260910T141745876Z.json",
-    "interpretation": "Later Astra work failed with unknown after owner-reported further tool activity. Preserve the earlier short Medium success; no sustained workaround is demonstrated. The failed call effort is unknown and this receipt is not counted as overload."
+    "exact_recovery_time": null,
+    "source": "builder-pro-light-20260910.json",
+    "interpretation": "Owner reports the same large Builder session resuming after Pro Light is connected to Hermes. Temporary continuation on another account; Full remains unresolved. Exact effective model/settings and completion are not supplied."
   }
 }

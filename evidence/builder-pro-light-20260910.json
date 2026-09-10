@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "evidence_id": "builder-pro-light-switch-20260910",
+  "reported_on": "2026-09-10",
+  "source_type": "Direct owner report in ChatGPT; no new transport trace or session export audited",
+  "owner_report": {
+    "previous_account": "Pro Full 20x",
+    "replacement_account": "Pro Light / Pro 5x, the account used for the continuing ChatGPT investigation",
+    "client": "Hermes",
+    "route_as_reported": "Existing Codex subscription connection with the account replaced",
+    "outcome": "Work resumed in the same existing Builder session",
+    "same_existing_session": true,
+    "existing_export_named_by_owner": "session-20260909.json, approximately 21 MB",
+    "clarification_verbatim_ru": "причем все заработало прямо в сессии строителе, которая большая вон лог от нее 21 мб",
+    "work_in_progress": "Jarvis is preserving the work and shutting down the external server, as reported by the owner; completion is not yet confirmed",
+    "remaining_runtime_estimate": "A couple of hours, owner estimate; not a measured quota-to-runtime conversion"
+  },
+  "not_supplied": {
+    "exact_recovery_time": null,
+    "live_session_id": null,
+    "effective_model": null,
+    "reasoning_effort": null,
+    "request_payload": null,
+    "new_tool_pairings": null,
+    "completed_conservation_receipt": null,
+    "current_pro_light_quota": null
+  },
+  "interpretation": [
+    "The existing large Builder session was able to progress after the account switch, according to the owner.",
+    "This strengthens the account-dependent availability pattern beyond the earlier browser comparison.",
+    "Export file size is not the active model context or the size of one outgoing request.",
+    "Effective model, request settings and payload equality are not established; elapsed time is also a changing variable.",
+    "Temporary continuation on another account is not restoration of the affected Pro Full subscription.",
+    "This observation does not identify the internal admission, quota or routing mechanism, or establish intent."
+  ],
+  "quota_reset_ledger": {
+    "account": "Pro Light / Pro 5x",
+    "window": "Current partial month, as described by the owner",
+    "current_owner_tally": {
+      "manual_resets_applied": 2,
+      "provider_initiated_resets_as_reported": 2,
+      "derived_total_reported_applications": 4,
+      "exact_dates_for_all_four": null,
+      "source": "Owner message on 2026-09-10; not a billing or quota ledger export"
+    },
+    "dated_prior_evidence": [
+      {
+        "event_date": "2026-08-30",
+        "event_type": "manual_reset_application",
+        "source_type": "Owner statement preserved in a prior chat transcript",
+        "source_file": "CHATGPT_SHARED_CHAT_SLOW_FIRST_RESPONSE_2026-09-07.md",
+        "source_user_message_number": 35,
+        "statement": "Owner says the previous reset credit was used on 30 August."
+      },
+      {
+        "event_date": "2026-09-04",
+        "event_type": "reset_credit_appearance",
+        "source_type": "Owner statement and contemporaneous screenshot interpretation preserved in a prior chat transcript",
+        "source_file": "CHATGPT_SHARED_CHAT_SLOW_FIRST_RESPONSE_2026-09-07.md",
+        "source_user_message_numbers": [
+          32,
+          35,
+          41
+        ],
+        "statement": "A new Full Reset credit appeared on the existing account; the transcript records expiry on 4 October. Its later application is not shown in this excerpt."
+      },
+      {
+        "event_date": "2026-09-10",
+        "event_time_window_moscow": "11:53–12:01",
+        "event_type": "remaining_weekly_allowance_snapshot",
+        "pro_light_remaining_percent": 45,
+        "source_type": "Retained analysis of owner screenshots, not a new live account read",
+        "source_file": "HERMES_SESSION_FORENSICS_2026-09-10.md",
+        "caution": "The 41 percent and two available resets in the same source describe the other affected Pro account, not Pro Light."
+      }
+    ],
+    "counting_rules": [
+      "A reset credit being issued or available is not an additional application of a reset.",
+      "Do not add the 4 September issuance to the owner tally of four applied resets.",
+      "The complete number of issued credits and the current number remaining are not established.",
+      "These are reset credits; the owner explicitly distinguished them from monetary credits in the prior transcript."
+    ]
+  }
+}

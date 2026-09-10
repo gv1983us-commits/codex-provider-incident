@@ -6,6 +6,8 @@
 
 **Status:** Astra's short Medium tool turn passed, but later work failed with an [exact `unknown` receipt at 14:17:45.876 UTC](ASTRA-2026-09-10.md). The owner reports approximately ten additional tool calls. The failed call's effort is not supplied. The earlier GPT-5.5 overload remains confirmed. No sustained workaround or exception-recovery repair is demonstrated. Preserve the interrupted work and correlate the supplied request ID before treating a retry as recovery.
 
+**Temporary continuation on another account:** the owner now reports that connecting Pro Light to Hermes resumed work in the same large Builder session. Work preservation is underway; completion and sustained duration are not yet confirmed. Record this as [same-session progress on Light](ACCOUNT-SWITCH-2026-09-10.md), while retaining the Full-account recovery target and earlier failures. No new export or effective request settings were captured for this switch.
+
 ## 0. Preserve the confirmed failures
 
 The latest Astra receipt explicitly names `openai-codex`, `gpt-6-astra-900k`, `code: unknown` and request ID `2a438cad-4c97-43d4-abc8-77ce4e4ac03d`. Keep it separate from `overloaded`; neither the HTTP status nor the raw upstream error object is supplied. Obtain the relevant request/result boundary around **2026-09-10T14:17:45.876Z** if needed to locate the pending step. See the [receipt and scope](ASTRA-2026-09-10.md).

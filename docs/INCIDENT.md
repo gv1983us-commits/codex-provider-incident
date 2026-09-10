@@ -2,7 +2,11 @@
 
 Source: [owner's Hermes issue](https://github.com/NousResearch/hermes-agent/issues/107307) and its [focused evidence reply](https://github.com/NousResearch/hermes-agent/issues/107307#issuecomment-5617927854). Snapshot: 10 September 2026.
 
-## Latest receipt — 14:17:45.876 UTC: Astra continuation fails with `unknown`
+## Latest owner report — the same Builder session resumes on Pro Light
+
+After connecting Pro Light to Hermes, the owner reports that work resumed directly in the same large Builder session associated with the earlier approximately 21 MB export. The owner reports work preservation and server shutdown in progress; completion is not yet confirmed. This adds a same-session account-switch observation to the earlier browser comparisons. Actual new request settings and exact recovery time are not supplied. **Pro Full recovery remains unresolved.** [Comparison, provenance and scoped reset ledger](ACCOUNT-SWITCH-2026-09-10.md).
+
+## Earlier receipt — 14:17:45.876 UTC: Astra continuation fails with `unknown`
 
 The [exact owner-supplied receipt](ASTRA-2026-09-10.md) records `openai-codex / gpt-6-astra-900k / code: unknown / retryable: true`, with request ID `2a438cad-4c97-43d4-abc8-77ce4e4ac03d`. The owner reports approximately ten further tool calls before the failure; this count is not independently audited. The earlier five-tool success remains valid, but sustained recovery has not been demonstrated. The new receipt does not supply the failed call's reasoning effort, session ID, HTTP status or call role, and is not classified as overload. Historical audit counts are unchanged.
 
