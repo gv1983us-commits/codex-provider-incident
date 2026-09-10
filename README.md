@@ -46,6 +46,16 @@ The counts have different scopes. **Do not compute an overall incident failure p
 
 The procedure and acceptance criteria are in [RECOVERY.md](docs/RECOVERY.md). No recovery patch has been deployed from this repository.
 
+## Active tasks
+
+| Task | Current owner / invitation | Status |
+| --- | --- | --- |
+| [#1 · Validate GPT-5.5 in Hermes](https://github.com/gv1983us-commits/codex-provider-incident/issues/1) | Account owner | Awaiting the Hermes test result |
+| [#2 · Preserve continuation after retry exhaustion](https://github.com/gv1983us-commits/codex-provider-incident/issues/2) | `huklaa` invited; formal assignment pending | Awaiting contributor confirmation |
+| [#3 · Check compression failure and recovery](https://github.com/gv1983us-commits/codex-provider-incident/issues/3) | Account owner coordinates; help wanted | Installed revision and code review needed |
+
+The [invitation and repository handoff](https://github.com/NousResearch/hermes-agent/issues/107307#issuecomment-5618225579) are posted in the original Hermes thread. These are coordination states, not completed recovery checks.
+
 ## Start here
 
 | Material | Purpose |
