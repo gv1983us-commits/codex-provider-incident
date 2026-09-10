@@ -2,7 +2,19 @@
 
 Source: [owner's Hermes issue](https://github.com/NousResearch/hermes-agent/issues/107307) and its [focused evidence reply](https://github.com/NousResearch/hermes-agent/issues/107307#issuecomment-5617927854). Snapshot: 10 September 2026.
 
-## Latest confirmed update — 10 September 2026: GPT-5.5 also returns Codex overload
+## Latest session evidence — 10 September 2026: Astra Medium completes a short tool run
+
+The owner supplied a new **98,545-byte / 29-message session export**, ending at 12:19 UTC. [Reviewed report](https://github.com/gv1983us-commits/codex-provider-incident/blob/main/docs/SESSION-2026-09-10.md) · [Machine-readable evidence](https://github.com/gv1983us-commits/codex-provider-incident/blob/main/evidence/session-20260910-reviewed.json).
+
+It preserves a later **`gpt-6-astra-900k` / `openai-codex` / Medium** success: a short text answer in **6.36 seconds**, then **five paired tool calls/results and a final answer in 51.33 seconds**. Medium is present in the session configuration returned by a read-only DB query. These are message timestamp intervals, not pure model compute time.
+
+This corrects any interpretation of the incident as continuous zero availability. **Sustained Jarvis work remains unreliable; no durable recovery is demonstrated.** The earlier confirmed GPT-5.5 overload still stands. Sol tests in the new export have no intervening completed answers; their exact error receipts are not included.
+
+Doctor itself took **32.50 seconds** in the initial phase and reported a running background gateway profile on Sol 900k. Neither fact proves the upstream root cause. The source contains no new overload receipt and does not change historical counters.
+
+---
+
+## Earlier confirmed update — 10 September 2026: GPT-5.5 also returns Codex overload
 
 A new Hermes session with GPT-5.5 Ultra selected first appeared to make very slow progress, then displayed an overload banner. The owner subsequently supplied this **exact Copy details receipt**:
 

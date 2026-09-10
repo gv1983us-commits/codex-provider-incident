@@ -26,7 +26,8 @@
         "Terra"
       ],
       "outcome": "overload_reported",
-      "exact_test_timestamp": null
+      "exact_test_timestamp": null,
+      "scope": "Earlier owner-reported failures; a later Astra Medium short success is recorded separately."
     },
     {
       "id": "full-work-affected",
@@ -108,6 +109,32 @@
       "exact_test_timestamp": null,
       "latency_measurements": null,
       "new_browser_failure_established": false
+    },
+    {
+      "id": "full-hermes-astra-medium-short-success",
+      "account": "Pro Full 20x (owner context)",
+      "client": "Hermes",
+      "model": "gpt-6-astra-900k",
+      "provider": "openai-codex",
+      "reasoning_config": {
+        "enabled": true,
+        "effort": "medium"
+      },
+      "configuration_source_message_id": 20371,
+      "configuration_scope": "Astra-phase DB snapshot, not captured wire request",
+      "outcome": "short_text_and_five_tool_turn_completed",
+      "text_test_prompt_utc": "2026-09-10T12:17:12.936Z",
+      "text_answer_utc": "2026-09-10T12:17:19.293Z",
+      "tool_analysis_prompt_utc": "2026-09-10T12:17:58.943Z",
+      "final_answer_utc": "2026-09-10T12:18:50.270Z",
+      "tool_calls": 5,
+      "tool_results": 5,
+      "final_finish_reason": "stop",
+      "tool_turn_seconds": 51.326852,
+      "tool_cycle_demonstrated": true,
+      "sustained_recovery_verified": false,
+      "source": "session-20260910-reviewed.json",
+      "limitation": "Model, prompt, effort and time changed. Does not establish Medium as the cause of success."
     }
   ],
   "browser_error_original": "Выбранная модель сейчас недоступна из-за высокой нагрузки. Попробуйте выбрать другую модель.",
@@ -120,7 +147,7 @@
   ],
   "latest_update": {
     "date": "2026-09-10",
-    "interpretation": "GPT-5.5 also has a confirmed openai-codex overload receipt after initial Hermes activity. No reliable Hermes workaround demonstrated. Historical audit counts unchanged.",
-    "source_url": "https://github.com/gv1983us-commits/codex-provider-incident/issues/1#issuecomment-5618436481"
+    "source": "session-20260910-reviewed.json",
+    "interpretation": "Later Astra 900k / Medium text and five-tool turn succeeded. Availability is intermittent; earlier GPT-5.5 overload persists as evidence and sustained recovery remains unverified."
   }
 }

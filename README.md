@@ -7,13 +7,14 @@
 [Русская сводка](docs/README.ru.md) · [Evidence](evidence/README.md) · [Recovery procedure](docs/RECOVERY.md) · [Open tasks](https://github.com/gv1983us-commits/codex-provider-incident/issues) · [Hermes report](https://github.com/NousResearch/hermes-agent/issues/107307)
 
 > [!IMPORTANT]
-> **Incident open. No reliable Hermes workaround demonstrated.** A new GPT-5.5 Ultra session showed initial activity, then failed. The error receipt explicitly identifies **`provider: openai-codex`, `model: gpt-5.5`, `code: overloaded`** at **2026-09-10 12:06:26.863 UTC**. Earlier GPT-5.5 browser success remains a separate observation. This repository records observations as of **10 September 2026**; it is not a live availability monitor.
+> **Incident open; sustained recovery unverified.** The new export confirms an **Astra 900k / Medium short text response and five-tool turn**, completed at **12:18:50 UTC**. GPT-5.5 previously returned a confirmed overload. Availability is intermittent; one successful diagnostic run does not establish reliable long-running Jarvis work.
 
 ## What works, what fails
 
 | Account | Client / route | Model | Latest reported observation |
 | --- | --- | --- | --- |
-| Pro Full 20× | Hermes → Codex | Astra / Sol / Terra | 🔴 Overload reported |
+| Pro Full 20× | Hermes → Codex, earlier tests | Astra / Sol / Terra | 🔴 Earlier overloads; later Astra Medium success recorded below |
+| Pro Full 20× | Hermes → Codex, later session phase | Astra 900k / Medium | 🟡 Text + five-tool turn completed; sustained work unverified |
 | Pro Full 20× | Official ChatGPT Work | GPT-6 / GPT-5.6 | 🔴 Capacity banner |
 | Pro Full 20× | Official ChatGPT Work | GPT-5.5; Max in latest report | 🟡 Earlier response; latest report very slow; no new browser failure established |
 | Pro Full 20× | Hermes → Codex, new session | GPT-5.5, Ultra selected | 🔴 Initial activity, then overload; provider/model confirmed by receipt |
@@ -25,6 +26,8 @@
 This narrows the failure to an **account/model/route-dependent pattern**. It does not identify an internal server pool, prove an account restriction, or establish the exact server-side cause. A short-prompt test in a fresh Work conversation on the affected account is still useful to separate conversation state from model/account routing.
 
 The [new exact receipt](https://github.com/gv1983us-commits/codex-provider-incident/issues/1#issuecomment-5618436481) supersedes the initial optimistic Hermes report. It is recorded separately from the historical audit counters. Slow progress has not been timed; its cause is not established.
+
+**New evidence:** [29-message session review](docs/SESSION-2026-09-10.md) and [reviewed event data](evidence/session-20260910-reviewed.json). Astra's five-tool analysis finished in **51.33 s**. Earlier delays include **32.50 s inside `hermes doctor`**; the comparison does not isolate reasoning effort as the cause.
 
 ## Evidence at a glance
 
@@ -52,7 +55,7 @@ The procedure and acceptance criteria are in [RECOVERY.md](docs/RECOVERY.md). No
 
 | Task | Current owner / invitation | Status |
 | --- | --- | --- |
-| [#1 · Validate GPT-5.5 in Hermes](https://github.com/gv1983us-commits/codex-provider-incident/issues/1) | Account owner | GPT-5.5 overload confirmed; recovery remains open |
+| [#1 · Validate GPT-5.5 in Hermes](https://github.com/gv1983us-commits/codex-provider-incident/issues/1) | Account owner | Astra Medium short tool run passed; sustained recovery open |
 | [#2 · Preserve continuation after retry exhaustion](https://github.com/gv1983us-commits/codex-provider-incident/issues/2) | `huklaa` invited; formal assignment pending | Awaiting contributor confirmation |
 | [#3 · Check compression failure and recovery](https://github.com/gv1983us-commits/codex-provider-incident/issues/3) | Account owner coordinates; help wanted | Installed revision and code review needed |
 | [#4 · Compare results with Sub2API](https://github.com/gv1983us-commits/codex-provider-incident/issues/4) | Project owner and two relevant reporters invited | Awaiting replies |
@@ -64,6 +67,7 @@ The [invitation and repository handoff](https://github.com/NousResearch/hermes-a
 | Material | Purpose |
 | --- | --- |
 | [Incident report](docs/INCIDENT.md) | Controlled comparison, chronology and known limitations |
+| [Fresh-session review](docs/SESSION-2026-09-10.md) | GPT-5.5/Sol attempts, later Astra Medium tool success and measured intervals |
 | [Evidence guide](evidence/README.md) | Provenance and how to request a focused excerpt |
 | [Exact excerpts](evidence/excerpts.json) | Historical log fields, a screenshot transcription and the new GPT-5.5 receipt |
 | [Audit summary](evidence/audit-summary.json) | Counts and the final interruption sequence |

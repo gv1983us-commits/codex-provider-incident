@@ -1,0 +1,428 @@
+{
+  "schema_version": 1,
+  "evidence_type": "Reviewed, whitelisted extract of an owner-supplied session export; descriptions are paraphrases, not a full transcript.",
+  "source": {
+    "filename": "gpt-5.5-ultra-hermes-20260910.json",
+    "bytes": 98545,
+    "sha256": "432f0978229e52f84beb4550ac4810ca6fcc3761f2df4cec050586eaab3111c2",
+    "exported_at": "2026-09-10T12:19:03.621Z",
+    "session_id": "20260910_150157_423354",
+    "message_count": 29,
+    "top_level_session_field": null,
+    "raw_file_published": false
+  },
+  "privacy_scope": "Omitted reasoning payloads, private skill instructions, local paths, unrelated database details, profile names and full configuration. Kept source message IDs, times, tool pairing, selected diagnostic lines and request-related configuration.",
+  "counts": {
+    "roles": {
+      "user": 9,
+      "assistant": 11,
+      "tool": 9
+    },
+    "tool_calls": 9,
+    "initial_phase_tool_calls": 4,
+    "astra_phase_tool_calls": 5,
+    "tool_results": 9,
+    "visible_final_text_messages_with_stop": 2
+  },
+  "session_config_snapshot": {
+    "source_message_id": 20371,
+    "source_kind": "Saved terminal result containing read-only SQLite query output",
+    "configuration": {
+      "model": "gpt-6-astra-900k",
+      "provider": "openai-codex",
+      "reasoning_config": {
+        "enabled": true,
+        "effort": "medium"
+      },
+      "base_url": "https://chatgpt.com/backend-api/codex",
+      "api_mode": "codex_responses",
+      "service_tier": "normal"
+    },
+    "limitation": "Snapshot during the Astra phase. It does not retroactively prove every initial GPT-5.5 request setting or the exact wire request. service_tier=normal is a stored config value, not proof of subscription priority or account classification."
+  },
+  "doctor": {
+    "source_message_id": 20350,
+    "exit_code": 0,
+    "selected_exact_lines": [
+      "Version files consistent (0.21.1)",
+      "Config version up to date (v41)",
+      "SSL CA certificate bundle is valid",
+      "OpenAI Codex auth (logged in)"
+    ],
+    "gateway_profile": {
+      "profile_name_omitted": true,
+      "reported_status": "gateway running",
+      "model": "gpt-5.6-sol-900k",
+      "concurrent_provider_requests_proven": false
+    },
+    "limitation": "Doctor auth checks do not guarantee inference availability. Background gateway status does not prove actual simultaneous requests or explain browser failures when Hermes was shut down."
+  },
+  "intervals": [
+    {
+      "name": "initial_prompt_to_first_tool",
+      "start_message_id": 20346,
+      "end_message_id": 20347,
+      "seconds": 26.754721
+    },
+    {
+      "name": "initial_skill_result_to_next_call",
+      "start_message_id": 20348,
+      "end_message_id": 20349,
+      "seconds": 37.680379
+    },
+    {
+      "name": "doctor_call_to_result",
+      "start_message_id": 20349,
+      "end_message_id": 20350,
+      "seconds": 32.49708
+    },
+    {
+      "name": "initial_doctor_result_to_next_call",
+      "start_message_id": 20350,
+      "end_message_id": 20351,
+      "seconds": 57.42916
+    },
+    {
+      "name": "astra_short_text_reply",
+      "start_message_id": 20361,
+      "end_message_id": 20362,
+      "seconds": 6.356697
+    },
+    {
+      "name": "astra_prompt_to_first_tool",
+      "start_message_id": 20363,
+      "end_message_id": 20364,
+      "seconds": 3.68896
+    },
+    {
+      "name": "astra_analysis_prompt_to_final",
+      "start_message_id": 20363,
+      "end_message_id": 20374,
+      "seconds": 51.326852
+    }
+  ],
+  "interval_interpretation": "Differences between exported message timestamps, not pure model compute, network latency or streaming throughput. Model, effort, prompt and wall-clock conditions changed; this is not a controlled speed comparison.",
+  "astra_tool_sequence": {
+    "start_message_id": 20363,
+    "call_message_ids": [
+      20364,
+      20366,
+      20368,
+      20370,
+      20372
+    ],
+    "result_message_ids": [
+      20365,
+      20367,
+      20369,
+      20371,
+      20373
+    ],
+    "final_message_id": 20374,
+    "final_finish_reason": "stop",
+    "tool_cycle_demonstrated": true,
+    "sustained_recovery_demonstrated": false,
+    "exception_recovery_patch_tested": false
+  },
+  "auxiliary_observation": {
+    "source_message_id": 20367,
+    "tool": "session_search",
+    "success": true,
+    "results": [],
+    "count": 0,
+    "sessions_searched": 0,
+    "subsequent_sqlite_read_succeeded": true,
+    "indexing_or_scope_root_cause_established": false
+  },
+  "limits": [
+    "The export contains no literal overload receipt; the separate owner-supplied gpt-5.5 receipt remains the provider-error evidence.",
+    "No assistant response is recorded between the two Sol test prompts and the switch to Astra; exact error codes or retry counts cannot be reconstructed for those Sol tests.",
+    "The hidden interruption marker coincides with a user message and is not itself proof of an overload at that timestamp.",
+    "Initial tool results returned and led to later tool calls, but no final assistant text ended the initial GPT-5.5-labeled phase.",
+    "Astra medium passed one short text test and a five-tool analysis turn; uninterrupted long-running Jarvis operation remains unverified.",
+    "The exact installed full commit and customization delta are not established by the doctor version label."
+  ],
+  "messages": [
+    {
+      "source_message_id": 20346,
+      "role": "user",
+      "timestamp_utc": "2026-09-10T12:01:58.030Z",
+      "finish_reason": null,
+      "description": "Owner requests a new GPT-5.5 Ultra session test."
+    },
+    {
+      "source_message_id": 20347,
+      "role": "assistant",
+      "timestamp_utc": "2026-09-10T12:02:24.785Z",
+      "finish_reason": "tool_calls",
+      "description": "One skill_view call.",
+      "tool_calls": [
+        {
+          "id": "call_SpdyTDZkp8qEHKP9S5riEVu1",
+          "name": "skill_view"
+        }
+      ]
+    },
+    {
+      "source_message_id": 20348,
+      "role": "tool",
+      "timestamp_utc": "2026-09-10T12:02:24.955Z",
+      "finish_reason": null,
+      "description": "Skill returned successfully; full instructions omitted.",
+      "tool_call_id": "call_SpdyTDZkp8qEHKP9S5riEVu1",
+      "tool_name": "skill_view"
+    },
+    {
+      "source_message_id": 20349,
+      "role": "assistant",
+      "timestamp_utc": "2026-09-10T12:03:02.635Z",
+      "finish_reason": "tool_calls",
+      "description": "Runs hermes doctor.",
+      "tool_calls": [
+        {
+          "id": "call_OVIS4N78gOyFm47f43OUl7tY",
+          "name": "terminal"
+        }
+      ],
+      "operation_summary": "hermes doctor"
+    },
+    {
+      "source_message_id": 20350,
+      "role": "tool",
+      "timestamp_utc": "2026-09-10T12:03:35.132Z",
+      "finish_reason": null,
+      "description": "Doctor returns exit code 0; selected diagnostics retained separately.",
+      "tool_call_id": "call_OVIS4N78gOyFm47f43OUl7tY",
+      "tool_name": "terminal"
+    },
+    {
+      "source_message_id": 20351,
+      "role": "assistant",
+      "timestamp_utc": "2026-09-10T12:04:32.561Z",
+      "finish_reason": "tool_calls",
+      "description": "Two CLI help calls in one assistant message.",
+      "tool_calls": [
+        {
+          "id": "call_XgfESrVJ3UAvfIHsGSSXzzxO",
+          "name": "terminal"
+        },
+        {
+          "id": "call_4SwjYpEdmSb4PANfjpdLUZgy",
+          "name": "terminal"
+        }
+      ],
+      "operation_summary": "hermes model --help; hermes config --help"
+    },
+    {
+      "source_message_id": 20352,
+      "role": "tool",
+      "timestamp_utc": "2026-09-10T12:04:34.817Z",
+      "finish_reason": null,
+      "description": "hermes model --help returns exit code 0.",
+      "tool_call_id": "call_XgfESrVJ3UAvfIHsGSSXzzxO",
+      "tool_name": "terminal"
+    },
+    {
+      "source_message_id": 20353,
+      "role": "tool",
+      "timestamp_utc": "2026-09-10T12:04:36.872Z",
+      "finish_reason": null,
+      "description": "hermes config --help returns exit code 0.",
+      "tool_call_id": "call_4SwjYpEdmSb4PANfjpdLUZgy",
+      "tool_name": "terminal"
+    },
+    {
+      "source_message_id": 20354,
+      "role": "assistant",
+      "timestamp_utc": "2026-09-10T12:04:42.862Z",
+      "finish_reason": null,
+      "description": "Hidden interrupted-response marker; same timestamp as next user message.",
+      "display_kind": "hidden",
+      "api_content": "[response interrupted]",
+      "cause_established": false
+    },
+    {
+      "source_message_id": 20355,
+      "role": "user",
+      "timestamp_utc": "2026-09-10T12:04:42.862Z",
+      "finish_reason": null,
+      "description": "Owner reports very slow initial progress and failures in neighboring GPT-5.6/6 sessions."
+    },
+    {
+      "source_message_id": 20356,
+      "role": "user",
+      "timestamp_utc": "2026-09-10T12:14:52.493Z",
+      "finish_reason": null,
+      "description": "Model-change notice: gpt-5.6-sol / openai-codex."
+    },
+    {
+      "source_message_id": 20357,
+      "role": "user",
+      "timestamp_utc": "2026-09-10T12:15:15.069Z",
+      "finish_reason": null,
+      "description": "Owner tests Sol and reports the prior GPT-5.5 attempt failed."
+    },
+    {
+      "source_message_id": 20358,
+      "role": "user",
+      "timestamp_utc": "2026-09-10T12:15:40.035Z",
+      "finish_reason": null,
+      "description": "Model-change notice: gpt-5.6-sol-900k / openai-codex."
+    },
+    {
+      "source_message_id": 20359,
+      "role": "user",
+      "timestamp_utc": "2026-09-10T12:15:55.170Z",
+      "finish_reason": null,
+      "description": "Owner tests Sol 900k and reports preceding attempts failed."
+    },
+    {
+      "source_message_id": 20360,
+      "role": "user",
+      "timestamp_utc": "2026-09-10T12:17:04.257Z",
+      "finish_reason": null,
+      "description": "Model-change notice: gpt-6-astra-900k / openai-codex."
+    },
+    {
+      "source_message_id": 20361,
+      "role": "user",
+      "timestamp_utc": "2026-09-10T12:17:12.936Z",
+      "finish_reason": null,
+      "description": "Owner requests Astra medium."
+    },
+    {
+      "source_message_id": 20362,
+      "role": "assistant",
+      "timestamp_utc": "2026-09-10T12:17:19.293Z",
+      "finish_reason": "stop",
+      "description": "Astra returns a short text answer; finish_reason=stop."
+    },
+    {
+      "source_message_id": 20363,
+      "role": "user",
+      "timestamp_utc": "2026-09-10T12:17:58.943Z",
+      "finish_reason": null,
+      "description": "Owner asks for tool-based analysis of this session."
+    },
+    {
+      "source_message_id": 20364,
+      "role": "assistant",
+      "timestamp_utc": "2026-09-10T12:18:02.632Z",
+      "finish_reason": "tool_calls",
+      "description": "Calls tool_describe for session_search.",
+      "tool_calls": [
+        {
+          "id": "call_T4P0eRnEP2V3ckGWXlksp02J",
+          "name": "tool_describe"
+        }
+      ]
+    },
+    {
+      "source_message_id": 20365,
+      "role": "tool",
+      "timestamp_utc": "2026-09-10T12:18:03.050Z",
+      "finish_reason": null,
+      "description": "Tool schema returned.",
+      "tool_call_id": "call_T4P0eRnEP2V3ckGWXlksp02J",
+      "tool_name": "tool_describe"
+    },
+    {
+      "source_message_id": 20366,
+      "role": "assistant",
+      "timestamp_utc": "2026-09-10T12:18:07.582Z",
+      "finish_reason": "tool_calls",
+      "description": "Calls session_search through tool_call.",
+      "tool_calls": [
+        {
+          "id": "call_Z0LUKhh99GfR3qsWs8lP1sti",
+          "name": "tool_call"
+        }
+      ]
+    },
+    {
+      "source_message_id": 20367,
+      "role": "tool",
+      "timestamp_utc": "2026-09-10T12:18:07.977Z",
+      "finish_reason": null,
+      "description": "Search reports success but zero results and zero sessions searched.",
+      "tool_call_id": "call_Z0LUKhh99GfR3qsWs8lP1sti",
+      "tool_name": "session_search"
+    },
+    {
+      "source_message_id": 20368,
+      "role": "assistant",
+      "timestamp_utc": "2026-09-10T12:18:13.878Z",
+      "finish_reason": "tool_calls",
+      "description": "Reads SQLite schema using read-only connection.",
+      "tool_calls": [
+        {
+          "id": "call_stOUxi2abpSC682FmPU9wwqR",
+          "name": "terminal"
+        }
+      ],
+      "operation_summary": "Read SQLite schema (read-only)"
+    },
+    {
+      "source_message_id": 20369,
+      "role": "tool",
+      "timestamp_utc": "2026-09-10T12:18:15.351Z",
+      "finish_reason": null,
+      "description": "SQLite schema returned; exit code 0.",
+      "tool_call_id": "call_stOUxi2abpSC682FmPU9wwqR",
+      "tool_name": "terminal"
+    },
+    {
+      "source_message_id": 20370,
+      "role": "assistant",
+      "timestamp_utc": "2026-09-10T12:18:25.095Z",
+      "finish_reason": "tool_calls",
+      "description": "Reads matching session configuration and message rows using read-only connection.",
+      "tool_calls": [
+        {
+          "id": "call_jBEZwq3jgtTTjzTTe45L4M37",
+          "name": "terminal"
+        }
+      ],
+      "operation_summary": "Read session configuration and selected messages (read-only)"
+    },
+    {
+      "source_message_id": 20371,
+      "role": "tool",
+      "timestamp_utc": "2026-09-10T12:18:25.791Z",
+      "finish_reason": null,
+      "description": "Session configuration and messages returned; exit code 0.",
+      "tool_call_id": "call_jBEZwq3jgtTTjzTTe45L4M37",
+      "tool_name": "terminal"
+    },
+    {
+      "source_message_id": 20372,
+      "role": "assistant",
+      "timestamp_utc": "2026-09-10T12:18:35.734Z",
+      "finish_reason": "tool_calls",
+      "description": "Computes selected timestamp differences from the session DB.",
+      "tool_calls": [
+        {
+          "id": "call_hSUrgoE45wN0yVajp61fB00Z",
+          "name": "terminal"
+        }
+      ],
+      "operation_summary": "Read timestamps and calculate intervals (read-only)"
+    },
+    {
+      "source_message_id": 20373,
+      "role": "tool",
+      "timestamp_utc": "2026-09-10T12:18:36.407Z",
+      "finish_reason": null,
+      "description": "Timing calculations returned; exit code 0.",
+      "tool_call_id": "call_hSUrgoE45wN0yVajp61fB00Z",
+      "tool_name": "terminal"
+    },
+    {
+      "source_message_id": 20374,
+      "role": "assistant",
+      "timestamp_utc": "2026-09-10T12:18:50.270Z",
+      "finish_reason": "stop",
+      "description": "Astra returns final session analysis; finish_reason=stop."
+    }
+  ]
+}

@@ -4,7 +4,7 @@
 
 **Target:** reliable Jarvis work through Hermes using the existing Pro Full `openai-codex` subscription connection.
 
-**Status:** A new Hermes GPT-5.5 Ultra session showed initial activity, then overload. The [owner's exact receipt](https://github.com/gv1983us-commits/codex-provider-incident/issues/1#issuecomment-5618436481) confirms `openai-codex / gpt-5.5 / overloaded` at 2026-09-10T12:06:26.863Z. No reliable Hermes workaround is demonstrated. Earlier GPT-5.5 browser success and very slow Max operation are separate observations. The following is a proposed validation procedure, not a completed repair.
+**Status:** The new [session review](SESSION-2026-09-10.md) confirms an Astra 900k / Medium short text answer and five-tool turn with a final answer. The earlier GPT-5.5 overload remains confirmed. Sustained work, auxiliary/worker route coverage and exception recovery remain unverified. This procedure combines observed checks with proposed remaining validation.
 
 ## 0. Preserve the confirmed failure
 
@@ -34,7 +34,12 @@ Record effective, non-secret settings only:
 
 Do not replace the whole configuration or silently reset custom settings during diagnosis.
 
-## 2. Run one short Hermes tool loop
+## 2. Build on the demonstrated short tool loop
+
+The new export already demonstrates **Astra 900k / Medium** completing five tool calls and a final answer. That limited acceptance check has passed. The next useful step is to observe further bounded, useful work in that session, retaining any failures and the effective model/configuration. Do not infer a durable fix from this one pass or from Medium alone.
+
+The GPT-5.5 command below is retained as the earlier candidate route; it also has a confirmed overload receipt. It is not presented as a proven repair.
+
 
 Current upstream documentation supports an in-chat model switch:
 
@@ -56,7 +61,9 @@ If the current installation does not support this command, report the installed 
 
 ### Record where the delay occurs
 
-For one short, comparable request, distinguish time before the first visible event, time spent producing the response, and time inside a tool. Record the selected interface setting without assuming “Ultra” and “Max” map to identical request parameters. The current slow-progress report contains no timed measurements.
+For one short, comparable request, distinguish time before the first visible event, time spent producing the response, and time inside a tool. Record the selected interface setting without assuming “Ultra” and “Max” map to identical request parameters. The original slow-progress report contained no timings; the later export now supplies message-level intervals, recorded below.
+
+The new export supplies several measured message intervals: Astra's first text response **6.36 s**, first tool request **3.69 s**, whole five-tool turn **51.33 s**; the initial doctor operation itself took **32.50 s**. These intervals do not isolate server queueing or model compute.
 
 ## 3. Cover the routes Jarvis actually uses
 

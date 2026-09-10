@@ -20,6 +20,12 @@ Counts apply to different scopes:
 - **1,987 successful Codex calls:** only the detailed success window, 9 September after 15:56 through 10 September 10:40:37, UTC+3.
 - The later Terra and GPT-5.5 browser observations do not change those historical counters.
 
+## Fresh-session export, including a later successful phase
+
+[Reviewed event data](session-20260910-reviewed.json) and the [narrative review](../docs/SESSION-2026-09-10.md) cover the new **98,545-byte, 29-message export**, with its source SHA-256. All 29 events are represented with source IDs, times and tool pairing; private payloads are omitted.
+
+Astra 900k / Medium completes five tool calls and a final answer in 51.33 seconds. This is a scoped success after the earlier GPT-5.5 failure; sustained recovery remains unverified. The new export contains no literal overload receipt. Keep it separate from the original 260-record index and the later pasted receipt.
+
 ## New receipt after the original audit
 
 At **2026-09-10T12:06:26.863Z**, an owner-supplied Hermes error receipt explicitly names **openai-codex / gpt-5.5 / overloaded**, with `retryable: true`. [Exact receipt](https://github.com/gv1983us-commits/codex-provider-incident/issues/1#issuecomment-5618436481). It follows an initial report of very slow activity in a new GPT-5.5 Ultra session and a subsequent overload screenshot.
