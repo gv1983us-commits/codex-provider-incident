@@ -25,7 +25,7 @@
 
 This narrows the failure to an **account/model/route-dependent pattern**. It does not identify an internal server pool, prove an account restriction, or establish the exact server-side cause. A short-prompt test in a fresh Work conversation on the affected account is still useful to separate conversation state from model/account routing.
 
-The [new exact receipt](https://github.com/gv1983us-commits/codex-provider-incident/issues/1#issuecomment-5618436481) supersedes the initial optimistic Hermes report. It is recorded separately from the historical audit counters. Slow progress has not been timed; its cause is not established.
+The [new exact receipt](https://github.com/gv1983us-commits/codex-provider-incident/issues/1#issuecomment-5618436481) supersedes the initial optimistic GPT-5.5 Hermes report. It is recorded separately from the historical audit counters. The new export supplies message-level timings below; the cause of the earlier reported slowness is not isolated.
 
 **New evidence:** [29-message session review](docs/SESSION-2026-09-10.md) and [reviewed event data](evidence/session-20260910-reviewed.json). Astra's five-tool analysis finished in **51.33 s**. Earlier delays include **32.50 s inside `hermes doctor`**; the comparison does not isolate reasoning effort as the cause.
 
@@ -55,7 +55,7 @@ The procedure and acceptance criteria are in [RECOVERY.md](docs/RECOVERY.md). No
 
 | Task | Current owner / invitation | Status |
 | --- | --- | --- |
-| [#1 · Validate GPT-5.5 in Hermes](https://github.com/gv1983us-commits/codex-provider-incident/issues/1) | Account owner | Astra Medium short tool run passed; sustained recovery open |
+| [#1 · Validate sustained Codex work](https://github.com/gv1983us-commits/codex-provider-incident/issues/1) | Account owner | Astra Medium short tool run passed; sustained recovery open |
 | [#2 · Preserve continuation after retry exhaustion](https://github.com/gv1983us-commits/codex-provider-incident/issues/2) | `huklaa` invited; formal assignment pending | Awaiting contributor confirmation |
 | [#3 · Check compression failure and recovery](https://github.com/gv1983us-commits/codex-provider-incident/issues/3) | Account owner coordinates; help wanted | Installed revision and code review needed |
 | [#4 · Compare results with Sub2API](https://github.com/gv1983us-commits/codex-provider-incident/issues/4) | Project owner and two relevant reporters invited | Awaiting replies |
@@ -68,6 +68,7 @@ The [invitation and repository handoff](https://github.com/NousResearch/hermes-a
 | --- | --- |
 | [Incident report](docs/INCIDENT.md) | Controlled comparison, chronology and known limitations |
 | [Fresh-session review](docs/SESSION-2026-09-10.md) | GPT-5.5/Sol attempts, later Astra Medium tool success and measured intervals |
+| [Controls → requests](docs/REQUEST-MAP.md) | Source-based model/effort mappings and the next bounded recovery observation |
 | [Evidence guide](evidence/README.md) | Provenance and how to request a focused excerpt |
 | [Exact excerpts](evidence/excerpts.json) | Historical log fields, a screenshot transcription and the new GPT-5.5 receipt |
 | [Audit summary](evidence/audit-summary.json) | Counts and the final interruption sequence |

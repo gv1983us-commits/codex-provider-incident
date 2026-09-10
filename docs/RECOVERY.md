@@ -12,7 +12,7 @@ The new Copy details receipt explicitly names `openai-codex`, `gpt-5.5` and `ove
 
 `retryable: true` is an error classification, not a promise of provider recovery. Treat GPT-5.5 as another route with an observed failure until scoped recovery evidence is supplied.
 
-The screenshot also exposes a client build label, transcribed in the evidence file. It is a UI label, not a verified full installed runtime commit.
+The screenshot's `9fd44b4` resolves to a public reference commit. The [request map](REQUEST-MAP.md) traces that snapshot; the installed runtime and customization delta remain unverified.
 
 ## 1. Pin the environment once
 
@@ -38,16 +38,13 @@ Do not replace the whole configuration or silently reset custom settings during 
 
 The new export already demonstrates **Astra 900k / Medium** completing five tool calls and a final answer. That limited acceptance check has passed. The next useful step is to observe further bounded, useful work in that session, retaining any failures and the effective model/configuration. Do not infer a durable fix from this one pass or from Medium alone.
 
-The GPT-5.5 command below is retained as the earlier candidate route; it also has a confirmed overload receipt. It is not presented as a proven repair.
-
-
-Current upstream documentation supports an in-chat model switch:
+Keep the already successful session's settings. If selection is necessary, the documented in-chat model-switch form is:
 
 ```text
-/model gpt-5.5 --provider openai-codex
+/model gpt-6-astra-900k --provider openai-codex
 ```
 
-Use the existing connection to the affected Full account. This selects a session model; it does not authenticate a different account.
+Use the existing connection to the affected Full account and retain **Medium** reasoning and **normal** fast-mode state. The model command alone does not set those two controls or authenticate a different account. This is the observed candidate configuration, not a proven durable repair.
 
 Ask the agent to list a harmless test directory with an available read-only tool, then state one filename from the result. A pass requires:
 
@@ -61,7 +58,7 @@ If the current installation does not support this command, report the installed 
 
 ### Record where the delay occurs
 
-For one short, comparable request, distinguish time before the first visible event, time spent producing the response, and time inside a tool. Record the selected interface setting without assuming “Ultra” and “Max” map to identical request parameters. The original slow-progress report contained no timings; the later export now supplies message-level intervals, recorded below.
+For one short, comparable request, distinguish time before the first visible event, time spent producing the response, and time inside a tool. Record both the selected setting and effective request value if available. The [pinned-source review](REQUEST-MAP.md) finds that GPT-5.5 Max and Ultra both clamp to `xhigh` in the standard Hermes Codex path; installed overrides remain unverified. The later export supplies message-level intervals, recorded below.
 
 The new export supplies several measured message intervals: Astra's first text response **6.36 s**, first tool request **3.69 s**, whole five-tool turn **51.33 s**; the initial doctor operation itself took **32.50 s**. These intervals do not isolate server queueing or model compute.
 
@@ -71,7 +68,7 @@ After a successful short cycle, inspect each active role:
 
 | Role | What must be verified |
 | --- | --- |
-| Main agent | Live session uses `openai-codex` / `gpt-5.5` on the intended account |
+| Main agent | Live session uses the intended Full account and observed candidate `openai-codex` / Astra 900k / Medium; retain actual request values when available |
 | New-session default | Future sessions do not revert to an affected model |
 | Auxiliary jobs | Effective model and fallback choices are known |
 | Compression / summarization | Summary request succeeds on the intended route or preserves recoverable state on failure |
@@ -81,10 +78,10 @@ After a successful short cycle, inspect each active role:
 Current upstream docs describe `--global` as persisting the model and switching the live session:
 
 ```text
-/model gpt-5.5 --provider openai-codex --global
+/model gpt-6-astra-900k --provider openai-codex --global
 ```
 
-Apply persistence only after the short cycle passes and the intended defaults are confirmed. Dashboard changes alone apply to new sessions; existing sessions keep their model until explicitly switched.
+Apply persistence only after further useful work supports the candidate and the intended defaults are confirmed. Do not infer that this model command propagates reasoning settings or explicit auxiliary/worker overrides. Dashboard changes alone apply to new sessions; existing sessions keep their model until explicitly switched.
 
 Auxiliary `auto` normally starts from the main model in current upstream documentation, but explicit overrides and fallback chains can choose other routes. Check the effective result in the installed version. This document intentionally provides no blanket configuration replacement.
 
