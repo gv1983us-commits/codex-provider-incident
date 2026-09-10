@@ -24,22 +24,31 @@ The exact new model, reasoning settings, transport payload, session identifier a
 
 **Keep the Full-account incident open.** Record useful progress on Light as temporary continuation, preserve completed work, and retain the earlier Full failures. A replacement account working does not restore the paid capability on the affected account.
 
-## Pro Light reset ledger: what can be counted
+## Pro Light reset ledger — corrected from the screenshot
 
-The owner currently reports **two manually applied resets and two provider-initiated resets during the partial month: four reported applications in total**. This is the owner's tally, not an independently retrieved account ledger. Exact dates for all four applications remain incomplete.
+**Three reset credits received, three used, zero available.** The owner supplied a screenshot of the reset-history panel with **History / Past 30 days** selected and **Available 0** visible. This corrects the previous provisional total of four applications.
 
-| Date | Retained evidence | Counting treatment |
+All displayed times are **GMT+3**. The year 2026 comes from the conversation date; the cropped panel displays only day and month.
+
+| Date | Time | Exact history label |
 | --- | --- | --- |
-| 30 August | Owner explicitly says a reset credit was used on this date | One dated manual application within the reported tally |
-| 4 September | Owner reports a new reset credit appearing; the contemporary transcript records a Full Reset expiry of 4 October | Issuance/availability, not proof of another application; do not add it as a fifth reset |
-| 10 September, 11:53–12:01 Moscow | Retained screenshot analysis records Pro Light at 45% weekly allowance | Historical snapshot, not the current remaining balance |
+| 22 August | 03:28 | `Reset received` |
+| 23 August | 20:24 | `Reset used` |
+| 4 September | 08:39 | `Reset received` |
+| 4 September | 10:02 | `Reset used` |
+| 5 September | 07:21 | `Reset received` |
+| 5 September | 17:33 | `Reset used` |
 
-Sources are the retained private texts `CHATGPT_SHARED_CHAT_SLOW_FIRST_RESPONSE_2026-09-07.md` (owner messages 32, 35, 37, 39 and 41 plus the contemporaneous screenshot interpretation) and `HERMES_SESSION_FORENSICS_2026-09-10.md` (10 September screenshot addendum). This public note paraphrases only the relevant account/reset observations. Earlier assistant explanations of provider internals are not treated as primary evidence.
+**Owner clarification:** one original reset credit and two additional credits were provided. The owner applied the original and first additional reset; the provider applied the second additional reset, taking the remaining allowance from **97% to 100%**. That is a reported increase of **3 percentage points**, not a newly measured full allowance of additional consumption. The history screenshot does not display the initiator or the before/after percentage; these remain the owner's observations.
 
-The same screenshot addendum assigns **41% and two available resets to the other affected Pro account**. Those values must not be moved into the Light ledger. The total number of issued reset credits and the current available balance are not established. The owner clarified that “credit” here means a reset credit, not a monetary credit.
+Source: owner-supplied image `9a33238a-7dfc-4867-80ad-3f69c5782c18.png`, visually read in this conversation. The owner identifies the account as Pro Light; the account name is not visible in this crop. The exact capture timestamp is not supplied. Only the relevant history entries are transcribed publicly.
+
+The prior chat recollection of a reset used on **30 August** remains in the original transcript, but it is not added as a fourth application: the current visible history shows **23 August, 4 September and 5 September** as the three used dates. The earlier four-application summary in this repository is superseded by this screenshot and the owner's correction.
+
+`Available 0` concerns saved reset credits, **not** current weekly allowance. A separate retained screenshot analysis recorded Pro Light at **45% weekly allowance on 10 September, 11:53–12:01 Moscow**; that is a historical snapshot. Its **41% and two available resets** describe the other affected Pro account and do not belong in this Light ledger. The current weekly allowance has not been read.
 
 ## По-русски
 
 **После подключения Pro Light заработала та же большая сессия Builder.** Это более сильное сравнение, чем отдельный ответ в новом чате: прежняя история оказалась пригодна для продолжения. По сообщению владельца, Джарвис консервирует работу; завершение ещё не подтверждено. Full не восстановлена — работа временно продолжена за счёт другой учётки.
 
-По текущему подсчёту владельца за неполный месяц было **2 ручных + 2 провайдерских сброса**. В старом чате датированы применение 30 августа и появление нового кредита 4 сентября. Выдачу кредита не прибавляем к числу применений. Утренние 45% Light не выдаём за текущий баланс; два доступных сброса на другом скриншоте относились к Full.
+**Исправление по скриншоту: 3 кредита получено, 3 использовано, доступно 0.** Выдачи: 22 августа, 4 и 5 сентября. Использования: 23 августа, 4 и 5 сентября. По уточнению владельца, два применения были ручными, одно — со стороны провайдера, с изменением остатка 97% → 100%. Инициатор и проценты на этом скриншоте не показаны. Прежний итог «четыре» исправлен. Нулевой остаток reset-кредитов не означает нулевой недельный лимит.

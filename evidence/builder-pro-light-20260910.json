@@ -36,34 +36,7 @@
   "quota_reset_ledger": {
     "account": "Pro Light / Pro 5x",
     "window": "Current partial month, as described by the owner",
-    "current_owner_tally": {
-      "manual_resets_applied": 2,
-      "provider_initiated_resets_as_reported": 2,
-      "derived_total_reported_applications": 4,
-      "exact_dates_for_all_four": null,
-      "source": "Owner message on 2026-09-10; not a billing or quota ledger export"
-    },
     "dated_prior_evidence": [
-      {
-        "event_date": "2026-08-30",
-        "event_type": "manual_reset_application",
-        "source_type": "Owner statement preserved in a prior chat transcript",
-        "source_file": "CHATGPT_SHARED_CHAT_SLOW_FIRST_RESPONSE_2026-09-07.md",
-        "source_user_message_number": 35,
-        "statement": "Owner says the previous reset credit was used on 30 August."
-      },
-      {
-        "event_date": "2026-09-04",
-        "event_type": "reset_credit_appearance",
-        "source_type": "Owner statement and contemporaneous screenshot interpretation preserved in a prior chat transcript",
-        "source_file": "CHATGPT_SHARED_CHAT_SLOW_FIRST_RESPONSE_2026-09-07.md",
-        "source_user_message_numbers": [
-          32,
-          35,
-          41
-        ],
-        "statement": "A new Full Reset credit appeared on the existing account; the transcript records expiry on 4 October. Its later application is not shown in this excerpt."
-      },
       {
         "event_date": "2026-09-10",
         "event_time_window_moscow": "11:53–12:01",
@@ -75,10 +48,85 @@
       }
     ],
     "counting_rules": [
-      "A reset credit being issued or available is not an additional application of a reset.",
-      "Do not add the 4 September issuance to the owner tally of four applied resets.",
-      "The complete number of issued credits and the current number remaining are not established.",
-      "These are reset credits; the owner explicitly distinguished them from monetary credits in the prior transcript."
+      "Three received events and three used events are two views of the reset-credit lifecycle, not six applied resets.",
+      "The original credit plus two additional credits equals three credits in the displayed history.",
+      "The screenshot shows Available 0 for reset credits, not zero remaining weekly allowance.",
+      "Who initiated the last reset and the 97 to 100 change are owner-reported, not visible in the screenshot.",
+      "The earlier four-application total is corrected; the original private source transcript is not rewritten."
+    ],
+    "screenshot_source": {
+      "file_name": "9a33238a-7dfc-4867-80ad-3f69c5782c18.png",
+      "source_type": "Owner-supplied screenshot, visually read in this conversation",
+      "account_attribution": "Pro Light, identified by the owner and surrounding conversation; account name is not visible in this crop",
+      "history_filter_visible": "Past 30 days",
+      "available_resets_visible": 0,
+      "timezone_visible": "GMT+3",
+      "year": "2026 inferred from conversation date; year is not displayed in the cropped history",
+      "capture_timestamp": null
+    },
+    "visible_history_events_chronological": [
+      {
+        "date": "2026-08-22",
+        "time": "03:28",
+        "timezone": "GMT+3",
+        "ui_label": "Reset received"
+      },
+      {
+        "date": "2026-08-23",
+        "time": "20:24",
+        "timezone": "GMT+3",
+        "ui_label": "Reset used"
+      },
+      {
+        "date": "2026-09-04",
+        "time": "08:39",
+        "timezone": "GMT+3",
+        "ui_label": "Reset received"
+      },
+      {
+        "date": "2026-09-04",
+        "time": "10:02",
+        "timezone": "GMT+3",
+        "ui_label": "Reset used"
+      },
+      {
+        "date": "2026-09-05",
+        "time": "07:21",
+        "timezone": "GMT+3",
+        "ui_label": "Reset received"
+      },
+      {
+        "date": "2026-09-05",
+        "time": "17:33",
+        "timezone": "GMT+3",
+        "ui_label": "Reset used"
+      }
+    ],
+    "counts_from_visible_history": {
+      "received_events": 3,
+      "used_events": 3,
+      "available_resets": 0
+    },
+    "owner_corrected_explanation": {
+      "original_credit": 1,
+      "additional_credits_received": 2,
+      "manual_applications": 2,
+      "provider_initiated_applications": 1,
+      "total_applications": 3,
+      "last_application_allowance_before_percent": 97,
+      "last_application_allowance_after_percent": 100,
+      "change_percentage_points": 3,
+      "source_scope": "Who applied the resets and the 97 to 100 change are owner observations; the history screenshot shows dates and received/used labels, not the initiator or allowance change."
+    },
+    "superseded_claims": [
+      {
+        "claim": "Four applications: two manual plus two provider-initiated",
+        "correction": "Three applications in total, per screenshot and explicit owner correction: two manual plus one provider-initiated."
+      },
+      {
+        "claim": "30 August as an additional dated manual application",
+        "correction": "The earlier chat contains that recollection; the visible history shows 23 August, 4 September and 5 September as the three used dates. Do not add 30 August as a fourth event."
+      }
     ]
   }
 }
