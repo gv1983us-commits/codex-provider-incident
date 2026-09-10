@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-09-10",
+  "evidence_type": "Owner-reported comparisons; not new automated tests performed by this repository",
+  "provenance": "https://github.com/NousResearch/hermes-agent/issues/107307",
+  "controls": {
+    "same_computer": true,
+    "same_network": true,
+    "same_vpn_configuration": true,
+    "browsers_tested": [
+      "Microsoft Edge",
+      "Yandex Browser"
+    ],
+    "native_account_switcher_tested": true,
+    "full_browser_failure_with_hermes_stopped": true
+  },
+  "observations": [
+    {
+      "id": "full-hermes-affected",
+      "account": "Pro Full 20x",
+      "client": "Hermes",
+      "provider": "openai-codex",
+      "models_as_reported": [
+        "Astra",
+        "Sol",
+        "Terra"
+      ],
+      "outcome": "overload_reported",
+      "exact_test_timestamp": null
+    },
+    {
+      "id": "full-work-affected",
+      "account": "Pro Full 20x",
+      "client": "Official ChatGPT Work",
+      "models_as_reported": [
+        "GPT-6",
+        "GPT-5.6"
+      ],
+      "outcome": "capacity_banner",
+      "exact_test_timestamp": null
+    },
+    {
+      "id": "full-work-55",
+      "account": "Pro Full 20x",
+      "client": "Official ChatGPT Work",
+      "browser": "Microsoft Edge",
+      "model_as_reported": "GPT-5.5",
+      "outcome": "response_received",
+      "sustained_tool_use_verified": false,
+      "exact_test_timestamp": null
+    },
+    {
+      "id": "full-hermes-55",
+      "account": "Pro Full 20x",
+      "client": "Hermes",
+      "provider": "openai-codex",
+      "model_to_test": "gpt-5.5",
+      "outcome": "not_yet_verified",
+      "exact_test_timestamp": null
+    },
+    {
+      "id": "full-conversation",
+      "account": "Pro Full 20x",
+      "client": "Official ChatGPT Conversation",
+      "model": null,
+      "outcome": "works_as_reported",
+      "exact_test_timestamp": null
+    },
+    {
+      "id": "light-work",
+      "account": "Pro Light",
+      "client": "Official ChatGPT Work",
+      "browser": "Yandex Browser",
+      "model": null,
+      "outcome": "works_as_reported",
+      "exact_test_timestamp": null
+    }
+  ],
+  "browser_error_original": "Выбранная модель сейчас недоступна из-за высокой нагрузки. Попробуйте выбрать другую модель.",
+  "not_established": [
+    "Internal server pool identity",
+    "Account restriction or anti-abuse action",
+    "Exact upstream root cause",
+    "Reliable Hermes recovery through GPT-5.5",
+    "Fresh-conversation control for affected Full models"
+  ]
+}

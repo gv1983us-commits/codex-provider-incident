@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Hermes upstream incident
+    url: https://github.com/NousResearch/hermes-agent/issues/107307
+    about: Follow the original cross-client provider report and maintainer discussion.

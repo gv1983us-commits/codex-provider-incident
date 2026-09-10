@@ -1,0 +1,33 @@
+name: Diagnostic or recovery proposal
+description: Propose a focused reproduction, diagnostic or patch.
+title: "[Proposal] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Failing state transition
+      description: Link the incident evidence and identify the code path.
+    validations:
+      required: true
+  - type: input
+    id: revision
+    attributes:
+      label: Target Hermes revision
+      description: Name the exact commit or state that it still needs to be identified.
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: Proposed diagnostic or change
+      description: Include a small diff, commands, or PR link and expected observations.
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation and remaining limits
+      description: Use a harmless fixture or mocked failure; distinguish proposed tests from completed ones.
+    validations:
+      required: true

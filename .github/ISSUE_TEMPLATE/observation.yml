@@ -1,0 +1,72 @@
+name: Comparable observation / Результат проверки
+description: Report a scoped failure or success on a specific account, model and route.
+title: "[Observation] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Record a specific observation. A plain response, a tool loop and sustained work are different results.
+        Share reviewed excerpts only; account credentials and full private sessions are unnecessary.
+  - type: input
+    id: time
+    attributes:
+      label: Timestamp and timezone
+      placeholder: "2026-09-10 14:30 UTC+3"
+    validations:
+      required: true
+  - type: dropdown
+    id: route
+    attributes:
+      label: Route
+      options:
+        - Hermes through openai-codex
+        - Official ChatGPT Work
+        - Official ChatGPT Conversation
+        - Another Codex client (describe below)
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Exact model / model ID
+      description: Copy the request model when available; distinguish a displayed name from the wire ID.
+    validations:
+      required: true
+  - type: input
+    id: tier
+    attributes:
+      label: Subscription tier and allowance snapshot, if available
+      description: Do not include account email, account ID or credentials.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment and controls
+      description: Client version, Hermes commit/customizations, browser, same or changed network, fresh or existing conversation.
+    validations:
+      required: true
+  - type: dropdown
+    id: outcome
+    attributes:
+      label: Outcome
+      options:
+        - Request failed
+        - Plain model response received
+        - Model → tool → model cycle passed
+        - Sustained task work observed (state duration)
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Exact error or scoped success evidence
+      description: Include a small reviewed excerpt, attempt count, tool outcome and observation duration.
+    validations:
+      required: true
+  - type: textarea
+    id: interpretation
+    attributes:
+      label: Interpretation and remaining unknowns
+      description: Keep the observed result separate from a proposed cause.

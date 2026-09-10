@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-09-10",
+  "provenance": "https://github.com/NousResearch/hermes-agent/issues/107307",
+  "evidence_type": "Derived audit summary; raw source files not included",
+  "source_corpus": {
+    "log_files": 8,
+    "dates_inclusive": [
+      "2026-09-08",
+      "2026-09-10"
+    ],
+    "timezone": "Europe/Moscow",
+    "deduplication_fields": [
+      "timestamp_ms",
+      "logger",
+      "message"
+    ],
+    "session_export_bytes": 21492423,
+    "session_export_messages": 4400,
+    "evidence_index_records": 260,
+    "evidence_index_scope": "259 records from original logs, plus one later user error receipt; not a count of unique provider failures"
+  },
+  "main_loop_codex": {
+    "failed_attempts": 181,
+    "overload": 151,
+    "overload_by_logged_model": {
+      "gpt-5.6-sol-900k": 102,
+      "gpt-6-astra-900k": 49
+    },
+    "overload_session_count": 8,
+    "other_request_processing_errors": 20,
+    "http_429_rate_limit_exceeded": 7,
+    "first_event_timeout_120_seconds": 2,
+    "http_400_unsupported_model": 1,
+    "unsupported_model": "gpt-5.6-sol-270k",
+    "not_explicitly_found_in_audited_codex_records": [
+      "usage_limit_reached",
+      "insufficient_quota",
+      "HTTP 401",
+      "HTTP 403"
+    ]
+  },
+  "auxiliary_overload": {
+    "total": 11,
+    "smart_approvals": 5,
+    "vision": 4,
+    "summary": 2,
+    "scope": "Separate from main-loop counters"
+  },
+  "success_window": {
+    "successful_codex_calls": 1987,
+    "start_description": "2026-09-09 after 15:56 local",
+    "end_description": "2026-09-10 10:40:37 local",
+    "timezone": "Europe/Moscow",
+    "limitation": "Earlier error-only logs do not provide the successful-call denominator for an overall incident failure rate."
+  },
+  "retry_observation": {
+    "total_attempts": 3,
+    "approximate_delays_seconds": [
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        6
+      ]
+    ],
+    "infinite_rotation_demonstrated": false
+  },
+  "allowance_snapshot": {
+    "timestamp_local": "2026-09-10T10:33:00+03:00",
+    "timestamp_precision": "minute",
+    "weekly_remaining_percent": 41,
+    "limitation": "Snapshot of the displayed weekly allowance; does not exclude all model-specific restrictions."
+  },
+  "final_interruption": {
+    "date": "2026-09-10",
+    "timezone": "Europe/Moscow",
+    "events": [
+      {
+        "time": "10:40:37.943",
+        "observation": "Successful Sol response",
+        "input_tokens": 67785,
+        "output_tokens": 377
+      },
+      {
+        "interval": [
+          "10:40:38",
+          "10:40:44"
+        ],
+        "observation": "Eight skill_view calls execute"
+      },
+      {
+        "time": "10:40:48.018",
+        "observation": "Overload on attempt 1/3"
+      },
+      {
+        "time": "10:40:55.063",
+        "observation": "Overload on attempt 2/3"
+      },
+      {
+        "time": "10:41:04.100",
+        "observation": "Overload on attempt 3/3"
+      },
+      {
+        "time": "10:41:04.107",
+        "observation": "Retry budget exhausted"
+      },
+      {
+        "time": "10:41:04.688",
+        "observation": "GUI ends turn with error"
+      }
+    ]
+  },
+  "compression_observations": [
+    {
+      "summary_failure_local": "2026-09-10T10:34:37.147+03:00",
+      "messages_before": 850,
+      "messages_after": 82
+    },
+    {
+      "summary_failure_local": "2026-09-10T10:36:03.394+03:00",
+      "messages_before": 328,
+      "messages_after": 102
+    }
+  ],
+  "compression_interpretation": {
+    "new_llm_summary_failed": true,
+    "active_history_shortened": true,
+    "full_archive_deletion_proven": false,
+    "desktop_marker": "Inserted a fallback context marker",
+    "telemetry": {
+      "commit_status": "committed",
+      "fallback_used": false
+    },
+    "open_question": "Explain marker/telemetry semantics and verify the recovery contract against the installed revision."
+  }
+}
