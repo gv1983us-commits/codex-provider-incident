@@ -135,6 +135,27 @@
       "sustained_recovery_verified": false,
       "source": "session-20260910-reviewed.json",
       "limitation": "Model, prompt, effort and time changed. Does not establish Medium as the cause of success."
+    },
+    {
+      "id": "full-hermes-astra-continuation-unknown",
+      "account": "Pro Full 20x (owner context)",
+      "client": "Hermes",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "outcome": "later_provider_error_confirmed_by_owner_supplied_receipt",
+      "receipt_timestamp": "2026-09-10T14:17:45.876Z",
+      "layer": "provider",
+      "code": "unknown",
+      "retryable": true,
+      "request_id_from_error_message": "2a438cad-4c97-43d4-abc8-77ce4e4ac03d",
+      "error_message": "An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID 2a438cad-4c97-43d4-abc8-77ce4e4ac03d in your message.",
+      "reasoning_effort": null,
+      "http_status": null,
+      "session_id": null,
+      "failed_call_role": null,
+      "further_tool_calls_as_reported": "Approximately ten; not an audited count",
+      "sustained_recovery_verified": false,
+      "source": "astra-20260910T141745876Z.json"
     }
   ],
   "browser_error_original": "Выбранная модель сейчас недоступна из-за высокой нагрузки. Попробуйте выбрать другую модель.",
@@ -147,7 +168,8 @@
   ],
   "latest_update": {
     "date": "2026-09-10",
-    "source": "session-20260910-reviewed.json",
-    "interpretation": "Later Astra 900k / Medium text and five-tool turn succeeded. Availability is intermittent; earlier GPT-5.5 overload persists as evidence and sustained recovery remains unverified."
+    "receipt_timestamp": "2026-09-10T14:17:45.876Z",
+    "source": "astra-20260910T141745876Z.json",
+    "interpretation": "Later Astra work failed with unknown after owner-reported further tool activity. Preserve the earlier short Medium success; no sustained workaround is demonstrated. The failed call effort is unknown and this receipt is not counted as overload."
   }
 }

@@ -9,14 +9,15 @@ We refer to the company as **the provider** throughout the investigation. Produc
 [Русская сводка](docs/README.ru.md) · [Evidence](evidence/README.md) · [Recovery procedure](docs/RECOVERY.md) · [Open tasks](https://github.com/gv1983us-commits/codex-provider-incident/issues) · [Hermes report](https://github.com/NousResearch/hermes-agent/issues/107307)
 
 > [!IMPORTANT]
-> **Incident open; sustained recovery unverified.** The new export confirms an **Astra 900k / Medium short text response and five-tool turn**, completed at **12:18:50 UTC**. GPT-5.5 previously returned a confirmed overload. Availability is intermittent; one successful diagnostic run does not establish reliable long-running Jarvis work.
+> **Incident open; Astra continuation also failed.** After the confirmed **Astra 900k / Medium five-tool success at 12:18:50 UTC**, the owner reports approximately ten further tool calls followed by a provider error. The [new exact receipt](docs/ASTRA-2026-09-10.md) records **14:17:45.876 UTC / `gpt-6-astra-900k` / `code: unknown`**, with a request ID. This is separate from the earlier GPT-5.5 `overloaded` receipt. No sustained recovery is demonstrated; the failed call's effort is not supplied.
 
 ## What works, what fails
 
 | Account | Client / route | Model | Latest reported observation |
 | --- | --- | --- | --- |
 | Pro Full 20× | Hermes → Codex, earlier tests | Astra / Sol / Terra | 🔴 Earlier overloads; later Astra Medium success recorded below |
-| Pro Full 20× | Hermes → Codex, later session phase | Astra 900k / Medium | 🟡 Text + five-tool turn completed; sustained work unverified |
+| Pro Full 20× | Hermes → Codex, audited short turn | Astra 900k / Medium | 🟡 Text + five-tool turn completed at 12:18:50 UTC |
+| Pro Full 20× | Hermes → Codex, subsequent owner report | Astra 900k; current effort not supplied | 🔴 `unknown` provider error at 14:17:45.876 UTC; request ID retained |
 | Pro Full 20× | Official ChatGPT Work | GPT-6 / GPT-5.6 | 🔴 Capacity banner |
 | Pro Full 20× | Official ChatGPT Work | GPT-5.5; Max in latest report | 🟡 Earlier response; latest report very slow; no new browser failure established |
 | Pro Full 20× | Hermes → Codex, new session | GPT-5.5, Ultra selected | 🔴 Initial activity, then overload; provider/model confirmed by receipt |
@@ -57,7 +58,7 @@ The procedure and acceptance criteria are in [RECOVERY.md](docs/RECOVERY.md). No
 
 | Task | Current owner / invitation | Status |
 | --- | --- | --- |
-| [#1 · Validate sustained Codex work](https://github.com/gv1983us-commits/codex-provider-incident/issues/1) | Account owner | Astra Medium short tool run passed; sustained recovery open |
+| [#1 · Validate sustained Codex work](https://github.com/gv1983us-commits/codex-provider-incident/issues/1) | Account owner | Short turn passed; later Astra `unknown` failure recorded; recovery open |
 | [#2 · Preserve continuation after retry exhaustion](https://github.com/gv1983us-commits/codex-provider-incident/issues/2) | `huklaa` invited; formal assignment pending | Awaiting contributor confirmation |
 | [#3 · Check compression failure and recovery](https://github.com/gv1983us-commits/codex-provider-incident/issues/3) | Account owner coordinates; help wanted | Installed revision and code review needed |
 | [#4 · Compare results with Sub2API](https://github.com/gv1983us-commits/codex-provider-incident/issues/4) | Project owner and two relevant reporters invited | Awaiting replies |
@@ -68,6 +69,7 @@ The [invitation and repository handoff](https://github.com/NousResearch/hermes-a
 
 | Material | Purpose |
 | --- | --- |
+| [Latest Astra failure](docs/ASTRA-2026-09-10.md) | Exact `unknown` receipt with request ID; later continuation failure |
 | [Incident report](docs/INCIDENT.md) | Controlled comparison, chronology and known limitations |
 | [Fresh-session review](docs/SESSION-2026-09-10.md) | GPT-5.5/Sol attempts, later Astra Medium tool success and measured intervals |
 | [Controls → requests](docs/REQUEST-MAP.md) | Source-based model/effort mappings and the next bounded recovery observation |

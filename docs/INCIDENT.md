@@ -2,7 +2,11 @@
 
 Source: [owner's Hermes issue](https://github.com/NousResearch/hermes-agent/issues/107307) and its [focused evidence reply](https://github.com/NousResearch/hermes-agent/issues/107307#issuecomment-5617927854). Snapshot: 10 September 2026.
 
-## Latest session evidence — 10 September 2026: Astra Medium completes a short tool run
+## Latest receipt — 14:17:45.876 UTC: Astra continuation fails with `unknown`
+
+The [exact owner-supplied receipt](ASTRA-2026-09-10.md) records `openai-codex / gpt-6-astra-900k / code: unknown / retryable: true`, with request ID `2a438cad-4c97-43d4-abc8-77ce4e4ac03d`. The owner reports approximately ten further tool calls before the failure; this count is not independently audited. The earlier five-tool success remains valid, but sustained recovery has not been demonstrated. The new receipt does not supply the failed call's reasoning effort, session ID, HTTP status or call role, and is not classified as overload. Historical audit counts are unchanged.
+
+## Earlier session evidence — 10 September 2026: Astra Medium completes a short tool run
 
 The owner supplied a new **98,545-byte / 29-message session export**, ending at 12:19 UTC. [Reviewed report](https://github.com/gv1983us-commits/codex-provider-incident/blob/main/docs/SESSION-2026-09-10.md) · [Machine-readable evidence](https://github.com/gv1983us-commits/codex-provider-incident/blob/main/evidence/session-20260910-reviewed.json).
 

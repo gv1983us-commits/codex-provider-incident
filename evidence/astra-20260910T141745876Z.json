@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "evidence_id": "hermes-astra-20260910T141745876Z",
+  "source": "Exact Hermes error-details text supplied by the account owner in ChatGPT on 2026-09-10; not an independently captured HTTP exchange.",
+  "receipt": {
+    "time": "2026-09-10T14:17:45.876Z",
+    "layer": "provider",
+    "code": "unknown",
+    "retryable": true,
+    "provider": "openai-codex",
+    "model": "gpt-6-astra-900k",
+    "error": "An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID 2a438cad-4c97-43d4-abc8-77ce4e4ac03d in your message."
+  },
+  "verbatim_receipt": "── Hermes error details ──\ntime: 2026-09-10T14:17:45.876Z\nlayer: provider\ncode: unknown\nretryable: true\nprovider: openai-codex\nmodel: gpt-6-astra-900k\nerror: An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID 2a438cad-4c97-43d4-abc8-77ce4e4ac03d in your message.",
+  "derived": {
+    "request_id_from_error_message": "2a438cad-4c97-43d4-abc8-77ce4e4ac03d",
+    "request_id_scope": "Identifier explicitly called request ID in the supplied error message; HTTP headers are not available.",
+    "receipt_time_moscow": "2026-09-10T17:17:45.876+03:00"
+  },
+  "owner_reported_context": {
+    "account": "Pro Full 20x",
+    "further_tool_calls_before_failure": "Approximately ten, as reported by the owner; no exact count or pairings audited.",
+    "relationship_to_earlier_astra_success": "Owner reports later Astra work failing; the earlier five-tool success is separately preserved."
+  },
+  "not_present_in_receipt": {
+    "http_status": null,
+    "endpoint": null,
+    "raw_upstream_error_type_or_code": null,
+    "response_headers": null,
+    "wire_model_id": null,
+    "effective_reasoning_effort": null,
+    "effective_service_tier": null,
+    "session_id": null,
+    "failed_call_role": null,
+    "retry_attempt_count": null,
+    "last_completed_tool_result": null,
+    "pending_step": null
+  },
+  "interpretation": [
+    "A later Astra provider-layer failure is confirmed by the supplied receipt; it is classified by Hermes as unknown, not overloaded.",
+    "The earlier short Astra Medium success remains valid; sustained recovery has not been demonstrated.",
+    "The receipt does not establish unchanged Medium/normal settings, the same session, a new root cause, an HTTP status, or an account block.",
+    "retryable true is a classification, not evidence that a retry succeeded.",
+    "Historical audit counters and the 29-message export are unchanged."
+  ]
+}

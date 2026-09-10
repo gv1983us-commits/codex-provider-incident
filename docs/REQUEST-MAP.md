@@ -27,11 +27,11 @@ The transport consults provider-declared effort support before its fallback voca
 
 ## The next recovery step
 
-The demonstrated anchor is **Full → Hermes → openai-codex → Astra 900k / Medium / normal**, which completed five tool calls and a final answer at 12:18:50 UTC. Preserve that session and its state. Let it perform one bounded, useful portion of the Jarvis task, retaining completed tool results. Do not simultaneously change its model, context variant, effort and fast mode or introduce a parallel probe workload.
+The earlier anchor **Full → Hermes → openai-codex → Astra 900k / Medium / normal** completed five tool calls and a final answer at 12:18:50 UTC. A later [Astra receipt at 14:17:45.876 UTC](ASTRA-2026-09-10.md) now records `code: unknown` and request ID `2a438cad-4c97-43d4-abc8-77ce4e4ac03d`. The owner reports approximately ten further tool calls before this failure. The failed call's current effort and session identity are not captured. Preserve the pending step and completed results; use the receipt to locate a focused request/error trace.
 
-If it completes, continue useful work and record the observation duration and any failures. A repeated synthetic test is unnecessary while the actual task is progressing. After that, inspect which auxiliary, compression and explicit worker routes the task actually uses; the successful main route does not prove they match.
+If work resumes and completes, record the observation duration and any failures. A repeated synthetic test is unnecessary while the actual task is progressing. After that, inspect which auxiliary, compression and explicit worker routes the task actually uses; the successful main route does not prove they match.
 
-If it overloads again, retain the failed step and collect only a focused request/error record:
+For the observed continuation failure, retain the failed step and collect only a focused request/error record:
 
 | Field | What it resolves |
 | --- | --- |
@@ -58,4 +58,4 @@ The exact provider-side capacity/admission mechanism remains unknown. No runtime
 
 ## По-русски
 
-Продолжаем от уже сработавшей Astra Medium. В проверенном исходном коде `900k` снимается с имени модели перед отправкой, а `Max` и `Ultra` у 5.5 оба превращаются в `xhigh`. Поэтому часть прежних переключений не разделяет варианты так, как кажется по интерфейсу. Сначала наблюдаем следующий полезный шаг в той же сессии. При отказе нужны параметры конкретного вызова и место остановки — особенно роль вызова, фактическая модель и reasoning. Полный экспорт заново для этого не требуется.
+Короткий проход Astra Medium состоялся, но дальнейшая работа снова завершилась ошибкой: новая квитанция фиксирует `unknown` и request ID в 17:17:45.876 по Москве. Текущий reasoning отказавшего вызова в ней не указан. В проверенном исходном коде `900k` снимается с имени модели перед отправкой, а `Max` и `Ultra` у 5.5 оба превращаются в `xhigh`. Поэтому часть прежних переключений не разделяет варианты так, как кажется по интерфейсу. Теперь сопоставляем новую квитанцию с параметрами конкретного вызова и местом остановки — особенно роль вызова, фактическая модель и reasoning. Полный экспорт заново для этого не требуется.

@@ -4,9 +4,11 @@
 
 **Target:** reliable Jarvis work through Hermes using the existing Pro Full `openai-codex` subscription connection.
 
-**Status:** The new [session review](SESSION-2026-09-10.md) confirms an Astra 900k / Medium short text answer and five-tool turn with a final answer. The earlier GPT-5.5 overload remains confirmed. Sustained work, auxiliary/worker route coverage and exception recovery remain unverified. This procedure combines observed checks with proposed remaining validation.
+**Status:** Astra's short Medium tool turn passed, but later work failed with an [exact `unknown` receipt at 14:17:45.876 UTC](ASTRA-2026-09-10.md). The owner reports approximately ten additional tool calls. The failed call's effort is not supplied. The earlier GPT-5.5 overload remains confirmed. No sustained workaround or exception-recovery repair is demonstrated. Preserve the interrupted work and correlate the supplied request ID before treating a retry as recovery.
 
-## 0. Preserve the confirmed failure
+## 0. Preserve the confirmed failures
+
+The latest Astra receipt explicitly names `openai-codex`, `gpt-6-astra-900k`, `code: unknown` and request ID `2a438cad-4c97-43d4-abc8-77ce4e4ac03d`. Keep it separate from `overloaded`; neither the HTTP status nor the raw upstream error object is supplied. Obtain the relevant request/result boundary around **2026-09-10T14:17:45.876Z** if needed to locate the pending step. See the [receipt and scope](ASTRA-2026-09-10.md).
 
 The new Copy details receipt explicitly names `openai-codex`, `gpt-5.5` and `overloaded`. It resolves the screenshot's model-attribution uncertainty. The receipt does not give an HTTP status, endpoint, request ID, call role or attempt count; obtain a focused log excerpt only if one of those fields is needed for a concrete diagnostic.
 
@@ -36,7 +38,7 @@ Do not replace the whole configuration or silently reset custom settings during 
 
 ## 2. Build on the demonstrated short tool loop
 
-The new export already demonstrates **Astra 900k / Medium** completing five tool calls and a final answer. That limited acceptance check has passed. The next useful step is to observe further bounded, useful work in that session, retaining any failures and the effective model/configuration. Do not infer a durable fix from this one pass or from Medium alone.
+The export demonstrates **Astra 900k / Medium** completing five tool calls and a final answer. That limited check passed. The subsequent owner-reported continuation has now failed; the new receipt identifies Astra but does not establish unchanged settings or session identity. Preserve completed results and determine what remains pending before resuming. The selection instructions below describe the earlier candidate, not a currently reliable route.
 
 Keep the already successful session's settings. If selection is necessary, the documented in-chat model-switch form is:
 

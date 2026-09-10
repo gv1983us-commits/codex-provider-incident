@@ -7,6 +7,7 @@
 | File | Evidence type | How to interpret it |
 | --- | --- | --- |
 | [excerpts.json](excerpts.json) | Two historical log message fields, a later UI transcription and a new GPT-5.5 receipt | Original source metadata is separate. The new receipt confirms provider/model; screenshot labels alone do not. |
+| [astra-20260910T141745876Z.json](astra-20260910T141745876Z.json) | Later exact Astra `unknown` error details, including request ID | Separate from the 29-message export and original audit; approximately ten additional tools are an owner report, not an audited count |
 | [audit-summary.json](audit-summary.json) | Derived counts and chronology | Transcribed from the retained audits; the raw logs are not bundled |
 | [route-matrix.json](route-matrix.json) | Account owner's browser and Hermes observations | Unknown model IDs or timestamps remain unknown |
 
