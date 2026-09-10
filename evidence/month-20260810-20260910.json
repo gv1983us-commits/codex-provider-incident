@@ -1,0 +1,515 @@
+{
+  "date_rules": "GitHub created_at/merged_at are API UTC values. Event dates may precede report dates. Unzoned webpage clock times are not treated as UTC. Approximate conversions are labeled.",
+  "events": [
+    {
+      "event_date": "2026-08-10",
+      "evidence_kind": "user_report",
+      "github_records": [
+        {
+          "closed_at": null,
+          "created_at": "2026-08-10T07:48:11Z",
+          "merged_at": null,
+          "state": "open",
+          "updated_at": "2026-08-12T09:52:31Z",
+          "url": "https://github.com/openai/codex/issues/37790"
+        }
+      ],
+      "id": "aug10-pro20-capacity",
+      "source_urls": [
+        "https://github.com/openai/codex/issues/37790"
+      ],
+      "summary_ru": "В официальном репозитории клиентского приложения пользователь Pro 20x сообщает о повторных capacity-отказах, которые не исчезают при смене модели."
+    },
+    {
+      "event_date": "2026-08-11",
+      "evidence_kind": "provider_status",
+      "github_records": [],
+      "id": "aug11-service-errors",
+      "source_urls": [
+        "https://status.openai.com/incidents/01KZSC0T66YTVM57N5T79SV8ZV"
+      ],
+      "summary_ru": "Провайдер зарегистрировал ошибки API, Codex и Work Mode; инцидент отмечен восстановленным."
+    },
+    {
+      "event_date": "2026-08-12",
+      "evidence_kind": "user_report",
+      "github_records": [
+        {
+          "closed_at": null,
+          "created_at": "2026-08-12T09:48:12Z",
+          "merged_at": null,
+          "state": "open",
+          "updated_at": "2026-09-09T18:00:09Z",
+          "url": "https://github.com/openai/codex/issues/38157"
+        }
+      ],
+      "id": "aug12-pro20-quota",
+      "source_urls": [
+        "https://github.com/openai/codex/issues/38157"
+      ],
+      "summary_ru": "Жалоба на предположительно уменьшившуюся доступную квоту Pro 20x. Сам факт назначения тарифа 5x не установлен."
+    },
+    {
+      "event_date": "2026-08-13",
+      "evidence_kind": "user_report",
+      "github_records": [
+        {
+          "closed_at": null,
+          "created_at": "2026-08-13T07:50:29Z",
+          "merged_at": null,
+          "state": "open",
+          "updated_at": "2026-08-18T07:22:52Z",
+          "url": "https://github.com/Wei-Shaw/sub2api/issues/5592"
+        }
+      ],
+      "id": "aug13-sol-overload",
+      "source_urls": [
+        "https://github.com/Wei-Shaw/sub2api/issues/5592"
+      ],
+      "summary_ru": "В Sub2API опубликован отказ overloaded для gpt-5.6-sol; это предшествует сентябрьскому появлению Astra."
+    },
+    {
+      "event_date": "2026-08-14",
+      "evidence_kind": "user_report",
+      "github_records": [
+        {
+          "closed_at": null,
+          "created_at": "2026-08-14T16:38:39Z",
+          "merged_at": null,
+          "state": "open",
+          "updated_at": "2026-08-20T11:30:36Z",
+          "url": "https://github.com/Wei-Shaw/sub2api/issues/5652"
+        }
+      ],
+      "id": "aug14-error-shapes",
+      "source_urls": [
+        "https://github.com/Wei-Shaw/sub2api/issues/5652"
+      ],
+      "summary_ru": "Sub2API описывает разные формы capacity-ошибки, включая сообщение без error.code, и непоследовательное срабатывание восстановления."
+    },
+    {
+      "event_date": "2026-08-16",
+      "event_date_end": "2026-08-17",
+      "evidence_kind": "client_merged_change",
+      "github_records": [
+        {
+          "closed_at": "2026-08-17T01:31:54Z",
+          "created_at": "2026-08-17T01:26:44Z",
+          "merged_at": "2026-08-17T01:31:54Z",
+          "state": "closed",
+          "updated_at": "2026-08-17T01:43:00Z",
+          "url": "https://github.com/NousResearch/hermes-agent/pull/88056"
+        }
+      ],
+      "id": "aug16-17-900k",
+      "provider_rollout_basis": "Автор PR сообщает дату; прямое объявление отдельно не прочитано.",
+      "source_urls": [
+        "https://github.com/NousResearch/hermes-agent/pull/88056"
+      ],
+      "summary_ru": "По журналу Hermes большой контекст подписочного Codex стал доступен 16 августа; 17 августа слит подъём локального лимита до 900k с результатами живых проб."
+    },
+    {
+      "event_date": "2026-08-17",
+      "evidence_kind": "user_report",
+      "github_records": [
+        {
+          "closed_at": "2026-08-30T12:15:39Z",
+          "created_at": "2026-08-17T22:09:04Z",
+          "merged_at": null,
+          "state": "closed",
+          "updated_at": "2026-08-30T12:17:36Z",
+          "url": "https://github.com/NousResearch/hermes-agent/issues/88695"
+        }
+      ],
+      "id": "aug17-compaction-mismatch",
+      "source_urls": [
+        "https://github.com/NousResearch/hermes-agent/issues/88695"
+      ],
+      "summary_ru": "Hermes: при окне 900k нативное сжатие продолжало срабатывать около прежнего порога 200k; в issue сохранены короткие логи."
+    },
+    {
+      "event_date": "2026-08-19",
+      "evidence_kind": "client_merged_change",
+      "github_records": [
+        {
+          "closed_at": "2026-08-19T03:11:24Z",
+          "created_at": "2026-08-15T13:31:12Z",
+          "merged_at": "2026-08-19T03:11:24Z",
+          "state": "closed",
+          "updated_at": "2026-08-19T03:11:32Z",
+          "url": "https://github.com/Wei-Shaw/sub2api/pull/5676"
+        }
+      ],
+      "id": "aug19-error-recovery-fix",
+      "source_urls": [
+        "https://github.com/Wei-Shaw/sub2api/pull/5676"
+      ],
+      "summary_ru": "В Sub2API слито распознавание нескольких форм перегрузки и восстановление до начала содержательного вывода; после начала вывода повтор исключается."
+    },
+    {
+      "event_date": "2026-08-20",
+      "evidence_kind": "provider_status",
+      "github_records": [],
+      "id": "aug20-api-auth",
+      "source_urls": [
+        "https://status.openai.com/incidents/01M0G1RZER839AZXWMYKSZF3GR"
+      ],
+      "summary_ru": "Провайдер признал ошибки Codex с API-аутентификацией. Это отдельный класс от подтверждённого нами OAuth overload."
+    },
+    {
+      "event_date": "2026-08-21",
+      "evidence_kind": "provider_status",
+      "github_records": [],
+      "id": "aug21-logouts",
+      "source_urls": [
+        "https://status.openai.com/incidents/01M0JXWD740S0Y50DWJZS7SH75"
+      ],
+      "summary_ru": "Признаны неожиданные выходы из веб-аккаунтов при обновлении страницы."
+    },
+    {
+      "date_basis": "Дата обращения; дата исходного объявления отдельно не подтверждена.",
+      "event_date": "2026-08-22",
+      "evidence_kind": "user_report",
+      "github_records": [
+        {
+          "closed_at": null,
+          "created_at": "2026-08-22T07:32:20Z",
+          "merged_at": null,
+          "state": "open",
+          "updated_at": "2026-08-22T07:33:42Z",
+          "url": "https://github.com/openai/codex/issues/40076"
+        }
+      ],
+      "id": "aug22-milestone-reset",
+      "source_urls": [
+        "https://github.com/openai/codex/issues/40076",
+        "https://x.com/thsottiaux/status/2090947196107764189"
+      ],
+      "summary_ru": "Пользователь сообщает о неначисленном banked reset за рубеж 20 млн пользователей и приводит ссылку на объявление. Прямой пост вернул 403."
+    },
+    {
+      "event_date": "2026-08-23",
+      "evidence_kind": "client_merged_change",
+      "github_records": [
+        {
+          "closed_at": "2026-08-23T09:14:36Z",
+          "created_at": "2026-08-23T08:19:38Z",
+          "merged_at": "2026-08-23T09:14:36Z",
+          "state": "closed",
+          "updated_at": "2026-08-23T09:18:13Z",
+          "url": "https://github.com/NousResearch/hermes-agent/pull/92797"
+        },
+        {
+          "closed_at": "2026-08-23T09:54:30Z",
+          "created_at": "2026-08-23T09:49:02Z",
+          "merged_at": "2026-08-23T09:54:30Z",
+          "state": "closed",
+          "updated_at": "2026-08-23T09:57:23Z",
+          "url": "https://github.com/NousResearch/hermes-agent/pull/92848"
+        }
+      ],
+      "id": "aug23-context-optin",
+      "source_urls": [
+        "https://github.com/NousResearch/hermes-agent/pull/92797",
+        "https://github.com/NousResearch/hermes-agent/pull/92848"
+      ],
+      "summary_ru": "Hermes вернул 272k по умолчанию, оставив 900k отдельным выбором: авторы связали прежнее автоматическое расширение с расходом подписки. В тот же день уточнили пороги сжатия."
+    },
+    {
+      "event_date": "2026-08-27",
+      "evidence_kind": "provider_status",
+      "github_records": [],
+      "id": "aug27-work-outage",
+      "source_urls": [
+        "https://status.openai.com/incidents/01M1263309PD7VYV8EF95W2M2P"
+      ],
+      "summary_ru": "Признаны ошибки Workspace Agents и Work в вебе и на мобильных устройствах."
+    },
+    {
+      "event_date": "2026-08-30",
+      "evidence_kind": "client_merged_change",
+      "github_records": [
+        {
+          "closed_at": "2026-08-30T12:15:38Z",
+          "created_at": "2026-08-30T11:54:12Z",
+          "merged_at": "2026-08-30T12:15:38Z",
+          "state": "closed",
+          "updated_at": "2026-08-30T12:15:41Z",
+          "url": "https://github.com/NousResearch/hermes-agent/pull/98542"
+        }
+      ],
+      "id": "aug30-compaction-fix",
+      "source_urls": [
+        "https://github.com/NousResearch/hermes-agent/pull/98542"
+      ],
+      "summary_ru": "В Hermes слито вычисление нативного порога сжатия из фактического локального порога вместо устаревшего постоянного значения 200k."
+    },
+    {
+      "conversion_basis": "07:40–12:53 PDT (UTC−7), указанные в разборе.",
+      "event_date": "2026-08-31",
+      "evidence_kind": "provider_postmortem",
+      "github_records": [],
+      "id": "aug31-work-capacity",
+      "impact_end_utc": "2026-08-31T19:53:00Z",
+      "impact_start_utc": "2026-08-31T14:40:00Z",
+      "source_urls": [
+        "https://status.openai.com/incidents/01M1C5M4K0WC8PPT0Z175RJA1E/write-up"
+      ],
+      "summary_ru": "Разбор провайдера связывает аварию Work с изменением кода, фоновой сетевой активностью, нехваткой сетевой ёмкости, давлением на память и повторными запросами. Восстановление включало ограничение новых задач и увеличение ёмкости.",
+      "time_precision": "approximate"
+    },
+    {
+      "event_date": "2026-08-31",
+      "event_date_end": "2026-09-01",
+      "evidence_kind": "provider_status",
+      "github_records": [],
+      "id": "aug31-sep1-responses-latency",
+      "source_urls": [
+        "https://status.openai.com/incidents/01M1CYZDD84XD0H56XNEV2PT98"
+      ],
+      "summary_ru": "Отдельный инцидент повышенной задержки Responses API завершён 1 сентября; одна из записей уточняет US endpoint."
+    },
+    {
+      "date_basis": "Датированные записи changelog и форума; дата исходной статьи не отображена в прочитанном тексте.",
+      "event_date": "2026-09-03",
+      "event_date_end": "2026-09-04",
+      "evidence_kind": "provider_announcement",
+      "github_records": [],
+      "id": "sep3-astra-rollout",
+      "source_urls": [
+        "https://openai.com/index/gpt-6-astra/",
+        "https://learn.chatgpt.com/docs/changelog",
+        "https://community.openai.com/t/introducing-gpt-6-astra-the-most-intelligent-and-aligned-model-in-the-world/1394703"
+      ],
+      "summary_ru": "К 3 сентября опубликованы описание поэтапного доступа к Astra и клиентская поддержка; 4 сентября CLI 0.153.4 меняет встроенный default при отсутствии явно заданной модели."
+    },
+    {
+      "event_date": "2026-09-03",
+      "evidence_kind": "provider_statement_reproduced",
+      "github_records": [],
+      "id": "sep3-waiting-reset-grant",
+      "source_access": "Текст встроенного сообщения прочитан на странице обсуждения.",
+      "source_urls": [
+        "https://community.openai.com/t/introducing-gpt-6-astra-the-most-intelligent-and-aligned-model-in-the-world/1394703/10"
+      ],
+      "summary_ru": "На форуме сохранено объявление представителя провайдера: один banked reset за каждый день ожидания Astra на платном плане. Прямой X-пост не удалось прочитать."
+    },
+    {
+      "event_date": "2026-09-03",
+      "evidence_kind": "provider_status",
+      "github_records": [],
+      "id": "sep3-work-and-codex-errors",
+      "source_urls": [
+        "https://status.openai.com/incidents/01M1J99EDCYED5GP2W8GZ3N2NA",
+        "https://status.openai.com/incidents/01M1KWEDH417T2CF44YYHZDFCR"
+      ],
+      "summary_ru": "В один день зарегистрированы отдельные инциденты Work Mode и общих ошибок ChatGPT/Codex."
+    },
+    {
+      "event_date": "2026-09-04",
+      "evidence_kind": "provider_status",
+      "github_records": [],
+      "id": "sep4-apac",
+      "source_urls": [
+        "https://status.openai.com/incidents/01M1NKFZH5EEYEREC54HNAHY35"
+      ],
+      "summary_ru": "Отдельный региональный APAC-инцидент затронул несколько поверхностей, включая Work и Codex Cloud; его региональная применимость к нашему случаю не установлена."
+    },
+    {
+      "event_date": "2026-09-07",
+      "evidence_kind": "user_report",
+      "github_records": [
+        {
+          "closed_at": null,
+          "created_at": "2026-09-07T04:07:54Z",
+          "merged_at": null,
+          "state": "open",
+          "updated_at": "2026-09-10T10:27:18Z",
+          "url": "https://github.com/Wei-Shaw/sub2api/issues/6739"
+        }
+      ],
+      "id": "sep7-sub2api-pro20",
+      "source_urls": [
+        "https://github.com/Wei-Shaw/sub2api/issues/6739"
+      ],
+      "summary_ru": "Автор Sub2API сообщает об overload на Sol/Astra у нескольких 20x аккаунтов при заявленной параллельности менее трёх запросов на аккаунт."
+    },
+    {
+      "event_date": "2026-09-07",
+      "evidence_kind": "client_merged_change",
+      "github_records": [
+        {
+          "closed_at": "2026-09-07T16:13:56Z",
+          "created_at": "2026-09-07T16:08:07Z",
+          "merged_at": "2026-09-07T16:13:56Z",
+          "state": "closed",
+          "updated_at": "2026-09-07T16:21:39Z",
+          "url": "https://github.com/NousResearch/hermes-agent/pull/105185"
+        }
+      ],
+      "id": "sep7-hermes-astra",
+      "source_urls": [
+        "https://github.com/NousResearch/hermes-agent/pull/105185"
+      ],
+      "summary_ru": "В Hermes слита адаптация Astra: проверка доступности по каталогу аккаунта, варианты контекста, допустимый reasoning и исправления совместимости. Автор PR также сообщает успешные живые пробы."
+    },
+    {
+      "approx_event_time_utc": "2026-09-08T01:00:00Z",
+      "conversion_basis": "Приблизительно 10:00 KST (UTC+9); в PDT это ещё 7 сентября.",
+      "event_date": "2026-09-08",
+      "evidence_kind": "user_report",
+      "github_records": [
+        {
+          "closed_at": null,
+          "created_at": "2026-09-08T02:01:31Z",
+          "merged_at": null,
+          "state": "open",
+          "updated_at": "2026-09-08T02:02:09Z",
+          "url": "https://github.com/openai/codex/issues/43643"
+        },
+        {
+          "closed_at": null,
+          "created_at": "2026-09-08T02:42:50Z",
+          "merged_at": null,
+          "state": "open",
+          "updated_at": "2026-09-08T02:43:59Z",
+          "url": "https://github.com/openai/codex/issues/43655"
+        },
+        {
+          "closed_at": null,
+          "created_at": "2026-09-08T04:20:23Z",
+          "merged_at": null,
+          "state": "open",
+          "updated_at": "2026-09-08T04:21:33Z",
+          "url": "https://github.com/openai/codex/issues/43694"
+        }
+      ],
+      "id": "sep8-global-reset",
+      "provider_global_scope_verified": false,
+      "source_urls": [
+        "https://github.com/openai/codex/issues/43643",
+        "https://github.com/openai/codex/issues/43655",
+        "https://github.com/openai/codex/issues/43694"
+      ],
+      "summary_ru": "Отдельные пользователи описывают автоматический общий сброс. В датированном примере около 10:00 KST остаток вырос с 90% до 100% после ранее потраченного banked reset; есть и жалоба на неполученный сброс."
+    },
+    {
+      "event_date": "2026-09-09",
+      "evidence_kind": "provider_status",
+      "github_records": [],
+      "id": "sep9-unexpected-resets",
+      "source_urls": [
+        "https://status.openai.com/incidents/01M23KG62KKK448RN434CQ64Z8"
+      ],
+      "summary_ru": "Провайдер признал неожиданные сбросы лимитов у части пользователей Codex; отмечены исправление и восстановление. Точная причина и состав затронутых аккаунтов не раскрыты."
+    },
+    {
+      "event_date": "2026-09-09",
+      "evidence_kind": "provider_status",
+      "github_records": [],
+      "id": "sep9-pro-plus-errors",
+      "source_urls": [
+        "https://status.openai.com/incidents/01M23BNX5V1XT9P3NP0PX56FTN"
+      ],
+      "summary_ru": "Отдельная запись провайдера об ошибках разговоров Pro и Plus."
+    },
+    {
+      "event_date": "2026-09-09",
+      "evidence_kind": "client_open_proposal",
+      "github_records": [
+        {
+          "closed_at": null,
+          "created_at": "2026-09-09T11:30:01Z",
+          "merged_at": null,
+          "state": "open",
+          "updated_at": "2026-09-09T11:35:46Z",
+          "url": "https://github.com/Wei-Shaw/sub2api/pull/6910"
+        }
+      ],
+      "id": "sep9-sub2api-open-proposal",
+      "source_urls": [
+        "https://github.com/Wei-Shaw/sub2api/pull/6910"
+      ],
+      "summary_ru": "В Sub2API предложена обработка пользовательских правил cooldown для ошибок внутри SSE. PR 6910 на момент проверки открыт, не слит."
+    },
+    {
+      "event_date": "2026-09-09",
+      "event_date_end": "2026-09-10",
+      "evidence_kind": "user_report",
+      "github_records": [
+        {
+          "closed_at": "2026-09-10T05:11:28Z",
+          "created_at": "2026-09-10T00:59:16Z",
+          "merged_at": null,
+          "state": "closed",
+          "updated_at": "2026-09-10T05:11:28Z",
+          "url": "https://github.com/openai/codex/issues/44356"
+        },
+        {
+          "closed_at": null,
+          "created_at": "2026-09-10T06:35:36Z",
+          "merged_at": null,
+          "state": "open",
+          "updated_at": "2026-09-10T10:33:12Z",
+          "url": "https://github.com/openai/codex/issues/44443"
+        }
+      ],
+      "id": "sep9-10-quota-enforcement",
+      "source_urls": [
+        "https://github.com/openai/codex/issues/44356",
+        "https://github.com/openai/codex/issues/44443"
+      ],
+      "summary_ru": "Пользователь Work/Pro описывает примерно 40% → 0%, остановку задачи и последующее восстановление до 43% без ручного сброса. Другой отчёт двух 20x аккаунтов фиксирует перенос дат reset при неизменном числе banked resets."
+    },
+    {
+      "event_date": "2026-09-10",
+      "evidence_kind": "user_report",
+      "github_records": [],
+      "id": "sep10-other-55-only",
+      "source_urls": [
+        "https://github.com/Wei-Shaw/sub2api/issues/6739#issuecomment-5614220680",
+        "https://github.com/Wei-Shaw/sub2api/issues/6739#issuecomment-5617139739"
+      ],
+      "summary_ru": "Участник Sub2API сообщает, что на 20x работает только 5.5. Следующий участник подтверждает сбой Codex при работающем вебе, но режим веба не уточнён."
+    },
+    {
+      "event_date": "2026-09-10",
+      "evidence_kind": "owner_evidence",
+      "github_records": [],
+      "id": "sep10-owner-receipt",
+      "source_urls": [
+        "https://github.com/gv1983us-commits/codex-provider-incident/issues/1#issuecomment-5618436481",
+        "https://github.com/gv1983us-commits/codex-provider-incident/blob/main/docs/SESSION-2026-09-10.md"
+      ],
+      "summary_ru": "Наша квитанция подтверждает gpt-5.5 overloaded в 12:06:26.863 UTC; позднее Astra Medium завершает пять вызовов инструментов и финальный ответ в 12:18:50.270 UTC. Устойчивое восстановление не установлено."
+    }
+  ],
+  "limitations": [
+    "Search results are selected, not a prevalence sample or complete count.",
+    "Our own reports are excluded from independent corroboration.",
+    "A merged client PR does not prove deployment to the user's customized installation.",
+    "Provider announcement, user-observed credit receipt and account-specific remediation are different evidence.",
+    "Direct X retrieval failed; mirrored statements or linked user reports are labeled.",
+    "Sub2API issue 5563 concerns another provider and was excluded despite the overload keyword.",
+    "No causal identity between the Aug 31 outage, Sep 9 quota incident and this account's Sep 10 overload has been established."
+  ],
+  "period": {
+    "from": "2026-08-10",
+    "inclusive": true,
+    "through": "2026-09-10"
+  },
+  "researched_on": "2026-09-10",
+  "schema_version": 1,
+  "scope": "Selected public events relevant to Codex/Work availability, quota/reset state and third-party client adaptation; not an exhaustive provider-wide event census.",
+  "source_classes": [
+    "provider_status",
+    "provider_postmortem",
+    "provider_announcement",
+    "provider_statement_reproduced",
+    "client_merged_change",
+    "client_open_proposal",
+    "user_report",
+    "owner_evidence"
+  ]
+}
+

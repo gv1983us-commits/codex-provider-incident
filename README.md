@@ -71,6 +71,7 @@ The [invitation and repository handoff](https://github.com/NousResearch/hermes-a
 | [Incident report](docs/INCIDENT.md) | Controlled comparison, chronology and known limitations |
 | [Fresh-session review](docs/SESSION-2026-09-10.md) | GPT-5.5/Sol attempts, later Astra Medium tool success and measured intervals |
 | [Controls → requests](docs/REQUEST-MAP.md) | Source-based model/effort mappings and the next bounded recovery observation |
+| [One-month public chronology](docs/MONTH-2026-08-10--2026-09-10.md) | 10 Aug–10 Sep: provider incidents, reset events and GitHub compatibility/recovery changes; Russian report with English handoff |
 | [Evidence guide](evidence/README.md) | Provenance and how to request a focused excerpt |
 | [Exact excerpts](evidence/excerpts.json) | Historical log fields, a screenshot transcription and the new GPT-5.5 receipt |
 | [Audit summary](evidence/audit-summary.json) | Counts and the final interruption sequence |
