@@ -2,13 +2,22 @@
 
 # Codex provider incident · September 2026
 
-**Goal: restore reliable Codex-backed Jarvis operation through Hermes on the affected Pro Full subscription.**
+**Goal: restore sustained, reliable Codex-backed Jarvis operation through Hermes on the affected existing subscriptions.**
 
 We refer to the company as **the provider** throughout the investigation. Product names, technical identifiers, source URLs and verbatim evidence retain their exact spelling for reproducibility.
 
 [Русская сводка](docs/README.ru.md) · [Evidence](evidence/README.md) · [Recovery procedure](docs/RECOVERY.md) · [Open tasks](https://github.com/gv1983us-commits/codex-provider-incident/issues) · [Hermes report](https://github.com/NousResearch/hermes-agent/issues/107307)
 
 > [!IMPORTANT]
+> **15 September — incident remains OPEN.** The owner still cannot work normally and has found no working fix on their side. Hermes maintainers and the provider are asked to investigate and repair the failing route together.
+>
+> **100 failed Codex attempts in the last 48 hours; 118 after the last Git commit.** Three recent GUI turns end in overload errors. [New audited report](docs/CONTINUING-INCIDENT-2026-09-15.md) · [Full attempt ledger, diagnostic index and source hashes](evidence/log-audit-20260915.json). The final series is unresolved at the log boundary.
+
+The earlier resolution claim was followed by [recurrence and reopening on 12 September](https://github.com/gv1983us-commits/codex-provider-incident/issues/1#issuecomment-5643482050). Individual successful runs have not established a durable fix.
+
+## Earlier updates — 10 September
+
+> [!NOTE]
 > **Latest owner follow-up:** roughly five failures with shrinking usable intervals, ending in immediate failure; Hermes/Codex is now unusable for the owner. This is an approximate narrative, not five additional audited receipts. [Fresh community comparison](docs/COMMUNITY-FOLLOWUP-2026-09-10.md) finds similar temporary recovery and renewed failures across several clients, with conflicting workaround outcomes.
 >
 > **Latest exact receipt: Pro Light also returns Sol overload.** The [15:21:54.745 UTC receipt](docs/LIGHT-OVERLOAD-2026-09-10.md) names `gpt-5.6-sol-900k / overloaded`; the owner identifies Light. Both accounts now have reported Hermes/Codex failures. Light allowed conservation but is not a sustained workaround.
@@ -17,7 +26,7 @@ We refer to the company as **the provider** throughout the investigation. Produc
 >
 > **Earlier: Astra continuation also failed.** After the confirmed **Astra 900k / Medium five-tool success at 12:18:50 UTC**, the owner reports approximately ten further tool calls followed by a provider error. The [new exact receipt](docs/ASTRA-2026-09-10.md) records **14:17:45.876 UTC / `gpt-6-astra-900k` / `code: unknown`**, with a request ID. This is separate from the earlier GPT-5.5 `overloaded` receipt. No sustained recovery is demonstrated; the failed call's effort is not supplied.
 
-## What works, what fails
+## Account / route observations — 10 September snapshot
 
 | Account | Client / route | Model | Latest reported observation |
 | --- | --- | --- | --- |
@@ -40,7 +49,7 @@ The [new exact receipt](https://github.com/gv1983us-commits/codex-provider-incid
 
 **New evidence:** [29-message session review](docs/SESSION-2026-09-10.md) and [reviewed event data](evidence/session-20260910-reviewed.json). Astra's five-tool analysis finished in **51.33 s**. Earlier delays include **32.50 s inside `hermes doctor`**; the comparison does not isolate reasoning effort as the cause.
 
-## Evidence at a glance
+## Historical audit — 8–10 September
 
 | Finding | Scope |
 | --- | --- |
@@ -53,7 +62,17 @@ The [new exact receipt](https://github.com/gv1983us-commits/codex-provider-incid
 
 The counts have different scopes. **Do not compute an overall incident failure percentage from this table.** Earlier logs do not contain a complete record of successful calls. Terra is a later owner observation; it is not part of the historical 151 Sol/Astra count.
 
-## Where we can act
+## Joint upstream action requested — 15 September
+
+| Requested party | Required work | Evidence / acceptance |
+| --- | --- | --- |
+| Provider | Correlate the supplied request IDs, timestamps and models; identify and remediate repeated overload/request-processing failures and investigate connection failures on the Codex route. | A concrete finding and remediation status tied to the supplied receipts. |
+| Hermes maintainers | Investigate retry exhaustion, redirect termination, failed compression/approval, history-version rejection and the WebSocket limit; preserve completed tool results and make interrupted state explicit. | A supported upstream fix or documented handling, with safe continuation and no uncontrolled replay of completed tools. |
+| Hermes + provider together | Trace the failing request → retry → tool/result → continuation path across both layers and agree on a supported fix. | Sustained useful work on the affected setup, with observation duration and remaining failures reported; successful one-shot calls alone do not close the incident. |
+
+The owner has found no working fix locally. The request is for a supported correction by Hermes and the provider, with sustained practical operation as the recovery criterion. [Current status and evidence](docs/CONTINUING-INCIDENT-2026-09-15.md).
+
+## Earlier recovery investigation plan — 10 September
 
 1. **Recover a usable route.** GPT-5.5 also has a confirmed Codex overload receipt. Preserve that failure and require a complete model → tool → model cycle plus sustained useful progress before declaring any route recovered.
 2. **Make routing consistent.** Inspect the live main model, explicit workers, auxiliary jobs, compression and fallback targets. A browser response or a changed dashboard default does not prove these routes changed.
@@ -66,7 +85,7 @@ The procedure and acceptance criteria are in [RECOVERY.md](docs/RECOVERY.md). No
 
 | Task | Current owner / invitation | Status |
 | --- | --- | --- |
-| [#1 · Validate sustained Codex work](https://github.com/gv1983us-commits/codex-provider-incident/issues/1) | Account owner | Both Full and Light now have failures; reported conservation preserved |
+| [#1 · Validate sustained Codex work](https://github.com/gv1983us-commits/codex-provider-incident/issues/1) | Hermes maintainers + provider requested; owner supplies evidence | OPEN on 15 Sep; normal work remains disrupted; no owner-side fix found |
 | [#2 · Preserve continuation after retry exhaustion](https://github.com/gv1983us-commits/codex-provider-incident/issues/2) | `huklaa` invited; formal assignment pending | Awaiting contributor confirmation |
 | [#3 · Check compression failure and recovery](https://github.com/gv1983us-commits/codex-provider-incident/issues/3) | Account owner coordinates; help wanted | Installed revision and code review needed |
 | [#4 · Compare results with Sub2API](https://github.com/gv1983us-commits/codex-provider-incident/issues/4) | Project owner and two relevant reporters invited | Awaiting replies |
@@ -77,6 +96,8 @@ The [invitation and repository handoff](https://github.com/NousResearch/hermes-a
 
 | Material | Purpose |
 | --- | --- |
+| [Continuing incident — 15 September](docs/CONTINUING-INCIDENT-2026-09-15.md) | Current OPEN status, 48-hour / after-Git counts, exact final failures and joint repair request |
+| [Audited logs — 15 September](evidence/log-audit-20260915.json) | All 118 Codex attempts, 1,013 diagnostic index entries, selected excerpts and source hashes |
 | [Fresh community follow-up](docs/COMMUNITY-FOLLOWUP-2026-09-10.md) | 10 Sep evening: shrinking work intervals, related user reports, temporary recovery and conflicting workarounds |
 | [Latest Light overload](docs/LIGHT-OVERLOAD-2026-09-10.md) | Sol `overloaded` on Light after reported conservation; failures now span both accounts |
 | [Conservation result and stale banner](docs/CONSERVATION-2026-09-10.md) | Sol completion reported; old Astra receipt redisplayed, no new failure counted |

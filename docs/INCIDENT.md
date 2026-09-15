@@ -1,5 +1,15 @@
 # Incident record
 
+## Current status — 15 September 2026
+
+**15 September 2026 — OPEN / work remains disrupted.** The owner still cannot work normally and has found no working fix on their side. **Joint investigation and repair are requested from Hermes maintainers and the provider.**
+
+The new audit contains **100 failed Codex API attempts in the last 48 hours** (78 overload, 18 request-processing errors with request IDs, 4 connection/timeout), with **three final overload errors in GUI turns**. The full after-commit window contains **118 Codex attempts**; retries and mirrored records are deduplicated. [New report](https://github.com/gv1983us-commits/codex-provider-incident/blob/main/docs/CONTINUING-INCIDENT-2026-09-15.md) · [Attempt ledger, diagnostic index and source hashes](https://github.com/gv1983us-commits/codex-provider-incident/blob/main/evidence/log-audit-20260915.json).
+
+The [12 September recurrence](https://github.com/gv1983us-commits/codex-provider-incident/issues/1#issuecomment-5643482050) and this update supersede the earlier resolution claim. Successful runs document temporary continuation; sustained reliable operation remains unresolved. The final failed series is still retrying at the end of the logs on 15 September. Per-request Full/Light attribution is not supplied by these new logs.
+
+## Earlier incident record — 10 September 2026
+
 Source: [owner's Hermes issue](https://github.com/NousResearch/hermes-agent/issues/107307) and its [focused evidence reply](https://github.com/NousResearch/hermes-agent/issues/107307#issuecomment-5617927854). Snapshot: 10 September 2026.
 
 ## Latest receipt — 15:21:54.745 UTC: Light also returns Sol overload
@@ -144,4 +154,4 @@ The detailed success log begins on 9 September at approximately 15:56, whereas s
 
 The original comparison used an existing Work conversation. A fresh short-prompt Work conversation on the affected account remains a useful additional control for GPT-5.6/GPT-6. The latest update above records a confirmed openai-codex / gpt-5.5 overload receipt after initial activity in a new Hermes session. Reliable recovery remains unverified.
 
-Public materials here are a curated subset of the retained audits, not the eight raw logs or the full session export. No source-file checksum has been independently added by this repository. Source line references refer to the retained files, not line numbers in this repository.
+Public materials here are a curated subset of the retained audits, not the eight raw logs or the full session export. The original audit did not publish raw-log checksums. The separate 15 September corpus now has source SHA-256 values in [log-audit-20260915.json](../evidence/log-audit-20260915.json). Source line references refer to the retained files, not line numbers in this repository.

@@ -1,5 +1,13 @@
 # Evidence and provenance
 
+## New corpus — 15 September 2026
+
+[log-audit-20260915.json](log-audit-20260915.json) publishes the 118-entry Codex failed-attempt ledger, a 1,013-entry diagnostic index, selected exact message excerpts, the five source-file hashes and the two observation windows. [Current report](../docs/CONTINUING-INCIDENT-2026-09-15.md).
+
+The last 48 hours contain 100 failed Codex attempts. This is a separate window after repository commit `4a398261`, including some 11–12 September events already discussed in issue #1. It must not be added wholesale to the older counters below. The 12 September clean-install and retained-session scope corrections remain applicable. Source line references identify the retained raw files by the hashes in this new corpus.
+
+## Earlier evidence guide — 10 September
+
 [Home](../README.md) · [Incident](../docs/INCIDENT.md)
 
 ## What is published here
@@ -14,7 +22,7 @@
 | [light-sol-20260910T152154745Z.json](light-sol-20260910T152154745Z.json) | Exact Sol `overloaded` receipt; owner attributes it to Light | Separate from the stale Astra redisplay and original audit counters |
 | [route-matrix.json](route-matrix.json) | Account owner's browser and Hermes observations | Unknown model IDs or timestamps remain unknown |
 
-The source corpus consists of eight logs spanning 8–10 September and a saved session export of 21,492,423 bytes / 4,400 messages. A retained index contains 260 evidence records: 259 from source logs plus one later user error receipt. The receipt was not added to the historical 181 Codex / 151 overload counters.
+The original 8–10 September source corpus consists of eight logs spanning 8–10 September and a saved session export of 21,492,423 bytes / 4,400 messages. A retained index contains 260 evidence records: 259 from source logs plus one later user error receipt. The receipt was not added to the historical 181 Codex / 151 overload counters.
 
 Deduplication used **timestamp including milliseconds + logger + message**. Buffered Desktop output is not a reliable measure of retry frequency.
 

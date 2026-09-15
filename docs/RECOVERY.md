@@ -1,10 +1,28 @@
-# Recovery procedure
+# Recovery status and upstream action
+
+## 15 September — no working owner-side fix found
+
+**15 September 2026 — OPEN / work remains disrupted.** The owner still cannot work normally and has found no working fix on their side. **Joint investigation and repair are requested from Hermes maintainers and the provider.**
+
+The new audit contains **100 failed Codex API attempts in the last 48 hours** (78 overload, 18 request-processing errors with request IDs, 4 connection/timeout), with **three final overload errors in GUI turns**. The full after-commit window contains **118 Codex attempts**; retries and mirrored records are deduplicated. [New report](https://github.com/gv1983us-commits/codex-provider-incident/blob/main/docs/CONTINUING-INCIDENT-2026-09-15.md) · [Attempt ledger, diagnostic index and source hashes](https://github.com/gv1983us-commits/codex-provider-incident/blob/main/evidence/log-audit-20260915.json).
+
+The [12 September recurrence](https://github.com/gv1983us-commits/codex-provider-incident/issues/1#issuecomment-5643482050) and this update supersede the earlier resolution claim. Successful runs document temporary continuation; sustained reliable operation remains unresolved. The final failed series is still retrying at the end of the logs on 15 September. Per-request Full/Light attribution is not supplied by these new logs.
+
+| Requested party | Required work | Evidence / acceptance |
+| --- | --- | --- |
+| Provider | Correlate the supplied request IDs, timestamps and models; identify and remediate repeated overload/request-processing failures and investigate connection failures on the Codex route. | A concrete finding and remediation status tied to the supplied receipts. |
+| Hermes maintainers | Investigate retry exhaustion, redirect termination, failed compression/approval, history-version rejection and the WebSocket limit; preserve completed tool results and make interrupted state explicit. | A supported upstream fix or documented handling, with safe continuation and no uncontrolled replay of completed tools. |
+| Hermes + provider together | Trace the failing request → retry → tool/result → continuation path across both layers and agree on a supported fix. | Sustained useful work on the affected setup, with observation duration and remaining failures reported; successful one-shot calls alone do not close the incident. |
+
+The following procedure is retained as the **10 September investigation plan**, not a newly validated workaround or a request for further owner-side live tests. Existing evidence should drive the joint investigation.
+
+## Historical investigation procedure — 10 September
 
 [Home](../README.md) · [Open tasks](https://github.com/gv1983us-commits/codex-provider-incident/issues)
 
 **Target:** reliable Jarvis work through Hermes using the existing Pro Full `openai-codex` subscription connection.
 
-**Latest status:** the owner reports [Sol overload on Light at 15:21:54.745 UTC](LIGHT-OVERLOAD-2026-09-10.md), after the reported completion of conservation. Both accounts now have observed Hermes/Codex failures. Preserve the reported `QUIESCED_SAFE` checkpoint and pause automatic requests if any remain active. No dependable fallback is established; a new browser-wide failure is not shown.
+**Status recorded on 10 September:** the owner reports [Sol overload on Light at 15:21:54.745 UTC](LIGHT-OVERLOAD-2026-09-10.md), after the reported completion of conservation. Both accounts now have observed Hermes/Codex failures. Preserve the reported `QUIESCED_SAFE` checkpoint and pause automatic requests if any remain active. No dependable fallback is established; a new browser-wide failure is not shown.
 
 **Earlier status:** Astra's short Medium tool turn passed, but later work failed with an [exact `unknown` receipt at 14:17:45.876 UTC](ASTRA-2026-09-10.md). The owner reports approximately ten additional tool calls. The failed call's effort is not supplied. The earlier GPT-5.5 overload remains confirmed. No sustained workaround or exception-recovery repair is demonstrated. Preserve the interrupted work and correlate the supplied request ID before treating a retry as recovery.
 
