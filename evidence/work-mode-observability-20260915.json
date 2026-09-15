@@ -1,0 +1,559 @@
+{
+  "schema_version": 1,
+  "record_type": "assistant_visible_observability_summary",
+  "date": "2026-09-15",
+  "scope": "Owner's current device/account comparison, decoded public share metadata, and separately observed local tooling events; not a backend transport audit",
+  "source_types": [
+    "visible tool results",
+    "current owner statements"
+  ],
+  "client": {
+    "interface": "ChatGPT Work",
+    "hermes_in_this_interface": false,
+    "account_tier": "Pro Light",
+    "account_tier_source": "explicit owner clarification on 15 September 2026",
+    "backend_route_equivalence_verified": false,
+    "browser": "Yandex Browser",
+    "device": "Lenovo laptop"
+  },
+  "owner_current_hermes_report": {
+    "model_label": "Astra",
+    "active_sessions_reported": 2,
+    "synchronous_errors_reported": true,
+    "retries_allow_some_continuation": true,
+    "current_attempt_budget_reported": 3,
+    "proposed_budget": 5,
+    "exact_event_times": null,
+    "request_ids": [],
+    "error_codes": [],
+    "new_log_export_supplied": false,
+    "included_in_existing_audited_failure_counts": false,
+    "account_tier": "Pro Full",
+    "edge_same_account_failure_reported": true
+  },
+  "internal_model_transport": {
+    "access_available": false,
+    "full_session_model_request_count": null,
+    "full_session_provider_failure_count": null,
+    "hidden_retry_count": null,
+    "note": "Unknown counts must not be interpreted as zero. No internal model transport trace is attached.",
+    "failed_model_request_ids_available": false
+  },
+  "observed_tool_results": {
+    "full_session_coverage": false,
+    "local_analysis_failures": [
+      {
+        "type": "orchestration_script_error",
+        "count": 1,
+        "summary": "Chunk validation used JavaScript UTF-16 string length against a Python Unicode code-point length.",
+        "visible_receipt": "Error: chunk mismatch {\"i\":0,\"code\":0,\"actual\":20010,\"expected\":20000}",
+        "resolution": "Validation changed to compare Unicode code-point counts; transfer and subsequent publication verified.",
+        "provider_failure": false,
+        "event_timestamp": null
+      }
+    ],
+    "truncated_output_notices": {
+      "meaning": "Output display budget truncation; not classified as a provider failure.",
+      "count": null
+    },
+    "provider_failure_count_from_visible_tools": null,
+    "source_retrieval_events": [
+      {
+        "type": "web_reader_fetch_disabled",
+        "count": 1,
+        "summary": "Web reader returned DisabledError on the owner-supplied share URL.",
+        "resolution": "Direct HTTP download succeeded with status 200 and yielded the parsed 7,158,276-byte snapshot.",
+        "provider_failure": false,
+        "event_timestamp": null
+      }
+    ]
+  },
+  "useful_progress": {
+    "repository": "gv1983us-commits/codex-provider-incident",
+    "verified_publication_commit": "9b90d0edf944fa48355c1ab0880405a395c13d0c",
+    "verified_files": 7,
+    "issue_number": 1,
+    "verified_comment_id": 5675695996,
+    "proof_scope": "Visible successful writes and exact read-back checks; not a service-level availability measure."
+  },
+  "limitations": [
+    "No complete assistant-side transport log or retry counter is exposed by the available runtime.",
+    "The inspected portion is not a complete transcript audit.",
+    "The current chat is not a controlled comparison with the two Hermes sessions.",
+    "The owner's new synchronous-error report does not extend the uploaded-log counters.",
+    "All 472 tool outputs in the supplied share are redacted.",
+    "The 42 wfr_ request IDs belong to user-message metadata and do not identify 42 failed model calls.",
+    "The Full-versus-Light comparison uses different accounts; same vendor does not prove identical backend routing."
+  ],
+  "comparison_matrix": [
+    {
+      "surface": "Hermes",
+      "account": "Pro Full",
+      "sessions": 2,
+      "model_label": "Astra",
+      "observation": "Synchronous errors; retries allow some continuation",
+      "source": "owner report"
+    },
+    {
+      "surface": "ChatGPT in Microsoft Edge",
+      "account": "Pro Full",
+      "observation": "Control fails when Hermes fails",
+      "source": "owner report"
+    },
+    {
+      "surface": "ChatGPT in Yandex Browser",
+      "account": "Pro Light",
+      "observation": "Current analysis conversation continues without Hermes",
+      "source": "owner report plus visible progress"
+    }
+  ],
+  "share_snapshot": {
+    "export_kind": "public ChatGPT share snapshot with redacted tool outputs",
+    "snapshot_source_id": "6aa8e571-2268-83eb-8e88-abe41eceaab6",
+    "source_bytes": 7158276,
+    "source_sha256": "46b9405b01061f247abc479d28bc4a39631ee909893fe34aefb5fc07d0fedb59",
+    "time_start_utc": "2026-09-12T11:08:58.417000+00:00",
+    "time_end_utc": "2026-09-15T06:25:39.599122+00:00",
+    "mapping_nodes": 2153,
+    "message_count": 2152,
+    "message_role_counts": {
+      "user": 63,
+      "assistant": 1614,
+      "tool": 472,
+      "system": 3
+    },
+    "tool_messages": 472,
+    "tool_outputs_marked_redacted": 472,
+    "tool_outputs_replaced_by_placeholder": 472,
+    "tool_names": {
+      "api_tool.call_tool": 140,
+      "container.exec": 330,
+      "request_user_input": 2
+    },
+    "message_status_counts": {
+      "finished_successfully": 2145,
+      "in_progress": 7
+    },
+    "status_by_role": [
+      {
+        "role": "user",
+        "status": "finished_successfully",
+        "count": 63
+      },
+      {
+        "role": "assistant",
+        "status": "finished_successfully",
+        "count": 1607
+      },
+      {
+        "role": "tool",
+        "status": "finished_successfully",
+        "count": 472
+      },
+      {
+        "role": "assistant",
+        "status": "in_progress",
+        "count": 7
+      },
+      {
+        "role": "system",
+        "status": "finished_successfully",
+        "count": 3
+      }
+    ],
+    "channel_counts": {
+      "None": 1806,
+      "commentary": 300,
+      "final": 46
+    },
+    "error_related_metadata_field_names": {
+      "request_id": 42
+    },
+    "provider_error_count": null,
+    "internal_retry_count": null,
+    "tool_failure_count_from_export": null,
+    "counts_describe_messages_not_model_requests": true,
+    "raw_conversation_published": false,
+    "user_message_request_id_count": 42,
+    "user_message_request_ids": [
+      {
+        "message_id": "dae9d038-cdcf-47ac-ad1c-6aa9fe8fadd8",
+        "message_time_utc": "2026-09-12T11:08:58.417000+00:00",
+        "request_id": "wfr_01a0954e69c0753aaa10c2ced46a9962",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "40ae68b9-b7b4-4d94-a0bd-3cd3fc09261c",
+        "message_time_utc": "2026-09-12T11:11:57.533000+00:00",
+        "request_id": "wfr_01a0955126d270b0816dc58af7c8ce20",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "d71deba5-9b7e-40f3-bba1-f304c217a032",
+        "message_time_utc": "2026-09-12T11:13:45.984000+00:00",
+        "request_id": "wfr_01a09552cf13703caa1f4d8a61d1c859",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "9d308dc7-3f88-440d-9724-26a9398adbe4",
+        "message_time_utc": "2026-09-12T11:27:26.083000+00:00",
+        "request_id": "wfr_01a0955f52ab769eadef00dc51c80cef",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "0c1c32b5-d71f-4a40-ae41-0d619e91cf7e",
+        "message_time_utc": "2026-09-12T11:31:05.607000+00:00",
+        "request_id": "wfr_01a09562ab527c749ec7994b41df6547",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "887b06b1-0a93-4982-9a1e-0ad2b53de5ca",
+        "message_time_utc": "2026-09-12T11:47:44.338000+00:00",
+        "request_id": "wfr_01a09571e8e07ca1a0d0179d1dfbbeac",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "90e9698b-17cd-4f12-822a-b206f761c238",
+        "message_time_utc": "2026-09-12T11:53:25.122000+00:00",
+        "request_id": "wfr_01a095771ba77463aef4beaa28536a43",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "c7ba0ad4-599d-40fa-b79c-78796e3fb5f0",
+        "message_time_utc": "2026-09-12T11:56:36.586000+00:00",
+        "request_id": "wfr_01a0957a20027e82b85516f4b2817031",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "929eaa53-665b-44d4-a2d4-16fc1f44f907",
+        "message_time_utc": "2026-09-12T12:27:24.880000+00:00",
+        "request_id": "wfr_01a0959508f074bab263d0032cd3a419",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "293d2afc-cf35-46c3-9690-5e2d39550f94",
+        "message_time_utc": "2026-09-12T13:11:16.304000+00:00",
+        "request_id": "wfr_01a095be41de713aa44cf8fb552a7470",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "0c5e78de-cb15-4552-840b-c19b0f93150d",
+        "message_time_utc": "2026-09-13T06:25:35.276000+00:00",
+        "request_id": "wfr_01a09970f99070db800155c70e6938c6",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "148b14d5-00fd-400c-a1f7-6e7982b8ec3b",
+        "message_time_utc": "2026-09-13T07:00:31.182000+00:00",
+        "request_id": "wfr_01a09991058072faabd31d85b3de7f4d",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "a63d6dc1-9a1f-4c1b-bc8f-512b55d14694",
+        "message_time_utc": "2026-09-13T07:10:05.841000+00:00",
+        "request_id": "wfr_01a0999927c37dceb7abbdeeb5bb7222",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "3b89870b-41de-4049-aff9-16e5118246df",
+        "message_time_utc": "2026-09-13T07:20:04.098000+00:00",
+        "request_id": "wfr_01a099a29c2b7ac7acb0d192b5935645",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "365d36ca-3c6b-4c57-845e-a4bf48566b02",
+        "message_time_utc": "2026-09-13T07:50:26.942000+00:00",
+        "request_id": "wfr_01a099bd69ba7e78b1071bd9633706a6",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "b19843f9-de28-4bbd-9fcb-67b63a8ca99a",
+        "message_time_utc": "2026-09-13T08:49:54.394000+00:00",
+        "request_id": "wfr_01a099f2283a7ebbadd277aecd46cfd0",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "9b5610e9-d6ac-48ae-a621-b701b7f93808",
+        "message_time_utc": "2026-09-13T10:27:29.447000+00:00",
+        "request_id": "wfr_01a09a46a9b0748ab9c65f10a307ce15",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "b1e7a392-a7ed-4e52-85a4-e8162193debe",
+        "message_time_utc": "2026-09-13T10:52:08.075000+00:00",
+        "request_id": "wfr_01a09a5ec9147eab8c319559af2878ca",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "dbef83eb-3dc8-4d4a-9fc2-db761fc33e5f",
+        "message_time_utc": "2026-09-13T11:08:32.928000+00:00",
+        "request_id": "wfr_01a09a72037b7be68c82a79086d62686",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "834bc89d-7506-4db9-affa-bdc71aaab8a8",
+        "message_time_utc": "2026-09-13T11:21:32.786000+00:00",
+        "request_id": "wfr_01a09a8043a1744a8dd919aa839538ce",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "8533c706-9063-4306-b9f5-7e8ddc439c93",
+        "message_time_utc": "2026-09-13T11:29:26.130000+00:00",
+        "request_id": "wfr_01a09a84a369763abce65c73ebdc894e",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "40827c9c-6edd-461c-8bcc-da2e404803fb",
+        "message_time_utc": "2026-09-13T11:48:57.789000+00:00",
+        "request_id": "wfr_01a09a9963767a1ab34428a0b312f9f9",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "1680ee98-fafe-436b-b68e-0881343b8ca5",
+        "message_time_utc": "2026-09-13T11:57:58.537000+00:00",
+        "request_id": "wfr_01a09aa1631d7419b2cf486117ba67db",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "99255b30-2e1d-413a-8fb9-0e76da00a2db",
+        "message_time_utc": "2026-09-13T12:00:18.813000+00:00",
+        "request_id": "wfr_01a09aa1f7ca71f78acd6448167e41c2",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "1926f8c2-8caf-4742-97eb-fad9d9adb915",
+        "message_time_utc": "2026-09-13T12:24:21.994000+00:00",
+        "request_id": "wfr_01a09ab79a9a71c28de23d318a288b25",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "9981b9d6-f1bc-4beb-bf0d-c5c7542f021b",
+        "message_time_utc": "2026-09-13T12:33:41.853000+00:00",
+        "request_id": "wfr_01a09ac002e37c6f959c7c75d4cf5399",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "563b3512-2f7d-4cfd-80cd-24c9d4a502f6",
+        "message_time_utc": "2026-09-13T12:45:50.233000+00:00",
+        "request_id": "wfr_01a09acd780a7467aa8ce7a42db7879a",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "4b08a876-289b-43bd-9879-ec8a09b0c6b9",
+        "message_time_utc": "2026-09-13T15:12:27.469000+00:00",
+        "request_id": "wfr_01a09b529d617729a29f45086cd9960a",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "ab062158-b408-4cb5-a1d6-1495d1023b41",
+        "message_time_utc": "2026-09-13T15:28:13.185000+00:00",
+        "request_id": "wfr_01a09b6221f77b11b5153b0a8e275e1a",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "38a695da-59bc-42ad-8198-899978e9d1ee",
+        "message_time_utc": "2026-09-13T15:36:39.459000+00:00",
+        "request_id": "wfr_01a09b69e22172dcb64271b7d40b9901",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "85c3a070-79c9-476c-ac84-a2e95c44e34b",
+        "message_time_utc": "2026-09-13T18:10:00.670000+00:00",
+        "request_id": "wfr_01a09bf5a8c97a4ca51ccd530a5442dd",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "c398402b-63dd-4d24-855a-99a0850db9c7",
+        "message_time_utc": "2026-09-13T18:11:04.067000+00:00",
+        "request_id": "wfr_01a09bf6c9377b5cba7f37789f4ef19a",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "93dd24c5-0451-4c43-9061-8b8b1025b585",
+        "message_time_utc": "2026-09-13T18:14:53.038000+00:00",
+        "request_id": "wfr_01a09bfa541077699a7b5c639290fbfe",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "14a5c9a2-36d1-40e0-9f2f-7db67874975c",
+        "message_time_utc": "2026-09-13T18:40:06.693000+00:00",
+        "request_id": "wfr_01a09c11299471c29a0b8fd8ebe56ad6",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "cf862efb-46d7-40f8-844f-726f9e78a780",
+        "message_time_utc": "2026-09-13T19:42:34.236000+00:00",
+        "request_id": "wfr_01a09c494251746e87ff93eda0dda6dc",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "f06c643d-c51e-4c5b-bbdc-4fd4dcfb266c",
+        "message_time_utc": "2026-09-14T11:43:59.385000+00:00",
+        "request_id": "wfr_01a09fbac9a57ea3af5108ac75be5bc7",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "577552cb-803e-4025-8698-95d0a8da6cf6",
+        "message_time_utc": "2026-09-14T15:22:23.648000+00:00",
+        "request_id": "wfr_01a0a08323a97064bef8ea8abf33f2e7",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "a7b085cd-8067-49ae-a8b6-1facb201ab80",
+        "message_time_utc": "2026-09-14T17:00:31.485000+00:00",
+        "request_id": "wfr_01a0a0dcbed876ab80b89b4117d4ffb6",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "2b1214e1-724b-4744-a8b0-9882edd1bff5",
+        "message_time_utc": "2026-09-14T18:42:08.856000+00:00",
+        "request_id": "wfr_01a0a13a0e0574ee985afd3c929ffd98",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "db4df0f0-8763-4144-92f2-0ada911841cb",
+        "message_time_utc": "2026-09-15T05:29:25.289000+00:00",
+        "request_id": "wfr_01a0a38a6aae7435894aad35eabcfc19",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "2ca4f4ef-dc90-42d6-abc0-0f131a492c3e",
+        "message_time_utc": "2026-09-15T05:33:45.546000+00:00",
+        "request_id": "wfr_01a0a38df6d272c3a58e12f36c5a1f67",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      },
+      {
+        "message_id": "573ce667-aa2e-421e-9ebd-143b578d65f4",
+        "message_time_utc": "2026-09-15T06:05:32.550000+00:00",
+        "request_id": "wfr_01a0a3abb1e97c9c931b52fe2f505a41",
+        "message_role": "user",
+        "message_status": "finished_successfully",
+        "model_label": null,
+        "provider_error_confirmed": false
+      }
+    ]
+  }
+}

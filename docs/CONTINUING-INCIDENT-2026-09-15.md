@@ -99,3 +99,7 @@ This continues the [new clean-install scope and parallel-session evidence](https
 New records retain the logged provider/model and leave per-request Full/Light attribution and reasoning effort unknown. The detailed `agent.log` begins only on 14 September at 18:18:42.598 UTC+3, so this corpus does not support a whole-window success percentage, a downtime total or quota-loss accounting. The internal provider mechanism and the causal relationship between the different client symptoms remain open for the requested joint investigation.
 
 Prepared with AI assistance from the owner's supplied logs and statement; selected public excerpts and an auditable event index accompany the derived counts.
+
+## Later follow-up on 15 September
+
+The owner has clarified the concurrent Lenovo setup: two Hermes Astra sessions and an Edge control on Pro Full, with this ChatGPT analysis in Yandex Browser on Pro Light. [The new follow-up](COMMUNITY-FOLLOWUP-2026-09-15.md) records that comparison, fresh independent Codex reports, the three-versus-five retry assessment, and the limits of the supplied ChatGPT share. The [minimized share/observability metadata](../evidence/work-mode-observability-20260915.json) preserves source hashes and correlation IDs. These observations do not change the uploaded-log attempt counters above.
