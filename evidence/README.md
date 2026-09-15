@@ -1,6 +1,12 @@
 # Evidence and provenance
 
-## New corpus — 15 September 2026
+## Expanded corpus — 15 September 2026, 10:16:49 UTC+3
+
+[New extension ledger](log-extension-20260915T071649Z.json) contains **60 additional failed Codex attempts**, eight GUI error turns, nine exhaustion records, selected diagnostics, hashes and exact byte-prefix checks against the old files. [Expanded report](../docs/LOG-EXTENSION-2026-09-15-1016.md).
+
+Current cumulative attempts: **178** from the original Git baseline. New rolling 48-hour count: **157**. The preceding ledger remains unchanged: 118 + 60 = 178. Three old overload attempts left the window: 100 + 60 − 3 = 157. Raw logs and private prompts/tool output are not published.
+
+## Earlier corpus — 15 September 2026, 08:32:53 UTC+3
 
 [log-audit-20260915.json](log-audit-20260915.json) publishes the 118-entry Codex failed-attempt ledger, a 1,013-entry diagnostic index, selected exact message excerpts, the five source-file hashes and the two observation windows. [Current report](../docs/CONTINUING-INCIDENT-2026-09-15.md).
 

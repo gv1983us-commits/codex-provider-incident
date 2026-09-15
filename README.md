@@ -11,7 +11,7 @@ We refer to the company as **the provider** throughout the investigation. Produc
 > [!IMPORTANT]
 > **15 September — incident remains OPEN.** The owner still cannot work normally and has found no working fix on their side. Hermes maintainers and the provider are asked to investigate and repair the failing route together.
 >
-> **100 failed Codex attempts in the last 48 hours; 118 after the last Git commit.** Three recent GUI turns end in overload errors. [New audited report](docs/CONTINUING-INCIDENT-2026-09-15.md) · [Full attempt ledger, diagnostic index and source hashes](evidence/log-audit-20260915.json). The final series is unresolved at the log boundary.
+> **Updated through 15 September 10:16:49 UTC+3: 157 failed Codex attempts in the rolling 48 hours; 178 since the original 10 September Git baseline.** Added logs contain 60 Astra failures and eight GUI error turns, including errors in two sessions 681 ms apart and failure of a fresh session. [Expanded report](docs/LOG-EXTENSION-2026-09-15-1016.md) · [New ledger and source hashes](evidence/log-extension-20260915T071649Z.json).
 
 The earlier resolution claim was followed by [recurrence and reopening on 12 September](https://github.com/gv1983us-commits/codex-provider-incident/issues/1#issuecomment-5643482050). Individual successful runs have not established a durable fix.
 
@@ -96,8 +96,9 @@ The [invitation and repository handoff](https://github.com/NousResearch/hermes-a
 
 | Material | Purpose |
 | --- | --- |
-| [Continuing incident — 15 September](docs/CONTINUING-INCIDENT-2026-09-15.md) | Current OPEN status, 48-hour / after-Git counts, exact final failures and joint repair request |
-| [Audited logs — 15 September](evidence/log-audit-20260915.json) | All 118 Codex attempts, 1,013 diagnostic index entries, selected excerpts and source hashes |
+| [Expanded logs — 15 September, 10:16 UTC+3](docs/LOG-EXTENSION-2026-09-15-1016.md) | Current 178/157 counts, 60 added Astra failures, near-simultaneous errors and fresh-session failure |
+| [Continuing incident — 15 September, earlier 08:32 snapshot](docs/CONTINUING-INCIDENT-2026-09-15.md) | Current OPEN status, 48-hour / after-Git counts, exact final failures and joint repair request |
+| [Audited logs — 15 September, earlier 08:32 snapshot](evidence/log-audit-20260915.json) | All 118 Codex attempts, 1,013 diagnostic index entries, selected excerpts and source hashes |
 | [Fresh community follow-up](docs/COMMUNITY-FOLLOWUP-2026-09-10.md) | 10 Sep evening: shrinking work intervals, related user reports, temporary recovery and conflicting workarounds |
 | [Latest Light overload](docs/LIGHT-OVERLOAD-2026-09-10.md) | Sol `overloaded` on Light after reported conservation; failures now span both accounts |
 | [Conservation result and stale banner](docs/CONSERVATION-2026-09-10.md) | Sol completion reported; old Astra receipt redisplayed, no new failure counted |

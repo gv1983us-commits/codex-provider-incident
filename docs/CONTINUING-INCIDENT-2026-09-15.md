@@ -1,5 +1,7 @@
 # Continuing Codex / Hermes incident — 15 September 2026
 
+> **Later uploads extend this snapshot to 10:16:49 UTC+3.** The [expanded report](LOG-EXTENSION-2026-09-15-1016.md) adds 60 Astra failed attempts and eight GUI error turns; current cumulative/rolling totals are 178/157. This page retains the earlier 08:32:53 snapshot. Its then-pending series is now confirmed exhausted.
+
 [Home](../README.md) · [Русская сводка](README.ru.md) · [Tracking issue #1](https://github.com/gv1983us-commits/codex-provider-incident/issues/1) · [Audited data](../evidence/log-audit-20260915.json)
 
 **Status: OPEN. Normal work remains disrupted; the owner has found no working fix on their side and requests joint investigation and repair by Hermes maintainers and the provider.**
