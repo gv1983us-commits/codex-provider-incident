@@ -1,6 +1,16 @@
 # Recovery status and upstream action
 
-## 15 September — no working owner-side fix found
+## Current status — 16 September 2026
+
+**16 September 2026 — OPEN / work remains disrupted.** The new logs through **09:06:01.535 UTC+3** add **99 failed Codex attempts**, all Astra, and **nine GUI error turns**. Totals from the fixed original Git baseline are **277 failed attempts / 22 GUI error turns**; the current rolling 48 hours contain **255 / 20** respectively.
+
+Both active sessions exhausted **five-attempt** chains around **09:04 UTC+3**, ending in GUI errors **1.532 s apart**. A pair of earlier errors was **120 ms apart**. Five attempts are already observed in these logs; they did not prevent these final failures.
+
+The common **08:00–09:06 UTC+3** window contains **19 failed attempts on 15 September and 45 on 16 September**. This is a recurrence in a similar morning period, with changed retry budget and unknown successful-call denominator; an exact daily schedule is unproven. New evidence also includes **HTTP 503 / upstream connection refused**, a **120 s no-first-event timeout**, and **three pending-tool endings marked complete by GUI**.
+
+[Full 16 September report](https://github.com/gv1983us-commits/codex-provider-incident/blob/main/docs/MORNING-RECURRENCE-2026-09-16.md) · [99-entry ledger and source hashes](https://github.com/gv1983us-commits/codex-provider-incident/blob/main/evidence/log-extension-20260916T060601Z.json). Joint investigation and repair by Hermes maintainers and the provider remain requested.
+
+## Previous snapshot — 15 September 2026
 
 **15 September 2026 — OPEN / work remains disrupted.** The owner still cannot work normally and has found no working fix on their side. **Joint investigation and repair are requested from Hermes maintainers and the provider.**
 

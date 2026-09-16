@@ -1,0 +1,4353 @@
+{
+  "schema_version": 1,
+  "status": "OPEN",
+  "report": "https://github.com/gv1983us-commits/codex-provider-incident/blob/main/docs/MORNING-RECURRENCE-2026-09-16.md",
+  "windows": {
+    "fixed_git_baseline_exclusive_utc": "2026-09-10T16:56:23.000Z",
+    "baseline_commit": "4a39826129fd02085ada5eb2f33d727022c0b3bf",
+    "previous_log_end_exclusive_utc": "2026-09-15T07:16:49.139Z",
+    "current_log_end_inclusive_utc": "2026-09-16T06:06:01.535Z",
+    "added_interval_seconds": 82152.396,
+    "rolling_48h_start_inclusive_utc": "2026-09-14T06:06:01.535Z",
+    "previous_publication_commit": "9a768a495b5b6d6ace94913455eda0a539a3b64d",
+    "previous_publication_time_utc": "2026-09-15T07:42:20.000Z",
+    "new_attempts_after_previous_publication_time": 78
+  },
+  "methodology": [
+    "Naive Python log times use UTC+3, as in earlier audits; desktop timestamps explicitly use Z.",
+    "Count agent.conversation_loop API call failed (attempt n/m), provider=openai-codex; retries count separately.",
+    "Exact timestamp, level, session, logger and message deduplicate errors/agent mirrors.",
+    "Desktop buffered echoes, retry scheduling, exhaustion, GUI status and low-level diagnostics are not extra attempts.",
+    "Current source files are exact byte extensions; new attempts are the set difference from the previous audit.",
+    "No new agent log was supplied. GUI complete is not an API success count; no failure percentage or downtime estimate is calculated.",
+    "Three pending-tool endings are explicitly correlated with GUI complete; the redirect limit 5 is a separate counter from API attempt budget 5.",
+    "Five non-Codex attempts from earlier logs are excluded; no new non-Codex main-loop failed attempt appears."
+  ],
+  "source_provenance": [
+    {
+      "file": "errors(2).log",
+      "bytes": 2000810,
+      "physical_lines": 10701,
+      "sha256": "47202885a28b298906fdf83e1037f02c635c4dba31b8f28dcd93489bc076e63a",
+      "first_timestamp_utc": "2026-09-08T05:56:07.080Z",
+      "last_timestamp_utc": "2026-09-16T06:06:01.535Z",
+      "previous_file": "errors(1).log",
+      "previous_bytes": 1720328,
+      "previous_lines": 9515,
+      "previous_sha256": "fdaa0bd072c38a714dccf4b42f11713081c4755fb706967cedc5b4c98e359a9a",
+      "exact_byte_extension": true,
+      "added_bytes": 280482,
+      "added_lines": 1186
+    },
+    {
+      "file": "desktop(2).log",
+      "bytes": 373527,
+      "physical_lines": 3554,
+      "sha256": "49aa440749b6625f01c2c52f762bac52a9257fb0858e2c5b012b9f981b093014",
+      "first_timestamp_utc": "2026-09-08T05:55:38.975Z",
+      "last_timestamp_utc": "2026-09-16T06:04:59.063Z",
+      "previous_file": "desktop(1).log",
+      "previous_bytes": 303461,
+      "previous_lines": 2875,
+      "previous_sha256": "22ff19e9a5742eb09b3050a802e4864d1b951df172fbaecb49ca25c41fa1631b",
+      "exact_byte_extension": true,
+      "added_bytes": 70066,
+      "added_lines": 679
+    },
+    {
+      "file": "gui(2).log",
+      "bytes": 531656,
+      "physical_lines": 2816,
+      "sha256": "ba5bbdcc2b781c80f21bb5d3cedba5fdfd67e7f17d1fea522b6a6c796ce681a6",
+      "first_timestamp_utc": "2026-09-08T05:55:54.836Z",
+      "last_timestamp_utc": "2026-09-16T06:04:08.447Z",
+      "previous_file": "gui(1).log",
+      "previous_bytes": 369558,
+      "previous_lines": 1904,
+      "previous_sha256": "33c4f1378ce122448fd161796745998d7c89c13e43c98b80d0586062d7fff904",
+      "exact_byte_extension": true,
+      "added_bytes": 162098,
+      "added_lines": 912
+    }
+  ],
+  "retained_older_sources": [
+    {
+      "file": "agent(1).log",
+      "last_timestamp_utc": "2026-09-15T07:16:49.139Z",
+      "sha256": "8e302e4d18af5ac3d4ef8d5ff10bad03aabdb561ec44dd80d613feb216cfdc71"
+    },
+    {
+      "file": "gateway(1).log",
+      "last_timestamp_utc": "2026-09-15T06:57:48.903Z",
+      "sha256": "fd5c256de8ce6db7fdc0287872f334f8e1b29200dc32f7ca136360cc75c37818"
+    }
+  ],
+  "counts": {
+    "failed_attempts": {
+      "previous": 178,
+      "added": 99,
+      "cumulative": 277,
+      "rolling_48h": 255
+    },
+    "categories": {
+      "overloaded": {
+        "previous_cumulative": 130,
+        "added": 72,
+        "cumulative": 202,
+        "rolling_48h": 195
+      },
+      "unknown + request ID": {
+        "previous_cumulative": 32,
+        "added": 22,
+        "cumulative": 54,
+        "rolling_48h": 51
+      },
+      "connection / timeout": {
+        "previous_cumulative": 16,
+        "added": 2,
+        "cumulative": 18,
+        "rolling_48h": 6
+      },
+      "TTFB timeout": {
+        "previous_cumulative": 0,
+        "added": 1,
+        "cumulative": 1,
+        "rolling_48h": 1
+      },
+      "HTTP 503 upstream connection failure": {
+        "previous_cumulative": 0,
+        "added": 2,
+        "cumulative": 2,
+        "rolling_48h": 2
+      }
+    },
+    "gui_codex_error_turns": {
+      "previous": 13,
+      "added": 9,
+      "cumulative": 22,
+      "rolling_48h": 20
+    },
+    "added_exhaustion_records": 9,
+    "added_attempt_budgets": {
+      "3": 47,
+      "5": 52
+    },
+    "added_sessions": {
+      "20260913_181010_f947d8": 59,
+      "20260914_183547_b2c101": 40
+    },
+    "rolling_models": {
+      "gpt-5.6-sol-900k": 55,
+      "gpt-6-astra-900k": 200
+    },
+    "added_all_gui_turn_end_statuses": {
+      "complete": 165,
+      "error": 9,
+      "interrupted": 2
+    },
+    "rolling_reconciliation": "157 + 99 - 1 = 255",
+    "record_leaving_rolling_window": {
+      "timestamp_utc": "2026-09-13T19:23:01.438Z",
+      "timestamp_utc_plus_3": "2026-09-13T22:23:01.438+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(1).log",
+          "line": 5551,
+          "lastLine": 5551
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "message": "API call failed (attempt 1/3) error_type=APIError thread=Thread-12357 (run):16724 provider=openai-codex base_url=https://chatgpt.com/backend-api/codex model=gpt-6-astra-900k summary=An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID fd1371d8-cc9b-499e-a3b7-e5bddf1d45ea in your message."
+    }
+  },
+  "morning_comparison": [
+    {
+      "date_utc_plus_3": "2026-09-14",
+      "common_window_local": "08:00:00.000–09:06:01.535",
+      "common_window_failed_attempts": 0,
+      "common_window_categories": {},
+      "first_overload_or_processing_after_08": {
+        "timestamp_utc": "2026-09-14T06:20:10.116Z",
+        "timestamp_utc_plus_3": "2026-09-14T09:20:10.116+03:00",
+        "logger": "agent.conversation_loop",
+        "level": "WARNING",
+        "sources": [
+          {
+            "file": "errors(2).log",
+            "line": 6233,
+            "lastLine": 6233
+          }
+        ],
+        "session_id": "20260913_191933_21ce86",
+        "message": "API call failed (attempt 1/3) error_type=APIError thread=Thread-1780 (run):2328 provider=openai-codex base_url=https://chatgpt.com/backend-api/codex model=gpt-5.6-sol-900k summary=Our servers are currently overloaded. Please try again later."
+      },
+      "first_overload_after_08": {
+        "timestamp_utc": "2026-09-14T06:20:10.116Z",
+        "timestamp_utc_plus_3": "2026-09-14T09:20:10.116+03:00",
+        "logger": "agent.conversation_loop",
+        "level": "WARNING",
+        "sources": [
+          {
+            "file": "errors(2).log",
+            "line": 6233,
+            "lastLine": 6233
+          }
+        ],
+        "session_id": "20260913_191933_21ce86",
+        "message": "API call failed (attempt 1/3) error_type=APIError thread=Thread-1780 (run):2328 provider=openai-codex base_url=https://chatgpt.com/backend-api/codex model=gpt-5.6-sol-900k summary=Our servers are currently overloaded. Please try again later."
+      },
+      "whole_available_day_failed_attempts": 85,
+      "hourly_failed_attempt_counts": {
+        "09": 5,
+        "10": 6,
+        "11": 2,
+        "12": 6,
+        "13": 4,
+        "14": 15,
+        "15": 14,
+        "16": 14,
+        "17": 10,
+        "18": 5,
+        "19": 4
+      }
+    },
+    {
+      "date_utc_plus_3": "2026-09-15",
+      "common_window_local": "08:00:00.000–09:06:01.535",
+      "common_window_failed_attempts": 19,
+      "common_window_categories": {
+        "unknown + request ID": 8,
+        "overloaded": 11
+      },
+      "first_overload_or_processing_after_08": {
+        "timestamp_utc": "2026-09-15T05:14:52.281Z",
+        "timestamp_utc_plus_3": "2026-09-15T08:14:52.281+03:00",
+        "logger": "agent.conversation_loop",
+        "level": "WARNING",
+        "sources": [
+          {
+            "file": "errors(2).log",
+            "line": 9229,
+            "lastLine": 9229
+          },
+          {
+            "file": "agent(1).log",
+            "line": 11331,
+            "lastLine": 11331
+          }
+        ],
+        "session_id": "20260914_183547_b2c101",
+        "message": "API call failed (attempt 1/3) error_type=APIError thread=Thread-24118 (run):13220 provider=openai-codex base_url=https://chatgpt.com/backend-api/codex model=gpt-6-astra-900k summary=An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID 32b606eb-dd97-41de-9f3b-20ef5616f83e in your message."
+      },
+      "first_overload_after_08": {
+        "timestamp_utc": "2026-09-15T05:17:07.006Z",
+        "timestamp_utc_plus_3": "2026-09-15T08:17:07.006+03:00",
+        "logger": "agent.conversation_loop",
+        "level": "WARNING",
+        "sources": [
+          {
+            "file": "errors(2).log",
+            "line": 9234,
+            "lastLine": 9234
+          },
+          {
+            "file": "agent(1).log",
+            "line": 11365,
+            "lastLine": 11365
+          }
+        ],
+        "session_id": "20260914_183547_b2c101",
+        "message": "API call failed (attempt 2/3) error_type=APIError thread=Thread-24118 (run):13220 provider=openai-codex base_url=https://chatgpt.com/backend-api/codex model=gpt-6-astra-900k summary=Our servers are currently overloaded. Please try again later."
+      },
+      "whole_available_day_failed_attempts": 121,
+      "hourly_failed_attempt_counts": {
+        "08": 14,
+        "09": 41,
+        "10": 46,
+        "12": 9,
+        "13": 8,
+        "22": 3
+      }
+    },
+    {
+      "date_utc_plus_3": "2026-09-16",
+      "common_window_local": "08:00:00.000–09:06:01.535",
+      "common_window_failed_attempts": 45,
+      "common_window_categories": {
+        "HTTP 503 upstream connection failure": 1,
+        "unknown + request ID": 12,
+        "overloaded": 32
+      },
+      "first_overload_or_processing_after_08": {
+        "timestamp_utc": "2026-09-16T05:32:13.533Z",
+        "timestamp_utc_plus_3": "2026-09-16T08:32:13.533+03:00",
+        "logger": "agent.conversation_loop",
+        "level": "WARNING",
+        "sources": [
+          {
+            "file": "errors(2).log",
+            "line": 10604,
+            "lastLine": 10604
+          }
+        ],
+        "session_id": "20260913_181010_f947d8",
+        "message": "API call failed (attempt 1/5) error_type=APIError thread=Thread-50512 (run):15180 provider=openai-codex base_url=https://chatgpt.com/backend-api/codex model=gpt-6-astra-900k summary=An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID 90937e59-baa4-43e6-8c9d-ccd061d2e7a0 in your message."
+      },
+      "first_overload_after_08": {
+        "timestamp_utc": "2026-09-16T05:33:09.159Z",
+        "timestamp_utc_plus_3": "2026-09-16T08:33:09.159+03:00",
+        "logger": "agent.conversation_loop",
+        "level": "WARNING",
+        "sources": [
+          {
+            "file": "errors(2).log",
+            "line": 10606,
+            "lastLine": 10606
+          }
+        ],
+        "session_id": "20260913_181010_f947d8",
+        "message": "API call failed (attempt 1/5) error_type=APIError thread=Thread-50512 (run):15180 provider=openai-codex base_url=https://chatgpt.com/backend-api/codex model=gpt-6-astra-900k summary=Our servers are currently overloaded. Please try again later."
+      },
+      "whole_available_day_failed_attempts": 49,
+      "hourly_failed_attempt_counts": {
+        "02": 3,
+        "07": 1,
+        "08": 24,
+        "09": 21
+      }
+    }
+  ],
+  "first_observed_five_attempt_budget": {
+    "timestamp_utc": "2026-09-15T19:34:08.487Z",
+    "timestamp_utc_plus_3": "2026-09-15T22:34:08.487+03:00",
+    "logger": "agent.conversation_loop",
+    "level": "WARNING",
+    "sources": [
+      {
+        "file": "errors(2).log",
+        "line": 10234,
+        "lastLine": 10234
+      }
+    ],
+    "session_id": "20260913_181010_f947d8",
+    "message": "API call failed (attempt 1/5) error_type=InternalServerError thread=Thread-43767 (run):16988 provider=openai-codex base_url=https://chatgpt.com/backend-api/codex model=gpt-6-astra-900k summary=HTTP 503: upstream connect error or disconnect/reset before headers. retried and the latest reset reason: connection timeout"
+  },
+  "parallel_errors_120ms_apart": [
+    {
+      "timestamp_utc": "2026-09-16T05:57:53.576Z",
+      "timestamp_utc_plus_3": "2026-09-16T08:57:53.576+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10654,
+          "lastLine": 10654
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "message": "API call failed (attempt 1/5) error_type=APIError thread=Thread-50958 (run):3460 provider=openai-codex base_url=https://chatgpt.com/backend-api/codex model=gpt-6-astra-900k summary=Our servers are currently overloaded. Please try again later."
+    },
+    {
+      "timestamp_utc": "2026-09-16T05:57:53.696Z",
+      "timestamp_utc_plus_3": "2026-09-16T08:57:53.696+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10656,
+          "lastLine": 10656
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "message": "API call failed (attempt 1/5) error_type=APIError thread=Thread-50512 (run):15180 provider=openai-codex base_url=https://chatgpt.com/backend-api/codex model=gpt-6-astra-900k summary=An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID 1e08862f-34f9-4736-b107-9c2f337ba316 in your message."
+    }
+  ],
+  "five_attempt_exhaustion_chains": [
+    {
+      "session_id": "20260914_183547_b2c101",
+      "attempt_source_lines": [
+        10676,
+        10680,
+        10684,
+        10688,
+        10690
+      ],
+      "first_failed_attempt_utc": "2026-09-16T06:03:09.659Z",
+      "fifth_failed_attempt_utc": "2026-09-16T06:04:06.242Z",
+      "exhaustion": {
+        "timestamp_utc": "2026-09-16T06:04:06.325Z",
+        "timestamp_utc_plus_3": "2026-09-16T09:04:06.325+03:00",
+        "logger": "agent.conversation_loop",
+        "level": "ERROR",
+        "sources": [
+          {
+            "file": "errors(2).log",
+            "line": 10691,
+            "lastLine": 10691
+          }
+        ],
+        "session_id": "20260914_183547_b2c101",
+        "message": "API call failed after 5 retries. Our servers are currently overloaded. Please try again later. | provider=openai-codex model=gpt-6-astra-900k msgs=28 tokens=~34,882"
+      },
+      "gui_end": {
+        "timestamp_utc": "2026-09-16T06:04:06.702Z",
+        "timestamp_utc_plus_3": "2026-09-16T09:04:06.702+03:00",
+        "logger": "tui_gateway.server",
+        "level": "INFO",
+        "sources": [
+          {
+            "file": "gui(2).log",
+            "line": 2814,
+            "lastLine": 2814
+          }
+        ],
+        "session_id": "20260914_183547_b2c101",
+        "message": "tui turn finished: ui_session=6b73d85e session_key=202609...c101 agent_session_id=20260914_183547_b2c101 status=error error_retained=True duration=427.0s failure_reason=overloaded cause='Our servers are currently overloaded. Please try again later.'"
+      }
+    },
+    {
+      "session_id": "20260913_181010_f947d8",
+      "attempt_source_lines": [
+        10674,
+        10678,
+        10682,
+        10686,
+        10692
+      ],
+      "first_failed_attempt_utc": "2026-09-16T06:03:07.531Z",
+      "fifth_failed_attempt_utc": "2026-09-16T06:04:07.585Z",
+      "exhaustion": {
+        "timestamp_utc": "2026-09-16T06:04:07.704Z",
+        "timestamp_utc_plus_3": "2026-09-16T09:04:07.704+03:00",
+        "logger": "agent.conversation_loop",
+        "level": "ERROR",
+        "sources": [
+          {
+            "file": "errors(2).log",
+            "line": 10693,
+            "lastLine": 10693
+          }
+        ],
+        "session_id": "20260913_181010_f947d8",
+        "message": "API call failed after 5 retries. Our servers are currently overloaded. Please try again later. | provider=openai-codex model=gpt-6-astra-900k msgs=134 tokens=~63,014"
+      },
+      "gui_end": {
+        "timestamp_utc": "2026-09-16T06:04:08.234Z",
+        "timestamp_utc_plus_3": "2026-09-16T09:04:08.234+03:00",
+        "logger": "tui_gateway.server",
+        "level": "INFO",
+        "sources": [
+          {
+            "file": "gui(2).log",
+            "line": 2815,
+            "lastLine": 2815
+          }
+        ],
+        "session_id": "20260913_181010_f947d8",
+        "message": "tui turn finished: ui_session=bb7470ad session_key=202609...47d8 agent_session_id=20260913_181010_f947d8 status=error error_retained=True duration=66.0s failure_reason=overloaded cause='Our servers are currently overloaded. Please try again later.'"
+      }
+    }
+  ],
+  "last_attempt": {
+    "timestamp_utc": "2026-09-16T06:06:01.534Z",
+    "timestamp_utc_plus_3": "2026-09-16T09:06:01.534+03:00",
+    "logger": "agent.conversation_loop",
+    "level": "WARNING",
+    "sources": [
+      {
+        "file": "errors(2).log",
+        "line": 10700,
+        "lastLine": 10700
+      }
+    ],
+    "session_id": "20260913_181010_f947d8",
+    "id": "SEP16-API-099",
+    "provider": "openai-codex",
+    "model": "gpt-6-astra-900k",
+    "thread": "Thread-51071 (run):12228",
+    "attempt": 4,
+    "attempt_budget": 5,
+    "category": "overloaded",
+    "error_type": "APIError",
+    "reason": "Our servers are currently overloaded. Please try again later.",
+    "request_id": null
+  },
+  "last_attempt_outcome": "Attempt 4/5 failed; another retry was scheduled at the log boundary. The fifth outcome is not in the supplied files.",
+  "failed_attempts": [
+    {
+      "timestamp_utc": "2026-09-15T07:23:29.402Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:23:29.402+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9516,
+          "lastLine": 9516
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-001",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-26532 (run):18964",
+      "attempt": 1,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:23:33.602Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:23:33.602+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9518,
+          "lastLine": 9518
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-002",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-26532 (run):18964",
+      "attempt": 2,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:25:44.889Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:25:44.889+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9526,
+          "lastLine": 9526
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-003",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-26528 (run):17500",
+      "attempt": 1,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:29:09.905Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:29:09.905+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9532,
+          "lastLine": 9532
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-004",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-26532 (run):18964",
+      "attempt": 1,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:29:22.057Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:29:22.057+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9534,
+          "lastLine": 9534
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-005",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-26528 (run):17500",
+      "attempt": 1,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:30:24.161Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:30:24.161+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9538,
+          "lastLine": 9538
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-006",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-26532 (run):18964",
+      "attempt": 1,
+      "attempt_budget": 3,
+      "category": "unknown + request ID",
+      "error_type": "APIError",
+      "reason": "An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID 297ace85-c2ea-4a2a-954a-343c6fbade74 in your message.",
+      "request_id": "297ace85-c2ea-4a2a-954a-343c6fbade74"
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:30:29.046Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:30:29.046+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9540,
+          "lastLine": 9540
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-007",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-26532 (run):18964",
+      "attempt": 2,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:30:36.493Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:30:36.493+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9542,
+          "lastLine": 9542
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-008",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-26532 (run):18964",
+      "attempt": 3,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:30:40.729Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:30:40.729+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9558,
+          "lastLine": 9558
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-009",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-26785 (run):20256",
+      "attempt": 1,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:30:46.480Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:30:46.480+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9560,
+          "lastLine": 9560
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-010",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-26785 (run):20256",
+      "attempt": 2,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:31:52.346Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:31:52.346+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9565,
+          "lastLine": 9565
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-011",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-26785 (run):20256",
+      "attempt": 1,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:31:57.275Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:31:57.275+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9567,
+          "lastLine": 9567
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-012",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-26785 (run):20256",
+      "attempt": 2,
+      "attempt_budget": 3,
+      "category": "unknown + request ID",
+      "error_type": "APIError",
+      "reason": "An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID 73f459e7-60b9-4490-aad8-9778d87a794a in your message.",
+      "request_id": "73f459e7-60b9-4490-aad8-9778d87a794a"
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:32:37.879Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:32:37.879+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9572,
+          "lastLine": 9572
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-013",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-26785 (run):20256",
+      "attempt": 1,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:33:16.375Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:33:16.375+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9574,
+          "lastLine": 9574
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-014",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-26785 (run):20256",
+      "attempt": 1,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:33:39.737Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:33:39.737+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9576,
+          "lastLine": 9576
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-015",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-26785 (run):20256",
+      "attempt": 1,
+      "attempt_budget": 3,
+      "category": "unknown + request ID",
+      "error_type": "APIError",
+      "reason": "An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID 24b88dae-c5a2-4893-a1aa-b4f995ced5a9 in your message.",
+      "request_id": "24b88dae-c5a2-4893-a1aa-b4f995ced5a9"
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:34:28.037Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:34:28.037+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9579,
+          "lastLine": 9579
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-016",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-26884 (run):13268",
+      "attempt": 1,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:34:33.970Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:34:33.970+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9581,
+          "lastLine": 9581
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-017",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-26884 (run):13268",
+      "attempt": 2,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:35:38.277Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:35:38.277+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9583,
+          "lastLine": 9583
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-018",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-26884 (run):13268",
+      "attempt": 1,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:35:46.664Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:35:46.664+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9585,
+          "lastLine": 9585
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-019",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-26884 (run):13268",
+      "attempt": 2,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:35:55.053Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:35:55.053+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9588,
+          "lastLine": 9588
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-020",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-26884 (run):13268",
+      "attempt": 3,
+      "attempt_budget": 3,
+      "category": "unknown + request ID",
+      "error_type": "APIError",
+      "reason": "An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID dc0e1453-be44-4d1b-9aa3-cc4647c67765 in your message.",
+      "request_id": "dc0e1453-be44-4d1b-9aa3-cc4647c67765"
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:40:50.885Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:40:50.885+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9591,
+          "lastLine": 9591
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-021",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-26528 (run):17500",
+      "attempt": 1,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:44:35.255Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:44:35.255+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9594,
+          "lastLine": 9594
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-022",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-26528 (run):17500",
+      "attempt": 1,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:44:40.366Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:44:40.366+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9596,
+          "lastLine": 9596
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-023",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-27158 (run):19672",
+      "attempt": 1,
+      "attempt_budget": 3,
+      "category": "unknown + request ID",
+      "error_type": "APIError",
+      "reason": "An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID 5db5708d-8412-4c4f-92d8-2a6090b18c13 in your message.",
+      "request_id": "5db5708d-8412-4c4f-92d8-2a6090b18c13"
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:44:51.552Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:44:51.552+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9598,
+          "lastLine": 9598
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-024",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-27158 (run):19672",
+      "attempt": 2,
+      "attempt_budget": 3,
+      "category": "unknown + request ID",
+      "error_type": "APIError",
+      "reason": "An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID b7d295a3-54e5-4274-ac52-0f388676a916 in your message.",
+      "request_id": "b7d295a3-54e5-4274-ac52-0f388676a916"
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:44:58.328Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:44:58.328+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9600,
+          "lastLine": 9600
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-025",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-27158 (run):19672",
+      "attempt": 3,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:48:43.885Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:48:43.885+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9602,
+          "lastLine": 9602
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-026",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-26528 (run):17500",
+      "attempt": 1,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:49:27.240Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:49:27.240+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9619,
+          "lastLine": 9619
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-027",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-27278 (run):20164",
+      "attempt": 1,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:49:51.692Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:49:51.692+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9621,
+          "lastLine": 9621
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-028",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-27278 (run):20164",
+      "attempt": 1,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:49:59.031Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:49:59.031+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9623,
+          "lastLine": 9623
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-029",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-27278 (run):20164",
+      "attempt": 2,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:50:07.190Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:50:07.190+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9625,
+          "lastLine": 9625
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-030",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-27278 (run):20164",
+      "attempt": 3,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T09:35:06.636Z",
+      "timestamp_utc_plus_3": "2026-09-15T12:35:06.636+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9633,
+          "lastLine": 9633
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-031",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-27681 (run):14940",
+      "attempt": 1,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T09:35:16.725Z",
+      "timestamp_utc_plus_3": "2026-09-15T12:35:16.725+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9635,
+          "lastLine": 9635
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-032",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-27676 (run):3444",
+      "attempt": 1,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T09:35:21.701Z",
+      "timestamp_utc_plus_3": "2026-09-15T12:35:21.701+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9637,
+          "lastLine": 9637
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-033",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-27676 (run):3444",
+      "attempt": 2,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T09:40:43.159Z",
+      "timestamp_utc_plus_3": "2026-09-15T12:40:43.159+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9644,
+          "lastLine": 9644
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-034",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-27839 (run):19712",
+      "attempt": 1,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T09:41:44.123Z",
+      "timestamp_utc_plus_3": "2026-09-15T12:41:44.123+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9647,
+          "lastLine": 9647
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-035",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-27930 (run):19224",
+      "attempt": 1,
+      "attempt_budget": 3,
+      "category": "unknown + request ID",
+      "error_type": "APIError",
+      "reason": "An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID aabe4f22-dd6b-40a3-8d58-478ca291db7b in your message.",
+      "request_id": "aabe4f22-dd6b-40a3-8d58-478ca291db7b"
+    },
+    {
+      "timestamp_utc": "2026-09-15T09:41:50.340Z",
+      "timestamp_utc_plus_3": "2026-09-15T12:41:50.340+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9649,
+          "lastLine": 9649
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-036",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-27930 (run):19224",
+      "attempt": 2,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T09:41:58.099Z",
+      "timestamp_utc_plus_3": "2026-09-15T12:41:58.099+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9651,
+          "lastLine": 9651
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-037",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-27930 (run):19224",
+      "attempt": 3,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T09:48:43.333Z",
+      "timestamp_utc_plus_3": "2026-09-15T12:48:43.333+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9654,
+          "lastLine": 9654
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-038",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-27977 (run):9976",
+      "attempt": 1,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T09:48:54.494Z",
+      "timestamp_utc_plus_3": "2026-09-15T12:48:54.494+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9656,
+          "lastLine": 9656
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-039",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-27977 (run):9976",
+      "attempt": 2,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T10:10:13.924Z",
+      "timestamp_utc_plus_3": "2026-09-15T13:10:13.924+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9676,
+          "lastLine": 9676
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-040",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-28495 (run):16428",
+      "attempt": 1,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T10:10:20.390Z",
+      "timestamp_utc_plus_3": "2026-09-15T13:10:20.390+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9678,
+          "lastLine": 9678
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-041",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-28495 (run):16428",
+      "attempt": 2,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T10:10:35.162Z",
+      "timestamp_utc_plus_3": "2026-09-15T13:10:35.162+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9680,
+          "lastLine": 9680
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-042",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-28495 (run):16428",
+      "attempt": 3,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T10:11:21.321Z",
+      "timestamp_utc_plus_3": "2026-09-15T13:11:21.321+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9683,
+          "lastLine": 9683
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-043",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-28491 (run):19148",
+      "attempt": 1,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T10:15:15.401Z",
+      "timestamp_utc_plus_3": "2026-09-15T13:15:15.401+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9687,
+          "lastLine": 9687
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-044",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-28491 (run):19148",
+      "attempt": 1,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T10:22:12.441Z",
+      "timestamp_utc_plus_3": "2026-09-15T13:22:12.441+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9690,
+          "lastLine": 9690
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-045",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-28761 (run):18272",
+      "attempt": 1,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T10:22:18.084Z",
+      "timestamp_utc_plus_3": "2026-09-15T13:22:18.084+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9692,
+          "lastLine": 9692
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-046",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-28761 (run):18272",
+      "attempt": 2,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T10:22:26.338Z",
+      "timestamp_utc_plus_3": "2026-09-15T13:22:26.338+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9694,
+          "lastLine": 9694
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-047",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-28761 (run):18272",
+      "attempt": 3,
+      "attempt_budget": 3,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T19:34:08.487Z",
+      "timestamp_utc_plus_3": "2026-09-15T22:34:08.487+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10234,
+          "lastLine": 10234
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-048",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-43767 (run):16988",
+      "attempt": 1,
+      "attempt_budget": 5,
+      "category": "HTTP 503 upstream connection failure",
+      "error_type": "InternalServerError",
+      "reason": "HTTP 503: upstream connect error or disconnect/reset before headers. retried and the latest reset reason: connection timeout",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T19:52:45.502Z",
+      "timestamp_utc_plus_3": "2026-09-15T22:52:45.502+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10247,
+          "lastLine": 10247
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-049",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-44151 (run):9372",
+      "attempt": 1,
+      "attempt_budget": 5,
+      "category": "connection / timeout",
+      "error_type": "APIConnectionError",
+      "reason": "Connection error.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T19:53:29.761Z",
+      "timestamp_utc_plus_3": "2026-09-15T22:53:29.761+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10253,
+          "lastLine": 10253
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-050",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-44151 (run):9372",
+      "attempt": 2,
+      "attempt_budget": 5,
+      "category": "connection / timeout",
+      "error_type": "APIConnectionError",
+      "reason": "Connection error.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-15T23:08:36.448Z",
+      "timestamp_utc_plus_3": "2026-09-16T02:08:36.448+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10461,
+          "lastLine": 10461
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-051",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-45344 (run):19468",
+      "attempt": 1,
+      "attempt_budget": 5,
+      "category": "unknown + request ID",
+      "error_type": "APIError",
+      "reason": "An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID 336f5207-4415-424e-b8cb-863fc864de91 in your message.",
+      "request_id": "336f5207-4415-424e-b8cb-863fc864de91"
+    },
+    {
+      "timestamp_utc": "2026-09-15T23:10:46.745Z",
+      "timestamp_utc_plus_3": "2026-09-16T02:10:46.745+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10466,
+          "lastLine": 10466
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-052",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-45344 (run):19468",
+      "attempt": 1,
+      "attempt_budget": 5,
+      "category": "unknown + request ID",
+      "error_type": "APIError",
+      "reason": "An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID ce4de347-3ec2-4b2a-86bc-1b00b4ff0938 in your message.",
+      "request_id": "ce4de347-3ec2-4b2a-86bc-1b00b4ff0938"
+    },
+    {
+      "timestamp_utc": "2026-09-15T23:13:29.092Z",
+      "timestamp_utc_plus_3": "2026-09-16T02:13:29.092+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10471,
+          "lastLine": 10471
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-053",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-45344 (run):19468",
+      "attempt": 1,
+      "attempt_budget": 5,
+      "category": "unknown + request ID",
+      "error_type": "APIError",
+      "reason": "An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID 87c3786d-e0bd-4ca6-8c70-53e61d4b03d4 in your message.",
+      "request_id": "87c3786d-e0bd-4ca6-8c70-53e61d4b03d4"
+    },
+    {
+      "timestamp_utc": "2026-09-16T04:10:50.257Z",
+      "timestamp_utc_plus_3": "2026-09-16T07:10:50.257+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10535,
+          "lastLine": 10535
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-054",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-48803 (run):20016",
+      "attempt": 1,
+      "attempt_budget": 5,
+      "category": "TTFB timeout",
+      "error_type": "TimeoutError",
+      "reason": "Codex stream produced no parsed stream event within 120s (TTFB threshold: 120s)",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-16T05:24:39.838Z",
+      "timestamp_utc_plus_3": "2026-09-16T08:24:39.838+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10600,
+          "lastLine": 10600
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-055",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50220 (run):16244",
+      "attempt": 1,
+      "attempt_budget": 5,
+      "category": "HTTP 503 upstream connection failure",
+      "error_type": "InternalServerError",
+      "reason": "HTTP 503: upstream connect error or disconnect/reset before headers. retried and the latest reset reason: remote connection failure, transport failure reason: delayed connect error: Connection refused",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-16T05:32:13.533Z",
+      "timestamp_utc_plus_3": "2026-09-16T08:32:13.533+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10604,
+          "lastLine": 10604
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-056",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50512 (run):15180",
+      "attempt": 1,
+      "attempt_budget": 5,
+      "category": "unknown + request ID",
+      "error_type": "APIError",
+      "reason": "An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID 90937e59-baa4-43e6-8c9d-ccd061d2e7a0 in your message.",
+      "request_id": "90937e59-baa4-43e6-8c9d-ccd061d2e7a0"
+    },
+    {
+      "timestamp_utc": "2026-09-16T05:33:09.159Z",
+      "timestamp_utc_plus_3": "2026-09-16T08:33:09.159+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10606,
+          "lastLine": 10606
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-057",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50512 (run):15180",
+      "attempt": 1,
+      "attempt_budget": 5,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-16T05:34:53.998Z",
+      "timestamp_utc_plus_3": "2026-09-16T08:34:53.998+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10608,
+          "lastLine": 10608
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-058",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50512 (run):15180",
+      "attempt": 1,
+      "attempt_budget": 5,
+      "category": "unknown + request ID",
+      "error_type": "APIError",
+      "reason": "An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID 93deedf3-8306-43a3-af29-344baa737d05 in your message.",
+      "request_id": "93deedf3-8306-43a3-af29-344baa737d05"
+    },
+    {
+      "timestamp_utc": "2026-09-16T05:41:07.538Z",
+      "timestamp_utc_plus_3": "2026-09-16T08:41:07.538+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10616,
+          "lastLine": 10616
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-059",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50670 (run):2296",
+      "attempt": 1,
+      "attempt_budget": 5,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-16T05:43:39.071Z",
+      "timestamp_utc_plus_3": "2026-09-16T08:43:39.071+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10618,
+          "lastLine": 10618
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-060",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50750 (run):11348",
+      "attempt": 1,
+      "attempt_budget": 5,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-16T05:44:02.496Z",
+      "timestamp_utc_plus_3": "2026-09-16T08:44:02.496+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10620,
+          "lastLine": 10620
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-061",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50750 (run):11348",
+      "attempt": 2,
+      "attempt_budget": 5,
+      "category": "unknown + request ID",
+      "error_type": "APIError",
+      "reason": "An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID 6b53a0ca-d90e-4952-9d0f-fae66069e83b in your message.",
+      "request_id": "6b53a0ca-d90e-4952-9d0f-fae66069e83b"
+    },
+    {
+      "timestamp_utc": "2026-09-16T05:44:16.549Z",
+      "timestamp_utc_plus_3": "2026-09-16T08:44:16.549+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10622,
+          "lastLine": 10622
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-062",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50512 (run):15180",
+      "attempt": 1,
+      "attempt_budget": 5,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-16T05:44:28.777Z",
+      "timestamp_utc_plus_3": "2026-09-16T08:44:28.777+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10624,
+          "lastLine": 10624
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-063",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50750 (run):11348",
+      "attempt": 3,
+      "attempt_budget": 5,
+      "category": "unknown + request ID",
+      "error_type": "APIError",
+      "reason": "An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID 0e962c27-3f8f-47f4-b331-6cf93b27e10d in your message.",
+      "request_id": "0e962c27-3f8f-47f4-b331-6cf93b27e10d"
+    },
+    {
+      "timestamp_utc": "2026-09-16T05:44:55.253Z",
+      "timestamp_utc_plus_3": "2026-09-16T08:44:55.253+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10626,
+          "lastLine": 10626
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-064",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50750 (run):11348",
+      "attempt": 1,
+      "attempt_budget": 5,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-16T05:46:35.783Z",
+      "timestamp_utc_plus_3": "2026-09-16T08:46:35.783+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10628,
+          "lastLine": 10628
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-065",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50512 (run):15180",
+      "attempt": 1,
+      "attempt_budget": 5,
+      "category": "unknown + request ID",
+      "error_type": "APIError",
+      "reason": "An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID 573c0e2d-1397-436e-932b-cd3f4407f733 in your message.",
+      "request_id": "573c0e2d-1397-436e-932b-cd3f4407f733"
+    },
+    {
+      "timestamp_utc": "2026-09-16T05:46:42.004Z",
+      "timestamp_utc_plus_3": "2026-09-16T08:46:42.004+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10630,
+          "lastLine": 10630
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-066",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50512 (run):15180",
+      "attempt": 2,
+      "attempt_budget": 5,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-16T05:49:16.759Z",
+      "timestamp_utc_plus_3": "2026-09-16T08:49:16.759+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10632,
+          "lastLine": 10632
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-067",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50512 (run):15180",
+      "attempt": 1,
+      "attempt_budget": 5,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-16T05:50:00.081Z",
+      "timestamp_utc_plus_3": "2026-09-16T08:50:00.081+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10634,
+          "lastLine": 10634
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-068",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50512 (run):15180",
+      "attempt": 2,
+      "attempt_budget": 5,
+      "category": "unknown + request ID",
+      "error_type": "APIError",
+      "reason": "An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID 84a52fb7-0f05-4086-9d2f-a3db61acbeac in your message.",
+      "request_id": "84a52fb7-0f05-4086-9d2f-a3db61acbeac"
+    },
+    {
+      "timestamp_utc": "2026-09-16T05:50:09.688Z",
+      "timestamp_utc_plus_3": "2026-09-16T08:50:09.688+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10636,
+          "lastLine": 10636
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-069",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50750 (run):11348",
+      "attempt": 1,
+      "attempt_budget": 5,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-16T05:50:20.063Z",
+      "timestamp_utc_plus_3": "2026-09-16T08:50:20.063+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10638,
+          "lastLine": 10638
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-070",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50750 (run):11348",
+      "attempt": 2,
+      "attempt_budget": 5,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-16T05:51:06.157Z",
+      "timestamp_utc_plus_3": "2026-09-16T08:51:06.157+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10640,
+          "lastLine": 10640
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-071",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50750 (run):11348",
+      "attempt": 1,
+      "attempt_budget": 5,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-16T05:52:40.956Z",
+      "timestamp_utc_plus_3": "2026-09-16T08:52:40.956+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10642,
+          "lastLine": 10642
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-072",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50893 (run):8768",
+      "attempt": 1,
+      "attempt_budget": 5,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-16T05:53:30.623Z",
+      "timestamp_utc_plus_3": "2026-09-16T08:53:30.623+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10644,
+          "lastLine": 10644
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-073",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50893 (run):8768",
+      "attempt": 1,
+      "attempt_budget": 5,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-16T05:55:38.959Z",
+      "timestamp_utc_plus_3": "2026-09-16T08:55:38.959+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10646,
+          "lastLine": 10646
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-074",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50893 (run):8768",
+      "attempt": 1,
+      "attempt_budget": 5,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-16T05:56:12.480Z",
+      "timestamp_utc_plus_3": "2026-09-16T08:56:12.480+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10648,
+          "lastLine": 10648
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-075",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50893 (run):8768",
+      "attempt": 1,
+      "attempt_budget": 5,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-16T05:56:20.627Z",
+      "timestamp_utc_plus_3": "2026-09-16T08:56:20.627+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10650,
+          "lastLine": 10650
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-076",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50893 (run):8768",
+      "attempt": 2,
+      "attempt_budget": 5,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-16T05:57:53.576Z",
+      "timestamp_utc_plus_3": "2026-09-16T08:57:53.576+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10654,
+          "lastLine": 10654
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-077",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50958 (run):3460",
+      "attempt": 1,
+      "attempt_budget": 5,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-16T05:57:53.696Z",
+      "timestamp_utc_plus_3": "2026-09-16T08:57:53.696+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10656,
+          "lastLine": 10656
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-078",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50512 (run):15180",
+      "attempt": 1,
+      "attempt_budget": 5,
+      "category": "unknown + request ID",
+      "error_type": "APIError",
+      "reason": "An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID 1e08862f-34f9-4736-b107-9c2f337ba316 in your message.",
+      "request_id": "1e08862f-34f9-4736-b107-9c2f337ba316"
+    },
+    {
+      "timestamp_utc": "2026-09-16T06:01:34.859Z",
+      "timestamp_utc_plus_3": "2026-09-16T09:01:34.859+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10658,
+          "lastLine": 10658
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-079",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50512 (run):15180",
+      "attempt": 1,
+      "attempt_budget": 5,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-16T06:01:56.199Z",
+      "timestamp_utc_plus_3": "2026-09-16T09:01:56.199+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10661,
+          "lastLine": 10661
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-080",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50958 (run):3460",
+      "attempt": 1,
+      "attempt_budget": 5,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-16T06:01:57.717Z",
+      "timestamp_utc_plus_3": "2026-09-16T09:01:57.717+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10663,
+          "lastLine": 10663
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-081",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50512 (run):15180",
+      "attempt": 2,
+      "attempt_budget": 5,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-16T06:02:04.168Z",
+      "timestamp_utc_plus_3": "2026-09-16T09:02:04.168+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10665,
+          "lastLine": 10665
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-082",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50512 (run):15180",
+      "attempt": 3,
+      "attempt_budget": 5,
+      "category": "unknown + request ID",
+      "error_type": "APIError",
+      "reason": "An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID c36cd038-03ff-4def-89a6-b68953b9e6fe in your message.",
+      "request_id": "c36cd038-03ff-4def-89a6-b68953b9e6fe"
+    },
+    {
+      "timestamp_utc": "2026-09-16T06:02:35.935Z",
+      "timestamp_utc_plus_3": "2026-09-16T09:02:35.935+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10667,
+          "lastLine": 10667
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-083",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50512 (run):15180",
+      "attempt": 4,
+      "attempt_budget": 5,
+      "category": "unknown + request ID",
+      "error_type": "APIError",
+      "reason": "An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID bc247290-fea9-4c41-b4c7-1ee835d0bb08 in your message.",
+      "request_id": "bc247290-fea9-4c41-b4c7-1ee835d0bb08"
+    },
+    {
+      "timestamp_utc": "2026-09-16T06:02:43.700Z",
+      "timestamp_utc_plus_3": "2026-09-16T09:02:43.700+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10669,
+          "lastLine": 10669
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-084",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50958 (run):3460",
+      "attempt": 2,
+      "attempt_budget": 5,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-16T06:02:49.872Z",
+      "timestamp_utc_plus_3": "2026-09-16T09:02:49.872+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10671,
+          "lastLine": 10671
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-085",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50958 (run):3460",
+      "attempt": 3,
+      "attempt_budget": 5,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-16T06:03:07.531Z",
+      "timestamp_utc_plus_3": "2026-09-16T09:03:07.531+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10674,
+          "lastLine": 10674
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-086",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-51044 (run):14476",
+      "attempt": 1,
+      "attempt_budget": 5,
+      "category": "unknown + request ID",
+      "error_type": "APIError",
+      "reason": "An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID dcc43f82-f990-4d72-9211-b029fbc0cb42 in your message.",
+      "request_id": "dcc43f82-f990-4d72-9211-b029fbc0cb42"
+    },
+    {
+      "timestamp_utc": "2026-09-16T06:03:09.659Z",
+      "timestamp_utc_plus_3": "2026-09-16T09:03:09.659+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10676,
+          "lastLine": 10676
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-087",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50958 (run):3460",
+      "attempt": 1,
+      "attempt_budget": 5,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-16T06:03:14.919Z",
+      "timestamp_utc_plus_3": "2026-09-16T09:03:14.919+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10678,
+          "lastLine": 10678
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-088",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-51044 (run):14476",
+      "attempt": 2,
+      "attempt_budget": 5,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-16T06:03:15.691Z",
+      "timestamp_utc_plus_3": "2026-09-16T09:03:15.691+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10680,
+          "lastLine": 10680
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-089",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50958 (run):3460",
+      "attempt": 2,
+      "attempt_budget": 5,
+      "category": "unknown + request ID",
+      "error_type": "APIError",
+      "reason": "An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID 2772adae-d2e2-4afb-ab2e-a094990efe91 in your message.",
+      "request_id": "2772adae-d2e2-4afb-ab2e-a094990efe91"
+    },
+    {
+      "timestamp_utc": "2026-09-16T06:03:23.946Z",
+      "timestamp_utc_plus_3": "2026-09-16T09:03:23.946+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10682,
+          "lastLine": 10682
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-090",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-51044 (run):14476",
+      "attempt": 3,
+      "attempt_budget": 5,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-16T06:03:29.929Z",
+      "timestamp_utc_plus_3": "2026-09-16T09:03:29.929+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10684,
+          "lastLine": 10684
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-091",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50958 (run):3460",
+      "attempt": 3,
+      "attempt_budget": 5,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-16T06:03:38.185Z",
+      "timestamp_utc_plus_3": "2026-09-16T09:03:38.185+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10686,
+          "lastLine": 10686
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-092",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-51044 (run):14476",
+      "attempt": 4,
+      "attempt_budget": 5,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-16T06:03:42.644Z",
+      "timestamp_utc_plus_3": "2026-09-16T09:03:42.644+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10688,
+          "lastLine": 10688
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-093",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50958 (run):3460",
+      "attempt": 4,
+      "attempt_budget": 5,
+      "category": "unknown + request ID",
+      "error_type": "APIError",
+      "reason": "An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID ca050f7c-712f-4460-b5d4-4e5d28159a61 in your message.",
+      "request_id": "ca050f7c-712f-4460-b5d4-4e5d28159a61"
+    },
+    {
+      "timestamp_utc": "2026-09-16T06:04:06.242Z",
+      "timestamp_utc_plus_3": "2026-09-16T09:04:06.242+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10690,
+          "lastLine": 10690
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "id": "SEP16-API-094",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-50958 (run):3460",
+      "attempt": 5,
+      "attempt_budget": 5,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-16T06:04:07.585Z",
+      "timestamp_utc_plus_3": "2026-09-16T09:04:07.585+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10692,
+          "lastLine": 10692
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-095",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-51044 (run):14476",
+      "attempt": 5,
+      "attempt_budget": 5,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-16T06:04:49.496Z",
+      "timestamp_utc_plus_3": "2026-09-16T09:04:49.496+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10694,
+          "lastLine": 10694
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-096",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-51071 (run):12228",
+      "attempt": 1,
+      "attempt_budget": 5,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-16T06:04:54.992Z",
+      "timestamp_utc_plus_3": "2026-09-16T09:04:54.992+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10696,
+          "lastLine": 10696
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-097",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-51071 (run):12228",
+      "attempt": 2,
+      "attempt_budget": 5,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-16T06:05:03.702Z",
+      "timestamp_utc_plus_3": "2026-09-16T09:05:03.702+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10698,
+          "lastLine": 10698
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-098",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-51071 (run):12228",
+      "attempt": 3,
+      "attempt_budget": 5,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    },
+    {
+      "timestamp_utc": "2026-09-16T06:06:01.534Z",
+      "timestamp_utc_plus_3": "2026-09-16T09:06:01.534+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10700,
+          "lastLine": 10700
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "id": "SEP16-API-099",
+      "provider": "openai-codex",
+      "model": "gpt-6-astra-900k",
+      "thread": "Thread-51071 (run):12228",
+      "attempt": 4,
+      "attempt_budget": 5,
+      "category": "overloaded",
+      "error_type": "APIError",
+      "reason": "Our servers are currently overloaded. Please try again later.",
+      "request_id": null
+    }
+  ],
+  "gui_error_turns": [
+    {
+      "timestamp_utc": "2026-09-15T07:30:37.106Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:30:37.106+03:00",
+      "logger": "tui_gateway.server",
+      "level": "INFO",
+      "sources": [
+        {
+          "file": "gui(2).log",
+          "line": 1920,
+          "lastLine": 1920
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "message": "tui turn finished: ui_session=db3feaf5 session_key=202609...47d8 agent_session_id=20260913_181010_f947d8 status=error error_retained=True duration=429.5s failure_reason=overloaded cause='Our servers are currently overloaded. Please try again later.'",
+      "whole_turn_duration_seconds": 429.5,
+      "failure_reason": "overloaded",
+      "cause": "Our servers are currently overloaded. Please try again later."
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:35:55.894Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:35:55.894+03:00",
+      "logger": "tui_gateway.server",
+      "level": "INFO",
+      "sources": [
+        {
+          "file": "gui(2).log",
+          "line": 1926,
+          "lastLine": 1926
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "message": "tui turn finished: ui_session=db3feaf5 session_key=202609...47d8 agent_session_id=20260913_181010_f947d8 status=error error_retained=True duration=110.6s failure_reason=unknown cause='An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID dc0e1453-be44-4d1b-9aa3-cc4647c67765 in your message.'",
+      "whole_turn_duration_seconds": 110.6,
+      "failure_reason": "unknown",
+      "cause": "An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID dc0e1453-be44-4d1b-9aa3-cc4647c67765 in your message."
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:44:58.958Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:44:58.958+03:00",
+      "logger": "tui_gateway.server",
+      "level": "INFO",
+      "sources": [
+        {
+          "file": "gui(2).log",
+          "line": 1940,
+          "lastLine": 1940
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "message": "tui turn finished: ui_session=db3feaf5 session_key=202609...47d8 agent_session_id=20260913_181010_f947d8 status=error error_retained=True duration=22.8s failure_reason=overloaded cause='Our servers are currently overloaded. Please try again later.'",
+      "whole_turn_duration_seconds": 22.8,
+      "failure_reason": "overloaded",
+      "cause": "Our servers are currently overloaded. Please try again later."
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:50:07.989Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:50:07.989+03:00",
+      "logger": "tui_gateway.server",
+      "level": "INFO",
+      "sources": [
+        {
+          "file": "gui(2).log",
+          "line": 1949,
+          "lastLine": 1949
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "message": "tui turn finished: ui_session=ed73d80e session_key=202609...c101 agent_session_id=20260914_183547_b2c101 status=error error_retained=True duration=43.8s failure_reason=overloaded cause='Our servers are currently overloaded. Please try again later.'",
+      "whole_turn_duration_seconds": 43.8,
+      "failure_reason": "overloaded",
+      "cause": "Our servers are currently overloaded. Please try again later."
+    },
+    {
+      "timestamp_utc": "2026-09-15T09:41:59.003Z",
+      "timestamp_utc_plus_3": "2026-09-15T12:41:59.003+03:00",
+      "logger": "tui_gateway.server",
+      "level": "INFO",
+      "sources": [
+        {
+          "file": "gui(2).log",
+          "line": 1962,
+          "lastLine": 1962
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "message": "tui turn finished: ui_session=db3feaf5 session_key=202609...47d8 agent_session_id=20260913_181010_f947d8 status=error error_retained=True duration=18.3s failure_reason=overloaded cause='Our servers are currently overloaded. Please try again later.'",
+      "whole_turn_duration_seconds": 18.3,
+      "failure_reason": "overloaded",
+      "cause": "Our servers are currently overloaded. Please try again later."
+    },
+    {
+      "timestamp_utc": "2026-09-15T10:10:36.676Z",
+      "timestamp_utc_plus_3": "2026-09-15T13:10:36.676+03:00",
+      "logger": "tui_gateway.server",
+      "level": "INFO",
+      "sources": [
+        {
+          "file": "gui(2).log",
+          "line": 1990,
+          "lastLine": 1990
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "message": "tui turn finished: ui_session=db3feaf5 session_key=202609...47d8 agent_session_id=20260913_181010_f947d8 status=error error_retained=True duration=99.4s failure_reason=overloaded cause='Our servers are currently overloaded. Please try again later.'",
+      "whole_turn_duration_seconds": 99.4,
+      "failure_reason": "overloaded",
+      "cause": "Our servers are currently overloaded. Please try again later."
+    },
+    {
+      "timestamp_utc": "2026-09-15T10:22:27.454Z",
+      "timestamp_utc_plus_3": "2026-09-15T13:22:27.454+03:00",
+      "logger": "tui_gateway.server",
+      "level": "INFO",
+      "sources": [
+        {
+          "file": "gui(2).log",
+          "line": 2000,
+          "lastLine": 2000
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "message": "tui turn finished: ui_session=db3feaf5 session_key=202609...47d8 agent_session_id=20260913_181010_f947d8 status=error error_retained=True duration=21.0s failure_reason=overloaded cause='Our servers are currently overloaded. Please try again later.'",
+      "whole_turn_duration_seconds": 21,
+      "failure_reason": "overloaded",
+      "cause": "Our servers are currently overloaded. Please try again later."
+    },
+    {
+      "timestamp_utc": "2026-09-16T06:04:06.702Z",
+      "timestamp_utc_plus_3": "2026-09-16T09:04:06.702+03:00",
+      "logger": "tui_gateway.server",
+      "level": "INFO",
+      "sources": [
+        {
+          "file": "gui(2).log",
+          "line": 2814,
+          "lastLine": 2814
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "message": "tui turn finished: ui_session=6b73d85e session_key=202609...c101 agent_session_id=20260914_183547_b2c101 status=error error_retained=True duration=427.0s failure_reason=overloaded cause='Our servers are currently overloaded. Please try again later.'",
+      "whole_turn_duration_seconds": 427,
+      "failure_reason": "overloaded",
+      "cause": "Our servers are currently overloaded. Please try again later."
+    },
+    {
+      "timestamp_utc": "2026-09-16T06:04:08.234Z",
+      "timestamp_utc_plus_3": "2026-09-16T09:04:08.234+03:00",
+      "logger": "tui_gateway.server",
+      "level": "INFO",
+      "sources": [
+        {
+          "file": "gui(2).log",
+          "line": 2815,
+          "lastLine": 2815
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "message": "tui turn finished: ui_session=bb7470ad session_key=202609...47d8 agent_session_id=20260913_181010_f947d8 status=error error_retained=True duration=66.0s failure_reason=overloaded cause='Our servers are currently overloaded. Please try again later.'",
+      "whole_turn_duration_seconds": 66,
+      "failure_reason": "overloaded",
+      "cause": "Our servers are currently overloaded. Please try again later."
+    }
+  ],
+  "exhaustion_records": [
+    {
+      "timestamp_utc": "2026-09-15T07:30:36.556Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:30:36.556+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "ERROR",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9543,
+          "lastLine": 9543
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "message": "API call failed after 3 retries. Our servers are currently overloaded. Please try again later. | provider=openai-codex model=gpt-6-astra-900k msgs=88 tokens=~55,758"
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:35:55.095Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:35:55.095+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "ERROR",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9589,
+          "lastLine": 9589
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "message": "API call failed after 3 retries. An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID dc0e1453-be44-4d1b-9aa3-cc4647c67765 in your message. | provider=openai-codex model=gpt-6-astra-900k msgs=122 tokens=~73,747"
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:44:58.344Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:44:58.344+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "ERROR",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9601,
+          "lastLine": 9601
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "message": "API call failed after 3 retries. Our servers are currently overloaded. Please try again later. | provider=openai-codex model=gpt-6-astra-900k msgs=123 tokens=~73,989"
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:50:07.212Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:50:07.212+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "ERROR",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9626,
+          "lastLine": 9626
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "message": "API call failed after 3 retries. Our servers are currently overloaded. Please try again later. | provider=openai-codex model=gpt-6-astra-900k msgs=201 tokens=~109,756"
+    },
+    {
+      "timestamp_utc": "2026-09-15T09:41:58.124Z",
+      "timestamp_utc_plus_3": "2026-09-15T12:41:58.124+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "ERROR",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9652,
+          "lastLine": 9652
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "message": "API call failed after 3 retries. Our servers are currently overloaded. Please try again later. | provider=openai-codex model=gpt-6-astra-900k msgs=180 tokens=~112,231"
+    },
+    {
+      "timestamp_utc": "2026-09-15T10:10:35.195Z",
+      "timestamp_utc_plus_3": "2026-09-15T13:10:35.195+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "ERROR",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9681,
+          "lastLine": 9681
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "message": "API call failed after 3 retries. Our servers are currently overloaded. Please try again later. | provider=openai-codex model=gpt-6-astra-900k msgs=286 tokens=~134,239"
+    },
+    {
+      "timestamp_utc": "2026-09-15T10:22:26.377Z",
+      "timestamp_utc_plus_3": "2026-09-15T13:22:26.377+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "ERROR",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9695,
+          "lastLine": 9695
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "message": "API call failed after 3 retries. Our servers are currently overloaded. Please try again later. | provider=openai-codex model=gpt-6-astra-900k msgs=286 tokens=~134,256"
+    },
+    {
+      "timestamp_utc": "2026-09-16T06:04:06.325Z",
+      "timestamp_utc_plus_3": "2026-09-16T09:04:06.325+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "ERROR",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10691,
+          "lastLine": 10691
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "message": "API call failed after 5 retries. Our servers are currently overloaded. Please try again later. | provider=openai-codex model=gpt-6-astra-900k msgs=28 tokens=~34,882"
+    },
+    {
+      "timestamp_utc": "2026-09-16T06:04:07.704Z",
+      "timestamp_utc_plus_3": "2026-09-16T09:04:07.704+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "ERROR",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10693,
+          "lastLine": 10693
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "message": "API call failed after 5 retries. Our servers are currently overloaded. Please try again later. | provider=openai-codex model=gpt-6-astra-900k msgs=134 tokens=~63,014"
+    }
+  ],
+  "hermes_restart_limit_records": [
+    {
+      "timestamp_utc": "2026-09-16T04:46:36.809Z",
+      "timestamp_utc_plus_3": "2026-09-16T07:46:36.809+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10560,
+          "lastLine": 10560
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "message": "Redirected-message restart limit (5) exceeded; ending turn instead of refunding the iteration budget indefinitely."
+    },
+    {
+      "timestamp_utc": "2026-09-16T05:16:28.697Z",
+      "timestamp_utc_plus_3": "2026-09-16T08:16:28.697+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10589,
+          "lastLine": 10589
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "message": "Redirected-message restart limit (5) exceeded; ending turn instead of refunding the iteration budget indefinitely."
+    },
+    {
+      "timestamp_utc": "2026-09-16T05:38:10.267Z",
+      "timestamp_utc_plus_3": "2026-09-16T08:38:10.267+03:00",
+      "logger": "agent.conversation_loop",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10613,
+          "lastLine": 10613
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "message": "Redirected-message restart limit (5) exceeded; ending turn instead of refunding the iteration budget indefinitely."
+    }
+  ],
+  "pending_tool_gui_correlations": [
+    {
+      "pending_tool_end": {
+        "timestamp_utc": "2026-09-16T04:46:36.816Z",
+        "timestamp_utc_plus_3": "2026-09-16T07:46:36.816+03:00",
+        "logger": "agent.conversation_loop",
+        "level": "WARNING",
+        "sources": [
+          {
+            "file": "errors(2).log",
+            "line": 10561,
+            "lastLine": 10561
+          }
+        ],
+        "session_id": "20260914_183547_b2c101",
+        "message": "Turn ended with pending tool result (agent may appear stuck). Turn ended: reason=redirect_restart_limit_exceeded model=gpt-6-astra-900k api_calls=27/500 budget=26/500 tool_turns=56 last_msg_role=tool response_len=0 session=20260914_183547_b2c101 last_tool=patch"
+      },
+      "gui_end": {
+        "timestamp_utc": "2026-09-16T04:46:36.892Z",
+        "timestamp_utc_plus_3": "2026-09-16T07:46:36.892+03:00",
+        "logger": "tui_gateway.server",
+        "level": "INFO",
+        "sources": [
+          {
+            "file": "gui(2).log",
+            "line": 2763,
+            "lastLine": 2763
+          }
+        ],
+        "session_id": "20260914_183547_b2c101",
+        "message": "tui turn finished: ui_session=6b73d85e session_key=202609...c101 agent_session_id=20260914_183547_b2c101 status=complete error_retained=False duration=1054.5s"
+      },
+      "delay_ms": 76
+    },
+    {
+      "pending_tool_end": {
+        "timestamp_utc": "2026-09-16T05:16:28.709Z",
+        "timestamp_utc_plus_3": "2026-09-16T08:16:28.709+03:00",
+        "logger": "agent.conversation_loop",
+        "level": "WARNING",
+        "sources": [
+          {
+            "file": "errors(2).log",
+            "line": 10590,
+            "lastLine": 10590
+          }
+        ],
+        "session_id": "20260914_183547_b2c101",
+        "message": "Turn ended with pending tool result (agent may appear stuck). Turn ended: reason=redirect_restart_limit_exceeded model=gpt-6-astra-900k api_calls=46/500 budget=46/500 tool_turns=72 last_msg_role=tool response_len=0 session=20260914_183547_b2c101 last_tool=read_file"
+      },
+      "gui_end": {
+        "timestamp_utc": "2026-09-16T05:16:28.793Z",
+        "timestamp_utc_plus_3": "2026-09-16T08:16:28.793+03:00",
+        "logger": "tui_gateway.server",
+        "level": "INFO",
+        "sources": [
+          {
+            "file": "gui(2).log",
+            "line": 2785,
+            "lastLine": 2785
+          }
+        ],
+        "session_id": "20260914_183547_b2c101",
+        "message": "tui turn finished: ui_session=6b73d85e session_key=202609...c101 agent_session_id=20260914_183547_b2c101 status=complete error_retained=False duration=1791.7s"
+      },
+      "delay_ms": 84
+    },
+    {
+      "pending_tool_end": {
+        "timestamp_utc": "2026-09-16T05:38:10.286Z",
+        "timestamp_utc_plus_3": "2026-09-16T08:38:10.286+03:00",
+        "logger": "agent.conversation_loop",
+        "level": "WARNING",
+        "sources": [
+          {
+            "file": "errors(2).log",
+            "line": 10614,
+            "lastLine": 10614
+          }
+        ],
+        "session_id": "20260914_183547_b2c101",
+        "message": "Turn ended with pending tool result (agent may appear stuck). Turn ended: reason=redirect_restart_limit_exceeded model=gpt-6-astra-900k api_calls=28/500 budget=28/500 tool_turns=99 last_msg_role=tool response_len=0 session=20260914_183547_b2c101 last_tool=patch"
+      },
+      "gui_end": {
+        "timestamp_utc": "2026-09-16T05:38:10.373Z",
+        "timestamp_utc_plus_3": "2026-09-16T08:38:10.373+03:00",
+        "logger": "tui_gateway.server",
+        "level": "INFO",
+        "sources": [
+          {
+            "file": "gui(2).log",
+            "line": 2804,
+            "lastLine": 2804
+          }
+        ],
+        "session_id": "20260914_183547_b2c101",
+        "message": "tui turn finished: ui_session=6b73d85e session_key=202609...c101 agent_session_id=20260914_183547_b2c101 status=complete error_retained=False duration=1301.2s"
+      },
+      "delay_ms": 87
+    }
+  ],
+  "transport_diagnostics": [
+    {
+      "timestamp_utc": "2026-09-15T07:34:06.468Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:34:06.468+03:00",
+      "logger": "agent.codex_runtime",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9578,
+          "lastLine": 9578
+        }
+      ],
+      "message": "Codex Responses request failed: serialized_request_body_bytes=395275 stream_opened=false exception_chain=APIConnectionError <- RemoteProtocolError <- RemoteProtocolError model=gpt-6-astra-900k"
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:49:25.642Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:49:25.642+03:00",
+      "logger": "agent.codex_runtime",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9618,
+          "lastLine": 9618
+        }
+      ],
+      "message": "Codex Responses request failed: serialized_request_body_bytes=430522 stream_opened=false exception_chain=APIConnectionError <- RemoteProtocolError <- RemoteProtocolError model=gpt-6-astra-900k"
+    },
+    {
+      "timestamp_utc": "2026-09-15T09:38:11.711Z",
+      "timestamp_utc_plus_3": "2026-09-15T12:38:11.711+03:00",
+      "logger": "agent.codex_runtime",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9639,
+          "lastLine": 9639
+        }
+      ],
+      "message": "Codex Responses request failed: serialized_request_body_bytes=627916 stream_opened=false exception_chain=APIConnectionError <- RemoteProtocolError <- RemoteProtocolError model=gpt-6-astra-900k"
+    },
+    {
+      "timestamp_utc": "2026-09-15T09:41:41.949Z",
+      "timestamp_utc_plus_3": "2026-09-15T12:41:41.949+03:00",
+      "logger": "agent.codex_runtime",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9646,
+          "lastLine": 9646
+        }
+      ],
+      "message": "Codex Responses request failed: serialized_request_body_bytes=597397 stream_opened=false exception_chain=APIConnectionError <- RemoteProtocolError <- RemoteProtocolError model=gpt-6-astra-900k"
+    },
+    {
+      "timestamp_utc": "2026-09-15T11:31:40.324Z",
+      "timestamp_utc_plus_3": "2026-09-15T14:31:40.324+03:00",
+      "logger": "agent.codex_runtime",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9742,
+          "lastLine": 9742
+        }
+      ],
+      "message": "Codex Responses request failed: serialized_request_body_bytes=743974 stream_opened=false exception_chain=APIConnectionError <- RemoteProtocolError <- RemoteProtocolError model=gpt-6-astra-900k"
+    },
+    {
+      "timestamp_utc": "2026-09-15T11:41:37.013Z",
+      "timestamp_utc_plus_3": "2026-09-15T14:41:37.013+03:00",
+      "logger": "agent.codex_runtime",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9748,
+          "lastLine": 9748
+        }
+      ],
+      "message": "Codex Responses request failed: serialized_request_body_bytes=239787 stream_opened=false exception_chain=APIConnectionError <- RemoteProtocolError <- RemoteProtocolError model=gpt-6-astra-900k"
+    },
+    {
+      "timestamp_utc": "2026-09-15T12:43:48.766Z",
+      "timestamp_utc_plus_3": "2026-09-15T15:43:48.766+03:00",
+      "logger": "agent.codex_runtime",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9787,
+          "lastLine": 9787
+        }
+      ],
+      "message": "Codex Responses request failed: serialized_request_body_bytes=549930 stream_opened=false exception_chain=APIConnectionError <- RemoteProtocolError <- RemoteProtocolError model=gpt-6-astra-900k"
+    },
+    {
+      "timestamp_utc": "2026-09-15T13:52:51.751Z",
+      "timestamp_utc_plus_3": "2026-09-15T16:52:51.751+03:00",
+      "logger": "agent.codex_runtime",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9887,
+          "lastLine": 9887
+        }
+      ],
+      "message": "Codex Responses request failed: serialized_request_body_bytes=518546 stream_opened=false exception_chain=APIConnectionError <- RemoteProtocolError <- RemoteProtocolError model=gpt-6-astra-900k"
+    },
+    {
+      "timestamp_utc": "2026-09-15T15:03:33.819Z",
+      "timestamp_utc_plus_3": "2026-09-15T18:03:33.819+03:00",
+      "logger": "agent.codex_runtime",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9917,
+          "lastLine": 9917
+        }
+      ],
+      "message": "Codex Responses request failed: serialized_request_body_bytes=468094 stream_opened=false exception_chain=APIConnectionError <- RemoteProtocolError <- RemoteProtocolError model=gpt-6-astra-900k"
+    },
+    {
+      "timestamp_utc": "2026-09-15T16:21:19.510Z",
+      "timestamp_utc_plus_3": "2026-09-15T19:21:19.510+03:00",
+      "logger": "agent.codex_runtime",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9997,
+          "lastLine": 9997
+        }
+      ],
+      "message": "Codex Responses request failed: serialized_request_body_bytes=344558 stream_opened=false exception_chain=APIConnectionError <- RemoteProtocolError <- RemoteProtocolError model=gpt-6-astra-900k"
+    },
+    {
+      "timestamp_utc": "2026-09-15T18:28:16.251Z",
+      "timestamp_utc_plus_3": "2026-09-15T21:28:16.251+03:00",
+      "logger": "agent.codex_runtime",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10101,
+          "lastLine": 10101
+        }
+      ],
+      "message": "Codex Responses request failed: serialized_request_body_bytes=813935 stream_opened=false exception_chain=APIConnectionError <- RemoteProtocolError <- RemoteProtocolError model=gpt-6-astra-900k"
+    },
+    {
+      "timestamp_utc": "2026-09-15T19:27:32.083Z",
+      "timestamp_utc_plus_3": "2026-09-15T22:27:32.083+03:00",
+      "logger": "agent.codex_runtime",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10226,
+          "lastLine": 10226
+        }
+      ],
+      "message": "Codex Responses request failed: serialized_request_body_bytes=535139 stream_opened=false exception_chain=APIConnectionError <- RemoteProtocolError <- RemoteProtocolError model=gpt-6-astra-900k"
+    },
+    {
+      "timestamp_utc": "2026-09-15T19:41:10.276Z",
+      "timestamp_utc_plus_3": "2026-09-15T22:41:10.276+03:00",
+      "logger": "agent.codex_runtime",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10240,
+          "lastLine": 10240
+        }
+      ],
+      "message": "Codex Responses request failed: serialized_request_body_bytes=790438 stream_opened=false exception_chain=APIConnectionError <- RemoteProtocolError <- RemoteProtocolError model=gpt-6-astra-900k"
+    },
+    {
+      "timestamp_utc": "2026-09-15T19:52:45.483Z",
+      "timestamp_utc_plus_3": "2026-09-15T22:52:45.483+03:00",
+      "logger": "agent.codex_runtime",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10246,
+          "lastLine": 10246
+        }
+      ],
+      "message": "Codex Responses request failed: serialized_request_body_bytes=362830 stream_opened=false exception_chain=APIConnectionError <- RemoteProtocolError <- RemoteProtocolError model=gpt-6-astra-900k"
+    },
+    {
+      "timestamp_utc": "2026-09-15T19:53:29.749Z",
+      "timestamp_utc_plus_3": "2026-09-15T22:53:29.749+03:00",
+      "logger": "agent.codex_runtime",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10252,
+          "lastLine": 10252
+        }
+      ],
+      "message": "Codex Responses request failed: serialized_request_body_bytes=362830 stream_opened=false exception_chain=APIConnectionError <- RemoteProtocolError <- RemoteProtocolError model=gpt-6-astra-900k"
+    },
+    {
+      "timestamp_utc": "2026-09-16T04:38:48.032Z",
+      "timestamp_utc_plus_3": "2026-09-16T07:38:48.032+03:00",
+      "logger": "agent.codex_runtime",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10556,
+          "lastLine": 10556
+        }
+      ],
+      "message": "Codex Responses request failed: serialized_request_body_bytes=649873 stream_opened=false exception_chain=APITimeoutError <- ConnectTimeout <- ConnectTimeout model=gpt-6-astra-900k"
+    },
+    {
+      "timestamp_utc": "2026-09-16T04:46:39.129Z",
+      "timestamp_utc_plus_3": "2026-09-16T07:46:39.129+03:00",
+      "logger": "agent.codex_runtime",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10562,
+          "lastLine": 10562
+        }
+      ],
+      "message": "Codex Responses request failed: serialized_request_body_bytes=662422 stream_opened=false exception_chain=APIConnectionError <- RemoteProtocolError <- RemoteProtocolError model=gpt-6-astra-900k"
+    },
+    {
+      "timestamp_utc": "2026-09-16T05:16:30.795Z",
+      "timestamp_utc_plus_3": "2026-09-16T08:16:30.795+03:00",
+      "logger": "agent.codex_runtime",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10591,
+          "lastLine": 10591
+        }
+      ],
+      "message": "Codex Responses request failed: serialized_request_body_bytes=665019 stream_opened=false exception_chain=APIConnectionError <- RemoteProtocolError <- RemoteProtocolError model=gpt-6-astra-900k"
+    },
+    {
+      "timestamp_utc": "2026-09-16T05:38:12.440Z",
+      "timestamp_utc_plus_3": "2026-09-16T08:38:12.440+03:00",
+      "logger": "agent.codex_runtime",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10615,
+          "lastLine": 10615
+        }
+      ],
+      "message": "Codex Responses request failed: serialized_request_body_bytes=776742 stream_opened=false exception_chain=APIConnectionError <- ReadError <- ReadError model=gpt-6-astra-900k"
+    },
+    {
+      "timestamp_utc": "2026-09-16T05:57:00.866Z",
+      "timestamp_utc_plus_3": "2026-09-16T08:57:00.866+03:00",
+      "logger": "agent.codex_runtime",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10653,
+          "lastLine": 10653
+        }
+      ],
+      "message": "Codex Responses request failed: serialized_request_body_bytes=950749 stream_opened=false exception_chain=APIConnectionError <- RemoteProtocolError <- RemoteProtocolError model=gpt-6-astra-900k"
+    },
+    {
+      "timestamp_utc": "2026-09-16T06:03:02.555Z",
+      "timestamp_utc_plus_3": "2026-09-16T09:03:02.555+03:00",
+      "logger": "agent.codex_runtime",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10673,
+          "lastLine": 10673
+        }
+      ],
+      "message": "Codex Responses request failed: serialized_request_body_bytes=331601 stream_opened=false exception_chain=APIConnectionError <- RemoteProtocolError <- RemoteProtocolError model=gpt-6-astra-900k"
+    }
+  ],
+  "ttfb_abort_diagnostics": [
+    {
+      "timestamp_utc": "2026-09-16T04:10:48.224Z",
+      "timestamp_utc_plus_3": "2026-09-16T07:10:48.224+03:00",
+      "logger": "agent.chat_completion_helpers",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10533,
+          "lastLine": 10533
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "message": "Codex stream produced no parsed stream event within TTFB cutoff (120s > 120s, model=gpt-6-astra). Backend accepted the connection but sent no stream events. Killing connection so the retry loop can reconnect."
+    },
+    {
+      "timestamp_utc": "2026-09-16T04:10:48.225Z",
+      "timestamp_utc_plus_3": "2026-09-16T07:10:48.225+03:00",
+      "logger": "run_agent",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10534,
+          "lastLine": 10534
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "message": "OpenAI client aborted (codex_ttfb_kill, shared=False, tcp_force_closed=0, deferred_close=stranger_thread) thread=Thread-48803 (run):20016 provider=openai-codex base_url=https://chatgpt.com/backend-api/codex model=gpt-6-astra-900k — no sockets found; in-flight request may keep running until the provider finishes"
+    }
+  ],
+  "auxiliary_diagnostics": [
+    {
+      "timestamp_utc": "2026-09-15T07:24:23.601Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:24:23.601+03:00",
+      "logger": "agent.context_compressor",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9523,
+          "lastLine": 9523
+        }
+      ],
+      "message": "Failed to generate context summary: Our servers are currently overloaded. Please try again later.. Further summary attempts paused for 60 seconds."
+    },
+    {
+      "timestamp_utc": "2026-09-15T07:25:13.318Z",
+      "timestamp_utc_plus_3": "2026-09-15T10:25:13.318+03:00",
+      "logger": "tools.approval",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9525,
+          "lastLine": 9525
+        }
+      ],
+      "message": "Smart approvals: LLM call failed after 1.6s (APIError: Our servers are currently overloaded. Please try again later.), escalating"
+    },
+    {
+      "timestamp_utc": "2026-09-15T15:06:55.072Z",
+      "timestamp_utc_plus_3": "2026-09-15T18:06:55.072+03:00",
+      "logger": "agent.auxiliary_client",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9918,
+          "lastLine": 9918
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "message": "Auxiliary goal_judge: main provider openai-codex is unavailable and no fallback_chain / fallback_providers is configured — refusing to guess another logged-in provider. Re-authenticate (`hermes model`) or declare a fallback."
+    },
+    {
+      "timestamp_utc": "2026-09-15T15:06:55.072Z",
+      "timestamp_utc_plus_3": "2026-09-15T18:06:55.072+03:00",
+      "logger": "agent.auxiliary_client",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9919,
+          "lastLine": 9919
+        }
+      ],
+      "session_id": "20260913_181010_f947d8",
+      "message": "Auxiliary goal_judge: connection error on auto and all fallbacks exhausted (fallback_chain + main agent model). Raising original error."
+    },
+    {
+      "timestamp_utc": "2026-09-15T15:06:55.312Z",
+      "timestamp_utc_plus_3": "2026-09-15T18:06:55.312+03:00",
+      "logger": "agent.auxiliary_client",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9920,
+          "lastLine": 9920
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "message": "Auxiliary goal_judge: main provider openai-codex is unavailable and no fallback_chain / fallback_providers is configured — refusing to guess another logged-in provider. Re-authenticate (`hermes model`) or declare a fallback."
+    },
+    {
+      "timestamp_utc": "2026-09-15T15:06:55.313Z",
+      "timestamp_utc_plus_3": "2026-09-15T18:06:55.313+03:00",
+      "logger": "agent.auxiliary_client",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 9921,
+          "lastLine": 9921
+        }
+      ],
+      "session_id": "20260914_183547_b2c101",
+      "message": "Auxiliary goal_judge: connection error on auto and all fallbacks exhausted (fallback_chain + main agent model). Raising original error."
+    },
+    {
+      "timestamp_utc": "2026-09-16T06:01:47.101Z",
+      "timestamp_utc_plus_3": "2026-09-16T09:01:47.101+03:00",
+      "logger": "agent.context_compressor",
+      "level": "WARNING",
+      "sources": [
+        {
+          "file": "errors(2).log",
+          "line": 10660,
+          "lastLine": 10660
+        }
+      ],
+      "message": "Failed to generate context summary: An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID 67061de9-0e6f-401e-bf4c-200b6ad5f787 in your message.. Further summary attempts paused for 60 seconds."
+    }
+  ],
+  "other_diagnostics": {
+    "replay_unknown_warning_records": {
+      "count": 368,
+      "first": {
+        "timestamp_utc": "2026-09-15T13:14:37.099Z",
+        "timestamp_utc_plus_3": "2026-09-15T16:14:37.099+03:00",
+        "logger": "agent.replay_cleanup",
+        "level": "WARNING",
+        "sources": [
+          {
+            "file": "errors(2).log",
+            "line": 9802,
+            "lastLine": 9802
+          }
+        ],
+        "session_id": "20260913_181010_f947d8",
+        "message": "Recovered dangling side-effecting tool call(s) as UNKNOWN instead of erasing them"
+      },
+      "last": {
+        "timestamp_utc": "2026-09-16T00:43:56.883Z",
+        "timestamp_utc_plus_3": "2026-09-16T03:43:56.883+03:00",
+        "logger": "agent.replay_cleanup",
+        "level": "WARNING",
+        "sources": [
+          {
+            "file": "errors(2).log",
+            "line": 10524,
+            "lastLine": 10524
+          }
+        ],
+        "session_id": "20260914_183547_b2c101",
+        "message": "Recovered dangling side-effecting tool call(s) as UNKNOWN instead of erasing them"
+      },
+      "interpretation": "Warning records, not a count of unique lost or repeated tool operations. Outcomes are UNKNOWN; loss/re-execution is not established."
+    },
+    "websocket_warning_records": {
+      "count": 21,
+      "index": [
+        {
+          "timestamp_utc": "2026-09-15T15:33:27.266Z",
+          "timestamp_utc_plus_3": "2026-09-15T18:33:27.266+03:00",
+          "logger": "tui_gateway.ws",
+          "level": "WARNING",
+          "sources": [
+            {
+              "file": "errors(2).log",
+              "line": 9925,
+              "lastLine": 9925
+            },
+            {
+              "file": "gui(2).log",
+              "line": 2440,
+              "lastLine": 2440
+            }
+          ]
+        },
+        {
+          "timestamp_utc": "2026-09-15T15:33:27.268Z",
+          "timestamp_utc_plus_3": "2026-09-15T18:33:27.268+03:00",
+          "logger": "tui_gateway.ws",
+          "level": "WARNING",
+          "sources": [
+            {
+              "file": "errors(2).log",
+              "line": 9926,
+              "lastLine": 9926
+            },
+            {
+              "file": "gui(2).log",
+              "line": 2441,
+              "lastLine": 2441
+            }
+          ]
+        },
+        {
+          "timestamp_utc": "2026-09-15T15:56:51.534Z",
+          "timestamp_utc_plus_3": "2026-09-15T18:56:51.534+03:00",
+          "logger": "tui_gateway.ws",
+          "level": "WARNING",
+          "sources": [
+            {
+              "file": "errors(2).log",
+              "line": 9957,
+              "lastLine": 9957
+            },
+            {
+              "file": "gui(2).log",
+              "line": 2492,
+              "lastLine": 2492
+            }
+          ]
+        },
+        {
+          "timestamp_utc": "2026-09-15T16:00:15.662Z",
+          "timestamp_utc_plus_3": "2026-09-15T19:00:15.662+03:00",
+          "logger": "tui_gateway.ws",
+          "level": "WARNING",
+          "sources": [
+            {
+              "file": "errors(2).log",
+              "line": 9962,
+              "lastLine": 9962
+            },
+            {
+              "file": "gui(2).log",
+              "line": 2501,
+              "lastLine": 2501
+            }
+          ]
+        },
+        {
+          "timestamp_utc": "2026-09-15T16:02:46.929Z",
+          "timestamp_utc_plus_3": "2026-09-15T19:02:46.929+03:00",
+          "logger": "tui_gateway.ws",
+          "level": "WARNING",
+          "sources": [
+            {
+              "file": "errors(2).log",
+              "line": 9963,
+              "lastLine": 9963
+            },
+            {
+              "file": "gui(2).log",
+              "line": 2504,
+              "lastLine": 2504
+            }
+          ]
+        },
+        {
+          "timestamp_utc": "2026-09-15T16:10:19.985Z",
+          "timestamp_utc_plus_3": "2026-09-15T19:10:19.985+03:00",
+          "logger": "tui_gateway.ws",
+          "level": "WARNING",
+          "sources": [
+            {
+              "file": "errors(2).log",
+              "line": 9967,
+              "lastLine": 9967
+            },
+            {
+              "file": "gui(2).log",
+              "line": 2515,
+              "lastLine": 2515
+            }
+          ]
+        },
+        {
+          "timestamp_utc": "2026-09-15T16:13:56.679Z",
+          "timestamp_utc_plus_3": "2026-09-15T19:13:56.679+03:00",
+          "logger": "tui_gateway.ws",
+          "level": "WARNING",
+          "sources": [
+            {
+              "file": "errors(2).log",
+              "line": 9968,
+              "lastLine": 9968
+            },
+            {
+              "file": "gui(2).log",
+              "line": 2518,
+              "lastLine": 2518
+            }
+          ]
+        },
+        {
+          "timestamp_utc": "2026-09-15T16:20:04.592Z",
+          "timestamp_utc_plus_3": "2026-09-15T19:20:04.592+03:00",
+          "logger": "tui_gateway.ws",
+          "level": "WARNING",
+          "sources": [
+            {
+              "file": "errors(2).log",
+              "line": 9994,
+              "lastLine": 9994
+            },
+            {
+              "file": "gui(2).log",
+              "line": 2529,
+              "lastLine": 2529
+            }
+          ]
+        },
+        {
+          "timestamp_utc": "2026-09-15T16:21:15.281Z",
+          "timestamp_utc_plus_3": "2026-09-15T19:21:15.281+03:00",
+          "logger": "tui_gateway.ws",
+          "level": "WARNING",
+          "sources": [
+            {
+              "file": "errors(2).log",
+              "line": 9996,
+              "lastLine": 9996
+            },
+            {
+              "file": "gui(2).log",
+              "line": 2532,
+              "lastLine": 2532
+            }
+          ]
+        },
+        {
+          "timestamp_utc": "2026-09-15T16:21:19.992Z",
+          "timestamp_utc_plus_3": "2026-09-15T19:21:19.992+03:00",
+          "logger": "tui_gateway.ws",
+          "level": "WARNING",
+          "sources": [
+            {
+              "file": "errors(2).log",
+              "line": 9998,
+              "lastLine": 9998
+            },
+            {
+              "file": "gui(2).log",
+              "line": 2535,
+              "lastLine": 2535
+            }
+          ]
+        },
+        {
+          "timestamp_utc": "2026-09-15T16:21:47.274Z",
+          "timestamp_utc_plus_3": "2026-09-15T19:21:47.274+03:00",
+          "logger": "tui_gateway.ws",
+          "level": "WARNING",
+          "sources": [
+            {
+              "file": "errors(2).log",
+              "line": 9999,
+              "lastLine": 9999
+            },
+            {
+              "file": "gui(2).log",
+              "line": 2538,
+              "lastLine": 2538
+            }
+          ]
+        },
+        {
+          "timestamp_utc": "2026-09-15T16:24:23.304Z",
+          "timestamp_utc_plus_3": "2026-09-15T19:24:23.304+03:00",
+          "logger": "tui_gateway.ws",
+          "level": "WARNING",
+          "sources": [
+            {
+              "file": "errors(2).log",
+              "line": 10005,
+              "lastLine": 10005
+            },
+            {
+              "file": "gui(2).log",
+              "line": 2546,
+              "lastLine": 2546
+            }
+          ]
+        },
+        {
+          "timestamp_utc": "2026-09-15T16:34:34.061Z",
+          "timestamp_utc_plus_3": "2026-09-15T19:34:34.061+03:00",
+          "logger": "tui_gateway.ws",
+          "level": "WARNING",
+          "sources": [
+            {
+              "file": "errors(2).log",
+              "line": 10014,
+              "lastLine": 10014
+            },
+            {
+              "file": "gui(2).log",
+              "line": 2559,
+              "lastLine": 2559
+            }
+          ]
+        },
+        {
+          "timestamp_utc": "2026-09-15T16:48:33.477Z",
+          "timestamp_utc_plus_3": "2026-09-15T19:48:33.477+03:00",
+          "logger": "tui_gateway.ws",
+          "level": "WARNING",
+          "sources": [
+            {
+              "file": "errors(2).log",
+              "line": 10023,
+              "lastLine": 10023
+            },
+            {
+              "file": "gui(2).log",
+              "line": 2566,
+              "lastLine": 2566
+            }
+          ]
+        },
+        {
+          "timestamp_utc": "2026-09-15T17:04:42.709Z",
+          "timestamp_utc_plus_3": "2026-09-15T20:04:42.709+03:00",
+          "logger": "tui_gateway.ws",
+          "level": "WARNING",
+          "sources": [
+            {
+              "file": "errors(2).log",
+              "line": 10032,
+              "lastLine": 10032
+            },
+            {
+              "file": "gui(2).log",
+              "line": 2585,
+              "lastLine": 2585
+            }
+          ]
+        },
+        {
+          "timestamp_utc": "2026-09-15T17:15:37.624Z",
+          "timestamp_utc_plus_3": "2026-09-15T20:15:37.624+03:00",
+          "logger": "tui_gateway.ws",
+          "level": "WARNING",
+          "sources": [
+            {
+              "file": "errors(2).log",
+              "line": 10038,
+              "lastLine": 10038
+            },
+            {
+              "file": "gui(2).log",
+              "line": 2600,
+              "lastLine": 2600
+            }
+          ]
+        },
+        {
+          "timestamp_utc": "2026-09-15T17:15:41.424Z",
+          "timestamp_utc_plus_3": "2026-09-15T20:15:41.424+03:00",
+          "logger": "tui_gateway.ws",
+          "level": "WARNING",
+          "sources": [
+            {
+              "file": "errors(2).log",
+              "line": 10039,
+              "lastLine": 10039
+            },
+            {
+              "file": "gui(2).log",
+              "line": 2603,
+              "lastLine": 2603
+            }
+          ]
+        },
+        {
+          "timestamp_utc": "2026-09-15T17:22:04.783Z",
+          "timestamp_utc_plus_3": "2026-09-15T20:22:04.783+03:00",
+          "logger": "tui_gateway.ws",
+          "level": "WARNING",
+          "sources": [
+            {
+              "file": "errors(2).log",
+              "line": 10046,
+              "lastLine": 10046
+            },
+            {
+              "file": "gui(2).log",
+              "line": 2623,
+              "lastLine": 2623
+            }
+          ]
+        },
+        {
+          "timestamp_utc": "2026-09-16T05:14:34.135Z",
+          "timestamp_utc_plus_3": "2026-09-16T08:14:34.135+03:00",
+          "logger": "tui_gateway.ws",
+          "level": "WARNING",
+          "sources": [
+            {
+              "file": "errors(2).log",
+              "line": 10585,
+              "lastLine": 10585
+            },
+            {
+              "file": "gui(2).log",
+              "line": 2776,
+              "lastLine": 2776
+            }
+          ]
+        },
+        {
+          "timestamp_utc": "2026-09-16T05:15:39.728Z",
+          "timestamp_utc_plus_3": "2026-09-16T08:15:39.728+03:00",
+          "logger": "tui_gateway.ws",
+          "level": "WARNING",
+          "sources": [
+            {
+              "file": "errors(2).log",
+              "line": 10587,
+              "lastLine": 10587
+            },
+            {
+              "file": "gui(2).log",
+              "line": 2781,
+              "lastLine": 2781
+            }
+          ]
+        },
+        {
+          "timestamp_utc": "2026-09-16T05:35:28.502Z",
+          "timestamp_utc_plus_3": "2026-09-16T08:35:28.502+03:00",
+          "logger": "tui_gateway.ws",
+          "level": "WARNING",
+          "sources": [
+            {
+              "file": "errors(2).log",
+              "line": 10610,
+              "lastLine": 10610
+            },
+            {
+              "file": "gui(2).log",
+              "line": 2800,
+              "lastLine": 2800
+            }
+          ]
+        }
+      ]
+    },
+    "detached_runtime_rpc_warning_records": {
+      "count": 10,
+      "index": [
+        {
+          "timestamp_utc": "2026-09-15T15:34:17.950Z",
+          "timestamp_utc_plus_3": "2026-09-15T18:34:17.950+03:00",
+          "logger": "tui_gateway.server",
+          "level": "WARNING",
+          "sources": [
+            {
+              "file": "errors(2).log",
+              "line": 9927,
+              "lastLine": 9927
+            },
+            {
+              "file": "gui(2).log",
+              "line": 2444,
+              "lastLine": 2444
+            }
+          ]
+        },
+        {
+          "timestamp_utc": "2026-09-15T15:35:44.819Z",
+          "timestamp_utc_plus_3": "2026-09-15T18:35:44.819+03:00",
+          "logger": "tui_gateway.server",
+          "level": "WARNING",
+          "sources": [
+            {
+              "file": "errors(2).log",
+              "line": 9937,
+              "lastLine": 9937
+            },
+            {
+              "file": "gui(2).log",
+              "line": 2449,
+              "lastLine": 2449
+            }
+          ]
+        },
+        {
+          "timestamp_utc": "2026-09-15T15:38:03.392Z",
+          "timestamp_utc_plus_3": "2026-09-15T18:38:03.392+03:00",
+          "logger": "tui_gateway.server",
+          "level": "WARNING",
+          "sources": [
+            {
+              "file": "errors(2).log",
+              "line": 9939,
+              "lastLine": 9939
+            },
+            {
+              "file": "gui(2).log",
+              "line": 2452,
+              "lastLine": 2452
+            }
+          ]
+        },
+        {
+          "timestamp_utc": "2026-09-15T15:38:26.099Z",
+          "timestamp_utc_plus_3": "2026-09-15T18:38:26.099+03:00",
+          "logger": "tui_gateway.server",
+          "level": "WARNING",
+          "sources": [
+            {
+              "file": "errors(2).log",
+              "line": 9940,
+              "lastLine": 9940
+            },
+            {
+              "file": "gui(2).log",
+              "line": 2455,
+              "lastLine": 2455
+            }
+          ]
+        },
+        {
+          "timestamp_utc": "2026-09-15T15:43:58.279Z",
+          "timestamp_utc_plus_3": "2026-09-15T18:43:58.279+03:00",
+          "logger": "tui_gateway.server",
+          "level": "WARNING",
+          "sources": [
+            {
+              "file": "errors(2).log",
+              "line": 9944,
+              "lastLine": 9944
+            },
+            {
+              "file": "gui(2).log",
+              "line": 2472,
+              "lastLine": 2472
+            }
+          ]
+        },
+        {
+          "timestamp_utc": "2026-09-15T15:47:29.965Z",
+          "timestamp_utc_plus_3": "2026-09-15T18:47:29.965+03:00",
+          "logger": "tui_gateway.server",
+          "level": "WARNING",
+          "sources": [
+            {
+              "file": "errors(2).log",
+              "line": 9948,
+              "lastLine": 9948
+            },
+            {
+              "file": "gui(2).log",
+              "line": 2477,
+              "lastLine": 2477
+            }
+          ]
+        },
+        {
+          "timestamp_utc": "2026-09-15T15:50:03.204Z",
+          "timestamp_utc_plus_3": "2026-09-15T18:50:03.204+03:00",
+          "logger": "tui_gateway.server",
+          "level": "WARNING",
+          "sources": [
+            {
+              "file": "errors(2).log",
+              "line": 9952,
+              "lastLine": 9952
+            },
+            {
+              "file": "gui(2).log",
+              "line": 2480,
+              "lastLine": 2480
+            }
+          ]
+        },
+        {
+          "timestamp_utc": "2026-09-15T15:55:06.769Z",
+          "timestamp_utc_plus_3": "2026-09-15T18:55:06.769+03:00",
+          "logger": "tui_gateway.server",
+          "level": "WARNING",
+          "sources": [
+            {
+              "file": "errors(2).log",
+              "line": 9955,
+              "lastLine": 9955
+            },
+            {
+              "file": "gui(2).log",
+              "line": 2487,
+              "lastLine": 2487
+            }
+          ]
+        },
+        {
+          "timestamp_utc": "2026-09-15T16:23:10.228Z",
+          "timestamp_utc_plus_3": "2026-09-15T19:23:10.228+03:00",
+          "logger": "tui_gateway.server",
+          "level": "WARNING",
+          "sources": [
+            {
+              "file": "errors(2).log",
+              "line": 10003,
+              "lastLine": 10003
+            },
+            {
+              "file": "gui(2).log",
+              "line": 2541,
+              "lastLine": 2541
+            }
+          ]
+        },
+        {
+          "timestamp_utc": "2026-09-15T17:15:49.965Z",
+          "timestamp_utc_plus_3": "2026-09-15T20:15:49.965+03:00",
+          "logger": "tui_gateway.server",
+          "level": "WARNING",
+          "sources": [
+            {
+              "file": "errors(2).log",
+              "line": 10040,
+              "lastLine": 10040
+            },
+            {
+              "file": "gui(2).log",
+              "line": 2606,
+              "lastLine": 2606
+            }
+          ]
+        }
+      ]
+    },
+    "tool_returned_error_records": 323,
+    "skipped_post_tool_hook_records": 130,
+    "negative_tool_requirement_records": 56
+  },
+  "limitations": [
+    "This is a selected set of provider and orchestration evidence; raw logs and private task/tool payloads are not published.",
+    "Earlier owner-reported Full/Light/browser observations are not new per-request account or browser telemetry.",
+    "Same-laptop near-simultaneous failures support temporal correlation, not identification of a server pool, account restriction, daily schedule or network root cause.",
+    "Three dates, partial day coverage, changing workload and 3-to-5 attempt budget do not establish a daily outage schedule or comparative failure rate.",
+    "No runtime configuration was changed or live test requested by this audit."
+  ]
+}

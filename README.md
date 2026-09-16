@@ -9,9 +9,9 @@ We refer to the company as **the provider** throughout the investigation. Produc
 [Русская сводка](docs/README.ru.md) · [Evidence](evidence/README.md) · [Recovery procedure](docs/RECOVERY.md) · [Open tasks](https://github.com/gv1983us-commits/codex-provider-incident/issues) · [Hermes report](https://github.com/NousResearch/hermes-agent/issues/107307)
 
 > [!IMPORTANT]
-> **15 September — incident remains OPEN.** The owner still cannot work normally and has found no working fix on their side. Hermes maintainers and the provider are asked to investigate and repair the failing route together.
+> **16 September — incident remains OPEN.** The owner still cannot work normally and requests joint repair by Hermes maintainers and the provider.
 >
-> **Updated through 15 September 10:16:49 UTC+3: 157 failed Codex attempts in the rolling 48 hours; 178 since the original 10 September Git baseline.** Added logs contain 60 Astra failures and eight GUI error turns, including errors in two sessions 681 ms apart and failure of a fresh session. [Expanded report](docs/LOG-EXTENSION-2026-09-15-1016.md) · [New ledger and source hashes](evidence/log-extension-20260915T071649Z.json).
+> **Through 16 September 09:06:01 UTC+3: 255 failed Codex attempts in the rolling 48 hours; 277 since the original Git baseline.** The new logs add **99 Astra failures and nine GUI error turns**. Both sessions exhausted **five attempts** around 09:04; GUI errors were **1.532 s apart**. [Morning recurrence and full report](docs/MORNING-RECURRENCE-2026-09-16.md) · [New ledger and source hashes](evidence/log-extension-20260916T060601Z.json).
 
 The earlier resolution claim was followed by [recurrence and reopening on 12 September](https://github.com/gv1983us-commits/codex-provider-incident/issues/1#issuecomment-5643482050). Individual successful runs have not established a durable fix.
 
@@ -62,7 +62,7 @@ The [new exact receipt](https://github.com/gv1983us-commits/codex-provider-incid
 
 The counts have different scopes. **Do not compute an overall incident failure percentage from this table.** Earlier logs do not contain a complete record of successful calls. Terra is a later owner observation; it is not part of the historical 151 Sol/Astra count.
 
-## Joint upstream action requested — 15 September
+## Joint upstream action requested — 16 September
 
 | Requested party | Required work | Evidence / acceptance |
 | --- | --- | --- |
@@ -70,7 +70,7 @@ The counts have different scopes. **Do not compute an overall incident failure p
 | Hermes maintainers | Investigate retry exhaustion, redirect termination, failed compression/approval, history-version rejection and the WebSocket limit; preserve completed tool results and make interrupted state explicit. | A supported upstream fix or documented handling, with safe continuation and no uncontrolled replay of completed tools. |
 | Hermes + provider together | Trace the failing request → retry → tool/result → continuation path across both layers and agree on a supported fix. | Sustained useful work on the affected setup, with observation duration and remaining failures reported; successful one-shot calls alone do not close the incident. |
 
-The owner has found no working fix locally. The request is for a supported correction by Hermes and the provider, with sustained practical operation as the recovery criterion. [Current status and evidence](docs/CONTINUING-INCIDENT-2026-09-15.md).
+The owner has found no working fix locally. The request is for a supported correction by Hermes and the provider, with sustained practical operation as the recovery criterion. [Current status and evidence](docs/MORNING-RECURRENCE-2026-09-16.md).
 
 ## Earlier recovery investigation plan — 10 September
 
@@ -85,7 +85,7 @@ The procedure and acceptance criteria are in [RECOVERY.md](docs/RECOVERY.md). No
 
 | Task | Current owner / invitation | Status |
 | --- | --- | --- |
-| [#1 · Validate sustained Codex work](https://github.com/gv1983us-commits/codex-provider-incident/issues/1) | Hermes maintainers + provider requested; owner supplies evidence | OPEN on 15 Sep; normal work remains disrupted; no owner-side fix found |
+| [#1 · Validate sustained Codex work](https://github.com/gv1983us-commits/codex-provider-incident/issues/1) | Hermes maintainers + provider requested; owner supplies evidence | OPEN on 16 Sep; five-attempt chains still fail; normal work remains disrupted |
 | [#2 · Preserve continuation after retry exhaustion](https://github.com/gv1983us-commits/codex-provider-incident/issues/2) | `huklaa` invited; formal assignment pending | Awaiting contributor confirmation |
 | [#3 · Check compression failure and recovery](https://github.com/gv1983us-commits/codex-provider-incident/issues/3) | Account owner coordinates; help wanted | Installed revision and code review needed |
 | [#4 · Compare results with Sub2API](https://github.com/gv1983us-commits/codex-provider-incident/issues/4) | Project owner and two relevant reporters invited | Awaiting replies |
@@ -96,8 +96,9 @@ The [invitation and repository handoff](https://github.com/NousResearch/hermes-a
 
 | Material | Purpose |
 | --- | --- |
-| [Expanded logs — 15 September, 10:16 UTC+3](docs/LOG-EXTENSION-2026-09-15-1016.md) | Current 178/157 counts, 60 added Astra failures, near-simultaneous errors and fresh-session failure |
-| [Continuing incident — 15 September, earlier 08:32 snapshot](docs/CONTINUING-INCIDENT-2026-09-15.md) | Current OPEN status, 48-hour / after-Git counts, exact final failures and joint repair request |
+| [Morning recurrence — 16 September, 09:06 UTC+3](docs/MORNING-RECURRENCE-2026-09-16.md) | Current 277/255 counts; 99 added failures; five-attempt exhaustion, morning comparison and pending-tool / GUI mismatch |
+| [Expanded logs — 15 September, 10:16 UTC+3](docs/LOG-EXTENSION-2026-09-15-1016.md) | Earlier 178/157 counts, 60 added Astra failures, near-simultaneous errors and fresh-session failure |
+| [Continuing incident — 15 September, earlier 08:32 snapshot](docs/CONTINUING-INCIDENT-2026-09-15.md) | Earlier 08:32 snapshot, 48-hour / after-Git counts, exact final failures and joint repair request |
 | [Audited logs — 15 September, earlier 08:32 snapshot](evidence/log-audit-20260915.json) | All 118 Codex attempts, 1,013 diagnostic index entries, selected excerpts and source hashes |
 | [Fresh community follow-up](docs/COMMUNITY-FOLLOWUP-2026-09-10.md) | 10 Sep evening: shrinking work intervals, related user reports, temporary recovery and conflicting workarounds |
 | [Latest Light overload](docs/LIGHT-OVERLOAD-2026-09-10.md) | Sol `overloaded` on Light after reported conservation; failures now span both accounts |

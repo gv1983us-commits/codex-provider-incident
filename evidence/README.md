@@ -1,6 +1,12 @@
 # Evidence and provenance
 
-## Expanded corpus — 15 September 2026, 10:16:49 UTC+3
+## Expanded corpus — 16 September 2026, 09:06:01 UTC+3
+
+[New extension ledger](log-extension-20260916T060601Z.json) contains **99 additional failed Codex attempts**, nine GUI error turns, nine exhausted chains, selected diagnostic excerpts, the morning comparison and exact byte-extension/hash checks for the three new files. [Full report](../docs/MORNING-RECURRENCE-2026-09-16.md).
+
+Current cumulative attempts: **277**; current rolling 48-hour attempts: **255**. Earlier ledgers remain frozen: **178 + 99 = 277**, **157 + 99 − 1 = 255**. The previous agent log was not extended; no new successful-call denominator or failure percentage is available. Five-attempt chains now demonstrably fail, and three pending-tool endings correlate with GUI complete.
+
+## Previous expanded corpus — 15 September 2026, 10:16:49 UTC+3
 
 [New extension ledger](log-extension-20260915T071649Z.json) contains **60 additional failed Codex attempts**, eight GUI error turns, nine exhaustion records, selected diagnostics, hashes and exact byte-prefix checks against the old files. [Expanded report](../docs/LOG-EXTENSION-2026-09-15-1016.md).
 
