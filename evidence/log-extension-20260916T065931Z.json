@@ -1,0 +1,556 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-09-16T07:16:20.956339+00:00",
+  "timezone_interpretation": "Python logs: Europe/Istanbul (UTC+3); desktop Z records: UTC",
+  "methodology": {
+    "failed_attempt_selector": "logger=agent.conversation_loop; message starts API call failed (attempt N/M); provider=openai-codex",
+    "dedup_key": [
+      "timestamp_ms",
+      "level",
+      "session",
+      "logger",
+      "full_message"
+    ],
+    "notes": [
+      "retry attempts count separately",
+      "mirrored records count once",
+      "GUI terminal errors overlap API attempts",
+      "successful-call denominator is incomplete outside the agent-log coverage"
+    ]
+  },
+  "source_relationships": [
+    "errors(3).log is an exact byte-prefix extension of errors(2).log",
+    "gui(3).log is an exact byte-prefix extension of gui(2).log",
+    "desktop(3).log is an exact byte-prefix extension of desktop(2).log",
+    "agent(2).log is a later rotated segment and is combined with agent(1).log"
+  ],
+  "excluded_from_failed_attempt_count": [
+    {
+      "time_local": "2026-09-16T09:58:17.457+03:00",
+      "component": "tools.approval auxiliary LLM",
+      "request_id": "6ae9171d-eaee-4852-a58a-fccb14b931c7",
+      "reason": "not an agent.conversation_loop main-turn attempt"
+    }
+  ],
+  "end_local": "2026-09-16T09:59:31.688+03:00",
+  "inventory": [
+    {
+      "file": "errors(3).log",
+      "bytes": 2017259,
+      "lines": 10749,
+      "events": 8239,
+      "sha256": "86c64c7f241ce57c45de5b2e472657f683c784b1cb39a6cd416b2c5dbe65688f",
+      "first_ms": 1788846967080,
+      "last_ms": 1789541970822
+    },
+    {
+      "file": "agent(1).log",
+      "bytes": 2777605,
+      "lines": 13273,
+      "events": 13144,
+      "sha256": "8e302e4d18af5ac3d4ef8d5ff10bad03aabdb561ec44dd80d613feb216cfdc71",
+      "first_ms": 1789399122598,
+      "last_ms": 1789456609139
+    },
+    {
+      "file": "agent(2).log",
+      "bytes": 1544310,
+      "lines": 7197,
+      "events": 7190,
+      "sha256": "fad0a0ef630eb2cb64b80073dc3c5d62087852b9e1758265636c694bb081c012",
+      "first_ms": 1789497386778,
+      "last_ms": 1789541971688
+    },
+    {
+      "file": "gui(3).log",
+      "bytes": 533863,
+      "lines": 2823,
+      "events": 2810,
+      "sha256": "fba9458fb3b05e4bbae3d1b168c98c6581861c0e3f0cc0bf41615daa6f2a460a",
+      "first_ms": 1788846954836,
+      "last_ms": 1789541971688
+    },
+    {
+      "file": "desktop(3).log",
+      "bytes": 387682,
+      "lines": 3679,
+      "events": 3679,
+      "sha256": "620c67685e9241797b80930f2bce63feaa7414ba64e8cdfd9a7afe8e1e7ff728",
+      "first_ms": 1788846938975,
+      "last_ms": 1789541970822
+    },
+    {
+      "file": "gateway(1).log",
+      "bytes": 130147,
+      "lines": 982,
+      "events": 982,
+      "sha256": "fd5c256de8ce6db7fdc0287872f334f8e1b29200dc32f7ca136360cc75c37818",
+      "first_ms": 1788895348327,
+      "last_ms": 1789455468903
+    }
+  ],
+  "counts": {
+    "all_failed_attempts": 524,
+    "post_baseline_failed_attempts": 293,
+    "rolling_48h_failed_attempts": 266,
+    "new_failed_attempts": 16,
+    "new_gui_errors": 4,
+    "post_baseline_all_gui_errors": 28,
+    "post_baseline_codex_gui_errors": 26
+  },
+  "new_attempts": [
+    {
+      "time_local": "2026-09-16T09:07:26.954+03:00",
+      "time_utc": "2026-09-16T06:07:26.954+00:00",
+      "session": "20260913_181010_f947d8",
+      "model": "gpt-6-astra-900k",
+      "attempt": "5/5",
+      "request_id": null,
+      "category": "overloaded",
+      "source": "errors(3).log:10702"
+    },
+    {
+      "time_local": "2026-09-16T09:30:39.853+03:00",
+      "time_utc": "2026-09-16T06:30:39.853+00:00",
+      "session": "20260913_181010_f947d8",
+      "model": "gpt-5.6-sol-900k",
+      "attempt": "1/5",
+      "request_id": "fb428e2e-2d92-4398-9900-aceb7c6c9b17",
+      "category": "request-processing",
+      "source": "errors(3).log:10715"
+    },
+    {
+      "time_local": "2026-09-16T09:30:46.603+03:00",
+      "time_utc": "2026-09-16T06:30:46.603+00:00",
+      "session": "20260913_181010_f947d8",
+      "model": "gpt-5.6-sol-900k",
+      "attempt": "2/5",
+      "request_id": "7e4ea726-c18f-4b9a-a429-7d87e747b307",
+      "category": "request-processing",
+      "source": "errors(3).log:10717"
+    },
+    {
+      "time_local": "2026-09-16T09:30:54.523+03:00",
+      "time_utc": "2026-09-16T06:30:54.523+00:00",
+      "session": "20260913_181010_f947d8",
+      "model": "gpt-5.6-sol-900k",
+      "attempt": "3/5",
+      "request_id": null,
+      "category": "overloaded",
+      "source": "errors(3).log:10719"
+    },
+    {
+      "time_local": "2026-09-16T09:31:14.009+03:00",
+      "time_utc": "2026-09-16T06:31:14.009+00:00",
+      "session": "20260913_181010_f947d8",
+      "model": "gpt-5.6-sol-900k",
+      "attempt": "4/5",
+      "request_id": null,
+      "category": "overloaded",
+      "source": "errors(3).log:10721"
+    },
+    {
+      "time_local": "2026-09-16T09:31:35.103+03:00",
+      "time_utc": "2026-09-16T06:31:35.103+00:00",
+      "session": "20260913_181010_f947d8",
+      "model": "gpt-5.6-sol-900k",
+      "attempt": "5/5",
+      "request_id": "1b1ec246-61f2-4ff8-97d0-17645ada869e",
+      "category": "request-processing",
+      "source": "errors(3).log:10723"
+    },
+    {
+      "time_local": "2026-09-16T09:57:39.884+03:00",
+      "time_utc": "2026-09-16T06:57:39.884+00:00",
+      "session": "20260914_183547_b2c101",
+      "model": "gpt-5.6-sol-900k",
+      "attempt": "1/5",
+      "request_id": "ecaa9406-b6ea-4e7a-a0d7-25b9c6a322c5",
+      "category": "request-processing",
+      "source": "errors(3).log:10729"
+    },
+    {
+      "time_local": "2026-09-16T09:57:45.073+03:00",
+      "time_utc": "2026-09-16T06:57:45.073+00:00",
+      "session": "20260914_183547_b2c101",
+      "model": "gpt-5.6-sol-900k",
+      "attempt": "2/5",
+      "request_id": "ce0e6f70-1d2b-4869-a091-21df1b8bb438",
+      "category": "request-processing",
+      "source": "errors(3).log:10731"
+    },
+    {
+      "time_local": "2026-09-16T09:57:55.547+03:00",
+      "time_utc": "2026-09-16T06:57:55.547+00:00",
+      "session": "20260914_183547_b2c101",
+      "model": "gpt-5.6-sol-900k",
+      "attempt": "3/5",
+      "request_id": null,
+      "category": "overloaded",
+      "source": "errors(3).log:10733"
+    },
+    {
+      "time_local": "2026-09-16T09:58:09.084+03:00",
+      "time_utc": "2026-09-16T06:58:09.084+00:00",
+      "session": "20260914_183547_b2c101",
+      "model": "gpt-5.6-sol-900k",
+      "attempt": "4/5",
+      "request_id": null,
+      "category": "overloaded",
+      "source": "errors(3).log:10735"
+    },
+    {
+      "time_local": "2026-09-16T09:58:33.391+03:00",
+      "time_utc": "2026-09-16T06:58:33.391+00:00",
+      "session": "20260913_181010_f947d8",
+      "model": "gpt-5.6-sol-900k",
+      "attempt": "1/5",
+      "request_id": "03dbcffd-472a-497e-a75a-df5272faed89",
+      "category": "request-processing",
+      "source": "errors(3).log:10738"
+    },
+    {
+      "time_local": "2026-09-16T09:58:34.444+03:00",
+      "time_utc": "2026-09-16T06:58:34.444+00:00",
+      "session": "20260914_183547_b2c101",
+      "model": "gpt-5.6-sol-900k",
+      "attempt": "5/5",
+      "request_id": "7969d90e-f26b-4b67-8cac-ca8ad9606fbd",
+      "category": "request-processing",
+      "source": "errors(3).log:10740"
+    },
+    {
+      "time_local": "2026-09-16T09:58:38.672+03:00",
+      "time_utc": "2026-09-16T06:58:38.672+00:00",
+      "session": "20260913_181010_f947d8",
+      "model": "gpt-5.6-sol-900k",
+      "attempt": "2/5",
+      "request_id": "dd8cff11-173f-4c0c-8892-9cb5b13750ad",
+      "category": "request-processing",
+      "source": "errors(3).log:10742"
+    },
+    {
+      "time_local": "2026-09-16T09:58:46.468+03:00",
+      "time_utc": "2026-09-16T06:58:46.468+00:00",
+      "session": "20260913_181010_f947d8",
+      "model": "gpt-5.6-sol-900k",
+      "attempt": "3/5",
+      "request_id": "864ad9a7-0499-41d4-a276-7a4dbed83c73",
+      "category": "request-processing",
+      "source": "errors(3).log:10744"
+    },
+    {
+      "time_local": "2026-09-16T09:58:59.594+03:00",
+      "time_utc": "2026-09-16T06:58:59.594+00:00",
+      "session": "20260913_181010_f947d8",
+      "model": "gpt-5.6-sol-900k",
+      "attempt": "4/5",
+      "request_id": "b7ccd569-db76-4744-b147-0fd65dd7e345",
+      "category": "request-processing",
+      "source": "errors(3).log:10746"
+    },
+    {
+      "time_local": "2026-09-16T09:59:30.765+03:00",
+      "time_utc": "2026-09-16T06:59:30.765+00:00",
+      "session": "20260913_181010_f947d8",
+      "model": "gpt-5.6-sol-900k",
+      "attempt": "5/5",
+      "request_id": null,
+      "category": "overloaded",
+      "source": "errors(3).log:10748"
+    }
+  ],
+  "new_model_counts": {
+    "gpt-6-astra-900k": 1,
+    "gpt-5.6-sol-900k": 15
+  },
+  "new_category_counts": {
+    "overloaded": 6,
+    "request-processing": 10
+  },
+  "retry_sequences": [
+    {
+      "session": "20260913_181010_f947d8",
+      "model": "gpt-6-astra-900k",
+      "attempts": [
+        {
+          "time_local": "2026-09-16T09:07:26.954+03:00",
+          "time_utc": "2026-09-16T06:07:26.954+00:00",
+          "session": "20260913_181010_f947d8",
+          "model": "gpt-6-astra-900k",
+          "attempt": "5/5",
+          "request_id": null,
+          "category": "overloaded",
+          "source": "errors(3).log:10702"
+        }
+      ],
+      "complete": true,
+      "first_local": "2026-09-16T09:07:26.954+03:00",
+      "last_local": "2026-09-16T09:07:26.954+03:00",
+      "duration_seconds": 0.0,
+      "configured_backoff_seconds": []
+    },
+    {
+      "session": "20260913_181010_f947d8",
+      "model": "gpt-5.6-sol-900k",
+      "attempts": [
+        {
+          "time_local": "2026-09-16T09:30:39.853+03:00",
+          "time_utc": "2026-09-16T06:30:39.853+00:00",
+          "session": "20260913_181010_f947d8",
+          "model": "gpt-5.6-sol-900k",
+          "attempt": "1/5",
+          "request_id": "fb428e2e-2d92-4398-9900-aceb7c6c9b17",
+          "category": "request-processing",
+          "source": "errors(3).log:10715"
+        },
+        {
+          "time_local": "2026-09-16T09:30:46.603+03:00",
+          "time_utc": "2026-09-16T06:30:46.603+00:00",
+          "session": "20260913_181010_f947d8",
+          "model": "gpt-5.6-sol-900k",
+          "attempt": "2/5",
+          "request_id": "7e4ea726-c18f-4b9a-a429-7d87e747b307",
+          "category": "request-processing",
+          "source": "errors(3).log:10717"
+        },
+        {
+          "time_local": "2026-09-16T09:30:54.523+03:00",
+          "time_utc": "2026-09-16T06:30:54.523+00:00",
+          "session": "20260913_181010_f947d8",
+          "model": "gpt-5.6-sol-900k",
+          "attempt": "3/5",
+          "request_id": null,
+          "category": "overloaded",
+          "source": "errors(3).log:10719"
+        },
+        {
+          "time_local": "2026-09-16T09:31:14.009+03:00",
+          "time_utc": "2026-09-16T06:31:14.009+00:00",
+          "session": "20260913_181010_f947d8",
+          "model": "gpt-5.6-sol-900k",
+          "attempt": "4/5",
+          "request_id": null,
+          "category": "overloaded",
+          "source": "errors(3).log:10721"
+        },
+        {
+          "time_local": "2026-09-16T09:31:35.103+03:00",
+          "time_utc": "2026-09-16T06:31:35.103+00:00",
+          "session": "20260913_181010_f947d8",
+          "model": "gpt-5.6-sol-900k",
+          "attempt": "5/5",
+          "request_id": "1b1ec246-61f2-4ff8-97d0-17645ada869e",
+          "category": "request-processing",
+          "source": "errors(3).log:10723"
+        }
+      ],
+      "complete": true,
+      "first_local": "2026-09-16T09:30:39.853+03:00",
+      "last_local": "2026-09-16T09:31:35.103+03:00",
+      "duration_seconds": 55.25,
+      "configured_backoff_seconds": [
+        2.038444420646231,
+        5.466256803238954,
+        8.549234233478746,
+        18.697907884073988
+      ]
+    },
+    {
+      "session": "20260913_181010_f947d8",
+      "model": "gpt-5.6-sol-900k",
+      "attempts": [
+        {
+          "time_local": "2026-09-16T09:58:33.391+03:00",
+          "time_utc": "2026-09-16T06:58:33.391+00:00",
+          "session": "20260913_181010_f947d8",
+          "model": "gpt-5.6-sol-900k",
+          "attempt": "1/5",
+          "request_id": "03dbcffd-472a-497e-a75a-df5272faed89",
+          "category": "request-processing",
+          "source": "errors(3).log:10738"
+        },
+        {
+          "time_local": "2026-09-16T09:58:38.672+03:00",
+          "time_utc": "2026-09-16T06:58:38.672+00:00",
+          "session": "20260913_181010_f947d8",
+          "model": "gpt-5.6-sol-900k",
+          "attempt": "2/5",
+          "request_id": "dd8cff11-173f-4c0c-8892-9cb5b13750ad",
+          "category": "request-processing",
+          "source": "errors(3).log:10742"
+        },
+        {
+          "time_local": "2026-09-16T09:58:46.468+03:00",
+          "time_utc": "2026-09-16T06:58:46.468+00:00",
+          "session": "20260913_181010_f947d8",
+          "model": "gpt-5.6-sol-900k",
+          "attempt": "3/5",
+          "request_id": "864ad9a7-0499-41d4-a276-7a4dbed83c73",
+          "category": "request-processing",
+          "source": "errors(3).log:10744"
+        },
+        {
+          "time_local": "2026-09-16T09:58:59.594+03:00",
+          "time_utc": "2026-09-16T06:58:59.594+00:00",
+          "session": "20260913_181010_f947d8",
+          "model": "gpt-5.6-sol-900k",
+          "attempt": "4/5",
+          "request_id": "b7ccd569-db76-4744-b147-0fd65dd7e345",
+          "category": "request-processing",
+          "source": "errors(3).log:10746"
+        },
+        {
+          "time_local": "2026-09-16T09:59:30.765+03:00",
+          "time_utc": "2026-09-16T06:59:30.765+00:00",
+          "session": "20260913_181010_f947d8",
+          "model": "gpt-5.6-sol-900k",
+          "attempt": "5/5",
+          "request_id": null,
+          "category": "overloaded",
+          "source": "errors(3).log:10748"
+        }
+      ],
+      "complete": true,
+      "first_local": "2026-09-16T09:58:33.391+03:00",
+      "last_local": "2026-09-16T09:59:30.765+03:00",
+      "duration_seconds": 57.374,
+      "configured_backoff_seconds": [
+        2.5491267931854975,
+        4.7095223809762565,
+        10.539776548011334,
+        21.178504638300662
+      ]
+    },
+    {
+      "session": "20260914_183547_b2c101",
+      "model": "gpt-5.6-sol-900k",
+      "attempts": [
+        {
+          "time_local": "2026-09-16T09:57:39.884+03:00",
+          "time_utc": "2026-09-16T06:57:39.884+00:00",
+          "session": "20260914_183547_b2c101",
+          "model": "gpt-5.6-sol-900k",
+          "attempt": "1/5",
+          "request_id": "ecaa9406-b6ea-4e7a-a0d7-25b9c6a322c5",
+          "category": "request-processing",
+          "source": "errors(3).log:10729"
+        },
+        {
+          "time_local": "2026-09-16T09:57:45.073+03:00",
+          "time_utc": "2026-09-16T06:57:45.073+00:00",
+          "session": "20260914_183547_b2c101",
+          "model": "gpt-5.6-sol-900k",
+          "attempt": "2/5",
+          "request_id": "ce0e6f70-1d2b-4869-a091-21df1b8bb438",
+          "category": "request-processing",
+          "source": "errors(3).log:10731"
+        },
+        {
+          "time_local": "2026-09-16T09:57:55.547+03:00",
+          "time_utc": "2026-09-16T06:57:55.547+00:00",
+          "session": "20260914_183547_b2c101",
+          "model": "gpt-5.6-sol-900k",
+          "attempt": "3/5",
+          "request_id": null,
+          "category": "overloaded",
+          "source": "errors(3).log:10733"
+        },
+        {
+          "time_local": "2026-09-16T09:58:09.084+03:00",
+          "time_utc": "2026-09-16T06:58:09.084+00:00",
+          "session": "20260914_183547_b2c101",
+          "model": "gpt-5.6-sol-900k",
+          "attempt": "4/5",
+          "request_id": null,
+          "category": "overloaded",
+          "source": "errors(3).log:10735"
+        },
+        {
+          "time_local": "2026-09-16T09:58:34.444+03:00",
+          "time_utc": "2026-09-16T06:58:34.444+00:00",
+          "session": "20260914_183547_b2c101",
+          "model": "gpt-5.6-sol-900k",
+          "attempt": "5/5",
+          "request_id": "7969d90e-f26b-4b67-8cac-ca8ad9606fbd",
+          "category": "request-processing",
+          "source": "errors(3).log:10740"
+        }
+      ],
+      "complete": true,
+      "first_local": "2026-09-16T09:57:39.884+03:00",
+      "last_local": "2026-09-16T09:58:34.444+03:00",
+      "duration_seconds": 54.56,
+      "configured_backoff_seconds": [
+        2.7159661895838547,
+        5.978591891282315,
+        11.218450754338466,
+        22.968260512798444
+      ]
+    }
+  ],
+  "fresh_prompt_windows": [
+    {
+      "session": "20260913_181010_f947d8",
+      "prompt_local": "2026-09-16T09:25:38.097+03:00",
+      "finish_local": "2026-09-16T09:31:35.938+03:00",
+      "duration_seconds": 357.841,
+      "successful_api_calls": 6,
+      "failed_attempts": 5,
+      "first_success_local": "2026-09-16T09:26:01.752+03:00",
+      "last_success_local": "2026-09-16T09:29:38.308+03:00",
+      "terminal_reason": "unknown",
+      "source": "gui(3).log:2818-2819"
+    },
+    {
+      "session": "20260914_183547_b2c101",
+      "prompt_local": "2026-09-16T09:55:53.088+03:00",
+      "finish_local": "2026-09-16T09:58:35.076+03:00",
+      "duration_seconds": 161.988,
+      "successful_api_calls": 6,
+      "failed_attempts": 5,
+      "first_success_local": "2026-09-16T09:56:07.957+03:00",
+      "last_success_local": "2026-09-16T09:57:37.406+03:00",
+      "terminal_reason": "unknown",
+      "source": "gui(3).log:2820-2822"
+    },
+    {
+      "session": "20260913_181010_f947d8",
+      "prompt_local": "2026-09-16T09:56:06.145+03:00",
+      "finish_local": "2026-09-16T09:59:31.688+03:00",
+      "duration_seconds": 205.543,
+      "successful_api_calls": 7,
+      "failed_attempts": 5,
+      "first_success_local": "2026-09-16T09:56:23.283+03:00",
+      "last_success_local": "2026-09-16T09:58:16.411+03:00",
+      "terminal_reason": "overloaded",
+      "source": "gui(3).log:2821-2823"
+    }
+  ],
+  "recent_session_activity": {
+    "20260913_181010_f947d8": {
+      "successes": 18,
+      "failed_attempts": 24,
+      "first": "2026-09-16T09:00:18.785+03:00",
+      "last": "2026-09-16T09:59:30.765+03:00"
+    },
+    "20260914_183547_b2c101": {
+      "successes": 8,
+      "failed_attempts": 13,
+      "first": "2026-09-16T09:00:35.268+03:00",
+      "last": "2026-09-16T09:58:34.444+03:00"
+    }
+  },
+  "latest_goal_judges": {
+    "20260913_181010_f947d8": {
+      "time_local": "2026-09-16T08:29:05.416+03:00",
+      "message": "goal judge: verdict=wait reason=Фоновый candidate rebuild ещё выполняется, а acceptance не завершён: target integration и training пока NOT_OS_INTEGRATE… [truncated] wait={'session_id': 'proc_d9bdf1c3e53b'}",
+      "source": "agent(2).log:6340"
+    },
+    "20260914_183547_b2c101": {
+      "time_local": "2026-09-16T08:56:59.442+03:00",
+      "message": "goal judge: API call failed (Our servers are currently overloaded. Please try again later.) — falling through to continue",
+      "source": "agent(2).log:6775"
+    }
+  }
+}
