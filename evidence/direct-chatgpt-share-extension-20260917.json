@@ -1,0 +1,139 @@
+{
+  "schema": "codex-provider-incident/direct-chatgpt-session-extension/v1",
+  "generated_at_utc": "2026-09-17T16:58:11+00:00",
+  "source": {
+    "url": "https://chatgpt.com/share/6aac18eb-6428-83eb-8bc1-adeabac78920",
+    "html_bytes": 12984108,
+    "html_sha256": "959b09f774474d863533461c7c247bd70de1b6465713648a121af943b88b94f8",
+    "conversation_title": "Связанные проекты и память",
+    "mapping_nodes": 4394,
+    "messages": 4393,
+    "source_time_range_utc": [
+      "2026-09-12T11:08:58.417+00:00",
+      "2026-09-17T16:30:04.194+00:00"
+    ]
+  },
+  "graph_extension": {
+    "previous_share_url": "https://chatgpt.com/share/6aabeaa8-4504-83ed-918d-b18808b38bc3",
+    "previous_messages": 3928,
+    "current_messages": 4393,
+    "common_message_ids": 3928,
+    "previous_message_ids_missing_from_current": 0,
+    "new_message_ids": 465,
+    "is_strict_message_id_superset": true
+  },
+  "confirmed_incomplete_turn": {
+    "case_id": "direct-chatgpt-pro-light-third-incomplete-turn",
+    "prompt": {
+      "message_id": "c436ce1f-a086-410a-a756-4256698885fe",
+      "role": "user",
+      "create_time_utc": "2026-09-17T13:28:40.886+00:00",
+      "create_time_istanbul": "2026-09-17T16:28:40.886+03:00",
+      "status": "finished_successfully",
+      "end_turn": null,
+      "model_slug": null,
+      "text_chars": 246,
+      "text_sha256": "23e9ab0eeae8bb4a3c40b01cf5dcacf2df45f2223309b52d4835f24a77364abf"
+    },
+    "last_model_activity": {
+      "message_id": "fcb81db5-3d9c-48e4-b3c7-30e9f732b36e",
+      "role": "assistant",
+      "create_time_utc": "2026-09-17T13:38:38.022+00:00",
+      "create_time_istanbul": "2026-09-17T16:38:38.022+03:00",
+      "status": "finished_successfully",
+      "end_turn": false,
+      "model_slug": "gpt-5.6-sol-wm",
+      "text_chars": 0,
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "last_assistant_activity": {
+      "message_id": "fcb81db5-3d9c-48e4-b3c7-30e9f732b36e",
+      "role": "assistant",
+      "create_time_utc": "2026-09-17T13:38:38.022+00:00",
+      "create_time_istanbul": "2026-09-17T16:38:38.022+03:00",
+      "status": "finished_successfully",
+      "end_turn": false,
+      "model_slug": "gpt-5.6-sol-wm",
+      "text_chars": 0,
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "user_complaint": {
+      "message_id": "6ed490be-7d0c-4def-9602-e983d3585203",
+      "role": "user",
+      "create_time_utc": "2026-09-17T16:18:45.701+00:00",
+      "create_time_istanbul": "2026-09-17T19:18:45.701+03:00",
+      "status": "finished_successfully",
+      "end_turn": null,
+      "model_slug": null,
+      "text_chars": 92,
+      "text_sha256": "0cb04f15f6d4d69e5561405d923fad52ee21a9a0e3cbb038ab46006ffc198eb5"
+    },
+    "first_final_reply_after_complaint": {
+      "message_id": "6083ab3a-b897-5aef-beca-6732f3f749e6",
+      "role": "assistant",
+      "create_time_utc": "2026-09-17T16:19:06.967+00:00",
+      "create_time_istanbul": "2026-09-17T19:19:06.967+03:00",
+      "status": "finished_successfully",
+      "end_turn": true,
+      "model_slug": "gpt-5.6-sol-wm",
+      "text_chars": 1793,
+      "text_sha256": "ad60e72d7a5bfe9f4f51ecdb0eb8968d59ca6130243a456feb4c66f4a352eea6"
+    },
+    "observed_between_prompt_and_complaint": {
+      "assistant_nodes": 54,
+      "assistant_nodes_with_text": 9,
+      "assistant_nodes_end_turn_true": 0,
+      "assistant_nodes_end_turn_false": 53,
+      "model_nodes": 48,
+      "tool_nodes": 29
+    },
+    "durations_seconds": {
+      "prompt_to_user_complaint": 10204.815,
+      "last_model_activity_to_user_complaint": 9607.678,
+      "last_assistant_activity_to_user_complaint": 9607.678,
+      "complaint_to_final_reply": 21.266
+    },
+    "turn_completion_before_complaint": false
+  },
+  "completed_control_turn": {
+    "case_id": "direct-chatgpt-cross-platform-analysis-completed",
+    "prompt": {
+      "message_id": "2f546278-5e17-4d71-921c-90e574f327b6",
+      "role": "user",
+      "create_time_utc": "2026-09-17T16:20:31.974+00:00",
+      "create_time_istanbul": "2026-09-17T19:20:31.974+03:00",
+      "status": "finished_successfully",
+      "end_turn": null,
+      "model_slug": null,
+      "text_chars": 118,
+      "text_sha256": "8d674fb04503345a9f68b31f96e52abab878d0b0a243408ad04a7df6a699ad49"
+    },
+    "final_reply": {
+      "message_id": "f94e5b01-8e2b-5aff-9d94-932803b2ad2c",
+      "role": "assistant",
+      "create_time_utc": "2026-09-17T16:30:04.194+00:00",
+      "create_time_istanbul": "2026-09-17T19:30:04.194+03:00",
+      "status": "finished_successfully",
+      "end_turn": true,
+      "model_slug": "gpt-5.6-sol-wm",
+      "text_chars": 15126,
+      "text_sha256": "a2e197323a65b85528b02f9099c94fcafb80822e5279aaba678782b6ece0f9b9"
+    },
+    "duration_seconds": 572.221,
+    "turn_completion": true
+  },
+  "interpretation": {
+    "confirmed": [
+      "The current share graph is a strict message-ID superset of the previous share graph.",
+      "The third affected prompt produced internal assistant/tool activity but no assistant node with end_turn=true before the user complaint.",
+      "The first final reply appeared only after the user sent a new complaint message.",
+      "The subsequent cross-platform analysis turn completed with end_turn=true, showing intermittent rather than continuous failure."
+    ],
+    "not_proven": [
+      "The shared graph exposes no direct provider request ID, HTTP status, hidden retry count, or server-side exception for the incomplete turn.",
+      "The graph does not prove whether the missing final delivery was caused by the model route, orchestration layer, persistence layer, or client delivery path.",
+      "The elapsed prompt-to-complaint interval is a lower-bound user-visible stall window, not a measured duration of one server request."
+    ],
+    "privacy": "The full HTML and conversation text are not republished. The receipt retains structural fields, timestamps, IDs, lengths, and hashes only."
+  }
+}

@@ -1,5 +1,13 @@
 # Evidence and provenance
 
+## Evening continuation — 17 September 2026, 19:43:53 UTC+3
+
+[Hermes late extension ledger](log-extension-20260917-late.json) records **33 additional failed Sol attempts**, 24 successful calls inside the same two ultimately failed user turns, four new request IDs, two terminal 5/5 exhaustions, two GUI error endings, concurrent compression telemetry, exact prefix/hash checks and seven local WebSocket loop-stall warnings. [Full report](../docs/EVENING-CONTINUATION-2026-09-17.md).
+
+[Direct ChatGPT graph extension](direct-chatgpt-share-extension-20260917.json) proves that the new public share is a strict 465-message extension of the preceding graph and records a third incomplete Sol turn: 54 assistant nodes, 29 tool nodes, zero `end_turn=true` before the complaint, and a 2:50:04.815 lower-bound window. Full HTML and private text remain unpublished.
+
+Current reconciliation: **723** failed attempts from the fixed baseline, **954** across the supplied corpus, and **498** in the final rolling 48 hours. The three Direct ChatGPT incomplete-turn windows are separate evidence and total a non-overlapping lower bound of **8:13:14.678**.
+
 ## Extended cross-surface corpus — 17 September 2026, 16:00:58 UTC+3
 
 [Hermes extension ledger](log-extension-20260917T130058Z.json) contains **397 additional failed Codex attempts**, 27 GUI error turns, 30 complete five-attempt sequence summaries, 86 request IDs, transport/compression diagnostics and source hashes. [Full cross-surface report](../docs/CROSS-SURFACE-RECURRENCE-2026-09-17.md).

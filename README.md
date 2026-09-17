@@ -8,6 +8,11 @@ We refer to the company as **the provider** throughout the investigation. Produc
 
 [Русская сводка](docs/README.ru.md) · [Evidence](evidence/README.md) · [Recovery procedure](docs/RECOVERY.md) · [Open tasks](https://github.com/gv1983us-commits/codex-provider-incident/issues) · [Hermes report](https://github.com/NousResearch/hermes-agent/issues/107307)
 
+> [!CAUTION]
+> **17 September, evening continuation — normal work is still blocked.** Exact-prefix log extensions add **33 failed Sol attempts** and four request IDs; despite **24 successful inner Codex calls**, two Hermes user turns still ended as overload errors after **986.2 s** and **503.0 s**. Current reconciliation: **723** failures since the fixed baseline, **954** across supplied logs, and **498** in the final rolling 48 hours.
+>
+> A strict extension of the public Direct ChatGPT graph confirms a **third incomplete Sol turn lasting at least 2:50:04.815**, bringing the three non-overlapping lower-bound Direct ChatGPT windows to **8:13:14.678**. Hermes also emitted seven consecutive local WebSocket `loop stalled >10s` warnings. [Evening report](docs/EVENING-CONTINUATION-2026-09-17.md) · [Hermes delta](evidence/log-extension-20260917-late.json) · [Direct graph receipt](evidence/direct-chatgpt-share-extension-20260917.json).
+
 > [!IMPORTANT]
 > **17 September — incident remains OPEN across Hermes/Codex and owner-visible direct ChatGPT Pro Light.**
 >
