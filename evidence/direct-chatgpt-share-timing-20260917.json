@@ -1,0 +1,186 @@
+{
+  "schema": "codex-provider-incident/direct-chatgpt-session-graph/v1",
+  "generated_at_utc": "2026-09-17T13:37:24+00:00",
+  "source": {
+    "url": "https://chatgpt.com/share/6aabeaa8-4504-83ed-918d-b18808b38bc3",
+    "html_bytes": 12181209,
+    "html_sha256": "a6f97c1ae94c761cddaf0e05dc11d9852146fceb4511ffcf0d6626040100673d",
+    "html_title": "ChatGPT - Связанные проекты и память",
+    "conversation_id": "6aabeaa8-4504-83ed-918d-b18808b38bc3",
+    "conversation_title": "Связанные проекты и память",
+    "react_router_enqueue_calls": 2,
+    "decoded_devalue_values": 189037,
+    "mapping_nodes": 3929,
+    "messages": 3928,
+    "source_time_range_utc": [
+      "2026-09-12T11:08:58.417+00:00",
+      "2026-09-17T12:54:02.835+00:00"
+    ]
+  },
+  "extraction": {
+    "method": "Decode the largest JSON array embedded in React Router stream enqueue calls, resolve devalue integer references, locate the conversation mapping, then order message nodes by create_time.",
+    "timezone_for_local_times": "Europe/Istanbul (UTC+03:00)",
+    "privacy": "The full HTML and conversation text are intentionally not republished. This receipt retains event identifiers, timestamps, structural completion fields, text lengths, and text hashes only."
+  },
+  "confirmed_cases": [
+    {
+      "case_id": "direct-chatgpt-pro-light-morning-incomplete-turn",
+      "prompt": {
+        "message_id": "7b512f96-a335-4aed-b91c-e3bbfb52ae61",
+        "role": "user",
+        "create_time_utc": "2026-09-17T07:24:48.658+00:00",
+        "create_time_istanbul": "2026-09-17T10:24:48.658+03:00",
+        "status": "finished_successfully",
+        "end_turn": null,
+        "model_slug": null,
+        "text_chars": 555,
+        "text_sha256": "5b289d2f76e7ddd530223f4e8661baa0676f0f2fcfb97ba655159efec9d974a7"
+      },
+      "partial_nonfinal_assistant_node": {
+        "message_id": "12d2f586-75fe-5ede-a2d8-53c617120a17",
+        "role": "assistant",
+        "create_time_utc": "2026-09-17T07:25:17.187+00:00",
+        "create_time_istanbul": "2026-09-17T10:25:17.187+03:00",
+        "status": "finished_successfully",
+        "end_turn": false,
+        "model_slug": "gpt-5.6-sol-wm",
+        "text_chars": 505,
+        "text_sha256": "6269befea91322ed2ce3c237f1740cbd2cf4e118ad741dcf798b064cc26cd643"
+      },
+      "last_assistant_activity": {
+        "message_id": "77d802c1-98f0-4177-b37d-612fee57c6de",
+        "role": "assistant",
+        "create_time_utc": "2026-09-17T07:26:35.271+00:00",
+        "create_time_istanbul": "2026-09-17T10:26:35.271+03:00",
+        "status": "finished_successfully",
+        "end_turn": false,
+        "model_slug": "gpt-5.6-sol-wm",
+        "text_chars": 0,
+        "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "user_interruption_or_complaint": {
+        "message_id": "5189967c-2820-4b9d-a87d-92854157867b",
+        "role": "user",
+        "create_time_utc": "2026-09-17T09:15:49.026+00:00",
+        "create_time_istanbul": "2026-09-17T12:15:49.026+03:00",
+        "status": "finished_successfully",
+        "end_turn": null,
+        "model_slug": null,
+        "text_chars": 25,
+        "text_sha256": "e77f74cc846e2bf159c1494274095715fe1742205021e0dc3de50a520fce17b6"
+      },
+      "first_final_reply_after_interruption": {
+        "message_id": "71a3b778-1fdd-5f58-a4af-9e4ed9be7948",
+        "role": "assistant",
+        "create_time_utc": "2026-09-17T09:16:25.334+00:00",
+        "create_time_istanbul": "2026-09-17T12:16:25.334+03:00",
+        "status": "finished_successfully",
+        "end_turn": true,
+        "model_slug": "gpt-5.6-sol-wm",
+        "text_chars": 538,
+        "text_sha256": "6cbfc88e3a029f185ac7ee3292dce3df62a15d75376becad38abe055e75f0697"
+      },
+      "observed_between_prompt_and_interruption": {
+        "assistant_nodes": 13,
+        "assistant_nodes_with_text": 2,
+        "assistant_nodes_end_turn_true": 0,
+        "assistant_nodes_end_turn_false": 12,
+        "tool_nodes": 1
+      },
+      "durations_seconds": {
+        "prompt_to_user_interruption_or_complaint": 6660.368,
+        "last_assistant_activity_to_user_interruption_or_complaint": 6553.755,
+        "interruption_or_complaint_to_final_reply": 36.308
+      },
+      "turn_completion_before_interruption": false
+    },
+    {
+      "case_id": "direct-chatgpt-pro-light-afternoon-incomplete-turn",
+      "prompt": {
+        "message_id": "deb352be-621e-4712-bf00-5b6902cef313",
+        "role": "user",
+        "create_time_utc": "2026-09-17T09:21:27.771+00:00",
+        "create_time_istanbul": "2026-09-17T12:21:27.771+03:00",
+        "status": "finished_successfully",
+        "end_turn": null,
+        "model_slug": null,
+        "text_chars": 131,
+        "text_sha256": "848d55e10e05dd1e4a8964c058c28e78c5d5177fc745c3f8efd158c98ecd8a52"
+      },
+      "partial_nonfinal_assistant_node": {
+        "message_id": "d774120c-b990-5f87-a423-10aaf08c8a0b",
+        "role": "assistant",
+        "create_time_utc": "2026-09-17T09:21:54.754+00:00",
+        "create_time_istanbul": "2026-09-17T12:21:54.754+03:00",
+        "status": "finished_successfully",
+        "end_turn": false,
+        "model_slug": "gpt-5.6-sol-wm",
+        "text_chars": 440,
+        "text_sha256": "16b8084ad69048dae3a3c0a693859393fcd02a86ee39895c5afa5cd1b71d2dea"
+      },
+      "last_assistant_activity": {
+        "message_id": "25ff8369-5071-40dc-98b0-6c6fe6bc7887",
+        "role": "assistant",
+        "create_time_utc": "2026-09-17T09:24:13.909+00:00",
+        "create_time_istanbul": "2026-09-17T12:24:13.909+03:00",
+        "status": "finished_successfully",
+        "end_turn": false,
+        "model_slug": "gpt-5.6-sol-wm",
+        "text_chars": 0,
+        "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "user_interruption_or_complaint": {
+        "message_id": "59f48060-fd84-4c67-9894-04ce351b7d4f",
+        "role": "user",
+        "create_time_utc": "2026-09-17T12:53:37.266+00:00",
+        "create_time_istanbul": "2026-09-17T15:53:37.266+03:00",
+        "status": "finished_successfully",
+        "end_turn": null,
+        "model_slug": null,
+        "text_chars": 53,
+        "text_sha256": "731c96c25bc124af9fdcc4d47cdc8f826a409d7a67d79b2fcbd154ebe5a54bb1"
+      },
+      "first_final_reply_after_interruption": {
+        "message_id": "c6d5a401-2d77-5982-81c8-7da50d729b82",
+        "role": "assistant",
+        "create_time_utc": "2026-09-17T12:54:02.835+00:00",
+        "create_time_istanbul": "2026-09-17T15:54:02.835+03:00",
+        "status": "finished_successfully",
+        "end_turn": true,
+        "model_slug": "gpt-5.6-sol-wm",
+        "text_chars": 1012,
+        "text_sha256": "9516c81389c5b323b75a71249b563a67ed86c6dc104a72f4ef3ab2e91d658fe0"
+      },
+      "observed_between_prompt_and_interruption": {
+        "assistant_nodes": 17,
+        "assistant_nodes_with_text": 1,
+        "assistant_nodes_end_turn_true": 0,
+        "assistant_nodes_end_turn_false": 17,
+        "tool_nodes": 0
+      },
+      "durations_seconds": {
+        "prompt_to_user_interruption_or_complaint": 12729.495,
+        "last_assistant_activity_to_user_interruption_or_complaint": 12563.356,
+        "interruption_or_complaint_to_final_reply": 25.57
+      },
+      "turn_completion_before_interruption": false
+    }
+  ],
+  "interpretation": {
+    "confirmed": [
+      "Both affected prompts entered assistant processing on gpt-5.6-sol-wm.",
+      "Each turn produced one non-empty partial assistant node plus multiple empty assistant nodes, all without end_turn=true.",
+      "Neither affected prompt had a final assistant node before the next user interruption or complaint.",
+      "The morning interval from prompt to user interruption/complaint was 6660.368 seconds (1:51:00.368).",
+      "The afternoon interval from prompt to user interruption/complaint was 12729.495 seconds (3:32:09.495).",
+      "After each new user message, a final end_turn=true response was produced within tens of seconds."
+    ],
+    "important_status_semantics": "Individual nodes are labelled status=finished_successfully even when end_turn=false. Therefore node status must not be treated as proof that the user turn completed or that a final answer was delivered.",
+    "not_proven": [
+      "No direct ChatGPT provider request ID, HTTP status, hidden retry count, or server-side exception is exposed by this shared-session graph.",
+      "The graph alone cannot identify the failing internal component or prove that direct ChatGPT and Hermes used the same backend route.",
+      "The elapsed intervals are user-visible lower-bound stall windows, not measured request execution durations.",
+      "The Pro Light account tier and Yandex Browser client are owner-supplied context; those fields are not encoded in the public share graph."
+    ]
+  }
+}

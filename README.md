@@ -13,7 +13,7 @@ We refer to the company as **the provider** throughout the investigation. Produc
 >
 > The extended Hermes audit adds **397 failed attempts**, all on `gpt-5.6-sol-900k`: **690** since the fixed 10 September baseline, **921** across all supplied logs, and **465** in the final rolling 48 hours. It also adds **27 GUI error turns**, **30 complete 5/5 chains**, **86 request IDs**, and three further 5/5 overload chains on 17 September. In the same coverage, 826 successful calls coexist with failures; short success is not sustained recovery.
 >
-> Separately, the owner reports two direct ChatGPT Pro Light turns on 17 September with no visible final answer for nearly two hours and more than three hours. These observations have no exposed request IDs or transport trace and are not added to the Hermes counts. [Full cross-surface report](docs/CROSS-SURFACE-RECURRENCE-2026-09-17.md) · [397-entry ledger and source hashes](evidence/log-extension-20260917T130058Z.json).
+> Separately, the public Direct ChatGPT shared-session graph confirms two incomplete turns on `gpt-5.6-sol-wm`: **1:51:00.368** in the morning and **3:32:09.495** in the afternoon. Each contains a partial model node followed by empty non-final nodes and **no `end_turn=true` before the next user message**. The share exposes no provider request ID, HTTP result or hidden retries, so these cases remain separate from the 397 Hermes failures. Pro Light/Yandex attribution is owner-supplied context. [Session-graph report](docs/DIRECT-CHATGPT-SHARE-TIMING-2026-09-17.md) · [Minimized receipt](evidence/direct-chatgpt-share-timing-20260917.json) · [Hermes cross-surface report](docs/CROSS-SURFACE-RECURRENCE-2026-09-17.md).
 
 > [!IMPORTANT]
 > **16 September — incident remains OPEN.** The owner still cannot work normally and requests joint repair by Hermes maintainers and the provider.
@@ -103,7 +103,8 @@ The [invitation and repository handoff](https://github.com/NousResearch/hermes-a
 
 | Material | Purpose |
 | --- | --- |
-| [Cross-surface recurrence — 17 September](docs/CROSS-SURFACE-RECURRENCE-2026-09-17.md) | 397 added Sol failures, 30 complete 5/5 chains, compression controls and two separately scoped direct ChatGPT Pro Light stalls |
+| [Direct ChatGPT shared-session timing — 17 September](docs/DIRECT-CHATGPT-SHARE-TIMING-2026-09-17.md) | Two incomplete Sol turns confirmed from message topology and `end_turn` state; 1:51:00 and 3:32:09 lower-bound windows |
+| [Cross-surface recurrence — 17 September](docs/CROSS-SURFACE-RECURRENCE-2026-09-17.md) | 397 added Hermes/Sol failures, 30 complete 5/5 chains, compression controls and separately scoped Direct ChatGPT evidence |
 | [Morning recurrence — 16 September, 09:06 UTC+3](docs/MORNING-RECURRENCE-2026-09-16.md) | Current 277/255 counts; 99 added failures; five-attempt exhaustion, morning comparison and pending-tool / GUI mismatch |
 | [Expanded logs — 15 September, 10:16 UTC+3](docs/LOG-EXTENSION-2026-09-15-1016.md) | Earlier 178/157 counts, 60 added Astra failures, near-simultaneous errors and fresh-session failure |
 | [Continuing incident — 15 September, earlier 08:32 snapshot](docs/CONTINUING-INCIDENT-2026-09-15.md) | Earlier 08:32 snapshot, 48-hour / after-Git counts, exact final failures and joint repair request |

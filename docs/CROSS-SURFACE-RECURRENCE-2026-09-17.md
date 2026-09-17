@@ -1,8 +1,8 @@
 # Cross-surface recurrence: extended Sol failures and direct ChatGPT Pro Light stalls — 17 September 2026
 
-**Status: OPEN. Normal work is still not reliable.** This update extends the audited Hermes/Codex boundary from **16 September 09:59:31.688** through **17 September 16:00:58.322 Europe/Istanbul (UTC+3)** and records two separate owner-observed stalls in direct ChatGPT Pro Light on 17 September.
+**Status: OPEN. Normal work is still not reliable.** This update extends the audited Hermes/Codex boundary from **16 September 09:59:31.688** through **17 September 16:00:58.322 Europe/Istanbul (UTC+3)** and records two incomplete Direct ChatGPT Pro Light turns confirmed from the public shared-session graph on 17 September.
 
-The Hermes ledger and the direct ChatGPT observations are deliberately kept as two evidence classes. Hermes supplies timestamps, models, retry numbers, sessions, request IDs and terminal GUI status. Direct ChatGPT does not expose an equivalent request ledger here, so those stalls are not added to the Hermes API counts and are not presented as proof of a shared backend route.
+The Hermes ledger and the Direct ChatGPT session graph are deliberately kept as two evidence classes. Hermes supplies timestamps, models, retry numbers, sessions, request IDs and terminal GUI status. The Direct ChatGPT share supplies message IDs, parent/child topology, timestamps, model slugs and `end_turn` state, but no equivalent provider request ledger. Those incomplete turns are not added to the Hermes API counts and are not presented as proof of a shared backend route.
 
 ## Audited reconciliation
 
@@ -89,16 +89,20 @@ Today's compression sequence provides a second control:
 
 This does not prove context size is irrelevant to every failure. It does show that reducing these sessions to roughly 45–52 thousand estimated tokens did not remove the observed overload condition.
 
-## Direct ChatGPT Pro Light observations — separate evidence class
+## Direct ChatGPT Pro Light session-graph evidence — separate evidence class
 
-The owner was using direct ChatGPT in Yandex Browser on the Pro Light account, without Hermes in that request path, and reported two stalls on 17 September:
+The public share page for the Direct ChatGPT conversation contains a React Router stream and devalue-style JSON reference array. Decoding it confirms two incomplete turns on `gpt-5.6-sol-wm`:
 
-| Local period | Owner-visible result | Available telemetry |
-| --- | --- | --- |
-| Morning | No visible final answer for nearly two hours; owner manually stopped the turn | No request ID, hidden retry ledger or transport trace available |
-| Afternoon | A later turn produced no visible final answer for more than three hours before the owner reported the stall and re-prompted | No request ID, hidden retry ledger or transport trace available |
+| Prompt time, UTC+3 | Last assistant activity | Next user message | Prompt→user interval | Final node before user message |
+| --- | --- | --- | ---: | --- |
+| 10:24:48.658 | 10:26:35.271 | 12:15:49.026 | **1:51:00.368** | None; 12 non-final assistant nodes, 0 with `end_turn=true` |
+| 12:21:27.771 | 12:24:13.909 | 15:53:37.266 | **3:32:09.495** | None; 17 non-final assistant nodes, 0 with `end_turn=true` |
 
-These two observations are **not** counted among the 397 Hermes failures. They broaden the affected user-visible surface beyond Hermes on the same day, but they do not prove that direct ChatGPT and Hermes used the same internal route or failed for the same cause. The content of the private conversation is not published.
+Each turn contains one non-empty partial model node followed by empty non-final model nodes. In both cases the next user message is attached to the last `end_turn=false` assistant node. New user messages then received final `end_turn=true` answers within 36.308 s and 25.570 s.
+
+The affected nodes nevertheless carry `status=finished_successfully`. That field describes individual graph nodes and is not proof of completed turn delivery; turn-level completion requires the terminal `end_turn=true` event.
+
+These cases are **not** counted among the 397 Hermes failures. The share graph exposes no Direct ChatGPT request ID, HTTP result, hidden retry count or server-side exception. It confirms the incomplete-turn topology and exact lower-bound user-visible intervals, but it does not prove that Direct ChatGPT and Hermes used the same internal route or failed for the same cause. See the [dedicated session-graph report](DIRECT-CHATGPT-SHARE-TIMING-2026-09-17.md) and [minimized receipt](../evidence/direct-chatgpt-share-timing-20260917.json).
 
 ## Architectural boundary visible from the incident
 
@@ -108,7 +112,7 @@ These two observations are **not** counted among the 397 Hermes failures. They b
 | Hermes request loop | Five-attempt retry chains, short backoff horizon, successful calls interleaved with failure | Whether upstream headers such as `Retry-After` were available or discarded |
 | Hermes compression | Long summary generation, provider failure during summary, fallback commit | Whether all compression traffic shares the main model route internally |
 | Hermes session/UI | Long-running turns terminate as errors; green logical goal can coexist with no forward execution | A reliable liveness contract between goal state, request state and resumable task state |
-| Direct ChatGPT Pro Light | Two owner-visible multi-hour stalls without a final answer | Request IDs, retries, model-route details and backend relation to Hermes failures |
+| Direct ChatGPT Pro Light | Two shared-graph-confirmed incomplete turns on `gpt-5.6-sol-wm`, with no `end_turn=true` before user interruption/re-prompt | Request IDs, retries, HTTP/stream failure, model-route details and backend relation to Hermes failures |
 
 ## Conclusions for the incident
 
@@ -117,7 +121,7 @@ These two observations are **not** counted among the 397 Hermes failures. They b
 3. **Five attempts are not sufficient protection when spent in one short overload episode.** More attempts without a longer coordinated horizon would mainly multiply load and cost.
 4. **Parallel sessions need shared backpressure.** Near-synchronous failures show why independent session retry loops should not probe the same provider/model simultaneously during a capacity event.
 5. **UI goal state must not stand in for execution liveness.** A green goal can remain visible while request progression has stopped.
-6. **Direct ChatGPT symptoms matter but must remain epistemically separate.** They justify cross-surface investigation, not a fabricated common request trace.
+6. **Direct ChatGPT symptoms are now session-graph confirmed but remain epistemically separate.** They justify cross-surface investigation, not a fabricated common request trace.
 7. **Owner-side polling cannot identify recovery.** Hermes is intentionally closed during failure bursts, and short successful intervals have repeatedly ended in another failure.
 
 ## Requested joint action
@@ -141,6 +145,6 @@ Recovery requires sustained useful work on the affected setup, across a declared
 
 ## Sources, integrity and limits
 
-The public machine-readable ledger is [`evidence/log-extension-20260917T130058Z.json`](../evidence/log-extension-20260917T130058Z.json). It contains the 397 attempt records, 27 GUI endings, 30 complete-chain summaries, transport and compression diagnostics, direct-observation boundaries, source hashes and the deduplication method.
+The public Hermes ledger is [`evidence/log-extension-20260917T130058Z.json`](../evidence/log-extension-20260917T130058Z.json). It contains the 397 attempt records, 27 GUI endings, 30 complete-chain summaries, transport and compression diagnostics, source hashes and the deduplication method. Direct ChatGPT evidence is separately minimized in [`evidence/direct-chatgpt-share-timing-20260917.json`](../evidence/direct-chatgpt-share-timing-20260917.json); the full private conversation is not republished.
 
 The new `gui(4).log`, `desktop(4).log` and `gateway(2).log` are exact byte-prefix extensions of their `(3)`, `(3)` and `(1)` predecessors respectively. Rotated agent/error files are combined and deduplicated by timestamp, level, session, logger and full message. Raw prompts, credentials, private tool output and full session archives are not published.
