@@ -9,6 +9,13 @@ We refer to the company as **the provider** throughout the investigation. Produc
 [Русская сводка](docs/README.ru.md) · [Evidence](evidence/README.md) · [Recovery procedure](docs/RECOVERY.md) · [Open tasks](https://github.com/gv1983us-commits/codex-provider-incident/issues) · [Hermes report](https://github.com/NousResearch/hermes-agent/issues/107307)
 
 > [!IMPORTANT]
+> **17 September — incident remains OPEN across Hermes/Codex and owner-visible direct ChatGPT Pro Light.**
+>
+> The extended Hermes audit adds **397 failed attempts**, all on `gpt-5.6-sol-900k`: **690** since the fixed 10 September baseline, **921** across all supplied logs, and **465** in the final rolling 48 hours. It also adds **27 GUI error turns**, **30 complete 5/5 chains**, **86 request IDs**, and three further 5/5 overload chains on 17 September. In the same coverage, 826 successful calls coexist with failures; short success is not sustained recovery.
+>
+> Separately, the owner reports two direct ChatGPT Pro Light turns on 17 September with no visible final answer for nearly two hours and more than three hours. These observations have no exposed request IDs or transport trace and are not added to the Hermes counts. [Full cross-surface report](docs/CROSS-SURFACE-RECURRENCE-2026-09-17.md) · [397-entry ledger and source hashes](evidence/log-extension-20260917T130058Z.json).
+
+> [!IMPORTANT]
 > **16 September — incident remains OPEN.** The owner still cannot work normally and requests joint repair by Hermes maintainers and the provider.
 >
 > **Through 16 September 09:06:01 UTC+3: 255 failed Codex attempts in the rolling 48 hours; 277 since the original Git baseline.** The new logs add **99 Astra failures and nine GUI error turns**. Both sessions exhausted **five attempts** around 09:04; GUI errors were **1.532 s apart**. [Morning recurrence and full report](docs/MORNING-RECURRENCE-2026-09-16.md) · [New ledger and source hashes](evidence/log-extension-20260916T060601Z.json).
@@ -85,7 +92,7 @@ The procedure and acceptance criteria are in [RECOVERY.md](docs/RECOVERY.md). No
 
 | Task | Current owner / invitation | Status |
 | --- | --- | --- |
-| [#1 · Validate sustained Codex work](https://github.com/gv1983us-commits/codex-provider-incident/issues/1) | Hermes maintainers + provider requested; owner supplies evidence | OPEN on 16 Sep; five-attempt chains still fail; normal work remains disrupted |
+| [#1 · Validate sustained Codex work](https://github.com/gv1983us-commits/codex-provider-incident/issues/1) | Hermes maintainers + provider requested; owner supplies evidence | OPEN on 17 Sep; 690 post-baseline failures; normal work remains disrupted |
 | [#2 · Preserve continuation after retry exhaustion](https://github.com/gv1983us-commits/codex-provider-incident/issues/2) | `huklaa` invited; formal assignment pending | Awaiting contributor confirmation |
 | [#3 · Check compression failure and recovery](https://github.com/gv1983us-commits/codex-provider-incident/issues/3) | Account owner coordinates; help wanted | Installed revision and code review needed |
 | [#4 · Compare results with Sub2API](https://github.com/gv1983us-commits/codex-provider-incident/issues/4) | Project owner and two relevant reporters invited | Awaiting replies |
@@ -96,6 +103,7 @@ The [invitation and repository handoff](https://github.com/NousResearch/hermes-a
 
 | Material | Purpose |
 | --- | --- |
+| [Cross-surface recurrence — 17 September](docs/CROSS-SURFACE-RECURRENCE-2026-09-17.md) | 397 added Sol failures, 30 complete 5/5 chains, compression controls and two separately scoped direct ChatGPT Pro Light stalls |
 | [Morning recurrence — 16 September, 09:06 UTC+3](docs/MORNING-RECURRENCE-2026-09-16.md) | Current 277/255 counts; 99 added failures; five-attempt exhaustion, morning comparison and pending-tool / GUI mismatch |
 | [Expanded logs — 15 September, 10:16 UTC+3](docs/LOG-EXTENSION-2026-09-15-1016.md) | Earlier 178/157 counts, 60 added Astra failures, near-simultaneous errors and fresh-session failure |
 | [Continuing incident — 15 September, earlier 08:32 snapshot](docs/CONTINUING-INCIDENT-2026-09-15.md) | Earlier 08:32 snapshot, 48-hour / after-Git counts, exact final failures and joint repair request |

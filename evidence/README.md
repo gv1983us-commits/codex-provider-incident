@@ -1,5 +1,11 @@
 # Evidence and provenance
 
+## Extended cross-surface corpus — 17 September 2026, 16:00:58 UTC+3
+
+[New extension ledger](log-extension-20260917T130058Z.json) contains **397 additional failed Codex attempts**, 27 GUI error turns, 30 complete five-attempt sequence summaries, 86 request IDs, transport/compression diagnostics, source hashes and two separately scoped direct ChatGPT Pro Light owner observations. [Full report](../docs/CROSS-SURFACE-RECURRENCE-2026-09-17.md).
+
+Current cumulative attempts from the fixed baseline: **690**; all deduplicated attempts in the supplied corpus: **921**; current rolling 48-hour count: **465**. Reconciliation with the preceding published Sol boundary is exact: **293 + 397 = 690** and **524 + 397 = 921**. All 397 added attempts use Sol. The direct ChatGPT stalls have no exposed request ledger and are not counted as Hermes attempts.
+
 ## Expanded corpus — 16 September 2026, 09:06:01 UTC+3
 
 [New extension ledger](log-extension-20260916T060601Z.json) contains **99 additional failed Codex attempts**, nine GUI error turns, nine exhausted chains, selected diagnostic excerpts, the morning comparison and exact byte-extension/hash checks for the three new files. [Full report](../docs/MORNING-RECURRENCE-2026-09-16.md).
