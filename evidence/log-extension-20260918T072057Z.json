@@ -1,0 +1,214 @@
+{
+  "schema": "codex-provider-incident/sep18-morning-extension/v1",
+  "generated_at_utc": "2026-09-18T07:21:00Z",
+  "previous_published_boundary_local": "2026-09-17T19:43:53.071+03:00",
+  "current_boundary_local": "2026-09-18T10:20:57.270+03:00",
+  "methodology": "Primary attempt counts use agent.conversation_loop attempt records in agent(5).log. Mirrored errors.log and desktop projections are not added again.",
+  "source_prefix_relationships": [
+    {
+      "old": "agent(4).log",
+      "new": "agent(5).log",
+      "old_bytes": 3479141,
+      "new_bytes": 3985735,
+      "added_bytes": 506594,
+      "exact_byte_prefix": true,
+      "old_sha256": "a15cba08039c7cbcf49e6b5afef08c0f3074aa0cf1173206aba5f5875e9c010d",
+      "new_sha256": "dd5ce1a41b94012d2830c34c2b1166678a339b21b00cd60f6d275626fa84c87a"
+    },
+    {
+      "old": "desktop(5).log",
+      "new": "desktop(6).log",
+      "old_bytes": 704574,
+      "new_bytes": 710535,
+      "added_bytes": 5961,
+      "exact_byte_prefix": true,
+      "old_sha256": "9550bcbbdd6f7d84182a868f6a14125c46ba8b63783842b44645d543a991f06c",
+      "new_sha256": "0357a96e53de8d22abcacd85c05b0c7fe8783ee333b8d02d341ea106e5b69408"
+    },
+    {
+      "old": "errors(5).log",
+      "new": "errors(6).log",
+      "old_bytes": 508814,
+      "new_bytes": 570548,
+      "added_bytes": 61734,
+      "exact_byte_prefix": true,
+      "old_sha256": "f916daa144db9befb757bdb5428c314b9441974b14d2a56c46132adb201a2596",
+      "new_sha256": "9376ce34d714edc501d02faa39483346dc68fc866cf500b914e272ec903d2d75"
+    },
+    {
+      "old": "gui(5).log",
+      "new": "gui(6).log",
+      "old_bytes": 651941,
+      "new_bytes": 662441,
+      "added_bytes": 10500,
+      "exact_byte_prefix": true,
+      "old_sha256": "e1e177889c821e7bab7f34a57f38ffbcfa94c575ceababecdf8d8df2f9968f0a",
+      "new_sha256": "86c0166bf59336497fbe5276c0498ff4f6f94d43915abb3270d9d700e3a37e31"
+    }
+  ],
+  "additional_source_hashes": {
+    "gateway(3).log": {
+      "bytes": 195048,
+      "lines": 1424,
+      "sha256": "d73d6635956b5416d6e63b3b3ede0bfa04bf0050fb870f21b990e8103da37443"
+    },
+    "gateway-exit-diag.log": {
+      "bytes": 6824,
+      "lines": 25,
+      "sha256": "310971125a68dfc91e203252f417f19e9e6e9b13a378ac3110d626ec1a347294"
+    },
+    "mcp-stderr.log": {
+      "bytes": 1296,
+      "lines": 32,
+      "sha256": "38c001a2ca8acdf85fa784f45f87545c02de15781532593d9fb3b4bf0fb2fd7d"
+    }
+  },
+  "counts": {
+    "new_failed_provider_attempts": 24,
+    "new_successful_provider_calls": 385,
+    "new_request_ids": 1,
+    "new_terminal_five_retry_exhaustions": 0,
+    "new_gui_error_turns": 0,
+    "new_gui_complete_turns": 15,
+    "new_gui_interrupted_turns": 1,
+    "new_gui_prompts": 20,
+    "new_goal_judge_failures": 4,
+    "new_post_tool_hook_skips": 13,
+    "new_live_sessiondb_handle_warnings": 2,
+    "categories": {
+      "overloaded": 23,
+      "request_processing": 1
+    },
+    "models": {
+      "gpt-5.6-sol-900k": 24
+    },
+    "sessions": {
+      "20260913_181010_f947d8": 11,
+      "20260914_183547_b2c101": 13
+    }
+  },
+  "cumulative": {
+    "all_deduplicated_failed_attempts_in_supplied_logs": 978,
+    "failed_attempts_since_fixed_10_september_baseline": 747,
+    "failed_attempts_in_final_rolling_48_hours": 451,
+    "rolling_48h_start_local": "2026-09-16T10:20:57.270+03:00",
+    "rolling_48h_categories": {
+      "overloaded": 339,
+      "request_processing": 91,
+      "connection": 21
+    },
+    "comparable_published_codex_gui_error_turns": 55,
+    "all_tui_error_turns_since_fixed_baseline": 57,
+    "corpus_boundary_local": "2026-09-18T10:20:57.270+03:00"
+  },
+  "successful_call_latency_seconds": {
+    "minimum": 3.4,
+    "median": 19.9,
+    "maximum": 186.5
+  },
+  "new_request_ids": [
+    {
+      "time_local": "2026-09-18T09:06:07.766+03:00",
+      "time_utc": "2026-09-18T06:06:07.766Z",
+      "request_id": "4c95dbeb-7407-4985-a35f-61ddefa22651",
+      "session_id": "20260913_181010_f947d8",
+      "source": "agent(5).log:18238"
+    }
+  ],
+  "failure_window": {
+    "first_failed_attempt_local": "2026-09-18T08:41:27.792+03:00",
+    "last_failed_attempt_local": "2026-09-18T10:07:32.305+03:00",
+    "maximum_observed_consecutive_retry_attempt": 2,
+    "no_complete_5_of_5_chain": true
+  },
+  "last_successful_calls": {
+    "20260913_181010_f947d8": {
+      "time_local": "2026-09-18T10:19:24.130+03:00",
+      "response_id": "resp_02c38ba7be39acb3016aace5cb684087d29106b85d2b52dc74"
+    },
+    "20260914_183547_b2c101": {
+      "time_local": "2026-09-18T10:20:56.452+03:00",
+      "response_id": "resp_0f50598352397f87016aace640de4887d28db1f72354cae9ee"
+    }
+  },
+  "gateway_lifecycle": {
+    "previous_gateway_detected_unclean": {
+      "prior_pid": 15040,
+      "last_heartbeat_local": "2026-09-17T20:01:25.473+03:00",
+      "state_db_integrity": "ok",
+      "suspected_oom": false,
+      "cause_not_established": true
+    },
+    "first_sep18_gateway": {
+      "started_local": "2026-09-18T08:06:06.509+03:00",
+      "clean_exit_local": "2026-09-18T09:00:46.720+03:00"
+    },
+    "second_sep18_gateway": {
+      "started_local": "2026-09-18T09:02:10.484+03:00",
+      "running_at_log_boundary": true
+    }
+  },
+  "hermes_local_observations": {
+    "sessiondb_handle_warnings": [
+      {
+        "time_local": "2026-09-18T08:06:28.187+03:00",
+        "handles": 5
+      },
+      {
+        "time_local": "2026-09-18T09:02:26.716+03:00",
+        "handles": 5
+      }
+    ],
+    "post_tool_hook_skips": 13,
+    "startup_orphan_reap_rows": 3,
+    "auto_continue_scheduled": 1,
+    "ws_slow_loop_stall_warnings": 0,
+    "session_persistence_failed": 0
+  },
+  "compression": [
+    {
+      "session_id": "20260914_183547_b2c101",
+      "started_local": "2026-09-18T09:29:00.305+03:00",
+      "messages_before": 457,
+      "messages_after": 310,
+      "rough_tokens_before": 169489,
+      "rough_tokens_after": 90107,
+      "total_duration_ms": 196296,
+      "commit_status": "committed"
+    },
+    {
+      "session_id": "20260914_183547_b2c101",
+      "started_local": "2026-09-18T09:56:40.925+03:00",
+      "messages_before": 460,
+      "messages_after": 460,
+      "rough_tokens_before": 190553,
+      "rough_tokens_after": 122318,
+      "total_duration_ms": 532,
+      "commit_status": "committed"
+    },
+    {
+      "session_id": "20260913_181010_f947d8",
+      "started_local": "2026-09-18T10:19:28.283+03:00",
+      "messages_before": 402,
+      "rough_tokens_before": 174024,
+      "completion_observed": false
+    },
+    {
+      "session_id": "20260914_183547_b2c101",
+      "started_local": "2026-09-18T10:20:31.460+03:00",
+      "messages_before": 549,
+      "messages_after": 549,
+      "rough_tokens_before": 170102,
+      "rough_tokens_after": 141897,
+      "total_duration_ms": 1015,
+      "commit_status": "committed"
+    }
+  ],
+  "non_claims": [
+    "The 24 provider failures do not prove continuous outage; 385 successful main-loop Codex calls are recorded in the same appended interval.",
+    "No new 5/5 terminal provider exhaustion or GUI error turn is recorded in the appended GUI boundary.",
+    "The gateway unclean-exit record does not establish OOM, provider causation, or an exact crash time; state.db integrity is reported as ok.",
+    "The rolling 48-hour total falling from 498 to 451 reflects older failures aging out of the window, not recovery by itself.",
+    "No account-level restriction mechanism is inferred from these logs alone."
+  ]
+}
