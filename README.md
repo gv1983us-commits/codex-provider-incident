@@ -4,6 +4,9 @@
 
 **Goal: restore sustained, reliable Codex-backed Jarvis operation through Hermes on the affected existing subscriptions.**
 
+> [!WARNING]
+> **Incident continuity note — no final closure has occurred.** The short usable interval around 11–12 September was temporary partial relief, not a durable recovery. Subsequent recurrence superseded the earlier optimistic closure language and the incident remains open.
+
 We refer to the company as **the provider** throughout the investigation. Product names, technical identifiers, source URLs and verbatim evidence retain their exact spelling for reproducibility.
 
 [Русская сводка](docs/README.ru.md) · [Evidence](evidence/README.md) · [Recovery procedure](docs/RECOVERY.md) · [Open tasks](https://github.com/gv1983us-commits/codex-provider-incident/issues) · [Hermes report](https://github.com/NousResearch/hermes-agent/issues/107307)
@@ -25,7 +28,7 @@ We refer to the company as **the provider** throughout the investigation. Produc
 >
 > **Through 16 September 09:06:01 UTC+3: 255 failed Codex attempts in the rolling 48 hours; 277 since the original Git baseline.** The new logs add **99 Astra failures and nine GUI error turns**. Both sessions exhausted **five attempts** around 09:04; GUI errors were **1.532 s apart**. [Morning recurrence and full report](docs/MORNING-RECURRENCE-2026-09-16.md) · [New ledger and source hashes](evidence/log-extension-20260916T060601Z.json).
 
-The earlier resolution claim was followed by [recurrence and reopening on 12 September](https://github.com/gv1983us-commits/codex-provider-incident/issues/1#issuecomment-5643482050). Individual successful runs have not established a durable fix.
+The earlier temporary-recovery claim was followed by [recurrence on 12 September](https://github.com/gv1983us-commits/codex-provider-incident/issues/1#issuecomment-5643482050). That brief usable interval did **not** close the incident; individual successful runs have not established a durable fix.
 
 ## Earlier updates — 10 September
 
@@ -100,7 +103,7 @@ The procedure and acceptance criteria are in [RECOVERY.md](docs/RECOVERY.md). No
 | [#1 · Validate sustained Codex work](https://github.com/gv1983us-commits/codex-provider-incident/issues/1) | Hermes maintainers + provider requested; owner supplies evidence | OPEN on 17 Sep; 723 post-baseline failures; normal work remains disrupted |
 | [#2 · Preserve continuation after retry exhaustion](https://github.com/gv1983us-commits/codex-provider-incident/issues/2) | `huklaa` invited; formal assignment pending | Awaiting contributor confirmation |
 | [#3 · Check compression failure and recovery](https://github.com/gv1983us-commits/codex-provider-incident/issues/3) | Account owner coordinates; help wanted | Installed revision and code review needed |
-| [#4 · Compare results with Sub2API](https://github.com/gv1983us-commits/codex-provider-incident/issues/4) | Project owner and two relevant reporters invited | Awaiting replies |
+| [#4 · Compare results with Sub2API](https://github.com/gv1983us-commits/codex-provider-incident/issues/4) | Reopened after recurrence; external comparison remains relevant | OPEN; temporary 11 Sep relief was superseded by renewed failures |
 
 The [invitation and repository handoff](https://github.com/NousResearch/hermes-agent/issues/107307#issuecomment-5618225579) are posted in the original Hermes thread. These are coordination states, not completed recovery checks.
 
