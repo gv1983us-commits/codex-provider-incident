@@ -104,6 +104,7 @@ The procedure and acceptance criteria are in [RECOVERY.md](docs/RECOVERY.md). No
 | [#2 · Preserve continuation after retry exhaustion](https://github.com/gv1983us-commits/codex-provider-incident/issues/2) | `huklaa` invited; formal assignment pending | Awaiting contributor confirmation |
 | [#3 · Check compression failure and recovery](https://github.com/gv1983us-commits/codex-provider-incident/issues/3) | Account owner coordinates; help wanted | Installed revision and code review needed |
 | [#4 · Compare results with Sub2API](https://github.com/gv1983us-commits/codex-provider-incident/issues/4) | Reopened after recurrence; external comparison remains relevant | OPEN; temporary 11 Sep relief was superseded by renewed failures |
+| [#5 · Clarify Pro $200 / Pro 20x account-activity restrictions](https://github.com/gv1983us-commits/codex-provider-incident/issues/5) | OpenAI requested to identify the published rule and notification semantics | OPEN; public policy clarification requested |
 
 The [invitation and repository handoff](https://github.com/NousResearch/hermes-agent/issues/107307#issuecomment-5618225579) are posted in the original Hermes thread. These are coordination states, not completed recovery checks.
 
