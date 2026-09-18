@@ -1,5 +1,11 @@
 # Evidence and provenance
 
+## Morning continuation — 18 September 2026, 10:20:57 UTC+3
+
+[Morning extension receipt](log-extension-20260918T072057Z.json) records **24 additional failed Sol attempts** amid **385 successful main-loop calls**, one new provider request ID, no new terminal 5/5 exhaustion, no new GUI error ending, exact byte-prefix checks against the prior published files, gateway lifecycle facts and Hermes-local warnings. [Full report](../docs/MORNING-CONTINUATION-2026-09-18.md).
+
+Current reconciliation: **747** failed attempts from the fixed baseline, **978** across the supplied corpus, and **451** in the final rolling 48 hours. The rolling count fell because older failures aged out; it is not a recovery claim.
+
 ## Evening continuation — 17 September 2026, 19:43:53 UTC+3
 
 [Hermes late extension ledger](log-extension-20260917-late.json) records **33 additional failed Sol attempts**, 24 successful calls inside the same two ultimately failed user turns, four new request IDs, two terminal 5/5 exhaustions, two GUI error endings, concurrent compression telemetry, exact prefix/hash checks and seven local WebSocket loop-stall warnings. [Full report](../docs/EVENING-CONTINUATION-2026-09-17.md).
