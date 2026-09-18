@@ -11,6 +11,11 @@ We refer to the company as **the provider** throughout the investigation. Produc
 
 [Русская сводка](docs/README.ru.md) · [Evidence](evidence/README.md) · [Recovery procedure](docs/RECOVERY.md) · [Open tasks](https://github.com/gv1983us-commits/codex-provider-incident/issues) · [Hermes report](https://github.com/NousResearch/hermes-agent/issues/107307)
 
+> [!IMPORTANT]
+> **18 September, morning continuation — incident remains OPEN, but the newest interval is intermittent rather than terminal.** Exact-prefix extensions add **24 failed Sol attempts** (23 overload + 1 request-processing error) alongside **385 successful main-loop Codex calls**. There is no new 5/5 exhaustion and no new GUI error turn. Current reconciliation: **747** failures since the fixed baseline, **978** across supplied logs, and **451** in the final rolling 48 hours. The lower rolling count reflects older failures aging out, not closure.
+>
+> A separate Hermes-local lifecycle record shows the previous gateway life ended **uncleanly** after its last heartbeat at 17 Sep 20:01:25 UTC+3, with `state_db_integrity=ok` and no OOM determination. New startups also repeat a **5 live SessionDB handles** warning and 13 post-tool hook skips. [18 Sep report](docs/MORNING-CONTINUATION-2026-09-18.md) · [Machine-readable receipt](evidence/log-extension-20260918T072057Z.json).
+
 > [!CAUTION]
 > **17 September, evening continuation — normal work is still blocked.** Exact-prefix log extensions add **33 failed Sol attempts** and four request IDs; despite **24 successful inner Codex calls**, two Hermes user turns still ended as overload errors after **986.2 s** and **503.0 s**. Current reconciliation: **723** failures since the fixed baseline, **954** across supplied logs, and **498** in the final rolling 48 hours.
 >
@@ -100,7 +105,7 @@ The procedure and acceptance criteria are in [RECOVERY.md](docs/RECOVERY.md). No
 
 | Task | Current owner / invitation | Status |
 | --- | --- | --- |
-| [#1 · Validate sustained Codex work](https://github.com/gv1983us-commits/codex-provider-incident/issues/1) | Hermes maintainers + provider requested; owner supplies evidence | OPEN as of 18 Sep; latest audited boundary is 17 Sep with 723 post-baseline failures; normal work remains disrupted |
+| [#1 · Validate sustained Codex work](https://github.com/gv1983us-commits/codex-provider-incident/issues/1) | Hermes maintainers + provider requested; owner supplies evidence | OPEN as of 18 Sep; latest audited boundary 10:20 UTC+3 with 747 post-baseline failures; provider route remains intermittent |
 | [#2 · Preserve continuation after retry exhaustion](https://github.com/gv1983us-commits/codex-provider-incident/issues/2) | `huklaa` invited; formal assignment pending | Awaiting contributor confirmation |
 | [#3 · Check compression failure and recovery](https://github.com/gv1983us-commits/codex-provider-incident/issues/3) | Account owner coordinates; help wanted | Installed revision and code review needed |
 | [#4 · Compare results with Sub2API](https://github.com/gv1983us-commits/codex-provider-incident/issues/4) | Reopened after recurrence; external comparison remains relevant | OPEN; temporary 11 Sep relief was superseded by renewed failures |
@@ -112,6 +117,7 @@ The [invitation and repository handoff](https://github.com/NousResearch/hermes-a
 
 | Material | Purpose |
 | --- | --- |
+| [18 September morning continuation](docs/MORNING-CONTINUATION-2026-09-18.md) | 24 added Sol failures amid 385 successes, 747/978/451 reconciliation, gateway lifecycle and Hermes-local warnings |
 | [Direct ChatGPT shared-session timing — 17 September](docs/DIRECT-CHATGPT-SHARE-TIMING-2026-09-17.md) | Two incomplete Sol turns confirmed from message topology and `end_turn` state; 1:51:00 and 3:32:09 lower-bound windows |
 | [Cross-surface recurrence — 17 September](docs/CROSS-SURFACE-RECURRENCE-2026-09-17.md) | 397 added Hermes/Sol failures, 30 complete 5/5 chains, compression controls and separately scoped Direct ChatGPT evidence |
 | [Morning recurrence — 16 September, 09:06 UTC+3](docs/MORNING-RECURRENCE-2026-09-16.md) | Current 277/255 counts; 99 added failures; five-attempt exhaustion, morning comparison and pending-tool / GUI mismatch |
