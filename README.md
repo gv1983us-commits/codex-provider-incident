@@ -12,6 +12,11 @@ We refer to the company as **the provider** throughout the investigation. Produc
 [Русская сводка](docs/README.ru.md) · [Evidence](evidence/README.md) · [Recovery procedure](docs/RECOVERY.md) · [Open tasks](https://github.com/gv1983us-commits/codex-provider-incident/issues) · [Hermes report](https://github.com/NousResearch/hermes-agent/issues/107307)
 
 > [!IMPORTANT]
+> **20 September — two-account control and dual-subscription impact.** The public evidence now has a canonical comparison of **Pro Full 20x and Pro Light on the same Windows laptop/network/VPN environment across independent clients**. Full reproduced execution-path failures in Hermes/Codex and the official ChatGPT Work/Codex surface, while ordinary ChatGPT conversation remained usable. Light temporarily continued in the official interface and later resumed the **same existing Hermes Builder session**, before Light itself also developed documented execution-path failures.
+>
+> This makes a purely Hermes-local, project-local, laptop-local, LAN-local or VPN-local explanation insufficient for the complete observed pattern, while still **not proving** an account-specific safeguard or internal routing mechanism. Both paid subscriptions were materially consumed by the incident period: Full as the primary affected subscription, Light as fallback/preservation/diagnostic capacity and later as an affected path itself. [Two-account controlled comparison](docs/TWO-ACCOUNT-CONTROL-2026-09-20.md) · [20 Sep status and compensation question](docs/STATUS-2026-09-20.md).
+
+> [!IMPORTANT]
 > **18 September, morning continuation — incident remains OPEN, but the newest interval is intermittent rather than terminal.** Exact-prefix extensions add **24 failed Sol attempts** (23 overload + 1 request-processing error) alongside **385 successful main-loop Codex calls**. There is no new 5/5 exhaustion and no new GUI error turn. Current reconciliation: **747** failures since the fixed baseline, **978** across supplied logs, and **451** in the final rolling 48 hours. The lower rolling count reflects older failures aging out, not closure.
 >
 > A separate Hermes-local lifecycle record shows the previous gateway life ended **uncleanly** after its last heartbeat at 17 Sep 20:01:25 UTC+3, with `state_db_integrity=ok` and no OOM determination. New startups also repeat a **5 live SessionDB handles** warning and 13 post-tool hook skips. [18 Sep report](docs/MORNING-CONTINUATION-2026-09-18.md) · [Machine-readable receipt](evidence/log-extension-20260918T072057Z.json).
@@ -117,6 +122,8 @@ The [invitation and repository handoff](https://github.com/NousResearch/hermes-a
 
 | Material | Purpose |
 | --- | --- |
+| [Two-account controlled comparison — 20 September](docs/TWO-ACCOUNT-CONTROL-2026-09-20.md) | Same machine/network controls across Pro Full and Pro Light; Codex/execution-path scope; same-session account switch; dual-subscription impact and evidence limits |
+| [20 September status](docs/STATUS-2026-09-20.md) | Current provider/Hermes state, low-concurrency control, subscription impact and compensation question |
 | [18 September morning continuation](docs/MORNING-CONTINUATION-2026-09-18.md) | 24 added Sol failures amid 385 successes, 747/978/451 reconciliation, gateway lifecycle and Hermes-local warnings |
 | [Direct ChatGPT shared-session timing — 17 September](docs/DIRECT-CHATGPT-SHARE-TIMING-2026-09-17.md) | Two incomplete Sol turns confirmed from message topology and `end_turn` state; 1:51:00 and 3:32:09 lower-bound windows |
 | [Cross-surface recurrence — 17 September](docs/CROSS-SURFACE-RECURRENCE-2026-09-17.md) | 397 added Hermes/Sol failures, 30 complete 5/5 chains, compression controls and separately scoped Direct ChatGPT evidence |
