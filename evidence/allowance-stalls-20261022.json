@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "timezone": "UTC+03:00",
+  "common_window": {
+    "start": "2026-10-20T12:04:02.662+03:00",
+    "end_inclusive": "2026-10-22T10:57:18.578+03:00"
+  },
+  "population": "Completed main/conversation-loop records; excludes unlogged auxiliary and failed/partial usage; record counts are not user turns or billed allowance units.",
+  "all_retained_calls": 19417,
+  "common_by_device": {
+    "Lenovo": {
+      "calls": 10259,
+      "input_tokens": 1969147623,
+      "output_tokens": 5210871,
+      "failed_attempts": 237,
+      "retry_notices": 213
+    },
+    "MSI": {
+      "calls": 2618,
+      "input_tokens": 440058362,
+      "output_tokens": 2705613,
+      "failed_attempts": 9,
+      "retry_notices": 7
+    }
+  },
+  "common_totals": {
+    "completed_calls": 12877,
+    "input_tokens": 2409205985,
+    "output_tokens": 7916484,
+    "explicit_cached_input_tokens": 2306460288,
+    "explicit_cached_share_of_all_input": 0.9573528798949916,
+    "cache_field_missing_calls": 301,
+    "failed_attempts": 246,
+    "retry_notices": 220
+  },
+  "quota": {
+    "error_type": "usage_limit_reached",
+    "plan_family": "pro",
+    "window_minutes": 10080,
+    "reset_epoch_values_by_device": {
+      "lenovo": [
+        1793090676,
+        1793090677,
+        1793090678
+      ],
+      "msi": [
+        1793090676,
+        1793090677
+      ]
+    },
+    "first_failure_times": {
+      "lenovo": "2026-10-22T11:46:10.786+03:00",
+      "msi": "2026-10-22T11:46:28.962+03:00"
+    },
+    "first_failure_recorded_gap_s": 18.176,
+    "attempts_by_device": {
+      "lenovo": 10,
+      "msi": 33
+    },
+    "retries_by_device": {
+      "lenovo": 8,
+      "msi": 22
+    },
+    "attribution": "Same current subscription/shared allowance is owner-reported; not independently identified from timestamps. Reset values overlap and differ by up to 2 seconds; clocks were not independently synchronized."
+  },
+  "msi_one_turn": {
+    "duration_s": 3679.3,
+    "start_inferred": "2026-10-22T09:54:56.249+03:00",
+    "end": "2026-10-22T10:56:15.549+03:00",
+    "status": "complete",
+    "error_retained": false,
+    "watchdog_count": 3,
+    "threshold_s_each": 300,
+    "affected_calls": [
+      {
+        "call": 150,
+        "completion_time": "2026-10-22T10:06:18.529+03:00",
+        "latency_s": 606.8,
+        "watchdog_time": "2026-10-22T10:01:11.806+03:00",
+        "source": {
+          "file": "agent(1).log",
+          "line": 18556
+        }
+      },
+      {
+        "call": 157,
+        "completion_time": "2026-10-22T10:33:51.361+03:00",
+        "latency_s": 568.5,
+        "watchdog_time": "2026-10-22T10:29:23.104+03:00",
+        "source": {
+          "file": "agent(1).log",
+          "line": 18709
+        }
+      },
+      {
+        "call": 160,
+        "completion_time": "2026-10-22T10:46:15.464+03:00",
+        "latency_s": 476.2,
+        "watchdog_time": "2026-10-22T10:43:19.519+03:00",
+        "source": {
+          "file": "agent(1).log",
+          "line": 18807
+        }
+      }
+    ],
+    "affected_call_latency_sum_s": 1651.5,
+    "all_call_latency_sum_s": 3385.1,
+    "completed_calls": 15,
+    "caution": "Recorded latency includes processing and recovery, not pure downtime. Do not add 900 seconds of watchdog thresholds to call latency."
+  },
+  "descriptive_output_comparison": {
+    "lenovo_oct19_output": 2243745,
+    "combined_oct21_output": 4785056,
+    "ratio": 2.1326202398222613,
+    "caution": "Different dates/workloads/models/concurrency; this is not a price/allowance ratio or controlled experiment."
+  },
+  "provenance": {
+    "joint_completed_calls.csv": {
+      "sha256": "15c0e25ab9002896318f783692ce40366be3020619853ed712c2a9ca1ae6fbaf",
+      "bytes": 3531570
+    },
+    "joint_usage_summary.json": {
+      "sha256": "c692abf38c4e9889a9010b3685c42e572bb7e3d56b2930273870a55f20eacbd3",
+      "bytes": 29494
+    },
+    "msi/lifecycle.json": {
+      "sha256": "69e06df68f1f716f8480b97d588422f1548ffbf623a841869522c6871d3a86ff",
+      "bytes": 138767
+    },
+    "source_manifest.json": {
+      "sha256": "557785c43034c98b32f8d21c4e31c807d2462f45fc124c8995a907d057f4aa29",
+      "bytes": 5976
+    }
+  },
+  "owner_reported_chronology": {
+    "prior_pro_200": {
+      "device": "Lenovo",
+      "reported_usable_days_per_week_approx": 5,
+      "request_level_full_history_not_in_recovered_package": true
+    },
+    "plus": {
+      "start_date_alternatives": [
+        "2026-10-03",
+        "2026-10-04"
+      ],
+      "initial_phase": "Almost two weeks of apparently prior-Pro-like allowance consumption; minor provider errors did not materially interrupt work",
+      "later_phase": "Abrupt depletion of weekly allowance in approximately one day, followed by use of purchased credits",
+      "exact_anomaly_timestamp": null
+    },
+    "current_pro_200": {
+      "new_purchase_on_different_historical_account": true,
+      "one_current_subscription_shared_by_lenovo_and_msi": true,
+      "owner_reported_usable_days_approx": 2.5,
+      "owner_reports_long_waits_returned_immediately": true,
+      "exact_initial_entitlement_and_balance": null
+    },
+    "full_lenovo_statistics": "Owner states they exist over the full history; their export was not among the recovered inputs."
+  },
+  "official_policy_checked_at": "2026-10-22",
+  "sources": {
+    "official_pro_terms": "https://help.openai.com/en/articles/9793128-about-chatgpt-pro-tiers",
+    "official_credit_rates": "https://learn.chatgpt.com/docs/pricing",
+    "third_party_published_account_of_openai_email": "https://github.com/openai/codex/issues/54677#issuecomment-6296212737",
+    "independent_pro_plus_report": "https://github.com/openai/codex/issues/45030",
+    "independent_account_following_capacity_report": "https://github.com/openai/codex/issues/56114",
+    "hermes_stall_issue": "https://github.com/NousResearch/hermes-agent/issues/131743"
+  }
+}

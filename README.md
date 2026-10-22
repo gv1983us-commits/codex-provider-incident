@@ -1,11 +1,15 @@
 <p align="center"><img src="assets/banner.svg" alt="Codex provider incident — September 2026. Evidence, recovery and collaboration." width="100%"></p>
 
-# Codex provider incident · September 2026
+# Codex provider incidents · September–October 2026
 
 **Goal: restore sustained, reliable Codex-backed Jarvis operation through Hermes on the affected existing subscriptions.**
 
-> [!WARNING]
-> **Incident continuity note — no final closure has occurred.** The short usable interval around 11–12 September was temporary partial relief, not a durable recovery. Subsequent recurrence superseded the earlier optimistic closure language and the incident remains open.
+> [!IMPORTANT]
+> **Current status — 22 October 2026.** The September incident was [closed operationally on 30 September](https://github.com/gv1983us-commits/codex-provider-incident/issues/1#issuecomment-5913330753), with user continuity restored and provider RCA unresolved. A separately bounded October incident remains open in [issue #6](https://github.com/gv1983us-commits/codex-provider-incident/issues/6).
+>
+> The October report now includes the owner's full plan/account chronology, independently rechecked Lenovo/MSI usage and a 61-minute MSI turn with three 300s stalls. New official Pro terms and a closely related plan-transition allowance report are included with their evidentiary limits. [Current report](docs/CODEX-WEEKLY-ALLOWANCE-2026-10-22.md) · [Minimized evidence](evidence/allowance-stalls-20261022.json).
+>
+> The dated September updates below are historical. Their OPEN wording does not override the September 30 operational closure.
 
 We refer to the company as **the provider** throughout the investigation. Product names, technical identifiers, source URLs and verbatim evidence retain their exact spelling for reproducibility.
 
