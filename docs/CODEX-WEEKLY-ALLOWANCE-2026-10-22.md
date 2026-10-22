@@ -10,7 +10,7 @@
 
 | Этап | Что известно | Граница подтверждения |
 |---|---|---|
-| Первый Pro $200 на Lenovo | Владелец сообщал примерно о пяти сутках работы на недельном объёме в период Sol 5.6 | Историческая оценка; сопоставимый полный журнал вызовов первого Pro в восстановленный пакет не входит |
+| Первый Pro $200 на Lenovo | Владелец сообщал примерно о пяти сутках работы на недельном объёме в период Sol 5.6 | Историческая оценка; теперь получены session/model aggregates с 8 сентября, но не полный per-call журнал и не выписка лимита |
 | Переход Lenovo на Plus **3 или 4 октября** | Почти две недели расход выглядел как на прежнем Pro $200; работа продолжалась, мелкие provider errors заметно не мешали | Дата начала имеет неопределённость в один день; точный момент изменения фактически применённого лимита не установлен |
 | Поздняя часть Plus | Недельный объём резко стал заканчиваться примерно за сутки, затем начали расходоваться credits | Нельзя описывать весь Plus-период как одинаковый «один день на неделю» |
 | Новый Pro $200 на другой учётке, со старта MSI | По словам владельца, долгие ожидания вернулись сразу; текущая подписка общая для MSI и Lenovo | Это новая покупка на другой учётке, а не обычный upgrade прежней Plus-подписки |
@@ -42,18 +42,21 @@
 
 Сходство симптомов обосновывает сопоставление. Оно не доказывает единую причину или намеренное ограничение Pro. Статус PR #133933, #139410 и #138206 проверен 22 октября: предложения открыты и не merged; обещать, что любое из них уже исправляет наш случай, нельзя.
 
-### 4. Полная статистика Lenovo существует по сообщению владельца; её нельзя подменять покрытием логов
+### 4. Статистика Lenovo получена: 8 сентября — 22 октября
 
-Владелец прямо сообщил о полной истории статистики Lenovo, охватывающей первый Pro, переход на Plus и новый Pro. **В восстановленные файлы этого разбора сама полная выгрузка статистики не входит.** Здесь заново проверен уже подготовленный пакет: 13 исходных логов, их минимизированные производные, CSV из 19 417 завершённых вызовов и сводки.
+**22 октября получена прямая offline-выгрузка счётчиков Lenovo.** [Подробное дополнение](https://github.com/gv1983us-commits/codex-provider-incident/blob/main/docs/LENOVO-RETAINED-USAGE-2026-10-22.md) и [агрегаты JSON](https://github.com/gv1983us-commits/codex-provider-incident/blob/main/evidence/lenovo-retained-usage-20261022.json) заменяют прежнее ограничение «полная статистика ещё не получена».
 
-Это ограничение нашего текущего набора данных, а не утверждение об отсутствии истории на Lenovo. При поступлении существующей выгрузки можно дополнить сравнение без новых модельных прогонов.
+Три базы содержат 1 188 сессий. Их сохранённые счётчики дают **115 531 main + 3 604 auxiliary = 119 135 вызовов**; 119 123 явно помечены openai-codex, восемь без provider attribution, четыре относятся к другим маршрутам. История начинается 8 сентября; наличие более ранних данных этим не подтверждается. Межбазовых пересечений session IDs не найдено, но это сумма локальных счётчиков, не независимая дедупликация всех физических запросов провайдера.
 
-Проверка кода установленной MSI-ревизии выявила два важных свойства:
+Во всех сессиях main-строки session_model_usage точно совпали с sessions по шести полям: calls, input, output, cache read/write, reasoning. Auxiliary составляет отдельную добавку в модельной таблице. **Таблицы целиком не складываются.**
 
-- [`agent/aux_accounting.py`](https://github.com/NousResearch/hermes-agent/blob/d923a5eb487a17c0a68801bba9ef0f56c81040a8/agent/aux_accounting.py) уже умеет best-effort записывать auxiliary usage в state DB. Поэтому отсутствие этих токенов в извлечённых текстовых логах не означает отсутствия учёта в Hermes.
-- [`hermes_cli/web_routers/analytics.py`](https://github.com/NousResearch/hermes-agent/blob/d923a5eb487a17c0a68801bba9ef0f56c81040a8/hermes_cli/web_routers/analytics.py) в проверенной версии относит накопленные session totals к дате начала сессии. Такой daily-график сам по себе не является расходом по времени каждого вызова; длинную сессию через границу тарифа нельзя целиком приписывать одному тарифу.
+**Уточнение области прежних log-итогов:** завершённые API-вызовы включают часть background_review. Для Sol 6: 9 944 main + 229 review = 10 173 log completions; для Sol 6.1: 166 + 18 = 184. Полный вход, выход и cache-read тоже точно совпали. Поэтому прибавление всей DB auxiliary-суммы к прежнему log total повторно посчитает часть нагрузки. Термин completed calls ниже обозначает журнал завершений, а не только DB main.
 
-Эти свойства проверены для MSI `d923a5e`. Lenovo использует другую dirty-ревизию; переносить на неё конкретную реализацию без проверки нельзя. Для исторического разреза нужны фактическая структура имеющейся статистики, даты вызовов либо явные ограничения session-агрегатов. Токенный счётчик, процент недельного allowance и купленные credits остаются разными показателями.
+DB input_tokens — вход без кеша; log in= — полный prompt. Для всех трёх баз полный вход равен **23 479 321 960**, cache-read — **22 282 305 456 (94,90%)**, выход — **70 324 713**. Reasoning уже является детализацией выхода и повторно не прибавляется.
+
+Для тарифного сравнения сохраняется ограничение: три длинные сессии с 28 944 main calls (25,06% основной базы) пересекают границы 3–4 октября либо не имеют окончания. Их lifetime totals нельзя целиком отнести к одному тарифу или дню. first_seen/last_seen содержат времена accounting writes и границы исторических session-агрегатов, не полноценную хронологию каждого вызова. Отдельно отмечено появление Sol 6 и Sol 6.1 на Lenovo 20 октября, подтверждённое логами.
+
+Нулевые денежные поля included-учёта не означают нулевые списания недельного allowance или купленных credits. Account/plan attribution и provider debit ledger в выгрузке отсутствуют. Механизм upstream проверен по MSI d923a5e; локальные изменения Lenovo c7c2595…dirty неизвестны.
 
 ### Что предъявляется поставщикам
 
@@ -157,7 +160,7 @@ Common-window models across both machines:
 
 MSI common-window auxiliary route selections include **36 approval, 12 compression, two goal_judge and one title_generation** records, all in the 6.1 family. Two further goal_judge selections occur in the delta. These are route-selection events, not a ledger of confirmed billed completions; their returned token usage is not recorded. Resolver auto-detect records are separate and are not added as extra calls.
 
-**Lenovo:** the common-window main-loop counts remain 9,954 on 6 Sol, 184 on 6.1, and 121 on 5.6. The 184 6.1 completions belong to one Telegram session. Separately, 175 desktop `goal_judge` route-selection records choose 6.1 in the common window. A new desktop session at **21 October 15:58:32.640** explicitly selects 6 Sol through `source=client override` despite a 6.1 profile default (`gui.log`, line **12745**). Thus this is a mixed session/auxiliary configuration; it is not evidence of hidden backend remapping.
+**Lenovo:** the common-window completed-call log counts remain 9,954 on 6 Sol, 184 on 6.1, and 121 on 5.6. The 184 6.1 completions belong to one Telegram session. Separately, 175 desktop `goal_judge` route-selection records choose 6.1 in the common window. A new desktop session at **21 October 15:58:32.640** explicitly selects 6 Sol through `source=client override` despite a 6.1 profile default (`gui.log`, line **12745**). Thus this is a mixed session/auxiliary configuration; it is not evidence of hidden backend remapping.
 
 #### E. Internal generation increased substantially
 
@@ -193,9 +196,9 @@ This is a specific demonstration of degraded execution hidden by a final `comple
 
 #### G. Cache and recovery conclusions
 
-The common-window MSI main-loop input is at least **96.96% explicitly cached**; Lenovo is at least **95.46%**. Combined, **95.74% of all recorded input** is explicitly cached, or 96.82% among records with cache fields. The 301 records without a cache field contain 27,002,835 input tokens. Missing cache fields are not assigned zero. Combined uncached input is bounded at **75,742,862–102,745,697** tokens within the recorded population.
+The common-window MSI completed-call input is at least **96.96% explicitly cached**; Lenovo is at least **95.46%**. Combined, **95.74% of all recorded input** is explicitly cached, or 96.82% among records with cache fields. The 301 records without a cache field contain 27,002,835 input tokens. Missing cache fields are not assigned zero. Combined uncached input is bounded at **75,742,862–102,745,697** tokens within the recorded population.
 
-These measurements do not support a general successful-main-loop cache collapse. They do not prove correct caching on every request, auxiliary route or partial response. The earlier source-level cache-affinity hypothesis remains unproven for the installed runtime and should not be presented as the established cause.
+These measurements do not support a general successful-call cache collapse. They do not prove correct caching on every request, auxiliary route or partial response. The earlier source-level cache-affinity hypothesis remains unproven for the installed runtime and should not be presented as the established cause.
 
 After weekly exhaustion, Lenovo records **two chains of five attempts** and MSI **eleven chains of three attempts**. Combined: **43 quota-error attempts and 30 associated retry notices**. MSI's last rejection is at **12:25:01.776**, nearly 39 minutes after its first. Eight MSI chains share a thread name but have distinct session fingerprints; a thread name alone does not establish whether a scheduler or user initiated them.
 
@@ -206,7 +209,7 @@ The repeated short retries are an actionable quota-error recovery problem. They 
 1. **OpenAI: reconcile the shared seven-day Pro bucket.** State the entitlement and starting balance of the newly purchased Pro subscription on a different account, reset boundary, carried consumption if any, and deductions through October 22 11:46. Attribute the supplied Lenovo/MSI activity and any other consumers of the same account bucket using provider records.
 2. **OpenAI: explain effective accounting.** Reconcile actual model mix, context, cached input, output/reasoning, auxiliary calls and requested/served tier. Explain any relevant changes between the earlier and current Pro periods. Public API or purchased-credit prices are not a conversion table for included weekly allowance.
 3. **OpenAI: explain failed/partial-response deductions.** Determine whether any recorded failed, timed-out or cancelled attempts consumed allowance, in what quantity, and whether deductions were reversed. Missing local usage is not a zero-usage finding.
-4. **Hermes: reconcile all inference routes.** Use existing state DB auxiliary accounting where available, and expose effective model, reasoning and tier together with returned usage for main, auxiliary and recovery paths. The provided text-log extraction lacks auxiliary usage; pinned MSI code already implements best-effort auxiliary DB accounting. Explain the observed Lenovo client override / auxiliary split and any accounting gaps, without treating missing text-log fields as proof that Hermes never records auxiliary usage.
+4. **Hermes: reconcile all inference routes.** Use existing state DB auxiliary accounting where available, and expose effective model, reasoning and tier together with returned usage for main, auxiliary and recovery paths. The text-log census has incomplete auxiliary coverage: the new Lenovo DB export proves that background_review already overlaps completed-call records. Pinned MSI code implements separate auxiliary DB accounting; do not add its whole total to log counts. Explain the observed Lenovo client override / auxiliary split and any accounting gaps, without treating missing text-log fields as proof that Hermes never records auxiliary usage.
 5. **Hermes: distinguish terminal quota exhaustion from transient failure.** Surface the reset and suppress short retries for structured `usage_limit_reached` on a seven-day window. Preserve recovery appropriate to overload or transport errors.
 6. **Remedy:** provide an account-specific explanation. Correct entitlement/metering defects and restore incorrectly consumed allowance if found. If deductions are expected, explain them with quantities the owner can reconcile.
 
@@ -253,6 +256,7 @@ GUI в общем окне: Lenovo 291 finishes (285 complete, 1 interrupted, 5 
 |---|---|
 | Lenovo agent-ротации | 18.10 23:04:46.396 → 22.10 11:51:54.702 |
 | Lenovo successful calls | 18.10 23:04:56.513 → 22.10 11:46:06.247 |
+| Lenovo offline DB counters | 08.09 09:02:23 → 22.10 11:46:06; session/model aggregates |
 | Lenovo errors-ротации | С 01.10; full retained failed-attempt census 645 |
 | MSI agent | 20.10 12:04:02.662 → 22.10 12:25:02.197 |
 | MSI successful calls | 20.10 14:12:51.359 → 22.10 11:46:26.453 |
@@ -263,13 +267,13 @@ GUI в общем окне: Lenovo 291 finishes (285 complete, 1 interrupted, 5 
 
 ## 4. Что осталось выяснить
 
-**Обе машины уже разобраны.** Для продолжения оформления не нужны новые модельные прогоны и повторная отправка тех же логов. Следующие источники для углубления — существующая полная статистика Lenovo, о которой сообщил владелец, и движение недельного остатка с фактически применёнными условиями аккаунта. Публикация имеющихся результатов не зависит от получения ответа провайдера. Сохранённый снимок остатка сразу после покупки помог бы сузить неизвестный начальный баланс, но отсутствие снимка не мешает предъявить подтверждённое исчерпание.
+**Обе машины уже разобраны; полная сохранённая выгрузка счётчиков Lenovo теперь получена и проверена.** Дополнение расширяет историю до 8 сентября и устанавливает main/auxiliary/log overlap. Следующий недостающий слой — движение недельного остатка и купленных credits с фактически применёнными условиями аккаунта. Публикация имеющихся результатов не зависит от получения ответа провайдера. Сохранённый снимок остатка сразу после покупки помог бы сузить неизвестный начальный баланс, но отсутствие снимка не мешает предъявить подтверждённое исчерпание.
 
 Сохраняются четыре границы вывода:
 
 1. Рост внутренней генерации и добавка MSI измерены; причина роста и полезность каждой операции по метаданным не установлены.
 2. Успешные вызовы не охватывают полную auxiliary/partial/server-side usage. Доли токенов не равны долям списания квоты.
-3. Первоначальные пять суток Pro и нынешние примерно 2,5 суток — наблюдения владельца. В восстановленном пакете нет одинаковых задач, полной выгрузки старой статистики и начальных балансов для контролируемого сравнения; это не отрицает существование полной статистики на Lenovo.
+3. Первоначальные пять суток Pro и нынешние примерно 2,5 суток — наблюдения владельца. Получена выгрузка сохранённых session/model counters с 8 сентября, но нет одинаковых задач, полного per-call журнала старого периода и начальных балансов для контролируемого сравнения.
 4. Не доказаны завышенное списание за ошибки, массовая потеря кэша, скрытая подмена модели или включение Fast. Эти объяснения не подставляются вместо provider reconciliation.
 
 Пакет **CODEX-SHARED-BUDGET-EVIDENCE-2026-10-22.zip** содержит манифест 13 оригиналов, совместный CSV из 19 417 completed-call records, отдельные технические JSON по машинам, quota payloads, retry chains, метаданные маршрутизации и lifecycle, а также скрипты воспроизведения основных счётчиков. Исходные логи, содержимое задач, ответы модели, вывод инструментов и auth-файлы не включены. Session IDs заменены псевдонимами/отпечатками; response IDs сохранены для серверной корреляции.
@@ -305,3 +309,5 @@ GUI в общем окне: Lenovo 291 finishes (285 complete, 1 interrupted, 5 
 Нужно различать долгосрочное исчерпание allowance и краткое ограничение частоты запросов, прекращать бесполезные немедленные повторы исчерпанного маршрута и показывать реальный reset. Альтернативный маршрут может использоваться только в рамках уже выбранной пользователем конфигурации.
 
 Этот механизм относится к **повторам после отказа по квоте**. Он не объясняет её предшествующее исчерпание или более ранние 300s stalls. Старый Hermes #97315 с бесконечным rotate-to-self циклом отличается от наших ограниченных цепочек 3/5; регрессия того старого бага здесь не заявляется.
+
+

@@ -1,0 +1,842 @@
+{
+  "format": "lenovo_retained_usage_public_v1",
+  "source": {
+    "filename": "lenovo_usage_20261022_113531.zip",
+    "sha256": "94031dbc498c87dd8f62eb8656f2a8813418bd57b83db0997a5d7b8bd0da5046",
+    "payload_sha256": "7c8e3875ad7b7360352015011c7839f095ff4ad45f31026de4432c1557138a24",
+    "export_created_utc": "2026-10-22T11:35:31.035627+00:00",
+    "export_format": "hermes_offline_usage_v1",
+    "timezone": "Europe/Istanbul (UTC+03:00)",
+    "scan_errors": []
+  },
+  "semantics": {
+    "input_tokens": "uncached canonical input; supported by pinned upstream and exact log bridge",
+    "full_prompt_tokens": "input_tokens + cache_read_tokens + cache_write_tokens",
+    "reasoning_tokens": "detail within output; do not add to output again",
+    "count_scope": "sum of retained local api_call_count counters, not independently deduplicated provider requests",
+    "main": "session_model_usage rows where task is empty; overlaps sessions totals",
+    "auxiliary": "nonempty task; only background_review is proven to overlap retained API-completion logs here",
+    "timestamps": "session boundaries and accounting-write/migration-seed boundaries, not a per-call ledger",
+    "costs": "included/unknown/no-source accounting values, not evidence of zero subscription or credit spend",
+    "code_pin": "d923a5eb487a17c0a68801bba9ef0f56c81040a8 (MSI); Lenovo dirty source not verified"
+  },
+  "databases": [
+    {
+      "database": "db_001",
+      "status": "ok",
+      "session_rows": 1183,
+      "model_usage_rows": 1277,
+      "session_coverage": {
+        "first_start": "2026-09-08T09:02:23.023+03:00",
+        "last_start": "2026-10-22T11:28:41.291+03:00",
+        "first_end": "2026-09-11T21:04:18.259+03:00",
+        "last_end": "2026-10-22T11:32:20.173+03:00",
+        "missing_end_count": 9
+      },
+      "model_usage_coverage": {
+        "first_start": "2026-09-08T09:02:45.183+03:00",
+        "last_start": "2026-10-22T11:28:46.636+03:00",
+        "first_end": "2026-09-08T09:02:46.097+03:00",
+        "last_end": "2026-10-22T11:46:06.267+03:00",
+        "missing_end_count": 0
+      },
+      "main": {
+        "api_call_count": 115503,
+        "input_tokens": 1114110668,
+        "output_tokens": 63965223,
+        "cache_read_tokens": 21641694128,
+        "cache_write_tokens": 0,
+        "reasoning_tokens": 24839378,
+        "full_prompt_tokens": 22755804796
+      },
+      "auxiliary": {
+        "api_call_count": 3599,
+        "input_tokens": 82737030,
+        "output_tokens": 6355029,
+        "cache_read_tokens": 640379904,
+        "cache_write_tokens": 0,
+        "reasoning_tokens": 892065,
+        "full_prompt_tokens": 723116934
+      },
+      "all_model_usage": {
+        "api_call_count": 119102,
+        "input_tokens": 1196847698,
+        "output_tokens": 70320252,
+        "cache_read_tokens": 22282074032,
+        "cache_write_tokens": 0,
+        "reasoning_tokens": 25731443,
+        "full_prompt_tokens": 23478921730
+      },
+      "main_per_session_reconciliation_mismatches": 0,
+      "auxiliary_by_task": {
+        "approval": {
+          "rows": 19,
+          "api_call_count": 304,
+          "input_tokens": 161313,
+          "output_tokens": 18906,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": 0,
+          "reasoning_tokens": 0,
+          "full_prompt_tokens": 161313
+        },
+        "background_review": {
+          "rows": 17,
+          "api_call_count": 2667,
+          "input_tokens": 63548960,
+          "output_tokens": 1927045,
+          "cache_read_tokens": 640379904,
+          "cache_write_tokens": 0,
+          "reasoning_tokens": 892065,
+          "full_prompt_tokens": 703928864
+        },
+        "compression": {
+          "rows": 40,
+          "api_call_count": 352,
+          "input_tokens": 18543500,
+          "output_tokens": 4240197,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": 0,
+          "reasoning_tokens": 0,
+          "full_prompt_tokens": 18543500
+        },
+        "title_generation": {
+          "rows": 11,
+          "api_call_count": 11,
+          "input_tokens": 3436,
+          "output_tokens": 228,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": 0,
+          "reasoning_tokens": 0,
+          "full_prompt_tokens": 3436
+        },
+        "vision": {
+          "rows": 4,
+          "api_call_count": 265,
+          "input_tokens": 479821,
+          "output_tokens": 168653,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": 0,
+          "reasoning_tokens": 0,
+          "full_prompt_tokens": 479821
+        }
+      },
+      "main_by_model": {
+        "gpt-5.6-sol-900k": {
+          "rows": 946,
+          "api_call_count": 101363,
+          "input_tokens": 997407754,
+          "output_tokens": 56819008,
+          "cache_read_tokens": 19327355776,
+          "cache_write_tokens": 0,
+          "reasoning_tokens": 21874088,
+          "full_prompt_tokens": 20324763530
+        },
+        "gpt-5.6-terra": {
+          "rows": 2,
+          "api_call_count": 18,
+          "input_tokens": 307914,
+          "output_tokens": 16171,
+          "cache_read_tokens": 916992,
+          "cache_write_tokens": 0,
+          "reasoning_tokens": 8623,
+          "full_prompt_tokens": 1224906
+        },
+        "gpt-5.6-terra-900k": {
+          "rows": 28,
+          "api_call_count": 712,
+          "input_tokens": 8011643,
+          "output_tokens": 713846,
+          "cache_read_tokens": 108754944,
+          "cache_write_tokens": 0,
+          "reasoning_tokens": 234688,
+          "full_prompt_tokens": 116766587
+        },
+        "gpt-6-astra": {
+          "rows": 1,
+          "api_call_count": 2,
+          "input_tokens": 13424,
+          "output_tokens": 559,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": 0,
+          "reasoning_tokens": 104,
+          "full_prompt_tokens": 13424
+        },
+        "gpt-6-astra-900k": {
+          "rows": 2,
+          "api_call_count": 3295,
+          "input_tokens": 18904887,
+          "output_tokens": 1305243,
+          "cache_read_tokens": 363607040,
+          "cache_write_tokens": 0,
+          "reasoning_tokens": 365728,
+          "full_prompt_tokens": 382511927
+        },
+        "gpt-6-sol-900k": {
+          "rows": 203,
+          "api_call_count": 9944,
+          "input_tokens": 86701825,
+          "output_tokens": 5059040,
+          "cache_read_tokens": 1810352384,
+          "cache_write_tokens": 0,
+          "reasoning_tokens": 2350143,
+          "full_prompt_tokens": 1897054209
+        },
+        "gpt-6.1-sol-900k": {
+          "rows": 1,
+          "api_call_count": 166,
+          "input_tokens": 2698798,
+          "output_tokens": 50934,
+          "cache_read_tokens": 30706432,
+          "cache_write_tokens": 0,
+          "reasoning_tokens": 6004,
+          "full_prompt_tokens": 33405230
+        },
+        "other_provider_model": {
+          "rows": 3,
+          "api_call_count": 3,
+          "input_tokens": 64423,
+          "output_tokens": 422,
+          "cache_read_tokens": 560,
+          "cache_write_tokens": 0,
+          "reasoning_tokens": 0,
+          "full_prompt_tokens": 64983
+        }
+      },
+      "transition_metadata_overlap": {
+        "sessions": {
+          "oct03_00": {
+            "ends_before_boundary": {
+              "rows": 154,
+              "api_call_count": 29160,
+              "input_tokens": 252424821,
+              "output_tokens": 14076027,
+              "cache_read_tokens": 4962127744,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 5987383
+            },
+            "starts_on_or_after_boundary": {
+              "rows": 1022,
+              "api_call_count": 57399,
+              "input_tokens": 492356696,
+              "output_tokens": 31566425,
+              "cache_read_tokens": 9286393264,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 13236129
+            },
+            "all_ambiguous_cumulative_counters": {
+              "rows": 3,
+              "api_call_count": 28944,
+              "input_tokens": 369329151,
+              "output_tokens": 18322771,
+              "cache_read_tokens": 7393173120,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 5615866
+            }
+          },
+          "oct04_00": {
+            "ends_before_boundary": {
+              "rows": 220,
+              "api_call_count": 30163,
+              "input_tokens": 264979841,
+              "output_tokens": 15166939,
+              "cache_read_tokens": 5024548912,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 6414052
+            },
+            "starts_on_or_after_boundary": {
+              "rows": 956,
+              "api_call_count": 56396,
+              "input_tokens": 479801676,
+              "output_tokens": 30475513,
+              "cache_read_tokens": 9223972096,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 12809460
+            },
+            "all_ambiguous_cumulative_counters": {
+              "rows": 3,
+              "api_call_count": 28944,
+              "input_tokens": 369329151,
+              "output_tokens": 18322771,
+              "cache_read_tokens": 7393173120,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 5615866
+            }
+          },
+          "oct05_00": {
+            "ends_before_boundary": {
+              "rows": 299,
+              "api_call_count": 31422,
+              "input_tokens": 278795493,
+              "output_tokens": 16372024,
+              "cache_read_tokens": 5090494256,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 6899029
+            },
+            "starts_on_or_after_boundary": {
+              "rows": 877,
+              "api_call_count": 55137,
+              "input_tokens": 465986024,
+              "output_tokens": 29270428,
+              "cache_read_tokens": 9158026752,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 12324483
+            },
+            "all_ambiguous_cumulative_counters": {
+              "rows": 3,
+              "api_call_count": 28944,
+              "input_tokens": 369329151,
+              "output_tokens": 18322771,
+              "cache_read_tokens": 7393173120,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 5615866
+            }
+          },
+          "msi_first_retained_call": {
+            "ends_before_boundary": {
+              "rows": 969,
+              "api_call_count": 84409,
+              "input_tokens": 857892048,
+              "output_tokens": 49798844,
+              "cache_read_tokens": 14409846320,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 19893672
+            },
+            "starts_on_or_after_boundary": {
+              "rows": 203,
+              "api_call_count": 4092,
+              "input_tokens": 34988720,
+              "output_tokens": 1983690,
+              "cache_read_tokens": 380730624,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 939880
+            },
+            "all_ambiguous_cumulative_counters": {
+              "rows": 7,
+              "api_call_count": 27002,
+              "input_tokens": 221229900,
+              "output_tokens": 12182689,
+              "cache_read_tokens": 6851117184,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 4005826
+            }
+          },
+          "oct03_oct04_full_date_uncertainty": {}
+        },
+        "model_usage": {
+          "oct03_00": {
+            "ends_before_boundary": {
+              "rows": 208,
+              "api_call_count": 30154,
+              "input_tokens": 264172648,
+              "output_tokens": 16456972,
+              "cache_read_tokens": 5024691456,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 6098598
+            },
+            "starts_on_or_after_boundary": {
+              "rows": 1059,
+              "api_call_count": 59522,
+              "input_tokens": 525689584,
+              "output_tokens": 33931398,
+              "cache_read_tokens": 9784677552,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 13728176
+            },
+            "all_ambiguous_cumulative_counters": {
+              "rows": 10,
+              "api_call_count": 29426,
+              "input_tokens": 406985466,
+              "output_tokens": 19931882,
+              "cache_read_tokens": 7472705024,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 5904669
+            }
+          },
+          "oct04_00": {
+            "ends_before_boundary": {
+              "rows": 274,
+              "api_call_count": 31157,
+              "input_tokens": 276727668,
+              "output_tokens": 17547884,
+              "cache_read_tokens": 5087112624,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 6525267
+            },
+            "starts_on_or_after_boundary": {
+              "rows": 990,
+              "api_call_count": 58077,
+              "input_tokens": 508720703,
+              "output_tokens": 32465450,
+              "cache_read_tokens": 9615888384,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 13216478
+            },
+            "all_ambiguous_cumulative_counters": {
+              "rows": 13,
+              "api_call_count": 29868,
+              "input_tokens": 411399327,
+              "output_tokens": 20306918,
+              "cache_read_tokens": 7579073024,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 5989698
+            }
+          },
+          "oct05_00": {
+            "ends_before_boundary": {
+              "rows": 360,
+              "api_call_count": 32877,
+              "input_tokens": 295936745,
+              "output_tokens": 19168431,
+              "cache_read_tokens": 5260725680,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 7113066
+            },
+            "starts_on_or_after_boundary": {
+              "rows": 908,
+              "api_call_count": 56804,
+              "input_tokens": 493927746,
+              "output_tokens": 31220495,
+              "cache_read_tokens": 9548643328,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 12713708
+            },
+            "all_ambiguous_cumulative_counters": {
+              "rows": 9,
+              "api_call_count": 29421,
+              "input_tokens": 406983207,
+              "output_tokens": 19931326,
+              "cache_read_tokens": 7472705024,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 5904669
+            }
+          },
+          "msi_first_retained_call": {
+            "ends_before_boundary": {
+              "rows": 1057,
+              "api_call_count": 98669,
+              "input_tokens": 1007733370,
+              "output_tokens": 60442973,
+              "cache_read_tokens": 17805793072,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 21976693
+            },
+            "starts_on_or_after_boundary": {
+              "rows": 216,
+              "api_call_count": 10444,
+              "input_tokens": 95192680,
+              "output_tokens": 5490216,
+              "cache_read_tokens": 1903783936,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 2456312
+            },
+            "all_ambiguous_cumulative_counters": {
+              "rows": 4,
+              "api_call_count": 9989,
+              "input_tokens": 93921648,
+              "output_tokens": 4387063,
+              "cache_read_tokens": 2572497024,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 1298438
+            }
+          },
+          "oct03_oct04_full_date_uncertainty": {}
+        }
+      },
+      "actual_cost_usd_null_sessions": 1183,
+      "actual_cost_usd_zero_model_rows": 1277
+    },
+    {
+      "database": "db_002",
+      "status": "ok",
+      "session_rows": 3,
+      "model_usage_rows": 6,
+      "session_coverage": {
+        "first_start": "2026-09-09T20:38:41.758+03:00",
+        "last_start": "2026-09-10T18:55:37.130+03:00",
+        "first_end": null,
+        "last_end": null,
+        "missing_end_count": 3
+      },
+      "model_usage_coverage": {
+        "first_start": "2026-09-09T20:38:50.305+03:00",
+        "last_start": "2026-09-10T18:55:55.966+03:00",
+        "first_end": "2026-09-09T20:38:50.305+03:00",
+        "last_end": "2026-09-11T22:19:32.509+03:00",
+        "missing_end_count": 0
+      },
+      "main": {
+        "api_call_count": 19,
+        "input_tokens": 107917,
+        "output_tokens": 1808,
+        "cache_read_tokens": 157696,
+        "cache_write_tokens": 0,
+        "reasoning_tokens": 895,
+        "full_prompt_tokens": 265613
+      },
+      "auxiliary": {
+        "api_call_count": 3,
+        "input_tokens": 797,
+        "output_tokens": 49,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "reasoning_tokens": 0,
+        "full_prompt_tokens": 797
+      },
+      "all_model_usage": {
+        "api_call_count": 22,
+        "input_tokens": 108714,
+        "output_tokens": 1857,
+        "cache_read_tokens": 157696,
+        "cache_write_tokens": 0,
+        "reasoning_tokens": 895,
+        "full_prompt_tokens": 266410
+      },
+      "main_per_session_reconciliation_mismatches": 0,
+      "auxiliary_by_task": {
+        "title_generation": {
+          "rows": 3,
+          "api_call_count": 3,
+          "input_tokens": 797,
+          "output_tokens": 49,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": 0,
+          "reasoning_tokens": 0,
+          "full_prompt_tokens": 797
+        }
+      },
+      "main_by_model": {
+        "gpt-5.6-sol-900k": {
+          "rows": 3,
+          "api_call_count": 19,
+          "input_tokens": 107917,
+          "output_tokens": 1808,
+          "cache_read_tokens": 157696,
+          "cache_write_tokens": 0,
+          "reasoning_tokens": 895,
+          "full_prompt_tokens": 265613
+        }
+      },
+      "transition_metadata_overlap": {},
+      "actual_cost_usd_null_sessions": 3,
+      "actual_cost_usd_zero_model_rows": 6
+    },
+    {
+      "database": "db_003",
+      "status": "ok",
+      "session_rows": 2,
+      "model_usage_rows": 4,
+      "session_coverage": {
+        "first_start": "2026-09-08T15:43:51.313+03:00",
+        "last_start": "2026-09-08T15:53:11.709+03:00",
+        "first_end": "2026-09-08T15:44:28.231+03:00",
+        "last_end": "2026-09-08T15:44:28.231+03:00",
+        "missing_end_count": 1
+      },
+      "model_usage_coverage": {
+        "first_start": "2026-09-08T15:43:57.094+03:00",
+        "last_start": "2026-09-08T15:53:21.205+03:00",
+        "first_end": "2026-09-08T15:43:57.094+03:00",
+        "last_end": "2026-09-08T15:55:35.721+03:00",
+        "missing_end_count": 0
+      },
+      "main": {
+        "api_call_count": 9,
+        "input_tokens": 59350,
+        "output_tokens": 2422,
+        "cache_read_tokens": 73728,
+        "cache_write_tokens": 0,
+        "reasoning_tokens": 705,
+        "full_prompt_tokens": 133078
+      },
+      "auxiliary": {
+        "api_call_count": 2,
+        "input_tokens": 742,
+        "output_tokens": 182,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "reasoning_tokens": 0,
+        "full_prompt_tokens": 742
+      },
+      "all_model_usage": {
+        "api_call_count": 11,
+        "input_tokens": 60092,
+        "output_tokens": 2604,
+        "cache_read_tokens": 73728,
+        "cache_write_tokens": 0,
+        "reasoning_tokens": 705,
+        "full_prompt_tokens": 133820
+      },
+      "main_per_session_reconciliation_mismatches": 0,
+      "auxiliary_by_task": {
+        "title_generation": {
+          "rows": 2,
+          "api_call_count": 2,
+          "input_tokens": 742,
+          "output_tokens": 182,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": 0,
+          "reasoning_tokens": 0,
+          "full_prompt_tokens": 742
+        }
+      },
+      "main_by_model": {
+        "gpt-5.6-sol": {
+          "rows": 2,
+          "api_call_count": 9,
+          "input_tokens": 59350,
+          "output_tokens": 2422,
+          "cache_read_tokens": 73728,
+          "cache_write_tokens": 0,
+          "reasoning_tokens": 705,
+          "full_prompt_tokens": 133078
+        }
+      },
+      "transition_metadata_overlap": {},
+      "actual_cost_usd_null_sessions": 2,
+      "actual_cost_usd_zero_model_rows": 4
+    }
+  ],
+  "identity_checks": {
+    "cross_database_shared_session_ids": {
+      "db_001/db_002": 0,
+      "db_001/db_003": 0,
+      "db_002/db_003": 0
+    },
+    "anonymous_mapping": "Provided exporter used one random salt across all databases in this run."
+  },
+  "all_database_recorded_counter_sum": {
+    "main": {
+      "api_call_count": 115531,
+      "input_tokens": 1114277935,
+      "output_tokens": 63969453,
+      "cache_read_tokens": 21641925552,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 24840978,
+      "full_prompt_tokens": 22756203487
+    },
+    "auxiliary": {
+      "api_call_count": 3604,
+      "input_tokens": 82738569,
+      "output_tokens": 6355260,
+      "cache_read_tokens": 640379904,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 892065,
+      "full_prompt_tokens": 723118473
+    },
+    "all": {
+      "api_call_count": 119135,
+      "input_tokens": 1197016504,
+      "output_tokens": 70324713,
+      "cache_read_tokens": 22282305456,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 25733043,
+      "full_prompt_tokens": 23479321960
+    },
+    "auxiliary_by_task": {
+      "approval": {
+        "rows": 19,
+        "api_call_count": 304,
+        "input_tokens": 161313,
+        "output_tokens": 18906,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "reasoning_tokens": 0,
+        "full_prompt_tokens": 161313
+      },
+      "background_review": {
+        "rows": 17,
+        "api_call_count": 2667,
+        "input_tokens": 63548960,
+        "output_tokens": 1927045,
+        "cache_read_tokens": 640379904,
+        "cache_write_tokens": 0,
+        "reasoning_tokens": 892065,
+        "full_prompt_tokens": 703928864
+      },
+      "compression": {
+        "rows": 40,
+        "api_call_count": 352,
+        "input_tokens": 18543500,
+        "output_tokens": 4240197,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "reasoning_tokens": 0,
+        "full_prompt_tokens": 18543500
+      },
+      "title_generation": {
+        "rows": 16,
+        "api_call_count": 16,
+        "input_tokens": 4975,
+        "output_tokens": 459,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "reasoning_tokens": 0,
+        "full_prompt_tokens": 4975
+      },
+      "vision": {
+        "rows": 4,
+        "api_call_count": 265,
+        "input_tokens": 479821,
+        "output_tokens": 168653,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "reasoning_tokens": 0,
+        "full_prompt_tokens": 479821
+      }
+    },
+    "provider_totals": {
+      "custom": {
+        "rows": 2,
+        "api_call_count": 2,
+        "input_tokens": 41871,
+        "output_tokens": 25,
+        "cache_read_tokens": 560,
+        "cache_write_tokens": 0,
+        "reasoning_tokens": 0,
+        "full_prompt_tokens": 42431
+      },
+      "jarvis-os": {
+        "rows": 2,
+        "api_call_count": 2,
+        "input_tokens": 22553,
+        "output_tokens": 398,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "reasoning_tokens": 0,
+        "full_prompt_tokens": 22553
+      },
+      "openai-codex": {
+        "rows": 1278,
+        "api_call_count": 119123,
+        "input_tokens": 1196603484,
+        "output_tokens": 70232505,
+        "cache_read_tokens": 22282304896,
+        "cache_write_tokens": 0,
+        "reasoning_tokens": 25733043,
+        "full_prompt_tokens": 23478908380
+      },
+      "unattributed": {
+        "rows": 5,
+        "api_call_count": 8,
+        "input_tokens": 348596,
+        "output_tokens": 91785,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "reasoning_tokens": 0,
+        "full_prompt_tokens": 348596
+      }
+    },
+    "cache_read_fraction_of_full_prompt": 0.9490182678171342,
+    "auxiliary_call_fraction": 0.03025139547572082,
+    "auxiliary_output_fraction": 0.09037022305373646
+  },
+  "retained_logs_bridge": {
+    "gpt-6-sol-900k": {
+      "main": {
+        "api_call_count": 9944,
+        "input_tokens": 86701825,
+        "output_tokens": 5059040,
+        "cache_read_tokens": 1810352384,
+        "cache_write_tokens": 0,
+        "reasoning_tokens": 2350143,
+        "full_prompt_tokens": 1897054209
+      },
+      "background_review": {
+        "api_call_count": 229,
+        "input_tokens": 3622675,
+        "output_tokens": 139060,
+        "cache_read_tokens": 54783616,
+        "cache_write_tokens": 0,
+        "reasoning_tokens": 81594,
+        "full_prompt_tokens": 58406291
+      },
+      "main_plus_review": {
+        "api_call_count": 10173,
+        "input_tokens": 90324500,
+        "output_tokens": 5198100,
+        "cache_read_tokens": 1865136000,
+        "cache_write_tokens": 0,
+        "reasoning_tokens": 2431737,
+        "full_prompt_tokens": 1955460500
+      },
+      "log_calls": 10173,
+      "log_input_tokens_full_prompt": 1955460500,
+      "log_output_tokens": 5198100,
+      "log_explicit_cache_read_tokens": 1865136000,
+      "log_first": "2026-10-20T13:08:47.539+03:00",
+      "log_last": "2026-10-22T11:46:06.247+03:00",
+      "checks": {
+        "calls_equal": true,
+        "full_prompt_equal": true,
+        "output_equal": true,
+        "explicit_cache_equal": true
+      },
+      "other_auxiliary_db_only_scope": {
+        "api_call_count": 24,
+        "input_tokens": 1331016,
+        "output_tokens": 201978,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "reasoning_tokens": 0,
+        "full_prompt_tokens": 1331016
+      }
+    },
+    "gpt-6.1-sol-900k": {
+      "main": {
+        "api_call_count": 166,
+        "input_tokens": 2698798,
+        "output_tokens": 50934,
+        "cache_read_tokens": 30706432,
+        "cache_write_tokens": 0,
+        "reasoning_tokens": 6004,
+        "full_prompt_tokens": 33405230
+      },
+      "background_review": {
+        "api_call_count": 18,
+        "input_tokens": 176168,
+        "output_tokens": 6389,
+        "cache_read_tokens": 3021952,
+        "cache_write_tokens": 0,
+        "reasoning_tokens": 1008,
+        "full_prompt_tokens": 3198120
+      },
+      "main_plus_review": {
+        "api_call_count": 184,
+        "input_tokens": 2874966,
+        "output_tokens": 57323,
+        "cache_read_tokens": 33728384,
+        "cache_write_tokens": 0,
+        "reasoning_tokens": 7012,
+        "full_prompt_tokens": 36603350
+      },
+      "log_calls": 184,
+      "log_input_tokens_full_prompt": 36603350,
+      "log_output_tokens": 57323,
+      "log_explicit_cache_read_tokens": 33728384,
+      "log_first": "2026-10-20T19:52:34.905+03:00",
+      "log_last": "2026-10-21T12:23:46.781+03:00",
+      "checks": {
+        "calls_equal": true,
+        "full_prompt_equal": true,
+        "output_equal": true,
+        "explicit_cache_equal": true
+      },
+      "other_auxiliary_db_only_scope": {
+        "api_call_count": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "reasoning_tokens": 0,
+        "full_prompt_tokens": 0
+      }
+    }
+  },
+  "not_provided": [
+    "provider allowance debits",
+    "purchased credit debits",
+    "plan/account attribution",
+    "exact activation time",
+    "per-call timestamps for all historical counters"
+  ]
+}

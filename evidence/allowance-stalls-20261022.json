@@ -164,5 +164,26 @@
     "independent_pro_plus_report": "https://github.com/openai/codex/issues/45030",
     "independent_account_following_capacity_report": "https://github.com/openai/codex/issues/56114",
     "hermes_stall_issue": "https://github.com/NousResearch/hermes-agent/issues/131743"
+  },
+  "scope_clarification_20261022_database_export": {
+    "report": "docs/LENOVO-RETAINED-USAGE-2026-10-22.md",
+    "evidence": "evidence/lenovo-retained-usage-20261022.json",
+    "completed_call_population": "API-completion logs include background_review; not identical to DB main.",
+    "db_log_bridge": {
+      "gpt_6_sol_900k": {
+        "main": 9944,
+        "background_review": 229,
+        "log_calls": 10173
+      },
+      "gpt_6_1_sol_900k": {
+        "main": 166,
+        "background_review": 18,
+        "log_calls": 184
+      }
+    },
+    "deduplication_rule": "Do not add all DB auxiliary counters to completed-call totals.",
+    "token_semantics": "DB input_tokens is uncached; log in includes cached input. Compare log in to DB input+cache_read+cache_write.",
+    "historical_coverage": "Retained session/model counters start 2026-09-08. They are not a provider allowance debit ledger."
   }
 }
+
