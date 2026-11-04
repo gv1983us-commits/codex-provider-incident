@@ -1,5 +1,5 @@
 {
-  "format": "msi_codex_html403_public_v2",
+  "format": "msi_codex_html403_public_v3",
   "analysis_date": "2026-11-04",
   "source": {
     "relative_file": "upload/errors(2).log",
@@ -21,11 +21,13 @@
     "followup_2026_11_04": {
       "provenance": "Owner follow-up in this conversation on 2026-11-04; not independently measured by the attached error-only log.",
       "hermes_versions": {
-        "lenovo_reported": "22.7",
+        "lenovo_reported": "21.7",
         "msi_before_update_reported": "22.2",
-        "msi_update_status": "in progress",
-        "post_update_result": null,
-        "installed_commit_attested": false
+        "msi_after_update_reported": "22.7",
+        "msi_update_status": "completed, according to owner",
+        "post_update_result": "One MSI session immediately received HTTP403 while another MSI session was working.",
+        "installed_commit_attested": false,
+        "correction": "Earlier Lenovo 22.7 report is superseded by the owner correction to 21.7."
       },
       "quota_usage": {
         "reported_period": "approximately one week before the follow-up; exact episode dates unavailable",
@@ -55,9 +57,18 @@
       },
       "causal_limits": [
         "Constant work volume and session count do not establish equal tokens, context, cache hit, retries or server-side accounting.",
-        "Improved consumption was reported while the MSI update was still in progress; it cannot be attributed to the result of that update.",
+        "Improved consumption was reported before the owner reported completion of the MSI update; the earlier improvement cannot be attributed to that subsequent update result.",
         "HTML403, quota consumption/resets and waiting with three sessions are distinct observations pending evidence of a causal link."
-      ]
+      ],
+      "correction_2026_11_04": {
+        "lenovo_previous_statement_superseded": "22.7",
+        "lenovo_corrected_version": "21.7",
+        "lenovo_no_errors_observed_by_owner": true,
+        "msi_403_before_and_after_update_reported": true,
+        "same_msi_one_session_403_another_working_reported": true,
+        "successful_session_model_transport_and_request_not_attested": true,
+        "new_attachment_success_trace_available": false
+      }
     }
   },
   "method": {
@@ -818,7 +829,7 @@
       "cloudflare ray id"
     ],
     "default_403_verdict": "auth fallback after transient/billing/known upstream-block checks",
-    "fresh_msi_version": "Owner reports 22.2 before an in-progress update on 2026-11-04; Lenovo 22.7. Exact running commit/local modifications and post-update result remain unattested.",
+    "fresh_msi_version": "Owner corrected Lenovo to 21.7 and reports MSI updated from 22.2 to 22.7, with 403 on both MSI versions; after update one MSI session immediately failed while another worked. Exact running commits/local modifications remain unattested.",
     "refresh_cap_caveat": "try_refresh_matching precedes cap comparison; the after-2 message is not a wire-request count"
   },
   "primary_sources": [
@@ -839,22 +850,228 @@
     "No billable usage, successful-call denominator or cross-machine failure-rate estimate is available from this error-only attachment.",
     "The documented classifier patch is not confirmed merged; changing classification alone does not remove the server-side HTTP403.",
     "No public account/IP ban, geo restriction, or shared root cause with other reports is established.",
-    "Owner follow-up adds two approximately two-day allowance-exhaustion episodes, two provider-attributed resets, then approximately 20% daily usage at constant reported work volume with two working sessions. These are owner observations, not a reconstructed billing ledger."
+    "Owner follow-up adds two approximately two-day allowance-exhaustion episodes, two provider-attributed resets, then approximately 20% daily usage at constant reported work volume with two working sessions. These are owner observations, not a reconstructed billing ledger.",
+    "The earlier owner-reported Lenovo 22.7 value is corrected to 21.7; after the MSI update the two laptops are still on different reported releases.",
+    "The owner reports different contemporaneous outcomes between two sessions on the same updated MSI; this does not establish all-session/account unavailability, a specific session defect, a concurrency cap or a 0.22-wide regression.",
+    "The known HTML403 classifier marker gap exists in all three inspected official release tags, including the working Lenovo release; it does not explain the initial server refusal."
   ],
   "release_comparison": {
     "repository": "NousResearch/hermes-agent",
     "tags": {
+      "v0.21.7": "71d34bad1045610252eda02ee79549436896e784",
       "v0.22.2": "d923a5eb487a17c0a68801bba9ef0f56c81040a8",
       "v0.22.7": "b200f5bc60e31588ba2cb60e288029c4a54ba5fa"
     },
     "upstream_blocked_patterns_identical": true,
     "status_403_function_identical": true,
-    "missing_in_both": [
+    "html403_classifier_fix_in_v0_22_7": false,
+    "installed_build_mapping": "Release-tag source comparison, not attestation of the exact running local builds.",
+    "post_update_access_result": "Owner reports one MSI 22.7 session received HTTP403 while another MSI session worked; no explicit successful completion trace in the error log.",
+    "upstream_blocked_patterns_identical_across_all_three": true,
+    "status_403_function_identical_across_all_three": true,
+    "missing_in_all_three": [
       "unable to load site",
       "cloudflare ray id"
     ],
-    "html403_classifier_fix_in_v0_22_7": false,
-    "installed_build_mapping": "Release-tag source comparison, not attestation of the exact running local builds.",
-    "post_update_access_result": null
+    "classifier_identical_blob_v0_21_7_and_v0_22_2": "3938594c5c5772a85921f9d1ecfcf5a276bb2b8d"
+  },
+  "new_attachment_errors_3": {
+    "sources": {
+      "previous": {
+        "relative_file": "upload/errors(2).log",
+        "byte_count": 1560572,
+        "sha256": "1a3f2043567d78595835d378a30234c29181f26e1e05463da677c8b66ec64ada",
+        "physical_lines": 8820,
+        "timestamped_records": 3890,
+        "first_timestamp": "2026-10-20 12:04:18,197",
+        "last_timestamp": "2026-11-04 15:26:14,379"
+      },
+      "current": {
+        "relative_file": "upload/errors(3).log",
+        "byte_count": 1584619,
+        "sha256": "9d4e4721cbe85188a81c54e645a9dc50dbb46b1fa56db8672988dcf312b28c58",
+        "physical_lines": 8995,
+        "timestamped_records": 3909,
+        "first_timestamp": "2026-10-20 12:04:18,197",
+        "last_timestamp": "2026-11-04 16:18:02,251"
+      }
+    },
+    "overlap": {
+      "exact_byte_prefix_match": true,
+      "previous_records_retained": 3890,
+      "previous_records_changed_or_removed": 0,
+      "appended_byte_count": 24047,
+      "appended_physical_lines": 175,
+      "appended_timestamped_records": 19,
+      "first_new_record": {
+        "timestamp": "2026-11-04 15:43:01,842",
+        "line_start": 8821,
+        "line_end": 8821
+      },
+      "last_new_record": {
+        "timestamp": "2026-11-04 16:18:02,251",
+        "line_start": 8943,
+        "line_end": 8995
+      },
+      "method": "The previous file is an exact byte prefix of the current file. Delta is the appended suffix only; no historical records counted again."
+    },
+    "delta_counts": {
+      "failed_attempt_records": 3,
+      "http403_attempts": 3,
+      "terminal_html_403_records": 3,
+      "unique_new_ray_ids": 3,
+      "api_timeouts": 0,
+      "api_connection_errors": 0,
+      "http429_attempts": 0,
+      "other_failed_attempts": 0,
+      "auth_persists_after_two_refreshes_notices": 3,
+      "ordinary_api_retry_notices": 0,
+      "api_retry_exhaustion_summaries": 0,
+      "lsp_diagnostics_timeouts_not_api_attempts": 2,
+      "tool_error_records_not_api_attempts": 3
+    },
+    "new_http403_sequences": [
+      {
+        "failed_attempt": {
+          "timestamp": "2026-11-04 15:43:01,843",
+          "line_start": 8822,
+          "line_end": 8822,
+          "error_type": "PermissionDeniedError",
+          "model": "gpt-6.1-sol-900k",
+          "provider": "openai-codex",
+          "endpoint": "https://chatgpt.com/backend-api/codex",
+          "http_status": 403,
+          "attempt": 1,
+          "attempt_limit": 3,
+          "not_retryable": true,
+          "safe_snippet": "HTTP 403 — HTML error page (title not found)"
+        },
+        "preceding_auth_notice": {
+          "timestamp": "2026-11-04 15:43:01,842",
+          "line_start": 8821,
+          "line_end": 8821,
+          "reported_refresh_count": 2,
+          "safe_snippet": "Credential auth failure persists after 2 refreshes; treating as unrecoverable and allowing fallback to activate."
+        },
+        "terminal_error": {
+          "timestamp": "2026-11-04 15:43:02,718",
+          "line_start": 8823,
+          "line_end": 8875,
+          "safe_snippet": "Non-retryable client error; HTML: Unable to load site",
+          "html_unable_to_load_site": true,
+          "ray_ids": [
+            "a553b399ccbf3720"
+          ],
+          "ray_ids_absent_from_previous_file": true
+        }
+      },
+      {
+        "failed_attempt": {
+          "timestamp": "2026-11-04 15:44:48,462",
+          "line_start": 8877,
+          "line_end": 8877,
+          "error_type": "PermissionDeniedError",
+          "model": "gpt-6.1-sol-900k",
+          "provider": "openai-codex",
+          "endpoint": "https://chatgpt.com/backend-api/codex",
+          "http_status": 403,
+          "attempt": 1,
+          "attempt_limit": 3,
+          "not_retryable": true,
+          "safe_snippet": "HTTP 403 — HTML error page (title not found)"
+        },
+        "preceding_auth_notice": {
+          "timestamp": "2026-11-04 15:44:48,461",
+          "line_start": 8876,
+          "line_end": 8876,
+          "reported_refresh_count": 2,
+          "safe_snippet": "Credential auth failure persists after 2 refreshes; treating as unrecoverable and allowing fallback to activate."
+        },
+        "terminal_error": {
+          "timestamp": "2026-11-04 15:44:49,073",
+          "line_start": 8878,
+          "line_end": 8930,
+          "safe_snippet": "Non-retryable client error; HTML: Unable to load site",
+          "html_unable_to_load_site": true,
+          "ray_ids": [
+            "a553b6494e53d2b7"
+          ],
+          "ray_ids_absent_from_previous_file": true
+        }
+      },
+      {
+        "failed_attempt": {
+          "timestamp": "2026-11-04 16:18:01,848",
+          "line_start": 8942,
+          "line_end": 8942,
+          "error_type": "PermissionDeniedError",
+          "model": "gpt-6.1-sol-900k",
+          "provider": "openai-codex",
+          "endpoint": "https://chatgpt.com/backend-api/codex",
+          "http_status": 403,
+          "attempt": 1,
+          "attempt_limit": 3,
+          "not_retryable": true,
+          "safe_snippet": "HTTP 403 — HTML error page (title not found)"
+        },
+        "preceding_auth_notice": {
+          "timestamp": "2026-11-04 16:18:01,840",
+          "line_start": 8941,
+          "line_end": 8941,
+          "reported_refresh_count": 2,
+          "safe_snippet": "Credential auth failure persists after 2 refreshes; treating as unrecoverable and allowing fallback to activate."
+        },
+        "terminal_error": {
+          "timestamp": "2026-11-04 16:18:02,251",
+          "line_start": 8943,
+          "line_end": 8995,
+          "safe_snippet": "Non-retryable client error; HTML: Unable to load site",
+          "html_unable_to_load_site": true,
+          "ray_ids": [
+            "a553e6d57db918e2"
+          ],
+          "ray_ids_absent_from_previous_file": true
+        }
+      }
+    ],
+    "identity_comparisons": {
+      "new_failed_attempt_unique_session_markers": 2,
+      "new_failed_attempt_unique_thread_markers": 3,
+      "pairs": [
+        {
+          "line_a": 8822,
+          "line_b": 8877,
+          "same_session_marker": true,
+          "same_thread_marker": false
+        },
+        {
+          "line_a": 8822,
+          "line_b": 8942,
+          "same_session_marker": false,
+          "same_thread_marker": false
+        },
+        {
+          "line_a": 8877,
+          "line_b": 8942,
+          "same_session_marker": false,
+          "same_thread_marker": false
+        }
+      ]
+    },
+    "nov4_updated_totals": {
+      "failed_attempt_records": 15,
+      "http403_attempts": 12,
+      "watchdog_timeouts": 2,
+      "overload_errors": 1,
+      "quota429_attempts": 0
+    },
+    "evidence_limits": [
+      "The new file is an exact extension of the old one; the appended suffix is counted only once.",
+      "All three 403s are new relative to the prior attachment; not all three can be labelled post-update without a verified version-change boundary.",
+      "No explicit 22.7 version stamp or successful second-session API completion is present in this error-only log.",
+      "The corrected version labels, completed update and simultaneously working second MSI session are owner observations.",
+      "Timestamps contain no timezone offset.",
+      "The auth warning is not an exact count of OAuth wire requests or evidence of credential expiry/revocation."
+    ]
   }
 }
