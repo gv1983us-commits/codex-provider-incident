@@ -1,0 +1,802 @@
+{
+  "format": "msi_codex_html403_public_v1",
+  "analysis_date": "2026-11-04",
+  "source": {
+    "relative_file": "upload/errors(2).log",
+    "sha256": "1a3f2043567d78595835d378a30234c29181f26e1e05463da677c8b66ec64ada",
+    "byte_count": 1560572,
+    "physical_line_count": 8820,
+    "timestamped_record_count": 3890,
+    "first_timestamp": "2026-10-20 12:04:18,197",
+    "last_timestamp": "2026-11-04 15:26:14,379",
+    "utf8_replacement_character_count": 747,
+    "timezone": "not encoded in timestamps; no conversion applied"
+  },
+  "owner_observation": {
+    "MSI_errors": true,
+    "Lenovo_continues_working": true,
+    "same_subscription": true,
+    "same_home_network": true,
+    "provenance": "Owner statement; fresh Lenovo telemetry not provided in this attachment."
+  },
+  "method": {
+    "attempt_definition": "One timestamped agent.conversation_loop record starting API call failed (attempt ...).",
+    "exclusions": "API call failed after ... is a terminal summary, not an extra attempt. HTML continuation lines and auth/fallback/retry notices are not attempts.",
+    "network_definition": "APIConnectionError only. TimeoutError and APITimeoutError reported separately to avoid equating timeout with proven network failure.",
+    "ray_extraction": "Only terminal Non-retryable client error records immediately following explicit 403 attempt records."
+  },
+  "fresh_windows": {
+    "nov3": {
+      "timestamped_records": 342,
+      "failed_attempts": 66,
+      "categories": {
+        "http_403": 1,
+        "network_connection": 1,
+        "timeout": 63,
+        "http_429_quota": 0,
+        "http_429_other": 0,
+        "other": 1
+      },
+      "error_types": {
+        "APITimeoutError": 63,
+        "InternalServerError": 1,
+        "APIConnectionError": 1,
+        "PermissionDeniedError": 1
+      },
+      "signatures": {
+        "request_timed_out": 63,
+        "http_503": 1,
+        "connection_error": 1,
+        "http_403_html_error_page": 1
+      },
+      "service_event_counts": {
+        "aux_try_fallback": 1,
+        "aux_fallback_unconfigured": 2,
+        "aux_fallback_exhausted": 2,
+        "ordinary_api_retry_notice": 44,
+        "provider_auto_recovery": 15,
+        "terminal_retry_exhaustion_summary_not_an_additional_attempt": 3,
+        "codex_zero_event_retry": 2,
+        "auth_failure_persists_after_2_refreshes_allowing_fallback": 1
+      },
+      "http403_html_unable_to_load_site_count": 1,
+      "http403_ray_occurrences": 1,
+      "http403_unique_ray_count": 1,
+      "http403_unique_ray_ids": [
+        "a54dd2ae3f129da0"
+      ],
+      "first_record": {
+        "timestamp": "2026-11-03 00:01:28,904",
+        "line_start": 7782,
+        "line_end": 7782,
+        "event": "source_record"
+      },
+      "last_record": {
+        "timestamp": "2026-11-03 23:57:37,621",
+        "line_start": 8175,
+        "line_end": 8175,
+        "event": "source_record"
+      }
+    },
+    "nov4": {
+      "timestamped_records": 171,
+      "failed_attempts": 12,
+      "categories": {
+        "http_403": 9,
+        "network_connection": 0,
+        "timeout": 2,
+        "http_429_quota": 0,
+        "http_429_other": 0,
+        "other": 1
+      },
+      "error_types": {
+        "APIError": 1,
+        "PermissionDeniedError": 9,
+        "TimeoutError": 2
+      },
+      "signatures": {
+        "servers_overloaded": 1,
+        "http_403_html_error_page": 9,
+        "non_streaming_no_response_1200s": 2
+      },
+      "service_event_counts": {
+        "aux_try_fallback": 2,
+        "aux_fallback_unconfigured": 2,
+        "aux_fallback_exhausted": 2,
+        "ordinary_api_retry_notice": 3,
+        "auth_failure_persists_after_2_refreshes_allowing_fallback": 9,
+        "codex_zero_event_retry": 4
+      },
+      "http403_html_unable_to_load_site_count": 9,
+      "http403_ray_occurrences": 9,
+      "http403_unique_ray_count": 9,
+      "http403_unique_ray_ids": [
+        "a54e9ce5cfa79d97",
+        "a55299bd4b89e313",
+        "a552f612f8669dca",
+        "a552f80dde2af3a7",
+        "a552f9ac287ff10e",
+        "a5530480190ff147",
+        "a55304a44d749dc5",
+        "a55348768a934d67",
+        "a55349ddbbdef6db"
+      ],
+      "first_record": {
+        "timestamp": "2026-11-04 00:02:44,336",
+        "line_start": 8176,
+        "line_end": 8176,
+        "event": "source_record"
+      },
+      "last_record": {
+        "timestamp": "2026-11-04 15:26:14,379",
+        "line_start": 8820,
+        "line_end": 8820,
+        "event": "source_record"
+      }
+    }
+  },
+  "fresh_failures": [
+    {
+      "timestamp": "2026-11-04 00:28:59,802",
+      "line_start": 8181,
+      "line_end": 8181,
+      "event": "api_failed_attempt",
+      "attempt": 1,
+      "attempt_limit": 3,
+      "not_retryable": false,
+      "error_type": "APIError",
+      "http_status": null,
+      "category": "other",
+      "signature": "servers_overloaded",
+      "provider": "openai-codex",
+      "model": "gpt-6.1-sol-900k"
+    },
+    {
+      "timestamp": "2026-11-04 00:53:36,947",
+      "line_start": 8186,
+      "line_end": 8186,
+      "event": "api_failed_attempt",
+      "attempt": 1,
+      "attempt_limit": 3,
+      "not_retryable": true,
+      "error_type": "PermissionDeniedError",
+      "http_status": 403,
+      "category": "http_403",
+      "signature": "http_403_html_error_page",
+      "provider": "openai-codex",
+      "model": "gpt-6.1-sol-900k"
+    },
+    {
+      "timestamp": "2026-11-04 11:49:20,761",
+      "line_start": 8339,
+      "line_end": 8339,
+      "event": "api_failed_attempt",
+      "attempt": 1,
+      "attempt_limit": 3,
+      "not_retryable": false,
+      "error_type": "TimeoutError",
+      "http_status": null,
+      "category": "timeout",
+      "signature": "non_streaming_no_response_1200s",
+      "provider": "openai-codex",
+      "model": "gpt-6.1-sol-900k"
+    },
+    {
+      "timestamp": "2026-11-04 12:09:23,917",
+      "line_start": 8351,
+      "line_end": 8351,
+      "event": "api_failed_attempt",
+      "attempt": 2,
+      "attempt_limit": 3,
+      "not_retryable": false,
+      "error_type": "TimeoutError",
+      "http_status": null,
+      "category": "timeout",
+      "signature": "non_streaming_no_response_1200s",
+      "provider": "openai-codex",
+      "model": "gpt-6.1-sol-900k"
+    },
+    {
+      "timestamp": "2026-11-04 12:30:33,735",
+      "line_start": 8354,
+      "line_end": 8354,
+      "event": "api_failed_attempt",
+      "attempt": 1,
+      "attempt_limit": 3,
+      "not_retryable": true,
+      "error_type": "PermissionDeniedError",
+      "http_status": 403,
+      "category": "http_403",
+      "signature": "http_403_html_error_page",
+      "provider": "openai-codex",
+      "model": "gpt-6.1-sol-900k"
+    },
+    {
+      "timestamp": "2026-11-04 13:33:38,389",
+      "line_start": 8419,
+      "line_end": 8419,
+      "event": "api_failed_attempt",
+      "attempt": 1,
+      "attempt_limit": 3,
+      "not_retryable": true,
+      "error_type": "PermissionDeniedError",
+      "http_status": 403,
+      "category": "http_403",
+      "signature": "http_403_html_error_page",
+      "provider": "openai-codex",
+      "model": "gpt-6.1-sol-900k"
+    },
+    {
+      "timestamp": "2026-11-04 13:34:57,161",
+      "line_start": 8474,
+      "line_end": 8474,
+      "event": "api_failed_attempt",
+      "attempt": 1,
+      "attempt_limit": 3,
+      "not_retryable": true,
+      "error_type": "PermissionDeniedError",
+      "http_status": 403,
+      "category": "http_403",
+      "signature": "http_403_html_error_page",
+      "provider": "openai-codex",
+      "model": "gpt-6.1-sol-900k"
+    },
+    {
+      "timestamp": "2026-11-04 13:36:03,456",
+      "line_start": 8529,
+      "line_end": 8529,
+      "event": "api_failed_attempt",
+      "attempt": 1,
+      "attempt_limit": 3,
+      "not_retryable": true,
+      "error_type": "PermissionDeniedError",
+      "http_status": 403,
+      "category": "http_403",
+      "signature": "http_403_html_error_page",
+      "provider": "openai-codex",
+      "model": "gpt-6.1-sol-900k"
+    },
+    {
+      "timestamp": "2026-11-04 13:43:26,933",
+      "line_start": 8591,
+      "line_end": 8591,
+      "event": "api_failed_attempt",
+      "attempt": 1,
+      "attempt_limit": 3,
+      "not_retryable": true,
+      "error_type": "PermissionDeniedError",
+      "http_status": 403,
+      "category": "http_403",
+      "signature": "http_403_html_error_page",
+      "provider": "openai-codex",
+      "model": "gpt-6.1-sol-900k"
+    },
+    {
+      "timestamp": "2026-11-04 13:43:31,960",
+      "line_start": 8646,
+      "line_end": 8646,
+      "event": "api_failed_attempt",
+      "attempt": 1,
+      "attempt_limit": 3,
+      "not_retryable": true,
+      "error_type": "PermissionDeniedError",
+      "http_status": 403,
+      "category": "http_403",
+      "signature": "http_403_html_error_page",
+      "provider": "openai-codex",
+      "model": "gpt-6.1-sol-900k"
+    },
+    {
+      "timestamp": "2026-11-04 14:30:05,136",
+      "line_start": 8710,
+      "line_end": 8710,
+      "event": "api_failed_attempt",
+      "attempt": 1,
+      "attempt_limit": 3,
+      "not_retryable": true,
+      "error_type": "PermissionDeniedError",
+      "http_status": 403,
+      "category": "http_403",
+      "signature": "http_403_html_error_page",
+      "provider": "openai-codex",
+      "model": "gpt-6.1-sol-900k"
+    },
+    {
+      "timestamp": "2026-11-04 14:30:47,342",
+      "line_start": 8765,
+      "line_end": 8765,
+      "event": "api_failed_attempt",
+      "attempt": 1,
+      "attempt_limit": 3,
+      "not_retryable": true,
+      "error_type": "PermissionDeniedError",
+      "http_status": 403,
+      "category": "http_403",
+      "signature": "http_403_html_error_page",
+      "provider": "openai-codex",
+      "model": "gpt-6.1-sol-900k"
+    }
+  ],
+  "fresh_html403_sequences": [
+    {
+      "failure": {
+        "timestamp": "2026-11-04 00:53:36,947",
+        "line_start": 8186,
+        "line_end": 8186,
+        "event": "api_failed_attempt",
+        "attempt": 1,
+        "attempt_limit": 3,
+        "not_retryable": true,
+        "error_type": "PermissionDeniedError",
+        "http_status": 403,
+        "category": "http_403",
+        "signature": "http_403_html_error_page",
+        "provider": "openai-codex",
+        "model": "gpt-6.1-sol-900k"
+      },
+      "auth_refresh_observation": {
+        "timestamp": "2026-11-04 00:53:36,946",
+        "line_start": 8185,
+        "line_end": 8185,
+        "event": "auth_failure_persists_after_2_refreshes_allowing_fallback",
+        "refresh_count_reported": 2
+      },
+      "terminal_error": {
+        "timestamp": "2026-11-04 00:53:37,382",
+        "line_start": 8187,
+        "line_end": 8239,
+        "event": "non_retryable_client_error",
+        "html_unable_to_load_site": true,
+        "ray_ids": [
+          "a54e9ce5cfa79d97"
+        ]
+      },
+      "observed_immediate_sequence": "auth-refresh-exhaustion notice (when present), nonretryable 403 attempt, terminal HTML error"
+    },
+    {
+      "failure": {
+        "timestamp": "2026-11-04 12:30:33,735",
+        "line_start": 8354,
+        "line_end": 8354,
+        "event": "api_failed_attempt",
+        "attempt": 1,
+        "attempt_limit": 3,
+        "not_retryable": true,
+        "error_type": "PermissionDeniedError",
+        "http_status": 403,
+        "category": "http_403",
+        "signature": "http_403_html_error_page",
+        "provider": "openai-codex",
+        "model": "gpt-6.1-sol-900k"
+      },
+      "auth_refresh_observation": {
+        "timestamp": "2026-11-04 12:30:33,735",
+        "line_start": 8353,
+        "line_end": 8353,
+        "event": "auth_failure_persists_after_2_refreshes_allowing_fallback",
+        "refresh_count_reported": 2
+      },
+      "terminal_error": {
+        "timestamp": "2026-11-04 12:30:34,523",
+        "line_start": 8355,
+        "line_end": 8407,
+        "event": "non_retryable_client_error",
+        "html_unable_to_load_site": true,
+        "ray_ids": [
+          "a55299bd4b89e313"
+        ]
+      },
+      "observed_immediate_sequence": "auth-refresh-exhaustion notice (when present), nonretryable 403 attempt, terminal HTML error"
+    },
+    {
+      "failure": {
+        "timestamp": "2026-11-04 13:33:38,389",
+        "line_start": 8419,
+        "line_end": 8419,
+        "event": "api_failed_attempt",
+        "attempt": 1,
+        "attempt_limit": 3,
+        "not_retryable": true,
+        "error_type": "PermissionDeniedError",
+        "http_status": 403,
+        "category": "http_403",
+        "signature": "http_403_html_error_page",
+        "provider": "openai-codex",
+        "model": "gpt-6.1-sol-900k"
+      },
+      "auth_refresh_observation": {
+        "timestamp": "2026-11-04 13:33:38,388",
+        "line_start": 8418,
+        "line_end": 8418,
+        "event": "auth_failure_persists_after_2_refreshes_allowing_fallback",
+        "refresh_count_reported": 2
+      },
+      "terminal_error": {
+        "timestamp": "2026-11-04 13:33:39,651",
+        "line_start": 8420,
+        "line_end": 8472,
+        "event": "non_retryable_client_error",
+        "html_unable_to_load_site": true,
+        "ray_ids": [
+          "a552f612f8669dca"
+        ]
+      },
+      "observed_immediate_sequence": "auth-refresh-exhaustion notice (when present), nonretryable 403 attempt, terminal HTML error"
+    },
+    {
+      "failure": {
+        "timestamp": "2026-11-04 13:34:57,161",
+        "line_start": 8474,
+        "line_end": 8474,
+        "event": "api_failed_attempt",
+        "attempt": 1,
+        "attempt_limit": 3,
+        "not_retryable": true,
+        "error_type": "PermissionDeniedError",
+        "http_status": 403,
+        "category": "http_403",
+        "signature": "http_403_html_error_page",
+        "provider": "openai-codex",
+        "model": "gpt-6.1-sol-900k"
+      },
+      "auth_refresh_observation": {
+        "timestamp": "2026-11-04 13:34:57,160",
+        "line_start": 8473,
+        "line_end": 8473,
+        "event": "auth_failure_persists_after_2_refreshes_allowing_fallback",
+        "refresh_count_reported": 2
+      },
+      "terminal_error": {
+        "timestamp": "2026-11-04 13:34:58,113",
+        "line_start": 8475,
+        "line_end": 8527,
+        "event": "non_retryable_client_error",
+        "html_unable_to_load_site": true,
+        "ray_ids": [
+          "a552f80dde2af3a7"
+        ]
+      },
+      "observed_immediate_sequence": "auth-refresh-exhaustion notice (when present), nonretryable 403 attempt, terminal HTML error"
+    },
+    {
+      "failure": {
+        "timestamp": "2026-11-04 13:36:03,456",
+        "line_start": 8529,
+        "line_end": 8529,
+        "event": "api_failed_attempt",
+        "attempt": 1,
+        "attempt_limit": 3,
+        "not_retryable": true,
+        "error_type": "PermissionDeniedError",
+        "http_status": 403,
+        "category": "http_403",
+        "signature": "http_403_html_error_page",
+        "provider": "openai-codex",
+        "model": "gpt-6.1-sol-900k"
+      },
+      "auth_refresh_observation": {
+        "timestamp": "2026-11-04 13:36:03,455",
+        "line_start": 8528,
+        "line_end": 8528,
+        "event": "auth_failure_persists_after_2_refreshes_allowing_fallback",
+        "refresh_count_reported": 2
+      },
+      "terminal_error": {
+        "timestamp": "2026-11-04 13:36:04,648",
+        "line_start": 8530,
+        "line_end": 8582,
+        "event": "non_retryable_client_error",
+        "html_unable_to_load_site": true,
+        "ray_ids": [
+          "a552f9ac287ff10e"
+        ]
+      },
+      "observed_immediate_sequence": "auth-refresh-exhaustion notice (when present), nonretryable 403 attempt, terminal HTML error"
+    },
+    {
+      "failure": {
+        "timestamp": "2026-11-04 13:43:26,933",
+        "line_start": 8591,
+        "line_end": 8591,
+        "event": "api_failed_attempt",
+        "attempt": 1,
+        "attempt_limit": 3,
+        "not_retryable": true,
+        "error_type": "PermissionDeniedError",
+        "http_status": 403,
+        "category": "http_403",
+        "signature": "http_403_html_error_page",
+        "provider": "openai-codex",
+        "model": "gpt-6.1-sol-900k"
+      },
+      "auth_refresh_observation": {
+        "timestamp": "2026-11-04 13:43:26,932",
+        "line_start": 8590,
+        "line_end": 8590,
+        "event": "auth_failure_persists_after_2_refreshes_allowing_fallback",
+        "refresh_count_reported": 2
+      },
+      "terminal_error": {
+        "timestamp": "2026-11-04 13:43:27,714",
+        "line_start": 8592,
+        "line_end": 8644,
+        "event": "non_retryable_client_error",
+        "html_unable_to_load_site": true,
+        "ray_ids": [
+          "a5530480190ff147"
+        ]
+      },
+      "observed_immediate_sequence": "auth-refresh-exhaustion notice (when present), nonretryable 403 attempt, terminal HTML error"
+    },
+    {
+      "failure": {
+        "timestamp": "2026-11-04 13:43:31,960",
+        "line_start": 8646,
+        "line_end": 8646,
+        "event": "api_failed_attempt",
+        "attempt": 1,
+        "attempt_limit": 3,
+        "not_retryable": true,
+        "error_type": "PermissionDeniedError",
+        "http_status": 403,
+        "category": "http_403",
+        "signature": "http_403_html_error_page",
+        "provider": "openai-codex",
+        "model": "gpt-6.1-sol-900k"
+      },
+      "auth_refresh_observation": {
+        "timestamp": "2026-11-04 13:43:31,959",
+        "line_start": 8645,
+        "line_end": 8645,
+        "event": "auth_failure_persists_after_2_refreshes_allowing_fallback",
+        "refresh_count_reported": 2
+      },
+      "terminal_error": {
+        "timestamp": "2026-11-04 13:43:32,558",
+        "line_start": 8647,
+        "line_end": 8699,
+        "event": "non_retryable_client_error",
+        "html_unable_to_load_site": true,
+        "ray_ids": [
+          "a55304a44d749dc5"
+        ]
+      },
+      "observed_immediate_sequence": "auth-refresh-exhaustion notice (when present), nonretryable 403 attempt, terminal HTML error"
+    },
+    {
+      "failure": {
+        "timestamp": "2026-11-04 14:30:05,136",
+        "line_start": 8710,
+        "line_end": 8710,
+        "event": "api_failed_attempt",
+        "attempt": 1,
+        "attempt_limit": 3,
+        "not_retryable": true,
+        "error_type": "PermissionDeniedError",
+        "http_status": 403,
+        "category": "http_403",
+        "signature": "http_403_html_error_page",
+        "provider": "openai-codex",
+        "model": "gpt-6.1-sol-900k"
+      },
+      "auth_refresh_observation": {
+        "timestamp": "2026-11-04 14:30:05,136",
+        "line_start": 8709,
+        "line_end": 8709,
+        "event": "auth_failure_persists_after_2_refreshes_allowing_fallback",
+        "refresh_count_reported": 2
+      },
+      "terminal_error": {
+        "timestamp": "2026-11-04 14:30:05,537",
+        "line_start": 8711,
+        "line_end": 8763,
+        "event": "non_retryable_client_error",
+        "html_unable_to_load_site": true,
+        "ray_ids": [
+          "a55348768a934d67"
+        ]
+      },
+      "observed_immediate_sequence": "auth-refresh-exhaustion notice (when present), nonretryable 403 attempt, terminal HTML error"
+    },
+    {
+      "failure": {
+        "timestamp": "2026-11-04 14:30:47,342",
+        "line_start": 8765,
+        "line_end": 8765,
+        "event": "api_failed_attempt",
+        "attempt": 1,
+        "attempt_limit": 3,
+        "not_retryable": true,
+        "error_type": "PermissionDeniedError",
+        "http_status": 403,
+        "category": "http_403",
+        "signature": "http_403_html_error_page",
+        "provider": "openai-codex",
+        "model": "gpt-6.1-sol-900k"
+      },
+      "auth_refresh_observation": {
+        "timestamp": "2026-11-04 14:30:47,342",
+        "line_start": 8764,
+        "line_end": 8764,
+        "event": "auth_failure_persists_after_2_refreshes_allowing_fallback",
+        "refresh_count_reported": 2
+      },
+      "terminal_error": {
+        "timestamp": "2026-11-04 14:30:47,510",
+        "line_start": 8766,
+        "line_end": 8818,
+        "event": "non_retryable_client_error",
+        "html_unable_to_load_site": true,
+        "ray_ids": [
+          "a55349ddbbdef6db"
+        ]
+      },
+      "observed_immediate_sequence": "auth-refresh-exhaustion notice (when present), nonretryable 403 attempt, terminal HTML error"
+    }
+  ],
+  "first_retained_html403": {
+    "failure": {
+      "timestamp": "2026-10-21 08:24:53,156",
+      "line_start": 364,
+      "line_end": 364,
+      "event": "api_failed_attempt",
+      "attempt": 1,
+      "attempt_limit": 3,
+      "not_retryable": true,
+      "error_type": "PermissionDeniedError",
+      "http_status": 403,
+      "category": "http_403",
+      "signature": "http_403_html_error_page",
+      "provider": "openai-codex",
+      "model": "gpt-6.1-sol-900k"
+    },
+    "auth_refresh_observation": null,
+    "terminal_error": {
+      "timestamp": "2026-10-21 08:24:53,674",
+      "line_start": 365,
+      "line_end": 417,
+      "event": "non_retryable_client_error",
+      "html_unable_to_load_site": true,
+      "ray_ids": [
+        "a4ddd6aabc15f116"
+      ]
+    },
+    "observed_immediate_sequence": "auth-refresh-exhaustion notice (when present), nonretryable 403 attempt, terminal HTML error"
+  },
+  "nov3_apitimeout_bounds": {
+    "count": 63,
+    "first": {
+      "timestamp": "2026-11-03 04:21:03,183",
+      "line_start": 7826,
+      "line_end": 7826,
+      "event": "api_failed_attempt",
+      "attempt": 1,
+      "attempt_limit": 3,
+      "not_retryable": false,
+      "error_type": "APITimeoutError",
+      "http_status": null,
+      "category": "timeout",
+      "signature": "request_timed_out",
+      "provider": "openai-codex",
+      "model": "gpt-6.1-sol-900k"
+    },
+    "last": {
+      "timestamp": "2026-11-03 06:35:38,150",
+      "line_start": 8009,
+      "line_end": 8009,
+      "event": "api_failed_attempt",
+      "attempt": 3,
+      "attempt_limit": 3,
+      "not_retryable": false,
+      "error_type": "APITimeoutError",
+      "http_status": null,
+      "category": "timeout",
+      "signature": "request_timed_out",
+      "provider": "openai-codex",
+      "model": "gpt-6.1-sol-900k"
+    }
+  },
+  "episode_identity_comparisons": [
+    {
+      "line_a": 8339,
+      "line_b": 8351,
+      "same_session_marker": true,
+      "same_thread_marker": true
+    },
+    {
+      "line_a": 8351,
+      "line_b": 8354,
+      "same_session_marker": false,
+      "same_thread_marker": false
+    },
+    {
+      "line_a": 8354,
+      "line_b": 8419,
+      "same_session_marker": true,
+      "same_thread_marker": false
+    },
+    {
+      "line_a": 8419,
+      "line_b": 8474,
+      "same_session_marker": false,
+      "same_thread_marker": false
+    },
+    {
+      "line_a": 8474,
+      "line_b": 8529,
+      "same_session_marker": false,
+      "same_thread_marker": false
+    },
+    {
+      "line_a": 8529,
+      "line_b": 8591,
+      "same_session_marker": true,
+      "same_thread_marker": false
+    },
+    {
+      "line_a": 8591,
+      "line_b": 8646,
+      "same_session_marker": false,
+      "same_thread_marker": false
+    },
+    {
+      "line_a": 8646,
+      "line_b": 8710,
+      "same_session_marker": false,
+      "same_thread_marker": false
+    },
+    {
+      "line_a": 8710,
+      "line_b": 8765,
+      "same_session_marker": false,
+      "same_thread_marker": false
+    }
+  ],
+  "timeout_evidence": {
+    "watchdog_seconds": 1200,
+    "watchdog_occurrences": 2,
+    "context_approx_tokens": 853350,
+    "serialized_request_body_bytes": 2132899,
+    "stream_opened": true,
+    "source_lines": [
+      8337,
+      8338,
+      8339,
+      8349,
+      8350,
+      8351
+    ],
+    "relationship_to_following_403": "Different session AND thread markers; not one proven retry chain."
+  },
+  "current_source_check": {
+    "repository": "NousResearch/hermes-agent",
+    "commit": "71736c9f32597bbca9d89cede5aa136e55946b2f",
+    "classifier_file": "agent/error_classifier.py",
+    "missing_html_patterns": [
+      "unable to load site",
+      "cloudflare ray id"
+    ],
+    "default_403_verdict": "auth fallback after transient/billing/known upstream-block checks",
+    "fresh_msi_version": "unknown; October version is not treated as current attestation",
+    "refresh_cap_caveat": "try_refresh_matching precedes cap comparison; the after-2 message is not a wire-request count"
+  },
+  "primary_sources": [
+    "https://github.com/NousResearch/hermes-agent/issues/141080",
+    "https://github.com/NousResearch/hermes-agent/issues/141080#issuecomment-6249887805",
+    "https://github.com/NousResearch/hermes-agent/blob/71736c9f32597bbca9d89cede5aa136e55946b2f/agent/error_classifier.py",
+    "https://github.com/NousResearch/hermes-agent/blob/71736c9f32597bbca9d89cede5aa136e55946b2f/agent/credential_auth_recovery.py",
+    "https://github.com/openai/codex/issues/57039#issuecomment-6630371149",
+    "https://status.openai.com/",
+    "https://status.openai.com/history"
+  ],
+  "interpretation": [
+    "No explicit quota 429 or usage_limit_reached failure on November 3 or 4 in this file.",
+    "Repeated HTML403 is directly evidenced; an edge/access rejection is an interpretation, not a provider RCA.",
+    "Auth recovery follows the HTML403 symptom; bad/expired credentials are not established by the warning.",
+    "Nine fresh outer failed-attempt records are not nine total wire requests or nine automatic retries.",
+    "Same subscription and home LAN do not attest equal process auth state, model, egress route or client transport.",
+    "No billable usage, successful-call denominator or cross-machine failure-rate estimate is available from this error-only attachment.",
+    "The documented classifier patch is not confirmed merged; changing classification alone does not remove the server-side HTTP403.",
+    "No public account/IP ban, geo restriction, or shared root cause with other reports is established."
+  ]
+}
