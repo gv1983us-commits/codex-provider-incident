@@ -1,5 +1,5 @@
 {
-  "format": "msi_codex_html403_public_v1",
+  "format": "msi_codex_html403_public_v2",
   "analysis_date": "2026-11-04",
   "source": {
     "relative_file": "upload/errors(2).log",
@@ -17,7 +17,48 @@
     "Lenovo_continues_working": true,
     "same_subscription": true,
     "same_home_network": true,
-    "provenance": "Owner statement; fresh Lenovo telemetry not provided in this attachment."
+    "provenance": "Owner statement; fresh Lenovo telemetry not provided in this attachment.",
+    "followup_2026_11_04": {
+      "provenance": "Owner follow-up in this conversation on 2026-11-04; not independently measured by the attached error-only log.",
+      "hermes_versions": {
+        "lenovo_reported": "22.7",
+        "msi_before_update_reported": "22.2",
+        "msi_update_status": "in progress",
+        "post_update_result": null,
+        "installed_commit_attested": false
+      },
+      "quota_usage": {
+        "reported_period": "approximately one week before the follow-up; exact episode dates unavailable",
+        "consecutive_exhaustion_episodes": 2,
+        "approximate_days_to_exhaustion_each": 2,
+        "subsequent_reset_count_reported": 2,
+        "reset_attribution": "Owner attributes both resets to provider; schedule/manual action/mechanism not independently established.",
+        "current_approximate_full_limit_fraction_per_day": 0.2,
+        "same_subscription_purchases_inferred": false,
+        "precise_meter_or_billing_export_available": false
+      },
+      "workload": {
+        "owner_reports_constant_work_volume": true,
+        "working_sessions": 2,
+        "when_open_sessions": 3,
+        "sessions_waiting_min": 1,
+        "sessions_waiting_max": 2,
+        "provider_concurrency_cap_established": false
+      },
+      "conditional_arithmetic": {
+        "assumption": "Each earlier episode started with a full allowance, and current 20% means 20 percentage points of the full allowance per day.",
+        "earlier_average_percentage_points_per_day": 50,
+        "current_approximate_percentage_points_per_day": 20,
+        "earlier_to_current_rate_ratio": 2.5,
+        "hypothetical_days_per_full_allowance_at_current_rate": 5,
+        "not_a_reset_schedule_or_entitlement_guarantee": true
+      },
+      "causal_limits": [
+        "Constant work volume and session count do not establish equal tokens, context, cache hit, retries or server-side accounting.",
+        "Improved consumption was reported while the MSI update was still in progress; it cannot be attributed to the result of that update.",
+        "HTML403, quota consumption/resets and waiting with three sessions are distinct observations pending evidence of a causal link."
+      ]
+    }
   },
   "method": {
     "attempt_definition": "One timestamped agent.conversation_loop record starting API call failed (attempt ...).",
@@ -777,7 +818,7 @@
       "cloudflare ray id"
     ],
     "default_403_verdict": "auth fallback after transient/billing/known upstream-block checks",
-    "fresh_msi_version": "unknown; October version is not treated as current attestation",
+    "fresh_msi_version": "Owner reports 22.2 before an in-progress update on 2026-11-04; Lenovo 22.7. Exact running commit/local modifications and post-update result remain unattested.",
     "refresh_cap_caveat": "try_refresh_matching precedes cap comparison; the after-2 message is not a wire-request count"
   },
   "primary_sources": [
@@ -797,6 +838,23 @@
     "Same subscription and home LAN do not attest equal process auth state, model, egress route or client transport.",
     "No billable usage, successful-call denominator or cross-machine failure-rate estimate is available from this error-only attachment.",
     "The documented classifier patch is not confirmed merged; changing classification alone does not remove the server-side HTTP403.",
-    "No public account/IP ban, geo restriction, or shared root cause with other reports is established."
-  ]
+    "No public account/IP ban, geo restriction, or shared root cause with other reports is established.",
+    "Owner follow-up adds two approximately two-day allowance-exhaustion episodes, two provider-attributed resets, then approximately 20% daily usage at constant reported work volume with two working sessions. These are owner observations, not a reconstructed billing ledger."
+  ],
+  "release_comparison": {
+    "repository": "NousResearch/hermes-agent",
+    "tags": {
+      "v0.22.2": "d923a5eb487a17c0a68801bba9ef0f56c81040a8",
+      "v0.22.7": "b200f5bc60e31588ba2cb60e288029c4a54ba5fa"
+    },
+    "upstream_blocked_patterns_identical": true,
+    "status_403_function_identical": true,
+    "missing_in_both": [
+      "unable to load site",
+      "cloudflare ray id"
+    ],
+    "html403_classifier_fix_in_v0_22_7": false,
+    "installed_build_mapping": "Release-tag source comparison, not attestation of the exact running local builds.",
+    "post_update_access_result": null
+  }
 }
